@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://mybatis.org/schema/mybatis-spring
+		http://mybatis.org/schema/mybatis-spring.xsd">
+
+	<context:component-scan base-package="emt.emt" />
+	<mvc:annotation-driven />
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<mvc:resources mapping="/img/**" location="/resources/img/" />
+	<mvc:resources mapping="/css/**" location="/resources/css/" />
+	<mvc:resources mapping="/js/**" location="/resources/js/" />
+
+	<!-- ch03: mybatis -->
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/emt" />
+		<property name="resourceRef" value="true" />
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath*:emt/emt/join/dao/mapper/*.xml" />
+	</bean>
+
+	<mybatis:scan base-package="emt.emt.*" />
+
+
+	<!-- ch03: file upload -->
+	<!-- <bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	<context:property-placeholder location="classpath:mvc/ch03/prop.properties" />
+	<mvc:resources mapping="/upload/**" location="/upload/" /> -->
+
+	<!-- ch04 : ajax -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+	
+		<property name="messageConverters">
+			<list>
+				<bean
+					class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
+			</list>
+		</property>
+		</bean>
+</beans>
