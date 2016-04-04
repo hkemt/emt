@@ -1,6 +1,6 @@
 package emt.emt.join.service;
 
-import emt.emt.domain.User;
+import emt.emt.common.domain.User;
 
 public interface JoinService {
 	User duplCheck(User user);

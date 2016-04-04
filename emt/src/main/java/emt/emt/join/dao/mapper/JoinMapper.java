@@ -3,7 +3,7 @@ package emt.emt.join.dao.mapper;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
-import emt.emt.domain.User;
+import emt.emt.common.domain.User;
 
 public interface JoinMapper {
 	@Select("select user_id userId FROM USERS WHERE user_id=#{userId}")

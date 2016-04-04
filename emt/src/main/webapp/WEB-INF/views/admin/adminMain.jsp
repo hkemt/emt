@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>관리자 페이지</title>
-</head>
-<body>
 <table width="1024" height="768" border="1" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <!--DWLayoutTable-->
   <tr>
@@ -52,4 +47,3 @@
     <td height="26" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
   </tr>
 </table>
-</body>

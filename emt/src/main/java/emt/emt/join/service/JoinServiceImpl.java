@@ -1,15 +1,16 @@
 package emt.emt.join.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
-import emt.emt.domain.User;
+import emt.emt.common.domain.User;
 import emt.emt.join.dao.JoinDao;
 
-@Repository
+@Service
 public class JoinServiceImpl implements JoinService{
 
-	@Autowired JoinDao joinDao;
+	@Autowired private JoinDao joinDao;
 	
 	@Override
 	public User duplCheck(User user) {

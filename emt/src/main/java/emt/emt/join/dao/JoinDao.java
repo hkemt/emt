@@ -1,6 +1,6 @@
 package emt.emt.join.dao;
 
-import emt.emt.domain.User;
+import emt.emt.common.domain.User;
 
 public interface JoinDao {
 	User duplCheck(User user);

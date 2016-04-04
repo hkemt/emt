@@ -55,7 +55,7 @@ $(function() {
 	var duplch = false;
 	// /////////// var userId = $("#userId").val();
 	$("#userId").change(function() {
-		duplch=false;
+	//	duplch=false;
 		idCheck();
 	});
 	$("#duplbtn").click(function() {
@@ -64,7 +64,6 @@ $(function() {
 		$.ajax({
 			method : "POST",
 			url : "duplCheck",
-			contentType : "application/x-www-form-urlencoded; charset=UTF-8",
 			data : {
 				userId : encodeURI(userId.val())
 			},
@@ -106,7 +105,7 @@ $(function() {
 											success : function(result) {
 												if (result == 1) {
 													alert("회원가입 되었습니다.")
-													document.location.href = "index";
+													document.location.href = "/emt/index";
 												} else {
 													alert("회원가입 되지 않았습니다.");
 												}

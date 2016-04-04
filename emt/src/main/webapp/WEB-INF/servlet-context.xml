@@ -25,33 +25,32 @@
 
 	<!-- ch03: mybatis -->
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="java:comp/env/emt" />
+		<property name="jndiName" value="java:comp/env/jdbc/emt" />
 		<property name="resourceRef" value="true" />
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="mapperLocations" value="classpath*:emt/emt/join/dao/mapper/*.xml" />
+		<property name="mapperLocations" value="classpath*:emt/emt/dao/mapper/*.xml" />
 	</bean>
 
-	<mybatis:scan base-package="emt.emt.*" />
-
+	<mybatis:scan base-package="emt.emt.join.dao.mapper" />
+	<mybatis:scan base-package="emt.emt.login.dao.mapper" />
 
 	<!-- ch03: file upload -->
-	<!-- <bean id="multipartResolver"
-		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
-	<context:property-placeholder location="classpath:mvc/ch03/prop.properties" />
-	<mvc:resources mapping="/upload/**" location="/upload/" /> -->
+	<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
+		/> <context:property-placeholder location="classpath:mvc/ch03/prop.properties" 
+		/> <mvc:resources mapping="/upload/**" location="/upload/" /> -->
 
 	<!-- ch04 : ajax -->
 	<bean
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-	
+
 		<property name="messageConverters">
 			<list>
 				<bean
 					class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></bean>
 			</list>
 		</property>
-		</bean>
+	</bean>
 </beans>

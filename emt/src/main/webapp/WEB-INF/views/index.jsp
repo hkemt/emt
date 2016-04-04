@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>메인 페이지</title>
 </head>
 <table width="1024" height="768" border="1" align="center"
@@ -20,8 +19,8 @@
 					<c:choose>
 						<c:when test="${sessionScope.sid==null }">
 							<td width="234" height="82" align="right" valign="middle"><a
-								href="login"><input type="button" name="button" value="로그인"></a>
-								<a href="join"><input type="button" name="button"
+								href="/emt/login/login"><input type="button" name="button" value="로그인"></a>
+								<a href="/emt/join/join"><input type="button" name="button"
 									value="회원가입"></a></td>
 						</c:when>
 						<c:otherwise>
