@@ -53,6 +53,7 @@
 					<td width="169"><a href="#">토익스피킹</a></td>
 					<td width="169"><a href="#">유형별문제</a></td>
 					<td width="169"><a href="#">게시판</a></td>
+					<td width="169"><a href="/emt/member/userReview">복습</a></td>
 				</tr>
 			</table></td>
 	</tr>

@@ -15,4 +15,9 @@ public class IndexController {
 	public String index(){
 		return "/index";
 	}
+	
+	@RequestMapping("member/userReview")
+	public String userReview(){
+		return "member/userReview";
+	}
 }
