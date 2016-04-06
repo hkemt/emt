@@ -14,7 +14,8 @@
 <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
-
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-blue layout-top-nav">
 	<div class="wrapper">
@@ -62,9 +63,7 @@
 								</c:when>
 								<c:otherwise>
 									<li><a href="#"> 마이페이지 </a></li>
-									<li class="dropdown notifications-menu">
-										<!-- Menu toggle button --> <a href="#"
-										class="dropdown-toggle" data-toggle="dropdown"> 로그아웃 </a>
+									<li id="logout"><a href=""> 로그아웃 </a>
 									</li>
 									<!-- 회원가입 -->
 								</c:otherwise>
