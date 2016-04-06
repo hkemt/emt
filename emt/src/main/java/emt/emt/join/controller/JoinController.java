@@ -19,10 +19,6 @@ public class JoinController {
 	public String join(){
 		return "join/join";
 	}
-	@RequestMapping("/join/join2")
-	public String join2(){
-		return "join/join2";
-	}
 	/////////////중복확인
 	@RequestMapping(value="/join/duplCheck",method=RequestMethod.POST)
 	@ResponseBody

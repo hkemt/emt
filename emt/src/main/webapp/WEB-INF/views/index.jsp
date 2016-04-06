@@ -1,84 +1,323 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<head>
-<title>메인 페이지</title>
+<title>AdminLTE 2 | Top Navigation</title>
+<!-- Bootstrap 3.3.5 -->
+<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="<c:url value="/css/AdminLTE.min.css"/>">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
-<table width="1024" height="768" border="1" align="center"
-	cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
-	<!--DWLayoutTable-->
-	<tr>
-		<td width="1020" height="84" align="center" valign="middle"
-			bgcolor="#FFFFFF"><table width="1010" height="78" border="0"
-				align="center">
-				<!--DWLayoutTable-->
-				<tr>
-					<td width="766" rowspan="2" align="center" valign="middle"><h1>
-							English Mock Test</h1></td>
-					<!-------------------------------- 로그인 여부-------------------->
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+	<div class="wrapper">
+		<header class="main-header">
+			<nav class="navbar navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<a href="../../index2.html" class="navbar-brand"><b>English</b>Mock
+							Test</a>
+						<button type="button" class="navbar-toggle collapsed"
+							data-toggle="collapse" data-target="#navbar-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+					</div>
+
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse pull-left"
+						id="navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li><a href="#">토익스피킹 모의고사</a></li>
+							<li><a href="#">문제공유</a></li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Part1</a></li>
+									<li><a href="#">Part2</a></li>
+									<li><a href="#">Part3</a></li>
+									<li><a href="#">Part4</a></li>
+									<li><a href="#">Part5</a></li>
+									<li><a href="#">Part6</a></li>
+								</ul></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+					<!-- Navbar Right Menu -->
+					<div class="navbar-custom-menu">
+						<ul class="nav navbar-nav">
+						
+						<!-------------------------------- 로그인 여부-------------------->
 					<c:choose>
 						<c:when test="${sessionScope.sid==null }">
-							<td width="234" height="82" align="right" valign="middle"><a
-								href="/emt/login/login"><input type="button" name="button" value="로그인"></a>
-								<a href="/emt/join/join"><input type="button" name="button"
-									value="회원가입"></a></td>
+							<li>
+								<!-- Menu toggle button --> <a href="/emt/login/login"> 로그인 </a>
+							</li>
+							<!-- /.messages-menu -->
+
+							<!-- ㅁㄴㅇㄻㄴㄻㄴㄻㄶㅁㄶㅁㄶㅁㄶㄴㅁㅎ -->
+							<!-- Notifications Menu -->
+							<li class="dropdown notifications-menu">
+								<!-- Menu toggle button --> <a href="/emt/join/join"> 회원가입 </a>
+							</li>
 						</c:when>
 						<c:otherwise>
-							<td width="234" height="82" align="center" valign="bottom">
-								<h4>${sid }님환영합니다.</h4> 
-								<input 	type="button" 
-										name="button" 
-										onclick="location.href='userMember'"
-										value="본인정보 관리"> 
-								<input type="button"  name="button"
-								value="복습"> <input name="button" type="button"
-								onClick-"location.href='index.html' " value="로그아웃">
-							</td>
+							<li>
+								<!-- Menu toggle button --> <a href="#"> 마이페이지 </a>
+							</li>
+							<!-- /.messages-menu -->
+
+							<!-- ㅁㄴㅇㄻㄴㄻㄴㄻㄶㅁㄶㅁㄶㅁㄶㄴㅁㅎ -->
+							<!-- Notifications Menu -->
+							<li class="dropdown notifications-menu">
+								<!-- Menu toggle button --> <a href="#" class="dropdown-toggle"
+								data-toggle="dropdown"> 로그아웃 </a>
+							</li>
 						</c:otherwise>
 					</c:choose>
+						</ul>
+					</div>
+					<!-- /.navbar-custom-menu -->
+				</div>
+				<!-- /.container-fluid -->
+			</nav>
+		</header>
+		<!-- Full Width Column -->
+		<div class="content-wrapper">
+			<div class="container">
+				<!-- Content Header (Page header) -->
+				<section class="content-header"></section>
 
-
-					<!------------------------------- 로그인 여부 --------------------->
-				</tr>
-				<tr>
-					<td height="4"></td>
-				</tr>
-			</table></td>
-	</tr>
-	<tr>
-		<td height="59" valign="top" class="navbar"><table width="704"
-				height="57" border="0">
-				<tr align="center" valign="middle">
-					<td width="169"><a href="#">EMT 소개 </a></td>
-					<td width="169"><a href="#">토익스피킹</a></td>
-					<td width="169"><a href="#">유형별문제</a></td>
-					<td width="169"><a href="#">게시판</a></td>
-				</tr>
-			</table></td>
-	</tr>
-	<tr>
-		<td height="563" align="center" valign="middle" bgcolor="#FFFFFF"><table
-				width="892" height="489" border="1">
-				<tr align="center" valign="middle">
-					<td width="441"><img src="#" width="430" height="300" /></td>
-					<td>
-						<div id="Layer1"
-							style="border: 1px solid black; left: 580px; top: 236px; width: 375px; height: 204px; z-index: 1">
-							<p>게시판 목록</p>
-							<p>글은 5개</p>
-							<p>공지여부 아이디 제목</p>
-						</div> <br>
-						<div id="Layer2"
-							style="left: 584px; top: 468px; width: 372px; height: 221px; border: 1px solid black;">
-							<p>게시판 목록</p>
-							<p>글은 5개</p>
-							<p>공지여부 아이디 제목</p>
+				<!-- Main content -->
+				<section class="content">
+					<!-- 이미지 슬라이드 -->
+							<div class="box box-info">
+								<div class="box-header with-border">
+									<h3 class="box-title">1234</h3>
+									<div class="box-tools pull-right">
+										<button class="btn btn-box-tool" data-widget="collapse">
+											<i class="fa fa-minus"></i>
+										</button>
+										<button class="btn btn-box-tool" data-widget="remove">
+											<i class="fa fa-times"></i>
+										</button>
+									</div>
+								</div>
+								<!-- /.box-header -->
+								<div class="box-body">
+									<div class="box-body">
+										<div id="carousel-example-generic" class="carousel slide"
+											data-ride="carousel">
+											<ol class="carousel-indicators">
+												<li data-target="#carousel-example-generic"
+													data-slide-to="0" class="active"></li>
+												<li data-target="#carousel-example-generic"
+													data-slide-to="1" class=""></li>
+												<li data-target="#carousel-example-generic"
+													data-slide-to="2" class=""></li>
+											</ol>
+											<div class="carousel-inner">
+												<div class="item active">
+													<img src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap" alt="First slide">
+													<div class="carousel-caption">First Slide</div>
+												</div>
+												<div class="item">
+													<img
+														src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap"
+														alt="Second slide">
+													<div class="carousel-caption">Second Slide</div>
+												</div>
+												<div class="item">
+													<img
+														src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap"
+														alt="Third slide">
+													<div class="carousel-caption">Third Slide</div>
+												</div>
+											</div>
+											<a class="left carousel-control"
+												href="#carousel-example-generic" data-slide="prev"> <span
+												class="fa fa-angle-left"></span>
+											</a> <a class="right carousel-control"
+												href="#carousel-example-generic" data-slide="next"> <span
+												class="fa fa-angle-right"></span>
+											</a>
+										</div>
+									</div>
+							<!-- /.box-body -->
+							<!-- /.table-responsive -->
 						</div>
-					</td>
-				</tr>
-			</table></td>
-	</tr>
-	<tr>
-		<td height="26" valign="top"></td>
-	</tr>
-</table>
+						<!-- /.box-body -->
+
+					</div>
+					<!-- 두번째 꺼 -->
+					<div class="row">
+						<div class="col-md-6">
+							<div class="box box-info">
+								<div class="box-header with-border">
+									<h3 class="box-title">Latest Orders</h3>
+									<div class="box-tools pull-right">
+										<button class="btn btn-box-tool" data-widget="collapse">
+											<i class="fa fa-minus"></i>
+										</button>
+										<button class="btn btn-box-tool" data-widget="remove">
+											<i class="fa fa-times"></i>
+										</button>
+									</div>
+								</div>
+								<!-- /.box-header -->
+								<div class="box-body">
+									<div class="table-responsive">
+										<table class="table no-margin">
+											<thead>
+												<tr>
+													<th>Order ID</th>
+													<th>Item</th>
+													<th>Status</th>
+													<th>Popularity</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><a href="pages/examples/invoice.html">OR9842</a></td>
+													<td>Call of Duty IV</td>
+													<td><span class="label label-success">Shipped</span></td>
+													<td><div class="sparkbar" data-color="#00a65a"
+															data-height="20">90,80,90,-70,61,-83,63</div></td>
+												</tr>
+												<tr>
+													<td><a href="pages/examples/invoice.html">OR1848</a></td>
+													<td>Samsung Smart TV</td>
+													<td><span class="label label-warning">Pending</span></td>
+													<td><div class="sparkbar" data-color="#f39c12"
+															data-height="20">90,80,-90,70,61,-83,68</div></td>
+												</tr>
+												<tr>
+													<td><a href="pages/examples/invoice.html">OR7429</a></td>
+													<td>iPhone 6 Plus</td>
+													<td><span class="label label-danger">Delivered</span></td>
+													<td><div class="sparkbar" data-color="#f56954"
+															data-height="20">90,-80,90,70,-61,83,63</div></td>
+												</tr>
+												<tr>
+													<td><a href="pages/examples/invoice.html">OR7429</a></td>
+													<td>Samsung Smart TV</td>
+													<td><span class="label label-info">Processing</span></td>
+													<td><div class="sparkbar" data-color="#00c0ef"
+															data-height="20">90,80,-90,70,-61,83,63</div></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- /.table-responsive -->
+								</div>
+								<!-- /.box-body -->
+							</div>
+						</div>
+						<!-- 두번째꺼 -->
+
+						<!-- 두번째 꺼 -->
+						<div class="col-md-6">
+							<div class="box box-info">
+								<div class="box-header with-border">
+									<h3 class="box-title">Latest Orders</h3>
+									<div class="box-tools pull-right">
+										<button class="btn btn-box-tool" data-widget="collapse">
+											<i class="fa fa-minus"></i>
+										</button>
+										<button class="btn btn-box-tool" data-widget="remove">
+											<i class="fa fa-times"></i>
+										</button>
+									</div>
+								</div>
+								<!-- /.box-header -->
+								<div class="box-body">
+									<div class="table-responsive">
+										<table class="table no-margin">
+											<thead>
+												<tr>
+													<th>Order ID</th>
+													<th>Item</th>
+													<th>Status</th>
+													<th>Popularity</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><a href="pages/examples/invoice.html">OR7429</a></td>
+													<td>iPhone 6 Plus</td>
+													<td><span class="label label-danger">Delivered</span></td>
+													<td><div class="sparkbar" data-color="#f56954"
+															data-height="20">90,-80,90,70,-61,83,63</div></td>
+												</tr>
+												<tr>
+													<td><a href="pages/examples/invoice.html">OR7429</a></td>
+													<td>Samsung Smart TV</td>
+													<td><span class="label label-info">Processing</span></td>
+													<td><div class="sparkbar" data-color="#00c0ef"
+															data-height="20">90,80,-90,70,-61,83,63</div></td>
+												</tr>
+												<tr>
+													<td><a href="pages/examples/invoice.html">OR1848</a></td>
+													<td>Samsung Smart TV</td>
+													<td><span class="label label-warning">Pending</span></td>
+													<td><div class="sparkbar" data-color="#f39c12"
+															data-height="20">90,80,-90,70,61,-83,68</div></td>
+												</tr>
+												<tr>
+													<td><a href="pages/examples/invoice.html">OR7429</a></td>
+													<td>iPhone 6 Plus</td>
+													<td><span class="label label-danger">Delivered</span></td>
+													<td><div class="sparkbar" data-color="#f56954"
+															data-height="20">90,-80,90,70,-61,83,63</div></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- /.table-responsive -->
+								</div>
+								<!-- /.box-body -->
+							</div>
+						</div>
+						<!-- 두번째꺼 -->
+					</div>
+
+
+
+				</section>
+				<!-- /.content -->
+			</div>
+			<!-- /.container -->
+		</div>
+		<!-- /.content-wrapper -->
+		<footer class="main-footer">
+			<div class="container">
+				<div class="pull-right hidden-xs">
+					<b>Version</b> 2.3.0
+				</div>
+				<strong>Copyright &copy; 2014-2015 <a
+					href="http://almsaeedstudio.com">Almsaeed Studio</a>.
+				</strong> All rights reserved.
+			</div>
+			<!-- /.container -->
+		</footer>
+	</div>
+	<!-- ./wrapper -->
+	<!-- Bootstrap 3.3.5 -->
+	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
+	<!-- SlimScroll -->
+	<script src="<c:url value="/js/jquery.slimscroll.min.js"/>"></script>
+	<!-- FastClick -->
+	<script src="<c:url value="/js/fastclick.min.js"/>"></script>
+	<!-- AdminLTE App -->
+	<script src="<c:url value="/js/app.min.js"/>"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="<c:url value="/js/demo.js"/>"></script>
+</body>
