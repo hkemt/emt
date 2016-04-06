@@ -13,6 +13,7 @@
 <link href="<c:url value="/css/blue.css" />" rel="stylesheet" type="text/css">
 <link href="<c:url value="/css/bootstrap.min.css" />" rel="stylesheet"
 	type="text/css">
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <title>무제 문서</title>
 <c:choose>
 	<c:when test="${msg!=null }">
@@ -73,14 +74,3 @@
 
 	</div>
 	<!-- /.login-box-body -->
-
-
-	<script>
-		$(function() {
-			$('input').iCheck({
-				checkboxClass : 'icheckbox_square-blue',
-				radioClass : 'iradio_square-blue',
-				increaseArea : '20%' // optional
-			});
-		});
-	</script>
