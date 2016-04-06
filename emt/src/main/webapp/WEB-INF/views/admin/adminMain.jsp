@@ -17,7 +17,7 @@
     <td height="57" align="left" valign="middle" bgcolor="#FFFFFF"><table width="704" height="57" border="0">
       <tr align="center" valign="middle">
         <td width="169"><a href="#">EMT 소개 </a></td>
-        <td width="169"><a href="회원관리/회원목록.html">회원관리</a></td>
+        <td width="169"><a href="../adminMember">회원관리</a></td>
         <td width="169"><a href="문제관리/문제목록.html">문제관리</a></td>
         <td width="169"><a href="게시판관리/게시판목록.html">게시판관리</a> </td>
       </tr>

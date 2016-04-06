@@ -25,8 +25,12 @@
 						</c:when>
 						<c:otherwise>
 							<td width="234" height="82" align="center" valign="bottom">
-								<h4>${sid }님환영합니다.</h4> <input type="button" name="button"
-								value="본인정보 관리"> <input type="button" name="button"
+								<h4>${sid }님환영합니다.</h4> 
+								<input 	type="button" 
+										name="button" 
+										onclick="location.href='userMember'"
+										value="본인정보 관리"> 
+								<input type="button"  name="button"
 								value="복습"> <input name="button" type="button"
 								onClick-"location.href='index.html' " value="로그아웃">
 							</td>
