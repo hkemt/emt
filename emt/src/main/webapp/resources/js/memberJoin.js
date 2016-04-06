@@ -36,22 +36,22 @@ function mailCheck() {
 		return true;
 	}
 }
-function term() {
-	if ($("input[type='radio'][name='term']:checked").val() == 'agree') {
-		return true;
-	} else if ($("input[type='radio'][name='term']:checked").val() == 'disagree') {
-		alert("약관 동의 하셔야 가입하실 수 있습니다.");
-		return false;
-	} else {
-		alert("약관 동의 하셔야 가입하실 수 있습니다.");
-		return false;
-	}
-}
+//function term() {
+//	if ($("input[type='radio'][name='term']:checked").val() == 'agree') {
+//		return true;
+//	} else if ($("input[type='radio'][name='term']:checked").val() == 'disagree') {
+//		alert("약관 동의 하셔야 가입하실 수 있습니다.");
+//		return false;
+//	} else {
+//		alert("약관 동의 하셔야 가입하실 수 있습니다.");
+//		return false;
+//	}
+//}
 $(function() {
 	var userId = $("#userId");
 	var userPw = $("#userPw");
 	var email = $("#email");
-	var terms = $("input[name='term']");
+//	var terms = $("input[name='term']");
 	var duplch = false;
 	// /////////// var userId = $("#userId").val();
 	$("#userId").change(function() {
@@ -91,7 +91,7 @@ $(function() {
 	});
 	$("#join").click(function() {
 						// 아이디, Pw, pw확인 일치하면 가입 ㄱㄱ
-						if (idCheck() && pwCheck() && pwCheck2() && mailCheck() && term()) {
+						if (idCheck() && pwCheck() && pwCheck2() && mailCheck()) {
 							if (duplch) {
 								$.ajax({
 											method : "POST",
@@ -104,7 +104,7 @@ $(function() {
 											},
 											success : function(result) {
 												if (result == 1) {
-													alert("회원가입 되었습니다.")
+													alert("회원가입 되었습니다.");
 													document.location.href = "/emt/index";
 												} else {
 													alert("회원가입 되지 않았습니다.");
