@@ -55,10 +55,8 @@
 
 							<c:choose>
 								<c:when test="${sessionScope.sid==null }">
-									<li><a href="#"> 로그인 </a></li>
-									<li class="dropdown notifications-menu">
-										<!-- Menu toggle button --> <a href="#"
-										class="dropdown-toggle" data-toggle="dropdown"> 회원가입 </a>
+									<li><a href="/emt/login/login"> 로그인 </a></li>
+									<li><a href="/emt/join/join"> 회원가입 </a>
 									</li>
 									<!-- 회원가입 -->
 								</c:when>
@@ -115,7 +113,7 @@
 									</ol>
 									<div class="carousel-inner">
 										<div class="item active">
-											<img src="Tulips.jpg" alt="First slide">
+											<img src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="First slide">
 											<div class="carousel-caption">First Slide</div>
 										</div>
 										<div class="item">
@@ -278,8 +276,6 @@
 						<!-- 두번째꺼 -->
 					</div>
 
-
-
 				</section>
 				<!-- /.content -->
 			</div>
@@ -300,17 +296,14 @@
 	</div>
 	<!-- ./wrapper -->
 
-<c:url value="/css/bootstrap.min.css"/>
-
-	<!-- jQuery 2.1.4 -->
-	<script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
 	<!-- SlimScroll -->
-	<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+	<script src="<c:url value="/js/jquery.slimscroll.min.js"/>"></script>
 	<!-- FastClick -->
-	<script src="plugins/fastclick/fastclick.min.js"></script>
+	<script src="<c:url value="/js/fastclick.min.js"/>"></script>
 	<!-- AdminLTE App -->
-	<script src="dist/js/app.min.js"></script>
+	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
-	<script src="dist/js/demo.js"></script>
+	<script src="<c:url value="/js/demo.js"/>"></script>
