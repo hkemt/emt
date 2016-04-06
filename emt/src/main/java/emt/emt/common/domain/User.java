@@ -1,6 +1,12 @@
 package emt.emt.common.domain;
 
 public class User {
+	
+/*	
+  	USER_ID		VARCHAR2(20 BYTE)
+	USER_PW		VARCHAR2(20 BYTE)
+	EMAIL		VARCHAR2(50 BYTE)
+*/
 	private String userId;
 	private String userPw;
 	private String email;

@@ -18,8 +18,8 @@
       <tr align="center" valign="middle">
         <td width="169"><a href="#">EMT 소개 </a></td>
         <td width="169"><a href="../adminMember">회원관리</a></td>
-        <td width="169"><a href="문제관리/문제목록.html">문제관리</a></td>
-        <td width="169"><a href="게시판관리/게시판목록.html">게시판관리</a> </td>
+        <td width="169"><a href="../adminQuestion">문제관리</a></td>
+        <td width="169"><a href="../adminBoard">게시판관리</a> </td>
       </tr>
     </table></td>
   </tr>

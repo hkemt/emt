@@ -37,6 +37,9 @@
 	<mybatis:scan base-package="emt.emt.join.dao.mapper" />
 	<mybatis:scan base-package="emt.emt.login.dao.mapper" />
 	<mybatis:scan base-package="emt.emt.member.dao.mapper" />
+	<mybatis:scan base-package="emt.emt.question.dao.mapper" />
+	<mybatis:scan base-package="emt.emt.board.dao.mapper" />
+	<mybatis:scan base-package="emt.emt.wrong.dao.mapper" />
 	
 	<!-- ch03: file upload -->
 	<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 

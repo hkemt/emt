@@ -23,7 +23,7 @@
 <!-- iCheck -->
 <link href="<c:url value="/css/blue.css"/>" rel="stylesheet" type="text/css">
 
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script src="<c:url value="/js/memberJoin.js"/>"></script>
 
 <body class="hold-transition register-page">
@@ -56,6 +56,7 @@
 						placeholder="Retype Password">
 
 				</div>
+
 
 				<!-- /.col -->
 				<div>
