@@ -25,7 +25,7 @@ public class MemberController {
 	public String adminMember(Model model){
 		List<User> user = memberService.memberList();
 		model.addAttribute("user", user);
-		return "/member/adminMember";
+		return "admin/member/adminMember";
 	}
 	
 	//5_회원관리 상세보기
