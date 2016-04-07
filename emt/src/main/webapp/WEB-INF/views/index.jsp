@@ -47,6 +47,7 @@
 									<li><a href="#">Part5</a></li>
 									<li><a href="#">Part6</a></li>
 								</ul></li>
+							<li><a href="/emt/user/member/userReview">복습</a></li>
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->

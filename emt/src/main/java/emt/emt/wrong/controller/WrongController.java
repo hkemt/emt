@@ -14,6 +14,11 @@ import emt.emt.wrong.service.WrongService;
 public class WrongController {
 	@Autowired private WrongService wrongService;
 	
+	//복습코너로 가기
+	@RequestMapping("user/member/userReview")
+	public String userReview(){
+		return "user/member/userReview";
+	}
 	//1_복습 등록
 	//2_복습 수정
 	//3_복습 삭제
