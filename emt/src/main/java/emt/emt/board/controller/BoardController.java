@@ -22,7 +22,7 @@ public class BoardController {
 	public String adminBoard(Model model) {
 		List<Board> board = boardService.boardList();
 		model.addAttribute("board", board);
-		return "/board/adminBoard";
+		return "admin/board/adminBoard";
 	}
 	
 	//5_게시판관리 상세보기

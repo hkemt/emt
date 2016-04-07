@@ -23,7 +23,7 @@ public class QuestionController {
 		List<Question> question = questionService.questionList();
 		model.addAttribute("question", question);
 		
-		return "/question/adminQuestion";
+		return "admin//question/adminQuestion";
 		
 	}
 	

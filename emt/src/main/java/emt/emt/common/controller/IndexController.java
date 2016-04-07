@@ -28,4 +28,10 @@ public class IndexController {
 		session.invalidate();
 		return "/index";
 	}
+	
+	//EMT 소개 페이지
+	@RequestMapping("/aboutEMT")
+	public String aboutEMT(){
+		return "user/aboutEMT";
+	}
 }

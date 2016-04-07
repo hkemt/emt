@@ -22,7 +22,7 @@ public class WrongController {
 	public String userWrong(Model model){
 		List<Wrong> wrong = wrongService.wrongList();
 		model.addAttribute("wrong", wrong);
-		return "/user/userWrong";
+		return "/user/member/userWrong";
 		
 	}
 	
