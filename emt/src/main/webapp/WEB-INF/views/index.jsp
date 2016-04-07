@@ -113,18 +113,24 @@
 									</ol>
 									<div class="carousel-inner">
 										<div class="item active">
-											<img src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap" alt="First slide">
+											<img src="<c:url value="/img/abc.jpg"/>" alt="First slide" style="margin-left:auto; margin-right:auto;">
 											<div class="carousel-caption">First Slide</div>
 										</div>
 										<div class="item">
 											<img
-												src="http://placehold.it/900x500/3c8dbc/ffffff&text=I+Love+Bootstrap"
+												src="<c:url value="/img/abc.jpg"/>"
 												alt="Second slide">
 											<div class="carousel-caption">Second Slide</div>
 										</div>
 										<div class="item">
 											<img
-												src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap"
+												src="<c:url value="/img/abc.jpg"/>"
+												alt="Third slide">
+											<div class="carousel-caption">Third Slide</div>
+										</div>
+										<div class="item">
+											<img
+												src="<c:url value="/img/abc.jpg"/>"
 												alt="Third slide">
 											<div class="carousel-caption">Third Slide</div>
 										</div>
@@ -280,7 +286,6 @@
 				<!-- /.content -->
 			</div>
 			<!-- /.container -->
-		</div>
 		<!-- /.content-wrapper -->
 		<footer class="main-footer">
 			<div class="container">
@@ -291,8 +296,8 @@
 					href="http://almsaeedstudio.com">Almsaeed Studio</a>.
 				</strong> All rights reserved.
 			</div>
-			<!-- /.container -->
 		</footer>
+		</div>
 	</div>
 	<!-- ./wrapper -->
 
