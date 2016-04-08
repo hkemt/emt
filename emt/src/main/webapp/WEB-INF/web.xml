@@ -70,7 +70,6 @@
   <filter-mapping>
     <filter-name>LoginFilter</filter-name>
     <url-pattern>/user/*</url-pattern>
-    <url-pattern>/join/*</url-pattern>
   </filter-mapping>
 	
 </web-app>

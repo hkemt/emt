@@ -10,10 +10,12 @@
 	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <link href="<c:url value="/css/AdminLTE.min.css" />" rel="stylesheet"
 	type="text/css">
-<link href="<c:url value="/css/blue.css" />" rel="stylesheet" type="text/css">
+<link href="<c:url value="/css/blue.css" />" rel="stylesheet"
+	type="text/css">
 <link href="<c:url value="/css/bootstrap.min.css" />" rel="stylesheet"
 	type="text/css">
-	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="<c:url value="/js/adminLogin.js" />"></script>
 <title>무제 문서</title>
 <c:choose>
 	<c:when test="${msg!=null }">
@@ -23,15 +25,13 @@
 	</c:when>
 
 	<c:when test="${sessionScope.sid=='admin' }">
-		<script>
-			alert("관리자님 환영합니다.");
-			document.location.href = "/emt/admin/adminMain";
-		</script>
+		<c:redirect url="/admin/adminMain" />
 	</c:when>
 	<c:when test="${sessionScope.sid==null }">
 	</c:when>
 	<c:otherwise>
 		<script>
+			alert("${msg}");
 			alert("${sid}" + "님환영합니다.");
 			document.location.href = "/emt/index";
 		</script>
@@ -47,17 +47,21 @@
 
 			<form method="post">
 				<div class="form-group has-feedback">
-					<input type="text" name="userId" id="userId" class="form-control" placeholder="ID"> <span
+					<input type="text" name="userId" id="userId" class="form-control"
+						placeholder="ID"> <span
 						class="glyphicon glyphicon-pencil form-control-feedback"></span>
 				</div>
 				<div class="form-group has-feedback">
-					<input type="password" name="userPw" id="userPw" class="form-control" placeholder="Password">
-					<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+					<input type="password" name="userPw" id="userPw"
+						class="form-control" placeholder="Password"> <span
+						class="glyphicon glyphicon-lock form-control-feedback"></span>
 				</div>
 				<div>
 					<!-- /.col -->
 					<div class="social-auth-links text-center">
-						<input type="submit" name="Submit" class="btn btn-primary btn-block btn-flat">로그인</button>
+						<input type="submit" name="Submit"
+							class="btn btn-primary btn-block btn-flat">로그인
+						</button>
 					</div>
 					<!-- /.col -->
 				</div>
