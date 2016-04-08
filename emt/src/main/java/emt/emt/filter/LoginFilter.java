@@ -24,6 +24,7 @@ public class LoginFilter implements Filter {
 		System.out.println("LoginFilter...Begein");
 		HttpServletResponse res= (HttpServletResponse) response;
 		HttpServletRequest req=(HttpServletRequest) request;
+		
 		HttpSession session=req.getSession();
 		String sid=(String) session.getAttribute("sid");
 		//session에 sid가 없으면 login.jsp로 이동

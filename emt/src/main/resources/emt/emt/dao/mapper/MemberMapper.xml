@@ -12,11 +12,6 @@
 		from users
 	</select>
 	
-	<update id="memberUpdate" parameterType="emt.emt.common.domain.User">
-		update users
-		set user_pw=#{userPw), email=#{email} where user_id=#{userId}	
-	</update>
-	
 	
 
 </mapper>

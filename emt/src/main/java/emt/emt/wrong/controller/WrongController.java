@@ -23,7 +23,7 @@ public class WrongController {
 	//2_복습 수정
 	//3_복습 삭제
 	//4_복습 목록보기
-	@RequestMapping("userWrong")
+	@RequestMapping("user/member/userWrong")
 	public String userWrong(Model model){
 		List<Wrong> wrong = wrongService.wrongList();
 		model.addAttribute("wrong", wrong);

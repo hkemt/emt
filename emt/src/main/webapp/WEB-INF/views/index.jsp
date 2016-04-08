@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+						
+<c:choose>
+	<c:when test="${loginMsg!=null }">
+		<script>
+			alert("${loginMsg}");
+			<%
+	    	session.removeAttribute("loginMsg");
+		    %>
+		</script>
+	</c:when>
+</c:choose>
+
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <!-- Font Awesome -->
@@ -30,7 +42,7 @@
 							<i class="fa fa-bars"></i>
 						</button>
 					</div>
-
+	
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse pull-left"
 						id="navbar-collapse">
@@ -65,8 +77,8 @@
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="userWrong">복습</a></li>
-									<li><a href="userModify">정보수정</a></li>
+									<li><a href="user/member/userWrong">복습</a></li>
+									<li><a href="member/userModify.html">정보수정</a></li>
 									<li id="logout"><a href="">로그아웃</a></li>
 								</ul></li>
 									<!-- 회원가입 -->

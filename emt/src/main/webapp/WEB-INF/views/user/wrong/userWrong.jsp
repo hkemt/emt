@@ -57,18 +57,17 @@
 							<c:choose>
 								<c:when test="${sessionScope.sid==null }">
 									<li><a href="/emt/login/login"> 로그인 </a></li>
-									<li><a href="/emt/join/join"> 회원가입 </a>
-									</li>
+									<li><a href="/emt/join/join"> 회원가입 </a></li>
 									<!-- 회원가입 -->
 								</c:when>
 								<c:otherwise>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">userId</a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="userWrong">복습</a></li>
-									<li><a href="member/userModify.html">정보수정</a></li>
-									<li><a href="logout">로그아웃</a></li>
-								</ul></li>
+									<li class="dropdown"><a href="#" class="dropdown-toggle"
+										data-toggle="dropdown">userId</a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="userWrong">복습</a></li>
+											<li><a href="member/userModify.html">정보수정</a></li>
+											<li><a href="logout">로그아웃</a></li>
+										</ul></li>
 									<!-- 회원가입 -->
 								</c:otherwise>
 							</c:choose>
@@ -89,82 +88,65 @@
 				<!-- Main content -->
 				<section class="content">
 
-
-
-
-
-
-
-<div class="box box-info" style="margin-top: 50px;">
-                <div class="box-header with-border">
-                  <h3 class="box-title">복습코너</h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                  <div class="table-responsive">
-                    <table class="table no-margin">
-                      <thead>
-                        <tr>
-                          <th>문제번호</th>
-                          <th>문제유형</th>
-                          <th>문제제목</th>
-                          <th>다시보기</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      	<c:forEach var="wrong" items="${wrong }">
-	<tr>
-		<td><input type="radio" name="myNo" value="${wrong.myNo }"></td>
-		<td><a href="#" >${wrong.myNo }</a></td>
-		<td><span class="label label-success">${wrong.myCode }</span></td>
-		<td>${wrong.userId }</td>
-	</tr>
-	</c:forEach>
-                      </tbody>
-                    </table>
-                  </div><!-- /.table-responsive -->
-                </div><!-- /.box-body -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+					<div class="box box-info" style="margin-top: 50px;">
+						<div class="box-header with-border">
+							<h3 class="box-title">복습코너</h3>
+							<div class="box-tools pull-right">
+								<button class="btn btn-box-tool" data-widget="collapse">
+									<i class="fa fa-minus"></i>
+								</button>
+								<button class="btn btn-box-tool" data-widget="remove">
+									<i class="fa fa-times"></i>
+								</button>
+							</div>
+						</div>
+						<!-- /.box-header -->
+						<div class="box-body">
+							<div class="table-responsive">
+								<table class="table no-margin">
+									<thead>
+										<tr>
+											<th>문제번호</th>
+											<th>문제유형</th>
+											<th>문제제목</th>
+											<th>다시보기</th>
+										</tr>
+									</thead>
+									<tbody>
+										<c:forEach var="wrong" items="${wrong }">
+											<tr>
+												<td><input type="radio" name="myNo"
+													value="${wrong.myNo }"></td>
+												<td><a href="#">${wrong.myNo }</a></td>
+												<td><span class="label label-success">${wrong.myCode }</span></td>
+												<td>${wrong.userId }</td>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
+							<!-- /.table-responsive -->
+						</div>
+						<!-- /.box-body -->
 				</section>
 				<!-- /.content -->
 			</div>
 			<!-- /.container -->
-		<!-- /.content-wrapper -->
-		<footer class="main-footer">
-			<div class="container">
-				<div class="pull-right hidden-xs">
-					<b>Version</b> 2.3.0
+			<!-- /.content-wrapper -->
+			<footer class="main-footer">
+				<div class="container">
+					<div class="pull-right hidden-xs">
+						<b>Version</b> 2.3.0
+					</div>
+					<strong>Copyright &copy; 2014-2015 <a
+						href="http://almsaeedstudio.com">Almsaeed Studio</a>.
+					</strong> All rights reserved.
 				</div>
-				<strong>Copyright &copy; 2014-2015 <a
-					href="http://almsaeedstudio.com">Almsaeed Studio</a>.
-				</strong> All rights reserved.
-			</div>
-		</footer>
+			</footer>
 		</div>
 	</div>
 	<!-- ./wrapper -->
-
+	
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
 	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
