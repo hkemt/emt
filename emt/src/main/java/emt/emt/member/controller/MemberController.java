@@ -31,4 +31,15 @@ public class MemberController {
 	//5_회원관리 상세보기
 	
 	
+	//6.본인정보관리 보기
+	@RequestMapping("userModify")
+	public String userModify(Model model){
+		return "user/member/userModify";
+		
+	}
+	
+	
+	
+	
+	
 }
