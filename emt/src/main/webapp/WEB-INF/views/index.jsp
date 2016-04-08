@@ -47,7 +47,6 @@
 									<li><a href="#">Part5</a></li>
 									<li><a href="#">Part6</a></li>
 								</ul></li>
-							<li><a href="/emt/user/member/userReview">복습</a></li>
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
@@ -63,9 +62,13 @@
 									<!-- 회원가입 -->
 								</c:when>
 								<c:otherwise>
-									<li><a href="#"> 마이페이지 </a></li>
-									<li id="logout"><a href=""> 로그아웃 </a>
-									</li>
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">userId</a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="userWrong">복습</a></li>
+									<li><a href="member/userModify.html">정보수정</a></li>
+									<li><a href="logout">로그아웃</a></li>
+								</ul></li>
 									<!-- 회원가입 -->
 								</c:otherwise>
 							</c:choose>
