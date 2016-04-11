@@ -14,13 +14,13 @@ import emt.emt.member.service.MemberService;
 public class MemberController {
 	@Autowired private MemberService memberService;
 	
-	//1_회원관리 등록
+	//1_1회원관리 등록
 	
-	//2_회원관리 수정
+	//1_2회원관리 수정
 	
-	//3_회원관리 삭제
+	//1_3회원관리 삭제
 	
-	//4_회원관리 목록보기
+	//1_4회원관리 목록보기
 	@RequestMapping("adminMember")
 	public String adminMember(Model model){
 		List<User> user = memberService.memberList();
@@ -28,7 +28,23 @@ public class MemberController {
 		return "admin/member/adminMember";
 	}
 	
-	//5_회원관리 상세보기
+	//1_5회원관리 상세보기
+	
+	
+	
+	//2_1본인정보관리 등록
+		
+	//2_2본인정보관리 수정
+	//2_3본인정보관리 삭제
+	//2_4본인정보관리 목록보기
+	@RequestMapping("userMemberList")
+	public String userMemberList(){
+		return "user/member/userMemberList";
+		
+	}
+	
+	
+	//2_5본인정보관리 상세보기
 	
 	
 }
