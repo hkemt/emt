@@ -31,9 +31,9 @@ public class WrongDaoImpl implements WrongDao{
 	}
 
 	@Override
-	public List<Wrong> wrongList() {
+	public List<Wrong> wrongList(Wrong wrong) {
 		// TODO Auto-generated method stub
-		return wrongMapper.wrongList();
+		return wrongMapper.wrongList(wrong);
 	}
 
 	@Override

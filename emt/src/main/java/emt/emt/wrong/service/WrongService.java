@@ -8,7 +8,7 @@ public interface WrongService {
 	int wrongInsert(Wrong wrong);
 	int wrongUpdate(Wrong wrong);
 	int wrongDelete(Wrong wrong);
-	List<Wrong> wrongList();
+	List<Wrong> wrongList(Wrong wrong);
 	Wrong wrongView(Wrong wrong);
 	
 

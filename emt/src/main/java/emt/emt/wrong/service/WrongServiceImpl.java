@@ -31,9 +31,9 @@ public class WrongServiceImpl implements WrongService{
 	}
 
 	@Override
-	public List<Wrong> wrongList() {
+	public List<Wrong> wrongList(Wrong wrong) {
 		// TODO Auto-generated method stub
-		return wrongDao.wrongList();
+		return wrongDao.wrongList(wrong);
 	}
 
 	@Override

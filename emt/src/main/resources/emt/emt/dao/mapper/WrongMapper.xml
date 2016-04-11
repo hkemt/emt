@@ -7,9 +7,8 @@
 		<result property="userId" column="user_id"/>
 	</resultMap>
 	
-	<select id="wrongList" resultMap="wrongMap">
-		select my_no myNo, my_code myCode, user_id userId
-		from wrong	
+	<select id="wrongList" parameterType="emt.emt.common.domain.Wrong" resultMap="wrongMap"> 
+	SELECT * FROM wrong WHERE user_id=#{userId} 
 	</select>
 	
 	
