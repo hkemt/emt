@@ -187,7 +187,6 @@
 						
 						var random=Math.floor(((Math.random()*partQtn.length)));
 						 
-						$("#partContent").html(partQtn[random].testContent);
 						
 						// 이미지가 있을시에 넣음
 						if(partQtn[random].testImg !=null){

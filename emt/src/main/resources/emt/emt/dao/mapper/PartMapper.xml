@@ -11,7 +11,7 @@
 	
 	<select id="partAll" parameterType="emt.emt.common.domain.Question" resultMap="partMap">
 	
-		select test_no testNo, test_content testContent, test_type testType, test_mp3 testMp3, test_img testImg 
+		select test_no testNo, test_type testType, test_mp3 testMp3, test_img testImg 
 		from question where test_type=#{testType}
 		
 	</select>
