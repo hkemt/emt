@@ -31,7 +31,6 @@
 	</c:when>
 	<c:otherwise>
 		<script>
-			alert("${msg}");
 			alert("${sid}" + "님환영합니다.");
 			document.location.href = "/emt/index";
 		</script>
@@ -60,7 +59,7 @@
 					<!-- /.col -->
 					<div class="social-auth-links text-center">
 						<input type="submit" name="Submit"
-							class="btn btn-primary btn-block btn-flat">로그인
+							class="btn btn-primary btn-block btn-flat" value="로그인">
 						</button>
 					</div>
 					<!-- /.col -->
