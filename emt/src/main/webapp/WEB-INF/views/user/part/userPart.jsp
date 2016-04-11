@@ -216,7 +216,7 @@
 			var times = [5,10,15,20,25,30];
 			 
 			// 유형시간을 변수에 저장
-		 	var partTime = times[testType];
+		 	var partTime = times[testType-1];
 			 
 			partDate = new Date();
 			
