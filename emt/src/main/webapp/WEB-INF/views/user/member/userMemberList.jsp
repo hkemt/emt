@@ -96,22 +96,28 @@
 							</div>
 						</div>
 						<!-- /.box-header -->
+						<form action="index" method="post">
 						<div class="box-body">
 							<div class="table-responsive">
+
 								<table class="table no-margin">
 									<thead>
 										<tr>
+											<td><b>아이디</b></td>
+											<td><input type="text" name="userId" value=${user.userId } readonly></td>
+										</tr>
+										<tr>
 											<td><b>현재 비밀번호</b></td>
-											<td><input type="password" placeholder="입력"></td>
+											<td><input type="password" value=${user.userPw } readonly></td>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td><b>새 비밀번호</b></td>
-											<td><input type="password" placeholder="입력"></td>
+											<td><b>새 비밀번호(수정 가능)</b></td>
+											<td><input type="password" name="userPw" placeholder="입력"></td>
 										</tr>
 										<tr>
-											<td><b>새 비밀번호 확인</b></td>
+											<td><b>새 비밀번호 확인(수정 가능)</b></td>
 											<td><input type="password" placeholder="입력"></td>
 										</tr>
 										<tr>
@@ -119,20 +125,24 @@
 										</tr>
 
 										<tr>
-											<td><b>이메일</b></td>
-											<td><input type="text" placeholder="aaa@aaa.com"></td>
+											<td><b>이메일(수정 가능)</b></td>
+											<td><input type="text" name="email" value=${user.email }></td>
 										</tr>
 
 									</tbody>
 								</table>
+								
 							</div>
 							<div style="text-align: right;">
 
-								<button class="btn btn-default" onclick="updateChk()" >수정</button>			 
+								<input type="submit" class="btn btn-default" value="수정">			 
 								<button class="btn btn-default"  onclick="location.href='index'">취소</button>
+								
 							</div>
+							
 							<!-- /.table-responsive -->
 						</div>
+						</form>
 						<!-- /.box-body -->
 					</div>
 				</section>

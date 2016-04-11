@@ -11,7 +11,11 @@
 		select user_id userId, email
 		from users
 	</select>
-	
+	<select id="memberView" resultType="emt.emt.common.domain.User">
+	select user_id userId, user_pw userPw, email
+	from users
+	where user_id=#{userId}
+	</select>
 	
 
 </mapper>

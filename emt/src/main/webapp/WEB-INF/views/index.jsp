@@ -78,7 +78,7 @@
 								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="user/member/userWrong">복습</a></li>
-									<li><a href="userMemberList">정보수정</a></li>
+									<li><a href="userMemberList?userId=${sid }">정보수정</a></li>
 									<li id="logout"><a>로그아웃</a></li>
 								</ul></li>
 									<!-- 회원가입 -->
