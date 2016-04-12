@@ -110,15 +110,20 @@
 											<td><b>현재 비밀번호</b></td>
 											<td><input type="password" value=${user.userPw } readonly></td>
 										</tr>
+										
+										<tr>
+											<td><b>가입일자</b></td>
+											<td><input type="text" value=${user.userDate } readonly></td>
+										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td><b>새 비밀번호(수정 가능)</b></td>
-											<td><input type="password" name="userPw" placeholder="입력"></td>
+											<td><input type="password" name="userPw" placeholder="입력" required></td>
 										</tr>
 										<tr>
 											<td><b>새 비밀번호 확인(수정 가능)</b></td>
-											<td><input type="password" placeholder="입력"></td>
+											<td><input type="password" placeholder="입력" required></td>
 										</tr>
 										<tr>
 
@@ -126,7 +131,7 @@
 
 										<tr>
 											<td><b>이메일(수정 가능)</b></td>
-											<td><input type="text" name="email" value=${user.email }></td>
+											<td><input type="text" name="email" value=${user.email } required></td>
 										</tr>
 
 									</tbody>
@@ -178,16 +183,5 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
-	
-		<script>
-		function updateChk(){
-			
-			alert("수정 성공입니다.");
-			
-			location.href="index";
-		}
-	</script>
-	
-	
 	
 	
