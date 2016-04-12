@@ -96,7 +96,7 @@
 							</div>
 						</div>
 						<!-- /.box-header -->
-						<form action="index" method="post">
+						<form action="update" method="post">
 						<div class="box-body">
 							<div class="table-responsive">
 

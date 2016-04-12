@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import emt.emt.common.domain.User;
 import emt.emt.member.service.MemberService;
@@ -35,6 +36,14 @@ public class MemberController {
 	//2_1본인정보관리 등록
 		
 	//2_2본인정보관리 수정
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public String update(User user, Model model){
+		int result = memberService.memberUpdate(user);
+		model.addAttribute("result", result);
+		return "user/member/userMemberUpdateResult";
+	}
+	
+	
 	//2_3본인정보관리 삭제
 	//2_4본인정보관리 목록보기
 	@RequestMapping("userMemberList")
