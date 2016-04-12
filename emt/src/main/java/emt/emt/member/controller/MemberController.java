@@ -16,8 +16,10 @@ public class MemberController {
 	@Autowired private MemberService memberService;
 	
 	//1_1회원관리 등록
-	
-	//1_2회원관리 수정
+	@RequestMapping("adminMemberDelete")
+	public String memberInsert(){
+		return "admin/member/adminMemberInsert";
+	}
 	
 	//1_3회원관리 삭제
 	

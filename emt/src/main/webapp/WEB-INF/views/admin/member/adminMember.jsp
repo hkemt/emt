@@ -96,6 +96,7 @@
 							<div class="table-responsive">
 								<table class="table no-margin">
 									<thead>
+									
 										<tr>
 											<th></th>
 											<th>아이디</th>
@@ -119,13 +120,17 @@
 
 									</tbody>
 								</table>
+								
 							</div>
 							<input type="button"
-								onclick="location.href='adminMemberList.html'"
+								onclick="location.href='adminMemberDelete'"
+								style="float: right" value="등록">
+							<input type="button"
+								onclick="location.href='adminMemberDelete'"
 								style="float: right" value="삭제">
 
 							<!-- /.table-responsive -->
-						</div>
+													</div>
 						<!-- /.box-body -->
 						</div>
 				</section>
