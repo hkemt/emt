@@ -5,15 +5,36 @@
 		<result property="boardNo" column="board_no"/> 
 		<result property="boardTitle" column="board_title"/> 
 		<result property="boardContent" column="board_content"/> 
-		<result property="userId" column="user_id"/> 
 		<result property="boardDate" column="board_date"/> 
 		<result property="boardCount" column="board_count"/> 
-
+		<result property="userId" column="user_id"/> 
 	</resultMap>
 	
-	<select id="boardList" resultMap="boardMap">
-		select *
-		from board order by board_no
+	
+	
+	
+	<select id="boardList" parameterType="int" resultMap="boardMap">
+		<![CDATA[
+		SELECT board_no boardNo, board_title boardTitle, board_content boardContent, board_date boardDate,
+			   board_count boardCount, user_id userId
+		FROM (SELECT rownum AS rnum, M.* 
+			  FROM (
+			  		SELECT * 
+					FROM board 
+					WHERE user_id != 'admin'
+					ORDER BY board_date DESC
+			  		) M 
+			  WHERE rownum  < = 7*#{type})
+		WHERE rnum > 7*(#{type}-1)
+		]]>
+	</select>
+	
+	<select id="boardCount" resultType="int">
+	<![CDATA[
+		SELECT COUNT(*) 
+		FROM board
+		WHERE user_id != 'admin'
+	]]>	
 	</select>
 </mapper>
 

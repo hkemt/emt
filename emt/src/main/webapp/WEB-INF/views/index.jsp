@@ -48,7 +48,14 @@
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="#">토익스피킹 모의고사</a></li>
-							<li><a href="#">문제공유</a></li>
+							<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">게시판
+							<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="../board/notice.html">공지사항</a>
+									<li><a href="board">문제공유</a>
+								</ul>
+							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">

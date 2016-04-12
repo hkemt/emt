@@ -13,32 +13,52 @@ public class BoardDaoImpl implements BoardDao{
 	@Autowired private BoardMapper boardMapper;
 
 	@Override
+	public List<Board> noticeList(int type) {
+
+		return boardMapper.noticeList(type);
+	}
+
+	@Override
+	public int noticeCount() {
+
+		return boardMapper.noticeCount();
+	}
+
+	@Override
+	public List<Board> boardList(int type) {
+
+		return boardMapper.boardList(type);
+	}
+
+	@Override
+	public int boardCount() {
+
+		return boardMapper.boardCount();
+	}
+
+	@Override
 	public int boardInsert(Board board) {
-		// TODO Auto-generated method stub
+
 		return boardMapper.boardInsert(board);
 	}
 
 	@Override
 	public int boardUpdate(Board board) {
-		// TODO Auto-generated method stub
+
 		return boardMapper.boardUpdate(board);
 	}
 
 	@Override
 	public int boardDelete(Board board) {
-		// TODO Auto-generated method stub
+	
 		return boardMapper.boardDelete(board);
 	}
 
 	@Override
-	public List<Board> boardList() {
-		// TODO Auto-generated method stub
-		return boardMapper.boardList();
-	}
-
-	@Override
 	public Board boardView(Board board) {
-		// TODO Auto-generated method stub
+
 		return boardMapper.boardView(board);
 	}
+
+	
 }
