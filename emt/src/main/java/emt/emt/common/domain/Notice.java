@@ -1,6 +1,11 @@
 package emt.emt.common.domain;
 
 public class Notice {
+/*	
+	NOTICE_NO	NUMBER
+	BOARD_NO	NUMBER
+*/	
+	
 	private int noticeNo;
 	private int boardNo;
 	

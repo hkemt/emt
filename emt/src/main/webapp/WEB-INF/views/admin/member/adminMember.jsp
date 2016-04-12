@@ -29,7 +29,7 @@
 			<nav class="navbar navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
-						<a href="../admin/adminMain.html" class="navbar-brand"><b>English</b>Mock
+						<a href="/emt/admin/adminMain" class="navbar-brand"><b>English</b>Mock
 							Test</a>
 						<button type="button" class="navbar-toggle collapsed"
 							data-toggle="collapse" data-target="#navbar-collapse">
@@ -41,9 +41,10 @@
 					<div class="collapse navbar-collapse pull-left"
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="../adminMember">회원관리</a></li>
-							<li><a href="../adminQuestion">문제관리</a></li>
-							<li><a href="../adminBoard">게시판관리</a></li>
+							<li><a href="adminMember">회원관리</a></li>
+							<li><a href="adminQuestion">문제관리</a></li>
+							<li><a href="adminBoard">게시판관리</a></li>
+							<li><a href="adminNotice">공지관리</a></li>
 
 						</ul>
 					</div>
@@ -51,14 +52,11 @@
 					<!-- Navbar Right Menu -->
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
-							<!-- 							<li><a href="login.html"> 로그인 </a></li>
-									<li><a href="join.html"> 회원가입 </a> -->
-							<!-- </li> -->
-							<!-- 회원가입 -->
-							<!-- <li><a href="#"> 마이페이지 </a></li>
-									<li id="logout"><a href=""> 로그아웃 </a>
-									</li> -->
-							<!-- 회원가입 -->
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">${sid }</a>
+								<ul class="dropdown-menu" role="menu">
+									<li id="logout"><a>로그아웃</a></li>
+								</ul></li>
 						</ul>
 					</div>
 					<!-- /.navbar-custom-menu -->
@@ -92,7 +90,7 @@
 								</button>
 							</div>
 						</div>
-					</div>	
+					
 						<!-- /.box-header -->
 						<div class="box-body">
 							<div class="table-responsive">
@@ -102,6 +100,7 @@
 											<th></th>
 											<th>아이디</th>
 											<th>이메일</th>
+											<th>가입일자</th>
 
 										</tr>
 									</thead>
@@ -113,6 +112,8 @@
 													value="${user.userId }"></td>
 												<td>${user.userId }</td>
 												<td>${user.email }</td>
+												<td>${user.userDate }</td>
+												
 											</tr>
 										</c:forEach>
 
@@ -126,6 +127,7 @@
 							<!-- /.table-responsive -->
 						</div>
 						<!-- /.box-body -->
+						</div>
 				</section>
 				<!-- /.content -->
 			</div>

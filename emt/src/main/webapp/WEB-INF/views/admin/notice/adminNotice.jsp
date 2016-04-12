@@ -74,9 +74,13 @@
 				<section class="content">
 
 
+
+
+
+
 					<div class="box box-info">
 						<div class="box-header with-border">
-							<h3 class="box-title">게시판관리 게시판목록보기</h3>
+							<h3 class="box-title">공지관리 목록</h3>
 							<div class="box-tools pull-right">
 								<button class="btn btn-box-tool" data-widget="collapse">
 									<i class="fa fa-minus"></i>
@@ -86,7 +90,7 @@
 								</button>
 							</div>
 						</div>
-					
+
 						<!-- /.box-header -->
 						<div class="box-body">
 							<div class="table-responsive">
@@ -94,66 +98,29 @@
 									<thead>
 										<tr>
 											<th></th>
+											<th>공지번호</th>
 											<th>게시판번호</th>
-											<th>제목</th>
-											<th>내용</th>
-											<th>아이디</th>
-											<th>날짜</th>
-											<th>조회수</th>
 
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var="board" items="${board }">
-											<tr>
-												<td><input type="radio" name="boardNo"
-													value="${board.boardNo }"></td>
-												<td>${board.boardNo }</td>
-												<td>${board.boardTitle }</td>
-												<td>${board.boardContent }</td>
-												<td>${board.userId }</td>
-												<td>${board.boardDate }</td>
-												<td>${board.boardCount }</td>
 
+										<c:forEach var="notice" items="${notice }">
+											<tr>
+												<td><input type="radio" name="noticeNo"
+													value="${notice.noticeNo }"></td>
+												<td>${notice.noticeNo }</td>
+												<td>${notice.boardNo }</td>
 											</tr>
 										</c:forEach>
-									</tbody>
-								</table>
-								
-								<table class="table no-margin">
-									<thead>
-										<tr>
-											<th></th>
-											<th>댓글번호</th>
-											<th>댓글내용</th>
-											<th>아이디</th>
-											<th>날짜</th>
-											<th>게시판번호</th>
-										</tr>
-									</thead>
-									<tbody>
-										<c:forEach var="reply" items="${reply }">
-											<tr>
-												<td><input type="radio" name="replyNo"
-													value="${reply.replyNo }"></td>
-												<td>${reply.replyNo }</td>
-												<td>${reply.replyContent }</td>
-												<td>${reply.userId }</td>
-												<td>${reply.replyDate }</td>
-												<td>${reply.boardNo }</td>
 
-											</tr>
-										</c:forEach>
 									</tbody>
 								</table>
-								
-								
 							</div>
 							<input type="button"
-								onclick="location.href='adminBoardList.html'"
-								style="float: right" value="삭제"> <input type="button"
-								onclick="location.href='adminBoardInsert.html'"
-								style="float: right" value="등록">
+								onclick="location.href='adminMemberList.html'"
+								style="float: right" value="삭제">
+
 							<!-- /.table-responsive -->
 						</div>
 						<!-- /.box-body -->
@@ -177,7 +144,7 @@
 		</footer>
 	</div>
 	<!-- ./wrapper -->
-	
+
 
 
 

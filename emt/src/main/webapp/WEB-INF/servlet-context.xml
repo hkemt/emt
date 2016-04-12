@@ -42,6 +42,7 @@
 	<mybatis:scan base-package="emt.emt.review.dao.mapper" />
 	<mybatis:scan base-package="emt.emt.part.dao.mapper" />
 	<mybatis:scan base-package="emt.emt.reply.dao.mapper" />
+	<mybatis:scan base-package="emt.emt.notice.dao.mapper" />
 	
 	<!-- ch03: file upload -->
 	<!-- <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
