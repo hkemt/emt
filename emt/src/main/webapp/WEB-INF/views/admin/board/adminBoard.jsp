@@ -98,10 +98,10 @@
 		<th>게시판번호</th>
 		<th>제목</th>
 		<th>내용</th>
-		<th>날짜</th>
-		<th>공지여부</th>
-		<th>조회수</th>
 		<th>아이디</th>
+		<th>날짜</th>
+		<th>조회수</th>
+
 	</tr>
 									</thead>
 									<tbody>
@@ -111,10 +111,10 @@
 		<td>${board.boardNo }</td>
 		<td>${board.boardTitle }</td>
 		<td>${board.boardContent }</td>
-		<td>${board.boardDate }</td>
-		<td>${board.boardNotice }</td>
-		<td>${board.boardCount }</td>
 		<td>${board.userId }</td>
+		<td>${board.boardDate }</td>
+		<td>${board.boardCount }</td>
+
 	</tr>
 	</c:forEach>
 									</tbody>

@@ -5,14 +5,14 @@
 		<result property="boardNo" column="board_no"/> 
 		<result property="boardTitle" column="board_title"/> 
 		<result property="boardContent" column="board_content"/> 
-		<result property="boardDate" column="board_date"/> 
-		<result property="boardNotice" column="board_notice"/> 
-		<result property="boardCount" column="board_count"/> 
 		<result property="userId" column="user_id"/> 
+		<result property="boardDate" column="board_date"/> 
+		<result property="boardCount" column="board_count"/> 
+
 	</resultMap>
 	
 	<select id="boardList" resultMap="boardMap">
-		select board_no boardNo, board_title boardTitle, board_content boardContent, board_date boardDate, board_notice boardNotice, board_count boardCount, user_id userId
+		select *
 		from board order by board_no
 	</select>
 </mapper>
