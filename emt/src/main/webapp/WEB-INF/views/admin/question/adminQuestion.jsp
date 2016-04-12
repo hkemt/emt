@@ -100,22 +100,19 @@
 										<tr>
 											<th></th>
 											<th>문제번호</th>
-											<th>문제내용</th>
 											<th>문제유형</th>
-											<th>문제Mp3경로</th>
-											<th>문제Img경로</th>
+											<th>문제Video경로</th>
 										</tr>
 									</thead>
 									<tbody>
 									
 										<c:forEach var="question" items="${question }">
 	<tr>
-		<td><input type="radio" name="testNo" value="${question.testNo }"></td>
-		<td>${question.testNo }</td>
-		<td>${question.testContent }</td>
-		<td>${question.testType }</td>
-		<td>${question.testMp3 }</td>
-		<td>${question.testImg }</td>
+		<td><input type="radio" name="questionNo" value="${question.questionNo }"></td>
+		<td>${question.questionNo }</td>
+		<td>${question.questionType }</td>
+		<td>${question.questionVideo }</td>
+
 	</tr>
 	</c:forEach>
 

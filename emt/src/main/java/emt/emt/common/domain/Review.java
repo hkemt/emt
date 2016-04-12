@@ -10,14 +10,6 @@ public class Review {
 	private int reviewNo;
 	private String userId;
 	private int questionNo;
-	
-	public Review() {	}
-	
-	public Review(int reviewNo, String userId, int questionNo) {
-		this.reviewNo = reviewNo;
-		this.userId = userId;
-		this.questionNo = questionNo;
-	}
 
 	public int getReviewNo() {
 		return reviewNo;

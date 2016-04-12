@@ -2,15 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="emt.emt.question.dao.mapper.QuestionMapper">
 	<resultMap id="questionMap" type="emt.emt.common.domain.Question">
-		<result property="testNo" column="test_no"/>
-		<result property="testContent" column="test_content"/>
-		<result property="testType" column="test_type"/>
-		<result property="testMp3" column="test_mp3"/>
-		<result property="testImg" column="test_img"/>
+		<result property="questionNo" column="question_no"/>
+		<result property="questionType" column="question_type"/>
+		<result property="questionVideo" column="question_video"/>
+
 	</resultMap>
 	
 	<select id="questionList" resultMap="questionMap">
-		select test_no testNo, test_content testContent, test_type testType, test_mp3 testMp3, test_img testImg
+		select *
 		from question
 	</select>
 	
