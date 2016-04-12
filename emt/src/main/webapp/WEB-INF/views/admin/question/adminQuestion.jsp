@@ -166,12 +166,13 @@
 			data: { type : page},
 			success: function(result) {
 				$("#questionView").html("<table id='questionTable' class='table no-margin'></table>");
-				$("#questionTable").append("<thead><tr><th>번호</th><th>아이디</th><th>조회수</th></thead>");
+				$("#questionTable").append("<thead><tr><th>문제번호</th><th>문제유형</th><th>Video경로</th></thead>");
 				$("#questionTable").append("<tbody>")
 				for(var i=0; i<result.length; i++){
-					$("#questionTable").append("<tr><td>"+result[i].questionNo + "</td>"
-														+"<td>"+result[i].questionType +"</td>"
-														+"<td>"+result[i].questionVideo +"</td></tr>");
+					$("#questionTable").append("<tr><td><a href='questionView?questionNo="+result[i].questionNo + "'>"+result[i].questionNo + "</a></td>"
+														+"<td><span class='label label-success'>"+result[i].questionType +"</span></td>"
+														+"<td>"+result[i].questionVideo +"</td></tr>");				
+				
 				}
 				$("#questionTable").append("</tbody");
 			}
@@ -201,7 +202,6 @@
 					pageCount = countAll/7;
 				}
 				
-				alert(pageCount);
 				$("#questionPage").html("<ul id='myPage' class='pagination pagination-sm no-margin pull-right'>");
 				
 				for(var i=0; i<pageCount; i++) {

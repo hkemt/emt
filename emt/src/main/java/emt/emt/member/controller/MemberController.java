@@ -56,7 +56,7 @@ public class MemberController {
 	
 	
 	//2_3본인정보관리 삭제
-	//2_4본인정보관리 목록보기
+	//2_4본인정보관리 상세보기
 	@RequestMapping("userMemberList")
 	public String userMemberList(User user, Model model){
 		
@@ -64,11 +64,7 @@ public class MemberController {
 		model.addAttribute("user", user);
 		
 		return "user/member/userMemberList";
-		
 	}
-	
-	
-	//2_5본인정보관리 상세보기
 	
 	
 }

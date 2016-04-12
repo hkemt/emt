@@ -15,6 +15,7 @@ import emt.emt.question.service.QuestionService;
 public class QuestionController {
 	@Autowired private QuestionService questionService;
 	
+	
 	@RequestMapping("adminQuestion")
 	public String adminQuestion(Model model){	
 		return "admin/question/adminQuestion";
@@ -32,6 +33,18 @@ public class QuestionController {
 	public int questionCount(){
 		return questionService.questionCount();
 	}
+	
+	@RequestMapping("questionView")
+	public String questionView(Question question, Model model){
+		question = questionService.questionView(question);
+		model.addAttribute("question", question);
+		
+		
+		
+		return "admin/question/adminQuestionView";
+	}
+	
+	
 	
 	
 	

@@ -28,5 +28,15 @@
 		FROM question
 		]]>
 	</select>
+	
+	<select id="questionView" resultType="emt.emt.common.domain.Question">
+		select question_no questionNo, question_type questionType, question_video questionVideo
+		from question
+		where question_no=#{questionNo}
+	</select>
+	
+	
+	
+	
 
 </mapper>

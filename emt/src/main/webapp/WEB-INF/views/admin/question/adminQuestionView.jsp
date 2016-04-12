@@ -45,7 +45,7 @@
 							<li><a href="adminQuestion">문제관리</a></li>
 							<li><a href="adminBoard">게시판관리</a></li>
 							<li><a href="adminNotice">공지관리</a></li>
-
+							
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
@@ -72,15 +72,10 @@
 
 				<!-- Main content -->
 				<section class="content">
-
-
-
-
-
-
+					
 					<div class="box box-info">
 						<div class="box-header with-border">
-							<h3 class="box-title">공지관리 목록</h3>
+							<h3 class="box-title">문제관리 상세보기</h3>
 							<div class="box-tools pull-right">
 								<button class="btn btn-box-tool" data-widget="collapse">
 									<i class="fa fa-minus"></i>
@@ -90,43 +85,52 @@
 								</button>
 							</div>
 						</div>
-
 						<!-- /.box-header -->
 						<div class="box-body">
-							<div id="noticeView" class="table-responsive">
+							<div class="table-responsive">
+
+								
+								
 								<table class="table no-margin">
 									<thead>
 										<tr>
-											<th></th>
-											<th>공지번호</th>
-											<th>게시판번호</th>
-
+											<td><b>문제번호</b></td>
+											<td><div>${question.questionNo }</div> </td>
+										</tr>
+										<tr>
+											<td><b>문제유형</b></td>
+											<td><div><span class="label label-success">${question.questionType }</span></div></td>
+										</tr>
+										<tr>
+											<td><b>경로</b></td>
+											<td><div>${question.questionVideo }</div></td>
 										</tr>
 									</thead>
 									<tbody>
 
-										<c:forEach var="notice" items="${notice }">
-											<tr>
-												<td><input type="radio" name="noticeNo"
-													value="${notice.noticeNo }"></td>
-												<td>${notice.noticeNo }</td>
-												<td>${notice.boardNo }</td>
-											</tr>
-										</c:forEach>
-
 									</tbody>
 								</table>
-							</div>
-							<input type="button"
-								onclick="location.href='adminMemberList.html'"
-								style="float: right" value="삭제">
 								
-							<div id="noticePage" style="text-align: right"></div>	
+								
+								
+								
+								
+								
+							</div>
+							<input class="btn btn-default" type="button" onclick="location.href='adminQuestion'" style="float: right" value="돌아가기"> 
 
 							<!-- /.table-responsive -->
 						</div>
 						<!-- /.box-body -->
-						</div>
+						</div>					
+					
+					
+
+
+					
+		
+					
+					
 				</section>
 				<!-- /.content -->
 			</div>
@@ -149,61 +153,7 @@
 
 
 
-<script>
-	function noticeList(page) {
-		$.ajax({
-			url: "noticeList",
-			method: "GET",
-			data: {type: page},
-			success: function(result){
-				$("#noticeView").html("<table id='noticeTable' class='table no-margin'></table>");
-				$("#noticeTable").append("<thead><tr><th>공지번호</th><th>게시판번호</th></thead>");
-				$("#noticeTable").append("<tbody>")
-				for(var i=0; i<result.length; i++){
-					$("#noticeTable").append("<tr><td>"+result[i].noticeNo + "</td>"
-													+"<td>"+result[i].boardNo+"</td></tr>");				
-				}
-				$("#noticeTable").append("</tbody>");
-			}
-		});
-	};
 
-	var countAll;
-	var pageCount;
-	var prev;
-	var next;
-	
-	function noticePage(){
-		$.ajax({
-			url: "noticeCount",
-			method: "GET",
-			success: function(count){
-				countAll = count;
-				
-				if((countAll%7)>0) {
-					pageCount = Math.floor((countAll/7)+1);
-				}
-				else {
-					pageCount = countAll/7;
-				}
-				$("#noticePage").html("<ul id='myPage' class='pagination pagination-sm no-margin pull-right'>");
-				
-				for(var i=0; i<pageCount; i++){
-					$("#myPage").append("<li onclick='noticeList("+(i+1)+ ")'>"+"<a href='#'>"+(i+1)+"</a></li>");
-				}
-			}
-		});
-	};
-	
-	$(document).ready(function(){
-		noticeList(1);
-		noticePage();
-	})
-	
-	
-
-
-</script>
 
 
 

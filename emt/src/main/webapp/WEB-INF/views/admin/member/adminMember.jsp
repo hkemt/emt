@@ -162,7 +162,7 @@
 			data: { type: page},
 			success: function(result) {
 				$("#memberView").html("<table id='memberTable' class='table no-margin'></table>");
-				$("#memberTable").append("<thead><tr><th>아이디</th>th>이메일</th>th>가입일자</th></thead>");
+				$("#memberTable").append("<thead><tr><th>아이디</th><th>이메일</th><th>가입일자</th></thead>");
 				$("#memberTable").append("<tbody>")
 				for(var i=0; i<result.length; i++){
 					$("#memberTable").append("<tr><td>"+result[i].userId +"</td>"
@@ -193,7 +193,6 @@
 					pageCount = countAll/7;
 				}
 				
-				alert(pageCount);
 				$("#memberPage").html("<ul id='myPage' class='pagination pagination-sm no margin pull-right'>");
 				
 				for(var i=0; i<pageCount; i++) {
