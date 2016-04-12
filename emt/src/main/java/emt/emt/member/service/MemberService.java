@@ -8,6 +8,7 @@ public interface MemberService {
 	int memberInsert(User user);
 	int memberUpdate(User user);
 	int memberDelete(User user);
-	List<User> memberList();
+	List<User> memberList(int page);
+	int memberCount();
 	User memberView(User user);
 }

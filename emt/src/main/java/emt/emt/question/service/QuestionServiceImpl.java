@@ -31,14 +31,20 @@ public class QuestionServiceImpl implements QuestionService{
 	}
 
 	@Override
-	public List<Question> questionList() {
+	public List<Question> questionList(int page) {
 		// TODO Auto-generated method stub
-		return questionDao.questionList();
+		return questionDao.questionList(page);
 	}
 
 	@Override
 	public Question questionView(Question question) {
 		// TODO Auto-generated method stub
 		return questionDao.questionView(question);
+	}
+
+	@Override
+	public int questionCount() {
+		// TODO Auto-generated method stub
+		return questionDao.questionCount();
 	}
 }

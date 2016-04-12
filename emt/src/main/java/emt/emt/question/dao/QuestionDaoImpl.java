@@ -31,9 +31,9 @@ public class QuestionDaoImpl implements QuestionDao{
 	}
 
 	@Override
-	public List<Question> questionList() {
+	public List<Question> questionList(int page) {
 		// TODO Auto-generated method stub
-		return questionMapper.questionList();
+		return questionMapper.questionList(page);
 	}
 
 	@Override
@@ -41,5 +41,13 @@ public class QuestionDaoImpl implements QuestionDao{
 		// TODO Auto-generated method stub
 		return questionMapper.questionView(question);
 	}
+
+	@Override
+	public int questionCount() {
+		// TODO Auto-generated method stub
+		return questionMapper.questionCount();
+	}
+	
+	
 
 }

@@ -8,7 +8,8 @@ public interface NoticeService {
 	int noticeInsert(Notice notice);
 	int noticeUpdate(Notice notice);
 	int noticeDelete(Notice notice);
-	List<Notice> noticeList();
+	List<Notice> noticeList(int page);
+	int noticeCount();
 	Notice noticeView(Notice notice);
 
 }

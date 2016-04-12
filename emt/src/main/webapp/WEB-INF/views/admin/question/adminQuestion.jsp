@@ -93,7 +93,7 @@
 
 						<!-- /.box-header -->
 						<div class="box-body">
-							<div class="table-responsive">
+							<div id="questionView" class="table-responsive">
 								<table class="table no-margin">
 									<thead>
 										<tr>
@@ -120,35 +120,15 @@
 							</div>
 							<input type="button" onclick="location.href='adminQuestionList.html'" style="float: right" value="삭제"> 
 							<input type="button" onclick="location.href='adminQuestionInsert.html'" style="float: right" value="등록">
+							
+							<div id="questionPage" style="text-align: right"></div>
 							<!-- /.table-responsive -->
 						</div>
 						<!-- /.box-body -->
 					</div>	
 
 					
-					
-
-				
-				
-				
-				
-			
-			
-			
-			
-			
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
+		
 					
 					
 				</section>
@@ -177,7 +157,70 @@
 
 
 
-
+<script>
+	function questionList(page) {
+		
+		$.ajax({
+			url: "questionList",
+			method: "GET",
+			data: { type : page},
+			success: function(result) {
+				$("#questionView").html("<table id='questionTable' class='table no-margin'></table>");
+				$("#questionTable").append("<thead><tr><th>번호</th><th>아이디</th><th>조회수</th></thead>");
+				$("#questionTable").append("<tbody>")
+				for(var i=0; i<result.length; i++){
+					$("#questionTable").append("<tr><td>"+result[i].questionNo + "</td>"
+														+"<td>"+result[i].questionType +"</td>"
+														+"<td>"+result[i].questionVideo +"</td></tr>");
+				}
+				$("#questionTable").append("</tbody");
+			}
+		});	
+	};
+	
+	
+	var countAll;
+	var pageCount;
+	var prev;
+	var next;
+	
+	function questionPage(){
+		
+		$.ajax({
+			url: "questionCount",
+			method: "GET",
+			success: function(count){
+			
+				
+				countAll = count;
+				
+				if((countAll%7)>0){
+					pageCount = Math.floor((countAll/7)+1);
+				}
+				else {
+					pageCount = countAll/7;
+				}
+				
+				alert(pageCount);
+				$("#questionPage").html("<ul id='myPage' class='pagination pagination-sm no-margin pull-right'>");
+				
+				for(var i=0; i<pageCount; i++) {
+					$("#myPage").append("<li onclick='questionList("+(i+1)+")'>"+"<a href='#'>"+(i+1)+"</a></li>");
+				}
+				
+				
+				
+			}
+		});
+	};
+	
+	$(document).ready(function(){
+		questionList(1);
+		questionPage();
+	})
+	
+	
+</script>	
 
 
 

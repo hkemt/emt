@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import emt.emt.common.domain.Notice;
 import emt.emt.notice.service.NoticeService;
@@ -16,9 +17,21 @@ public class NoticeController {
 	
 	@RequestMapping("adminNotice")
 	public String adminNotice(Model model) {
-		List<Notice> notice = noticeService.noticeList();
-		model.addAttribute("notice", notice);
 		return "admin/notice/adminNotice";
 	}
+	
+	@RequestMapping("noticeList")
+	@ResponseBody
+	public List<Notice> noticeList(int type){
+		return noticeService.noticeList(type);
+	}
+	
+	@RequestMapping("noticeCount")
+	@ResponseBody
+	public int noticeCount(){
+		return noticeService.noticeCount();
+	}
+	
+	
 	
 }

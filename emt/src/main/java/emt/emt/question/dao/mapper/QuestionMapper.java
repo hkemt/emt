@@ -8,7 +8,8 @@ public interface QuestionMapper {
 	int questionInsert(Question question);
 	int questionUpdate(Question question);
 	int questionDelete(Question question);
-	List<Question> questionList();
+	List<Question> questionList(int page);
+	int questionCount();
 	Question questionView(Question question);
 
 }

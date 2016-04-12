@@ -31,15 +31,21 @@ public class NoticeDaoImpl implements NoticeDao{
 	}
 
 	@Override
-	public List<Notice> noticeList() {
+	public List<Notice> noticeList(int page) {
 		// TODO Auto-generated method stub
-		return noticeMapper.noticeList();
+		return noticeMapper.noticeList(page);
 	}
 
 	@Override
 	public Notice noticeView(Notice notice) {
 		// TODO Auto-generated method stub
 		return noticeMapper.noticeView(notice);
+	}
+
+	@Override
+	public int noticeCount() {
+		// TODO Auto-generated method stub
+		return noticeMapper.noticeCount();
 	}
 	
 }

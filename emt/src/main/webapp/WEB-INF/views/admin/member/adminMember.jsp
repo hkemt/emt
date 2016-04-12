@@ -93,10 +93,9 @@
 					
 						<!-- /.box-header -->
 						<div class="box-body">
-							<div class="table-responsive">
+							<div id="memberView" class="table-responsive">
 								<table class="table no-margin">
 									<thead>
-									
 										<tr>
 											<th></th>
 											<th>아이디</th>
@@ -120,17 +119,15 @@
 
 									</tbody>
 								</table>
-								
 							</div>
 							<input type="button"
-								onclick="location.href='adminMemberDelete'"
-								style="float: right" value="등록">
-							<input type="button"
-								onclick="location.href='adminMemberDelete'"
+								onclick="location.href='adminMemberList.html'"
 								style="float: right" value="삭제">
+								
+							<div id="memberPage" style="text-align: right"></div>	
 
 							<!-- /.table-responsive -->
-													</div>
+						</div>
 						<!-- /.box-body -->
 						</div>
 				</section>
@@ -155,6 +152,67 @@
 
 
 
+
+<script>
+	function memberList(page) {
+		
+		$.ajax({
+			url: "memberList",
+			method: "GET",
+			data: { type: page},
+			success: function(result) {
+				$("#memberView").html("<table id='memberTable' class='table no-margin'></table>");
+				$("#memberTable").append("<thead><tr><th>아이디</th>th>이메일</th>th>가입일자</th></thead>");
+				$("#memberTable").append("<tbody>")
+				for(var i=0; i<result.length; i++){
+					$("#memberTable").append("<tr><td>"+result[i].userId +"</td>"
+													+"<td>"+result[i].email+"</td>"
+													+"<td>"+result[i].userDate+"</td></tr>");
+				}
+				$("#memberTable").append("</tbody>");
+			}
+		});
+	};
+	
+	var countAll;
+	var pageCount;
+	var prev;
+	var next;
+	
+	function memberPage(){
+		$.ajax({
+			url: "memberCount",
+			method: "GET",
+			success: function(count){
+				countAll = count;
+				
+				if((countAll%7)>0){
+					pageCount = Math.floor((countAll/7)+1);
+				}
+				else {
+					pageCount = countAll/7;
+				}
+				
+				alert(pageCount);
+				$("#memberPage").html("<ul id='myPage' class='pagination pagination-sm no margin pull-right'>");
+				
+				for(var i=0; i<pageCount; i++) {
+					$("#myPage").append("<li onclick='memberList("+(i+1)+ ")'>"+"<a href='#'>"+(i+1)+"</a></li>");
+				}
+				
+			}
+			
+		});
+		
+	};
+	
+	$(document).ready(function(){
+		memberList(1);
+		memberPage();
+	})
+
+
+</script>
 
 
 

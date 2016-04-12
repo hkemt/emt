@@ -7,11 +7,26 @@
 
 	</resultMap>
 	
-	<select id="noticeList" resultMap="noticeMap">
-		select *
-		from notice
+	<select id="noticeList" parameterType="int" resultMap="noticeMap">
+		<![CDATA[
+		SELECT notice_no noticeNo, board_no boardNo
+		FROM (SELECT rownum AS rnum, M.* 
+			  FROM (
+			  		SELECT * 
+					FROM notice 
+					ORDER BY notice_no DESC
+			  		) M 
+			  WHERE rownum  < = 7*#{noticeCount})
+		WHERE rnum > 7*(#{noticeCount}-1)
+		]]>
 	</select>
 
+	<select id="noticeCount" resultType="int">
+		<![CDATA[
+		SELECT COUNT(*) 
+		FROM notice
+		]]>		
+	</select>
 	
 
 	

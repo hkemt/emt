@@ -30,15 +30,21 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public List<User> memberList() {
+	public List<User> memberList(int page) {
 		// TODO Auto-generated method stub
-		return memberDao.memberList();
+		return memberDao.memberList(page);
 	}
 
 	@Override
 	public User memberView(User user) {
 		// TODO Auto-generated method stub
 		return memberDao.memberView(user);
+	}
+
+	@Override
+	public int memberCount() {
+		// TODO Auto-generated method stub
+		return memberDao.memberCount();
 	}
 
 }

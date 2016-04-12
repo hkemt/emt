@@ -31,15 +31,21 @@ public class MemberDaoImpl implements MemberDao{
 	}
 
 	@Override
-	public List<User> memberList() {
+	public List<User> memberList(int page) {
 		// TODO Auto-generated method stub
-		return memberMapper.memberList();
+		return memberMapper.memberList(page);
 	}
 
 	@Override
 	public User memberView(User user) {
 		// TODO Auto-generated method stub
 		return memberMapper.memberView(user);
+	}
+
+	@Override
+	public int memberCount() {
+		// TODO Auto-generated method stub
+		return memberMapper.memberCount();
 	}
 
 }

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import emt.emt.common.domain.User;
 import emt.emt.member.service.MemberService;
@@ -16,19 +17,27 @@ public class MemberController {
 	@Autowired private MemberService memberService;
 	
 	//1_1회원관리 등록
-	@RequestMapping("adminMemberDelete")
-	public String memberInsert(){
-		return "admin/member/adminMemberInsert";
-	}
+	
+	//1_2회원관리 수정
 	
 	//1_3회원관리 삭제
 	
 	//1_4회원관리 목록보기
 	@RequestMapping("adminMember")
 	public String adminMember(Model model){
-		List<User> user = memberService.memberList();
-		model.addAttribute("user", user);
 		return "admin/member/adminMember";
+	}
+	
+	@RequestMapping("memberList")
+	@ResponseBody
+	public List<User> memberList(int type) {
+		return memberService.memberList(type); 
+	}
+	
+	@RequestMapping("memberCount") 
+	@ResponseBody
+	public int memberCount(){
+		return memberService.memberCount();
 	}
 	
 	//1_5회원관리 상세보기

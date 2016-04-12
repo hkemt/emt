@@ -31,14 +31,20 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public List<Notice> noticeList() {
+	public List<Notice> noticeList(int page) {
 		// TODO Auto-generated method stub
-		return noticeDao.noticeList();
+		return noticeDao.noticeList(page);
 	}
 
 	@Override
 	public Notice noticeView(Notice notice) {
 		// TODO Auto-generated method stub
 		return noticeDao.noticeView(notice);
+	}
+
+	@Override
+	public int noticeCount() {
+		// TODO Auto-generated method stub
+		return noticeDao.noticeCount();
 	}
 }
