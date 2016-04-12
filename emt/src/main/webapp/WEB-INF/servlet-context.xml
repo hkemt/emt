@@ -39,7 +39,7 @@
 	<mybatis:scan base-package="emt.emt.member.dao.mapper" />
 	<mybatis:scan base-package="emt.emt.question.dao.mapper" />
 	<mybatis:scan base-package="emt.emt.board.dao.mapper" />
-	<mybatis:scan base-package="emt.emt.wrong.dao.mapper" />
+	<mybatis:scan base-package="emt.emt.review.dao.mapper" />
 	<mybatis:scan base-package="emt.emt.part.dao.mapper" />
 	
 	<!-- ch03: file upload -->

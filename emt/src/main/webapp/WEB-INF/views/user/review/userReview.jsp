@@ -113,13 +113,13 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var="wrong" items="${wrong }">
+										<c:forEach var="review" items="${review }">
 											<tr>
-												<td><input type="radio" name="myNo"
-													value="${wrong.myNo }"></td>
-												<td><a href="#">${wrong.myNo }</a></td>
-												<td><span class="label label-success">${wrong.myCode }</span></td>
-												<td>${wrong.userId }</td>
+												<td><input type="radio" name="reviewNo"
+													value="${review.reviewNo }"></td>
+												<td><a href="#">${review.reviewNo }</a></td>
+												<td><span class="label label-success">${review.questionNo }</span></td>
+												<td>${review.userId }</td>
 											</tr>
 										</c:forEach>
 									</tbody>

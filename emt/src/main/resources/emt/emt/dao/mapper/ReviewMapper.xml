@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emt.emt.review.dao.mapper.ReviewMapper">
+	<resultMap id="reviewMap" type="emt.emt.common.domain.Review">
+		<result property="reviewNo" column="review_no"/>
+		<result property="userId" column="user_id"/>
+		<result property="questionNo" column="question_no"/>
+	</resultMap>
+	
+	<select id="reviewList" parameterType="emt.emt.common.domain.Review" resultMap="reviewMap"> 
+	SELECT * FROM review WHERE user_id=#{userId} 
+	</select>
+	
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
