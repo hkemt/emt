@@ -38,6 +38,29 @@ public class BoardController {
 		
 		return boardService.noticeCount();
 	}
+	
+	// 공지사항 상세보기 페이지 이동
+	@RequestMapping("noticeDetailMove")
+	public String noticeDetailMove(Board board, Model model){
+		
+		// 조회수 올리기
+		boardService.hitPlus(board);
+		
+		model.addAttribute("boardNo", board.getBoardNo());
+		
+		return "user/board/noticeDetailView";
+		
+	}
+	
+	// 공지사항 상세보기
+	@RequestMapping(value="noticeDetailView", method=RequestMethod.POST)
+	@ResponseBody
+	public Board noticeDetailView(Board board){
+		
+		return boardService.boardView(board);
+	}
+	
+	
 	// 게시판 페이지 이동
 	@RequestMapping("board")
 	public String board(){

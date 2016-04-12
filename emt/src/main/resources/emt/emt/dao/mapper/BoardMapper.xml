@@ -10,7 +10,7 @@
 		<result property="userId" column="user_id"/> 
 	</resultMap>
 	
-	<!-- 공지사항을 가져오는 쿼리 -->
+<!-- 공지사항을 가져오는 쿼리 -->
 	<select id="noticeList" parameterType="int" resultMap="boardMap">
 		<![CDATA[
 		SELECT board_no boardNo, board_title boardTitle, board_content boardContent, board_date boardDate,
@@ -36,6 +36,23 @@
 	]]>	
 	</select>
 	
+	<!-- 누르면 조회수 올리기 -->
+	<update id="hitPlus" parameterType="emt.emt.common.domain.Board">
+			UPDATE board 
+			SET board_count = ( SELECT board_count 
+			   					FROM board
+			   					WHERE board_no=#{boardNo})+1
+			WHERE board_no=#{boardNo}
+	</update>
+	
+		<!-- 게시판상세보기 -->
+	<select id="boardView" parameterType="emt.emt.common.domain.Board" resultMap="boardMap">
+		
+		select *
+		from board
+		where board_no = #{boardNo}
+	
+	</select>
 	
 	<select id="boardList" parameterType="int" resultMap="boardMap">
 		<![CDATA[

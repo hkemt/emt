@@ -60,5 +60,10 @@ public class BoardServiceImpl implements BoardService{
 		return boardDao.boardView(board);
 	}
 
-	
+	@Override
+	public int hitPlus(Board board) {
+		
+		return boardDao.hitPlus(board);
+	}
+
 }

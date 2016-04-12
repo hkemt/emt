@@ -60,5 +60,10 @@ public class BoardDaoImpl implements BoardDao{
 		return boardMapper.boardView(board);
 	}
 
-	
+	@Override
+	public int hitPlus(Board board) {
+
+		return boardMapper.hitPlus(board);
+	}
+
 }

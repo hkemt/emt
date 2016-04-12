@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +12,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
 <!-- Bootstrap 3.3.5 -->
-<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <!-- Font Awesome -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -17,10 +20,10 @@
 <link rel="stylesheet"
 	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Theme style -->
-<link rel="stylesheet" href="../../resources/css/AdminLTE.min.css">
+<link rel="stylesheet" href="<c:url value="/css/AdminLTE.min.css"/>">
 <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-<link rel="stylesheet" href="../../resources/css/_all-skins.min.css">
+<link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 </head>
@@ -91,8 +94,9 @@
 				<section class="content">
 
 					<div class="box box-info">
-						<div class="box-header with-border">
-							<h3 class="box-title">글 상세보기</h3>
+						<div class="box-header with-border" style="text-align: center;">
+							<h3 id="title" class="box-title">이곳에 제목이 옵니다</h3>
+							
 							<div class="box-tools pull-right">
 								<button class="btn btn-box-tool" data-widget="collapse">
 									<i class="fa fa-minus"></i>
@@ -108,40 +112,28 @@
 								<table class="table no-margin">
 									<thead>
 										<tr>
-											<td>
-											<div style="text-align: right">
-											작성자 may5014
-											&nbsp;
-											작성일 	2016-12-15
-											&nbsp;
-											조회수 0
-										
+											<th>
+											
+											<div id="noticeInfo" style="text-align: right">
 											</div>
 											
-											</td>
-										</tr>
-
-										<tr>
-											<td><div>
-												this가 왜 this인지 아시는분?</div></td>
-
+											</th>
 										</tr>
 									</thead>
 									<tbody>
 
 										<tr>
-
-											<td><div>
-사실 한국담배 this피고 어떤 사람이 오 this했답니다 그래서 this가 this인 겁니다.
-												</div></td>
-
+											<td>
+											<div id="noticeContent" style="height:300px;">
+											</div>
+											</td>
 										</tr>
 
 									</tbody>
 								</table>
 
 							</div>
-							<div style="text-align: right;">
+							<div id="updel" style="text-align: right;">
 								<input type="button" class="btn btn-default"
 									onclick="location.href='boardModify.html'" value="수정">
 									 <input type="button" class="btn btn-default"
@@ -152,86 +144,6 @@
 						</div>
 						<!-- /.box-body -->
 					</div>
-
-
-					<!-- 댓글 구현 테이블 입니다. -->
-					<div class="box box-info">
-						<div class="box-header with-border">
-							<h3 class="box-title">댓글</h3>
-							<div class="box-tools pull-right">
-								<button class="btn btn-box-tool" data-widget="collapse">
-									<i class="fa fa-minus"></i>
-								</button>
-								<button class="btn btn-box-tool" data-widget="remove">
-									<i class="fa fa-times"></i>
-								</button>
-							</div>
-						</div>
-						<!-- /.box-header -->
-						<div class="box-body">
-							<div class="table-responsive">
-
-								<!-- 여기에 테이블이 들어갑니다. -->
-
-								<table class="table no-margin">
-									<thead>
-										<tr>
-											<th colspan="3">
-												<div style="text-align: center;">
-													<form action="boardList.html">
-														<input type="text" style="width: 90%;"> <input
-															class="btn btn-default" type="submit" value="등록">
-													</form>
-												</div>
-											</th>
-
-
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>maxs22</td>
-											<td>드릅게 재미없네 --;</td>
-											<td>2016-11-14</td>
-										</tr>
-										<tr>
-											<td>manus01</td>
-											<td>이분 혹시 개그하신건가요???</td>
-											<td>2016-11-14</td>
-										</tr>
-										<tr>
-											<td>mauros12</td>
-											<td>this의 진실</td>
-											<td>2016-11-13</td>
-										</tr>
-										<tr>
-											<td>nojam12</td>
-											<td>와 개 전다..</td>
-											<td>2016-11-13</td>
-										</tr>
-									</tbody>
-								</table>
-
-								<!-- table 끝남 -->
-
-								<!-- 페이징 숫자 -->
-								<div class="box-footer clearfix">
-									<ul class="pagination pagination-sm no-margin pull-right">
-										<li><a href="#">«</a></li>
-										<li><a href="#">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">»</a></li>
-									</ul>
-								</div>
-
-							</div>
-							<!-- /.table-responsive -->
-						</div>
-						<!-- /.box-body -->
-					</div>
-
-
 				</section>
 
 				<!-- /.content -->
@@ -255,14 +167,42 @@
 
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
-	<script src="../../resources/js/bootstrap.min.js"></script>
+	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
 	<!-- SlimScroll -->
-	<script src="../../resources/js/jquery.slimscroll.min.js"></script>
+	<script src="<c:url value="/js/jquery.slimscroll.min.js"/>"></script>
 	<!-- FastClick -->
-	<script src="../../resources/js/fastclick.min.js"></script>
+	<script src="<c:url value="/js/fastclick.min.js"/>"></script>
 	<!-- AdminLTE App -->
-	<script src="../../resources/js/app.min.js"></script>
+	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
-	<script src="../../resources/js/demo.js"></script>
+	<script src="<c:url value="/js/demo.js"/>"></script>
+	<script>
+	
+		var no = "${boardNo}"
+		
+		
+		function noticeDetailView(){
+			
+			$.ajax({
+				url : "noticeDetailView",
+				method : "POST",
+				data : { boardNo : no},
+				success : function(result){
+					
+					$("#title").html(result.boardTitle);
+					
+					$("#noticeInfo").html("작성자 : "+ result.userId + " 작성일 : " 
+										+ result.boardDate + " 조회수 : " + result.boardCount);
+					
+					$("#noticeContent").html(result.boardContent)
+				}
+				
+			});
+		}
+		
+		$(document).ready(function(){
+			noticeDetailView();
+		});
+	</script>
 </body>
 </html>
