@@ -16,14 +16,34 @@ import emt.emt.common.domain.Board;
 public class BoardController {
 	@Autowired private BoardService boardService;
 	
+	// 공지사항 페이지 이동
+	@RequestMapping("notice")
+	public String notice(){
+		
+		return "user/board/notice";
+	}
+	
+	// 공지사항 불러오기
+	@RequestMapping("noticeView")
+	@ResponseBody
+	public List<Board> noticeView(int type){
+		
+		return boardService.noticeList(type);
+	}
+	
+	// 공지사항 전체 개수 불러오기
+	@RequestMapping(value="noticeCount", method=RequestMethod.POST)
+	@ResponseBody
+	public int noticeCount(){
+		
+		return boardService.noticeCount();
+	}
 	// 게시판 페이지 이동
 	@RequestMapping("board")
 	public String board(){
 		
-		return "/user/board/boardList";
+		return "user/board/boardList";
 	}
-	
-	
 	
 	// 게시판 불러오기
 	@RequestMapping(value="boardList", method=RequestMethod.POST)

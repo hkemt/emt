@@ -10,7 +10,31 @@
 		<result property="userId" column="user_id"/> 
 	</resultMap>
 	
+	<!-- 공지사항을 가져오는 쿼리 -->
+	<select id="noticeList" parameterType="int" resultMap="boardMap">
+		<![CDATA[
+		SELECT board_no boardNo, board_title boardTitle, board_content boardContent, board_date boardDate,
+			   board_count boardCount, user_id userId
+		FROM (SELECT rownum AS rnum, M.* 
+			  FROM (
+			  		SELECT b.* 
+					FROM board b, notice n
+					WHERE b.board_no = n.board_no
+					ORDER BY board_date DESC
+			  		) M 
+			  WHERE rownum  < = 7*#{type})
+		WHERE rnum > 7*(#{type}-1)
+		]]>
+	</select>
 	
+	<!-- 공지사항 총 갯수를 가져오는 쿼리 -->
+	<select id="noticeCount" resultType="int">
+	<![CDATA[
+		SELECT COUNT(*) 
+		FROM board b, notice n
+		WHERE b.board_no = n.board_no
+	]]>	
+	</select>
 	
 	
 	<select id="boardList" parameterType="int" resultMap="boardMap">

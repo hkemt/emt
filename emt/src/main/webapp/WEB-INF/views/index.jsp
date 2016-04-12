@@ -52,7 +52,7 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">게시판
 							<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="../board/notice.html">공지사항</a>
+									<li><a href="notice">공지사항</a>
 									<li><a href="board">문제공유</a>
 								</ul>
 							</li>

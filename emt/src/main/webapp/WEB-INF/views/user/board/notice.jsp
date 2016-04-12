@@ -1,15 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Insert title here</title>
+<title>EMT</title>
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
 <!-- Bootstrap 3.3.5 -->
-<link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
+<link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <!-- Font Awesome -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -17,10 +20,10 @@
 <link rel="stylesheet"
 	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 <!-- Theme style -->
-<link rel="stylesheet" href="../../resources/css/AdminLTE.min.css">
+<link rel="stylesheet" href="<c:url value="/css/AdminLTE.min.css"/>">
 <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
-<link rel="stylesheet" href="../../resources/css/_all-skins.min.css">
+<link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 </head>
@@ -108,7 +111,7 @@
 
 						<!-- /.box-header -->
 						<div class="box-body">
-							<div class="table-responsive">
+							<div id="noticeView" class="table-responsive">
 								<table class="table no-margin">
 									<thead>
 										<tr>
@@ -183,7 +186,7 @@
 							</div>
 							
 							<!-- 페이징 링크 -->
-							<div class="box-footer clearfix">
+							<div id="pages" class="box-footer clearfix">
 								<ul class="pagination pagination-sm no-margin pull-right">
 									<li><a href="#">«</a></li>
 									<li><a href="#">1</a></li>
@@ -219,14 +222,17 @@
 
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
-	<script src="../../resources/js/bootstrap.min.js"></script>
+	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
 	<!-- SlimScroll -->
-	<script src="../../resources/js/jquery.slimscroll.min.js"></script>
+	<script src="<c:url value="/js/jquery.slimscroll.min.js"/>"></script>
 	<!-- FastClick -->
-	<script src="../../resources/js/fastclick.min.js"></script>
+	<script src="<c:url value="/js/fastclick.min.js"/>"></script>
 	<!-- AdminLTE App -->
-	<script src="../../resources/js/app.min.js"></script>
+	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
-	<script src="../../resources/js/demo.js"></script>
+	<script src="<c:url value="/js/demo.js"/>"></script>
+	
+	<!-- noticeList.js 링크 -->
+	<script src="<c:url value="/js/board/noticeList.js"/>"></script>
 </body>
 </html>
