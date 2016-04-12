@@ -44,21 +44,21 @@
 							<li><a href="../adminMember">회원관리</a></li>
 							<li><a href="../adminQuestion">문제관리</a></li>
 							<li><a href="../adminBoard">게시판관리</a></li>
-							
+
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
 					<!-- Navbar Right Menu -->
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
-<!-- 									<li><a href="login.html"> 로그인 </a></li>
+							<!-- 							<li><a href="login.html"> 로그인 </a></li>
 									<li><a href="join.html"> 회원가입 </a> -->
-									</li>
-									<!-- 회원가입 -->
-									<!-- <li><a href="#"> 마이페이지 </a></li>
+							<!-- </li> -->
+							<!-- 회원가입 -->
+							<!-- <li><a href="#"> 마이페이지 </a></li>
 									<li id="logout"><a href=""> 로그아웃 </a>
 									</li> -->
-									<!-- 회원가입 -->
+							<!-- 회원가입 -->
 						</ul>
 					</div>
 					<!-- /.navbar-custom-menu -->
@@ -74,13 +74,13 @@
 
 				<!-- Main content -->
 				<section class="content">
-					
-					
-					
-					
-					
-				
-									<div class="box box-info">
+
+
+
+
+
+
+					<div class="box box-info">
 						<div class="box-header with-border">
 							<h3 class="box-title">회원관리 목록</h3>
 							<div class="box-tools pull-right">
@@ -92,6 +92,7 @@
 								</button>
 							</div>
 						</div>
+					</div>	
 						<!-- /.box-header -->
 						<div class="box-body">
 							<div class="table-responsive">
@@ -105,60 +106,26 @@
 										</tr>
 									</thead>
 									<tbody>
-									
+
 										<c:forEach var="user" items="${user }">
-	<tr>
-		<td><input type="radio" name="userId" value="${user.userId }"></td>
-		<td>${user.userId }</td>
-		<td>${user.email }</td>
-	</tr>
-	</c:forEach>
+											<tr>
+												<td><input type="radio" name="userId"
+													value="${user.userId }"></td>
+												<td>${user.userId }</td>
+												<td>${user.email }</td>
+											</tr>
+										</c:forEach>
 
 									</tbody>
 								</table>
 							</div>
-							<input type="button" onclick="location.href='adminMemberList.html'" style="float: right" value="삭제">
-							
+							<input type="button"
+								onclick="location.href='adminMemberList.html'"
+								style="float: right" value="삭제">
+
 							<!-- /.table-responsive -->
 						</div>
-						<!-- /.box-body -->					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-	
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
+						<!-- /.box-body -->
 				</section>
 				<!-- /.content -->
 			</div>

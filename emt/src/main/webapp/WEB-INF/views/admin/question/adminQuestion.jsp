@@ -53,7 +53,7 @@
 						<ul class="nav navbar-nav">
 <!-- 									<li><a href="login.html"> 로그인 </a></li>
 									<li><a href="join.html"> 회원가입 </a> -->
-									</li>
+									<!-- </li> -->
 									<!-- 회원가입 -->
 									<!-- <li><a href="#"> 마이페이지 </a></li>
 									<li id="logout"><a href=""> 로그아웃 </a>
@@ -92,6 +92,7 @@
 								</button>
 							</div>
 						</div>
+					</div>	
 						<!-- /.box-header -->
 						<div class="box-body">
 							<div class="table-responsive">
