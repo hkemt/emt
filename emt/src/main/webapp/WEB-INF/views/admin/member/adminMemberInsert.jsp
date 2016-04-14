@@ -24,7 +24,7 @@
 <link href="<c:url value="/css/blue.css"/>" rel="stylesheet" type="text/css">
 
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="<c:url value="/js/memberJoin.js"/>"></script>
+<script src="<c:url value="/js/admin.js"/>"></script>
 
 <body class="hold-transition register-page">
 	<div class="register-box">
@@ -38,7 +38,7 @@
 				<div class="form-group has-feedback">
                 <input type="text" name="userId" id="userId" class="form-control" placeholder="ID">
                     <span class="input-group-btn">
-                      <button type="button" name="duplbtn" id="duplbtn" class="btn pull-right">중복확인</button>
+                      <button type="button" name="duplbtn2" id="duplbtn2" class="btn pull-right">중복확인</button>
                     </span>
               </div>
 				<div class="form-group has-feedback">

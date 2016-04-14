@@ -10,14 +10,33 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import emt.emt.common.domain.User;
+import emt.emt.join.service.JoinService;
 import emt.emt.member.service.MemberService;
 
 @Controller
 public class MemberController {
 	@Autowired private MemberService memberService;
+	@Autowired private JoinService joinService;
 	
 	//1_1회원관리 등록
+	@RequestMapping("adminMemberInsert")
+	public String memberInsert(){
+		return "admin/member/adminMemberInsert";
+	}
+	@RequestMapping(value="/duplCheck2",method=RequestMethod.POST)
+	@ResponseBody
+	public User duplCheck(User user){
+		System.out.println("컨트롤러");
+		user = joinService.duplCheck(user);
+		return user;
+	}
 	
+	@RequestMapping(value="addUser2",method=RequestMethod.POST)
+	@ResponseBody
+	public int addUser(User user){
+		int res = joinService.joinUser(user);
+		return res;
+	}
 	//1_2회원관리 수정
 	
 	//1_3회원관리 삭제

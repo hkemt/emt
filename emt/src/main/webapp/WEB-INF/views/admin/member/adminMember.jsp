@@ -121,7 +121,10 @@
 								</table>
 							</div>
 							<input type="button"
-								onclick="location.href='adminMemberList.html'"
+								onclick="location.href='adminMemberInsert'"
+								style="float: right" value="등록">
+							<input type="button"
+								onclick="location.href='adminMemberDelete'"
 								style="float: right" value="삭제">
 								
 							<div id="memberPage" style="text-align: right"></div>	
