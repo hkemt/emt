@@ -9,12 +9,14 @@
 	
 	<select id="noticeList" parameterType="int" resultMap="noticeMap">
 		<![CDATA[
-		SELECT notice_no noticeNo, board_no boardNo
+		SELECT board_no boardNo, board_title boardTitle, board_content boardContent, board_date boardDate,
+			   board_count boardCount, user_id userId
 		FROM (SELECT rownum AS rnum, M.* 
 			  FROM (
-			  		SELECT * 
-					FROM notice 
-					ORDER BY notice_no DESC
+			  		SELECT b.* 
+					FROM board b, notice n
+					WHERE b.board_no = n.board_no
+					ORDER BY board_date DESC
 			  		) M 
 			  WHERE rownum  < = 7*#{noticeCount})
 		WHERE rnum > 7*(#{noticeCount}-1)

@@ -117,9 +117,8 @@
 									</tbody>
 								</table>
 							</div>
-							<input type="button"
-								onclick="location.href='adminMemberList.html'"
-								style="float: right" value="삭제">
+							
+							<input type="button" onclick="location.href='adminMemberList.html'" style="float: right" value="삭제">
 								
 							<div id="noticePage" style="text-align: right"></div>	
 
@@ -157,11 +156,15 @@
 			data: {type: page},
 			success: function(result){
 				$("#noticeView").html("<table id='noticeTable' class='table no-margin'></table>");
-				$("#noticeTable").append("<thead><tr><th>공지번호</th><th>게시판번호</th></thead>");
+				$("#noticeTable").append("<thead><tr><th>번호</th><th>제목</th><th>아이디</th><th>날짜</th></thead>");
 				$("#noticeTable").append("<tbody>")
 				for(var i=0; i<result.length; i++){
-					$("#noticeTable").append("<tr><td>"+result[i].noticeNo + "</td>"
-													+"<td>"+result[i].boardNo+"</td></tr>");				
+					$("#noticeTable").append(
+							"<tr>"
+							+"<td>"+result[i].boardNo+"</td>"
+							+"<td><a href='adminNoticeDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle+"</td>"
+							+"<td>"+result[i].userId+"</a></td>"
+							+"<td>"+result[i].boardDate+"</td></tr>"); 	
 				}
 				$("#noticeTable").append("</tbody>");
 			}
