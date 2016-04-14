@@ -49,18 +49,18 @@ label.error{
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">게시판<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">공지사항</a>
-									<li><a href="#">문제공유</a>
+									<li><a href="notice">공지사항</a>
+									<li><a href="board">문제공유</a>
 								</ul></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">Part1</a></li>
-									<li><a href="#">Part2</a></li>
-									<li><a href="#">Part3</a></li>
-									<li><a href="#">Part4</a></li>
-									<li><a href="#">Part5</a></li>
-									<li><a href="#">Part6</a></li>
+									<li><a href="partMove?no=1">Part1</a></li>
+									<li><a href="partMove?no=2">Part2</a></li>
+									<li><a href="partMove?no=3">Part3</a></li>
+									<li><a href="partMove?no=4">Part4</a></li>
+									<li><a href="partMove?no=5">Part5</a></li>
+									<li><a href="partMove?no=6">Part6</a></li>
 								</ul></li>
 						</ul>
 					</div>
@@ -71,8 +71,8 @@ label.error{
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="userWrong">복습</a></li>
-									<li><a href="userModify">정보수정</a></li>
+									<li><a href="user/review/userReview?sid=${sid}">복습</a></li>
+									<li><a href="userMemberList?userId=${sid}">정보수정</a></li>
 									<li><a href="logout">로그아웃</a></li>
 								</ul></li>
 						</ul>
@@ -194,55 +194,12 @@ label.error{
 	<!-- AdminLTE App -->
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
-	<script src="<c:url value="/js/demo.js"/>"></script>
+	<script src="<c:url value="/js/demo.js"/>"></script>	
+	<script	src="//cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+	<script src="<c:url value="/js/member/userMemberList.js"/>"></script>	
 	
+
 	
-<script	src="//cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
 
-<script>
-$.validator.setDefaults({
-    submitHandler : function() {
-        location.href("update");
-
-    }
-});
- 
-$().ready(function() {
-    // validate the comment form when it is submitted
- 
-    // validate signup form on keyup and submit
-    $("#signupForm").validate({
-        rules : {
-            userPw : {
-                required : true, 
-                minlength : 5
-            },
-            confirm_password : {
-                required : true, 
-                minlength : 5, 
-                equalTo : "#userPw"
-            },
-            email : {
-                required : true, 
-                email : true
-            }
-        },
-        messages : {
-            userPw : {
-                required : "비밀번호를 입력하세요.",
-                minlength : "5자 이상을 입력하세요."
-            },
-            confirm_password : {
-                required : "비밀번호를 입력하세요.",
-                minlength : "5자 이상을 입력하세요.",
-                equalTo : "위에 입력한 비밀번호와 일치하지 않습니다."
-            },
-            email : "유효한 이메일을 입력하세요."
-        }
-    });
- 
-});
-
-</script>	
 	
 	

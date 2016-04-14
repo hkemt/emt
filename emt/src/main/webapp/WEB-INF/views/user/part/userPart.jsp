@@ -47,8 +47,8 @@
 							<li class="dropdown"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
 								>게시판<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="../board/notice.html">공지사항</a>
-									<li><a href="../board/boardList.html">문제공유</a>
+									<li><a href="notice">공지사항</a>
+									<li><a href="board">문제공유</a>
 								</ul>
 							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -70,9 +70,9 @@
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">userId</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="../member/userReview.html">복습</a></li>
-									<li><a href="../member/userModify.html">정보수정</a></li>
-									<li><a href="../../index.html">로그아웃</a></li>
+									<li><a href="user/review/userReview?sid=${sid}">복습</a></li>
+									<li><a href="userMemberList?userId=${sid}">정보수정</a></li>
+									<li><a href="logout">로그아웃</a></li>
 								</ul></li>
 						</ul>
 					</div>

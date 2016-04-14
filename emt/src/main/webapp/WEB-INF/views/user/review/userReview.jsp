@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Insert title here</title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <!-- Font Awesome -->
@@ -15,15 +23,15 @@
          folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+</head>
 <body class="hold-transition skin-blue layout-top-nav">
 	<div class="wrapper">
 		<header class="main-header">
 			<nav class="navbar navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
-						<a href="../../index2.html" class="navbar-brand"><b>English</b>Mock
+						<a href="../userMain.html" class="navbar-brand"><b>English</b>Mock
 							Test</a>
 						<button type="button" class="navbar-toggle collapsed"
 							data-toggle="collapse" data-target="#navbar-collapse">
@@ -35,17 +43,23 @@
 					<div class="collapse navbar-collapse pull-left"
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="#">토익스피킹 모의고사</a></li>
-							<li><a href="#">문제공유</a></li>
+							<li><a href="userQuestion.html">토익스피킹 모의고사</a></li>
+							<li class="dropdown"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
+								>게시판<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="notice">공지사항</a>
+									<li><a href="board">문제공유</a>
+								</ul>
+							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">Part1</a></li>
-									<li><a href="#">Part2</a></li>
-									<li><a href="#">Part3</a></li>
-									<li><a href="#">Part4</a></li>
-									<li><a href="#">Part5</a></li>
-									<li><a href="#">Part6</a></li>
+									<li><a href="partMove?no=1">Part1</a></li>
+									<li><a href="partMove?no=2">Part2</a></li>
+									<li><a href="partMove?no=3">Part3</a></li>
+									<li><a href="partMove?no=4">Part4</a></li>
+									<li><a href="partMove?no=5">Part5</a></li>
+									<li><a href="partMove?no=6">Part6</a></li>
 								</ul></li>
 						</ul>
 					</div>
@@ -53,25 +67,13 @@
 					<!-- Navbar Right Menu -->
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
-
-							<c:choose>
-								<c:when test="${sessionScope.sid==null }">
-									<li><a href="/emt/login/login"> 로그인 </a></li>
-									<li><a href="/emt/join/join"> 회원가입 </a></li>
-									<!-- 회원가입 -->
-								</c:when>
-								<c:otherwise>
-									<li class="dropdown"><a href="#" class="dropdown-toggle"
-										data-toggle="dropdown">userId</a>
-										<ul class="dropdown-menu" role="menu">
-											<li><a href="userWrong">복습</a></li>
-											<li><a href="member/userModify.html">정보수정</a></li>
-											<li><a href="logout">로그아웃</a></li>
-										</ul></li>
-									<!-- 회원가입 -->
-								</c:otherwise>
-							</c:choose>
-
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">userId</a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="user/review/userReview?sid=${sid}">복습</a></li>
+									<li><a href="userMemberList?userId=${sid}">정보수정</a></li>
+									<li><a href="logout">로그아웃</a></li>
+								</ul></li>
 						</ul>
 					</div>
 					<!-- /.navbar-custom-menu -->

@@ -35,7 +35,7 @@
 			<nav class="navbar navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
-						<a href="../../index2.html" class="navbar-brand"><b>English</b>Mock
+						<a href="index" class="navbar-brand"><b>English</b>Mock
 							Test</a>
 						<button type="button" class="navbar-toggle collapsed"
 							data-toggle="collapse" data-target="#navbar-collapse">
