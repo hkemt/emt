@@ -16,59 +16,15 @@ import emt.emt.common.domain.Board;
 public class BoardController {
 	@Autowired private BoardService boardService;
 	
-	// 공지사항 페이지 이동
-	@RequestMapping("notice")
-	public String notice(){
-		
-		return "user/board/notice";
-	}
-	
-	// 공지사항 불러오기
-	@RequestMapping("noticeView")
-	@ResponseBody
-	public List<Board> noticeView(int type){
-		
-		return boardService.noticeList(type);
-	}
-	
-	// 공지사항 전체 개수 불러오기
-	@RequestMapping(value="noticeCount", method=RequestMethod.POST)
-	@ResponseBody
-	public int noticeCount(){
-		
-		return boardService.noticeCount();
-	}
-	
-	// 공지사항 상세보기 페이지 이동
-	@RequestMapping("noticeDetailMove")
-	public String noticeDetailMove(Board board, Model model){
-		
-		// 조회수 올리기
-		boardService.hitPlus(board);
-		
-		model.addAttribute("boardNo", board.getBoardNo());
-		
-		return "user/board/noticeDetailView";
-		
-	}
-	
-	// 공지사항 상세보기
-	@RequestMapping(value="noticeDetailView", method=RequestMethod.POST)
-	@ResponseBody
-	public Board noticeDetailView(Board board){
-		
-		return boardService.boardView(board);
-	}
-	
-	
-	// 게시판 페이지 이동
+
+	//1_1 게시판 페이지 이동
 	@RequestMapping("board")
 	public String board(){
 		
 		return "user/board/boardList";
 	}
 	
-	// 게시판 불러오기
+	//1_2 게시판 불러오기
 	@RequestMapping(value="boardList", method=RequestMethod.POST)
 	@ResponseBody
 	public List<Board> boardList(int type){
@@ -76,7 +32,7 @@ public class BoardController {
 		return boardService.boardList(type);
 	}
 	
-	// 게시판 전체 숫자 불러오기
+	//1_3 게시판 전체 숫자 불러오기
 	@RequestMapping(value="boardCount", method=RequestMethod.POST)
 	@ResponseBody
 	public int boardCount(){
