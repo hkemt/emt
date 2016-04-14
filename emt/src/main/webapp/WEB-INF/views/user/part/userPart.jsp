@@ -1,13 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.List, emt.emt.common.domain.Question" %>
+<c:choose>
+	<c:when test="${loginMsg!=null }">
+		<script>
+			alert("${loginMsg}");
+			<%
+	    	session.removeAttribute("loginMsg");
+		    %>
+		</script>
+	</c:when>
+</c:choose>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Insert title here</title>
+<title>EMT - 파트별문제</title>
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
@@ -54,12 +66,12 @@
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="partMove?no=1">Part1</a></li>
-									<li><a href="partMove?no=2">Part2</a></li>
-									<li><a href="partMove?no=3">Part3</a></li>
-									<li><a href="partMove?no=4">Part4</a></li>
-									<li><a href="partMove?no=5">Part5</a></li>
-									<li><a href="partMove?no=6">Part6</a></li>
+									<li><a href="user/part1">Part1</a></li>
+									<li><a href="user/part2">Part2</a></li>
+									<li><a href="user/part3">Part3</a></li>
+									<li><a href="user/part4">Part4</a></li>
+									<li><a href="user/part5">Part5</a></li>
+									<li><a href="user/part6">Part6</a></li>
 								</ul></li>
 						</ul>
 					</div>
@@ -67,13 +79,26 @@
 					<!-- Navbar Right Menu -->
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
+
+							<c:choose>
+								<c:when test="${sessionScope.sid==null }">
+									<li><a href="/emt/login/login"> 로그인 </a></li>
+									<li><a href="/emt/join/join"> 회원가입 </a>
+									</li>
+									<!-- 회원가입 -->
+								</c:when>
+								<c:otherwise>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">userId</a>
+								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="user/review/userReview?sid=${sid}">복습</a></li>
-									<li><a href="userMemberList?userId=${sid}">정보수정</a></li>
-									<li><a href="logout">로그아웃</a></li>
+									<li><a href="user/review/userReview?sid=${sid }">복습</a></li>
+									<li><a href="userMemberList?userId=${sid }">정보수정</a></li>
+									<li id="logout"><a>로그아웃</a></li>
 								</ul></li>
+									<!-- 회원가입 -->
+								</c:otherwise>
+							</c:choose>
+
 						</ul>
 					</div>
 					<!-- /.navbar-custom-menu -->
@@ -110,18 +135,44 @@
 					<!-- 이곳에 문제내용이 들어갑니다. -->
                      <div style="width:500px; margin-left: auto; margin-right: auto; text-align: center">
 						
-						<!-- 문제내용 -->
-						<div id="partContent"></div><br>
+						<c:set var="partQuestions" value="${partQuestion }"/>
+						<%
 						
-						<!-- 문제이미지 -->
-						<div id="partImg"></div><br>
+							List<Question> parts = (List)request.getAttribute("partQuestion");
+							
+							int random = (int)(Math.random()*parts.size());
+							
+							Question part = parts.get(random);
+							
+							// 문제유형
+							int type=part.getQuestionType();
+							
+							// 파일 경로
+							String path="";
+							
+							switch (type)
+							{
+							case 1 : path="part1/"; break;
+							case 2 : path="part2/"; break;
+							case 3 : path="part3/"; break;
+							case 4 : path="part4/"; break;
+							case 5 : path="part5/"; break;
+							case 6 : path="part6/"; break;
+							}
+							
+							// 파일 이름
+							String videoFile = part.getQuestionVideo();
+						%>
+						<!-- 파일 경로와 유형을 jstl로 -->
+						<c:set var="part" value="<%=part %>"/>
 						
-						<!-- 문제오디오 -->
-						<div id="partMp3"></div>
+						<c:set var="file" value="<%=path+videoFile %>"/>
+						
+						<video onended="gogo()" id="videos" controls="controls" autoplay="autoplay" width="500px" height="500px">
+							<source src="<c:url value="/questions/${file }"/>" type="video/mp4"/>
+						</video>
 						
 						
-                     	<!-- 문제 시간 -->
-                     	<div id="partTime"></div>
                      </div>	<!-- /.box-body -->
 							<!-- /.table-responsive -->
 					
@@ -160,107 +211,43 @@
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	
-	    <script>
-		$(document).ready(function(){
-				
-					
-				parts();
-				
-		});
-		
-		
-	    function parts(){
+	<script type="text/javascript">
+	function gogo(){
 			
-			// 파트번호가 있을때
-			if("${no}" !=null){
-				
-				var part = "${no}";
-				
-				alert("part"+part+"확인을 누르면 시작됩니다.");
-				// 파트별 문제를 가져옵니다
-				$.ajax({
-					
-					method: "Get",
-					url : "partAll",
-					data : {testType : part},
-					success : function(partQtn){
-						
-						var random=Math.floor(((Math.random()*partQtn.length)));
-						 
-						
-						// 이미지가 있을시에 넣음
-						if(partQtn[random].testImg !=null){
-							$("#partImg").html(partQtn[random].testImg);
-							
-						}
-						
-						// mp3가 있을시 넣음
-						if(partQtn[random].testMp3 != null){
-							$("#partMp3").html(partQtn[random].testMp3);
-						}
-						
-						// 시간계산
-						count(partQtn[random].testType);
-					}
-				});
-			};
-	 };
-	 
-	 	var partDate;
-		
-	 	
-		// 파트문제 시간 가져오기
-		function count(testType){
-			// 유형별 시간
-			var times = [5,10,15,20,25,30];
-			 
-			// 유형시간을 변수에 저장
-		 	var partTime = times[testType-1];
-			 
-			partDate = new Date();
+		// 문제를 저장한다
+		alert("${part.questionType}");
+		var no = "${part.questionNo}";
+		var id = "${sid}";
+		alert(no);
+		alert(userId);
+		$.ajax({
 			
-			partDate.setMilliseconds(partTime*1000+1000);
-			
-			countDown();
-			
-			 
-		 };	
-		 
-		 
-		 // 카운트다운
-		 function countDown(){
-			 	
-			 	var now = new Date();
-				var diff = partDate - now;
-
-				if (diff > 1) {
-					var ms = Math.floor(diff % 1000);
-					diff = diff / 1000;
-					var sec = Math.floor(diff % 60);
-					diff = diff / 60;
-					var min = Math.floor(diff % 60);
-					diff = diff / 60;
-					var hour = Math.floor(diff % 24);
-					diff = diff / 24;
-					var days = Math.floor(diff);
-
-					if (sec < 10) {
-						sec = "0" + sec;
-					}
-					if (min < 10) {
-						min = "0" + min;
-					}
+			url: "saveReview",
+			method : "POST",
+			data : {
+				questionNo : no,
+				userId : id
+			},
+			success : function(result){
+				if(result>0){
+					// 계속할지 묻는다
+					if(confirm("계속하시겠습니까?")){
 						
-						$("#partTime").html(min+ " : "+ sec);
-						setTimeout('countDown()', 1000);
+						location.replace("part2?questionType=2");
+						
+					} else {
+						
+						location.replace("index");
+						
 					}
 					
-					else if (diff<1){
-						parts();
-					}
 				}
-		
+			}
+		});
+	}
+	</script>
 	
-</script>
+	<!-- 로그아웃 -->
+	<script src="<c:url value="/js/logout.js"/>"></script>
 </body>
 </html>

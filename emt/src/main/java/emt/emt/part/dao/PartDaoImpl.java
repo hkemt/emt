@@ -12,11 +12,15 @@ import emt.emt.part.dao.mapper.PartMapper;
 public class PartDaoImpl implements PartDao{
 
 	@Autowired private PartMapper partMapper;
-	
+
 	@Override
-	public List<Question> partAll(Question question) {
+	public List<Question> partQuestion(Question question) {
 		
-		return partMapper.partAll(question);
+		return partMapper.partQuestion(question);
 	}
+
+	
+	
+	
 
 }

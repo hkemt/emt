@@ -6,6 +6,6 @@ import emt.emt.common.domain.Question;
 
 public interface PartDao {
 	
-	List<Question> partAll(Question question);
+	List<Question> partQuestion(Question question);
 
 }

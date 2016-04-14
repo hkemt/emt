@@ -12,11 +12,12 @@ import emt.emt.part.dao.PartDao;
 public class PartServiceImpl implements PartService{
 
 	@Autowired private PartDao partDao;
-	
-	@Override
-	public List<Question> partAll(Question question) {
-		
-		return partDao.partAll(question);
-	}
 
+	@Override
+	public List<Question> partQuestion(Question question) {
+
+		return partDao.partQuestion(question);
+	}
+	
+	
 }
