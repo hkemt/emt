@@ -22,8 +22,7 @@
 	<mvc:resources mapping="/img/**" location="/resources/img/" />
 	<mvc:resources mapping="/css/**" location="/resources/css/" />
 	<mvc:resources mapping="/js/**" location="/resources/js/" />
-	<mvc:resources mapping="/js/**" location="/resources/mp3/" />
-	<mvc:resources mapping="/js/**" location="/resources/mp4/" />
+	<mvc:resources mapping="/js/**" location="/resources/questions/" />
 
 	<!-- ch03: mybatis -->
 	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
