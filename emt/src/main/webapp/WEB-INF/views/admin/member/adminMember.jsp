@@ -125,7 +125,12 @@
 	</div>
 	<!-- ./wrapper -->
 
-
+<script>
+var result=${result };
+if(result=1){
+	alert("삭제되었습니다.");
+}
+</script>
 
 
 <script>
@@ -187,6 +192,7 @@
 		memberList(1);
 		memberPage();
 	})
+
 
 
 </script>
