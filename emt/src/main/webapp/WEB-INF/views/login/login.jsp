@@ -32,6 +32,7 @@
 	<c:otherwise>
 		<script>
 			alert("${sid}" + "님환영합니다.");
+			${sessionScope.loginMsg=null}
 			document.location.href = "/emt/index";
 		</script>
 	</c:otherwise>
