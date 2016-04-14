@@ -24,5 +24,8 @@ public interface BoardMapper {
 	int boardUpdate(Board board);
 	int boardDelete(Board board);
 	Board boardView(Board board);
+	
+	//인덱스페이지 최근게시판
+	List<Board> indexBoardList(int type);
 
 }

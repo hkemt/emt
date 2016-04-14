@@ -1,7 +1,7 @@
 		function boardList(page){
 
 			$.ajax({
-				url: "boardList",
+				url: "indexBoardList",
 				method: "POST",
 				data: { type :  page},
 				success : function(result){

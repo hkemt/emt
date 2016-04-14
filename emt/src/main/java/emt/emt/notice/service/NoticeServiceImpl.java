@@ -47,4 +47,10 @@ public class NoticeServiceImpl implements NoticeService{
 		// TODO Auto-generated method stub
 		return noticeDao.noticeCount();
 	}
+
+	@Override
+	public List<Notice> indexNoticeList(int page) {
+		// TODO Auto-generated method stub
+		return noticeDao.indexNoticeList(page);
+	}
 }

@@ -83,4 +83,11 @@ public class NoticeController {
 		return boardService.boardView(board);
 	}
 	
+	//3_1 인덱스 최근 공지사항 목록 불러오기
+	@RequestMapping("indexNoticeList")
+	@ResponseBody
+	public List<Notice> indexNoticeList(int type){
+		return noticeService.indexNoticeList(type);
+	}
+	
 }

@@ -1,7 +1,7 @@
 
 	function noticeList(page) {
 		$.ajax({
-			url: "noticeList",
+			url: "indexNoticeList",
 			method: "GET",
 			data: {type: page},
 			success: function(result){
