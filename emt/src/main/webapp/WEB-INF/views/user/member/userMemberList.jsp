@@ -19,7 +19,15 @@
 <script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 
-
+<style>
+input.error, textarea.error{
+  border:thin solid red;
+}
+label.error{
+  margin-left:10px;
+  color:red;
+}
+</style>
 <body class="hold-transition skin-blue layout-top-nav">
 	<div class="wrapper">
 		<header class="main-header">
@@ -96,7 +104,7 @@
 							</div>
 						</div>
 						<!-- /.box-header -->
-						<form action="update" method="post">
+						<form action="update" method="post" id="signupForm">
 						<div class="box-body">
 							<div class="table-responsive">
 
@@ -117,13 +125,14 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td><b>새 비밀번호(수정 가능)</b></td>
-											<td><input type="password" name="userPw" placeholder="입력" required></td>
+										<tr>			 
+														
+											<td><label for="userPw">비밀번호(수정 가능)</label></td>
+											<td><input id="userPw" name="userPw" type="password"></td>
 										</tr>
 										<tr>
-											<td><b>새 비밀번호 확인(수정 가능)</b></td>
-											<td><input type="password" placeholder="입력" required></td>
+											<td><label for="confirm_password">비밀번호 확인(수정 가능)</label> </td>
+											<td><input id="confirm_password" name="confirm_password" type="password"></td>
 										</tr>
 										<tr>
 
@@ -150,6 +159,9 @@
 						</form>
 						<!-- /.box-body -->
 					</div>
+					
+
+					
 				</section>
 				<!-- /.content -->
 			</div>
@@ -183,5 +195,54 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
+	
+	
+<script	src="//cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
+
+<script>
+$.validator.setDefaults({
+    submitHandler : function() {
+        location.href("update");
+
+    }
+});
+ 
+$().ready(function() {
+    // validate the comment form when it is submitted
+ 
+    // validate signup form on keyup and submit
+    $("#signupForm").validate({
+        rules : {
+            userPw : {
+                required : true, 
+                minlength : 5
+            },
+            confirm_password : {
+                required : true, 
+                minlength : 5, 
+                equalTo : "#userPw"
+            },
+            email : {
+                required : true, 
+                email : true
+            }
+        },
+        messages : {
+            userPw : {
+                required : "비밀번호를 입력하세요.",
+                minlength : "5자 이상을 입력하세요."
+            },
+            confirm_password : {
+                required : "비밀번호를 입력하세요.",
+                minlength : "5자 이상을 입력하세요.",
+                equalTo : "위에 입력한 비밀번호와 일치하지 않습니다."
+            },
+            email : "유효한 이메일을 입력하세요."
+        }
+    });
+ 
+});
+
+</script>	
 	
 	
