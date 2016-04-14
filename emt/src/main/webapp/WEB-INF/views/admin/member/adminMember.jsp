@@ -18,11 +18,6 @@
 <script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 
-
-
-
-
-
 <body class="hold-transition skin-blue layout-top-nav">
 	<div class="wrapper">
 		<header class="main-header">
@@ -73,11 +68,6 @@
 				<!-- Main content -->
 				<section class="content">
 
-
-
-
-
-
 					<div class="box box-info">
 						<div class="box-header with-border">
 							<h3 class="box-title">회원관리 목록</h3>
@@ -93,46 +83,28 @@
 					
 						<!-- /.box-header -->
 						<div class="box-body">
+						<form action="adminMemberDelete">
 							<div id="memberView" class="table-responsive">
+							
 								<table class="table no-margin">
-									<thead>
-										<tr>
-											<th></th>
-											<th>아이디</th>
-											<th>이메일</th>
-											<th>가입일자</th>
-
-										</tr>
-									</thead>
-									<tbody>
-
-										<c:forEach var="user" items="${user }">
-											<tr>
-												<td><input type="radio" name="userId"
-													value="${user.userId }"></td>
-												<td>${user.userId }</td>
-												<td>${user.email }</td>
-												<td>${user.userDate }</td>
-												
-											</tr>
-										</c:forEach>
-
-									</tbody>
+								
 								</table>
+								
 							</div>
 							<input type="button"
 								onclick="location.href='adminMemberInsert'"
 								style="float: right" value="등록">
-							<input type="button"
-								onclick="location.href='adminMemberDelete'"
+							<input type="submit"
 								style="float: right" value="삭제">
 								
+							</form>
 							<div id="memberPage" style="text-align: right"></div>	
 
 							<!-- /.table-responsive -->
 						</div>
 						<!-- /.box-body -->
 						</div>
+						
 				</section>
 				<!-- /.content -->
 			</div>
@@ -164,15 +136,18 @@
 			method: "GET",
 			data: { type: page},
 			success: function(result) {
+				 
 				$("#memberView").html("<table id='memberTable' class='table no-margin'></table>");
 				$("#memberTable").append("<thead><tr><th>아이디</th><th>이메일</th><th>가입일자</th></thead>");
 				$("#memberTable").append("<tbody>")
 				for(var i=0; i<result.length; i++){
-					$("#memberTable").append("<tr><td>"+result[i].userId +"</td>"
+					$("#memberTable").append("<tr>"+"<td><input type='radio' name='userId' value="+result[i].userId+">"+result[i].userId+"</td>"
 													+"<td>"+result[i].email+"</td>"
 													+"<td>"+result[i].userDate+"</td></tr>");
 				}
 				$("#memberTable").append("</tbody>");
+				 
+			 	
 			}
 		});
 	};

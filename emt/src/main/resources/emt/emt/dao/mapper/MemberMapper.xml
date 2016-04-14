@@ -41,5 +41,8 @@
 		update users set user_pw=#{userPw}, email=#{email} where user_id=#{userId}
 	</update>
 	
+	<delete id="memberDelete" parameterType="String">
+		DELETE users where user_id=#{userId}
+	</delete>
 
 </mapper>

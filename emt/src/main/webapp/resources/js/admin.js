@@ -107,7 +107,7 @@ $(function() {
 											success : function(result) {
 												if (result == 1) {
 													alert("정상적으로 등록되었습니다.");
-													document.location.href = "/emt/";
+													document.location.href = "/emt/admin/adminMain";
 												} else {
 													alert("정상적으로 등록되지 않았습니다.");
 												}

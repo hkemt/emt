@@ -25,9 +25,9 @@ public class MemberDaoImpl implements MemberDao{
 	}
 
 	@Override
-	public int memberDelete(User user) {
+	public int memberDelete(String userId) {
 		// TODO Auto-generated method stub
-		return memberMapper.memberDelete(user);
+		return memberMapper.memberDelete(userId);
 	}
 
 	@Override
