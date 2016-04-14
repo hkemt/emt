@@ -66,4 +66,10 @@ public class BoardServiceImpl implements BoardService{
 		return boardDao.hitPlus(board);
 	}
 
+	@Override
+	public List<Board> indexBoardList(int type) {
+		// TODO Auto-generated method stub
+		return boardDao.indexBoardList(type);
+	}
+
 }

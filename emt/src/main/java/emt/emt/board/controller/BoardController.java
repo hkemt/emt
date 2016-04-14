@@ -40,4 +40,13 @@ public class BoardController {
 		return boardService.boardCount();
 	}
 	
+	//3_1 인덱스 최근 게시판목록
+	@RequestMapping(value="indexBoardList")
+	@ResponseBody
+	public List<Board> indexBoardList(int type){
+		// 페이지 숫자를 받아서 해당 데이터 가져옴
+		return boardService.indexBoardList(type);
+	}
+	
+	
 }

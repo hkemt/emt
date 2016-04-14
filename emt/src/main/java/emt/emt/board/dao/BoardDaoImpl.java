@@ -66,4 +66,10 @@ public class BoardDaoImpl implements BoardDao{
 		return boardMapper.hitPlus(board);
 	}
 
+	@Override
+	public List<Board> indexBoardList(int type) {
+		// TODO Auto-generated method stub
+		return boardMapper.indexBoardList(type);
+	}
+
 }

@@ -110,7 +110,7 @@
 					<!-- 이미지 슬라이드 -->
 					<div class="box box-info">
 						<div class="box-header with-border">
-							<h3 class="box-title">1234</h3>
+							<h3 class="box-title"></h3>
 							<div class="box-tools pull-right">
 								<button class="btn btn-box-tool" data-widget="collapse">
 									<i class="fa fa-minus"></i>
@@ -135,25 +135,19 @@
 									</ol>
 									<div class="carousel-inner">
 										<div class="item active">
-											<img src="<c:url value="/img/abc.jpg"/>" alt="First slide" style="margin-left:auto; margin-right:auto;">
+											<img src="<c:url value="/img/1.jpg"/>" alt="First slide" style="margin-left:auto; margin-right:auto;">
 											<div class="carousel-caption">First Slide</div>
 										</div>
 										<div class="item">
 											<img
-												src="<c:url value="/img/abc.jpg"/>"
-												alt="Second slide">
+												src="<c:url value="/img/2.jpg"/>"
+												alt="Second slide" style="margin-left:auto; margin-right:auto;">
 											<div class="carousel-caption">Second Slide</div>
 										</div>
 										<div class="item">
 											<img
-												src="<c:url value="/img/abc.jpg"/>"
-												alt="Third slide">
-											<div class="carousel-caption">Third Slide</div>
-										</div>
-										<div class="item">
-											<img
-												src="<c:url value="/img/abc.jpg"/>"
-												alt="Third slide">
+												src="<c:url value="/img/3.jpg"/>"
+												alt="Third slide" style="margin-left:auto; margin-right:auto;">
 											<div class="carousel-caption">Third Slide</div>
 										</div>
 									</div>

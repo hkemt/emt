@@ -77,6 +77,27 @@
 		WHERE user_id != 'admin'
 	]]>	
 	</select>
+	
+	
+	<!-- 인덱스 최근 게시판 목록  -->
+		<select id="indexBoardList" parameterType="int" resultMap="boardMap">
+		<![CDATA[
+		SELECT board_no boardNo, board_title boardTitle, board_content boardContent, board_date boardDate,
+			   board_count boardCount, user_id userId
+		FROM (SELECT rownum AS rnum, M.* 
+			  FROM (
+			  		SELECT * 
+					FROM board 
+					WHERE user_id != 'admin'
+					ORDER BY board_date DESC
+			  		) M 
+			  WHERE rownum  < = 4*#{type})
+		WHERE rnum > 4*(#{type}-1)
+		]]>
+	</select>
+	
+	
+	
 </mapper>
 
 

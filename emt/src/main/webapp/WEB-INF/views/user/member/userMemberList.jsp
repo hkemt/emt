@@ -112,26 +112,29 @@ label.error{
 									<thead>
 										<tr>
 											<td><b>아이디</b></td>
-											<td><input type="text" name="userId" value=${user.userId } readonly></td>
+											<td><b>${user.userId }</b></td>
 										</tr>
-										<tr>
-											<td><b>현재 비밀번호</b></td>
-											<td><input type="password" value=${user.userPw } readonly></td>
-										</tr>
+
 										
 										<tr>
 											<td><b>가입일자</b></td>
-											<td><input type="text" value=${user.userDate } readonly></td>
+											<td><b>${user.userDate }</b></td>
 										</tr>
+<%-- 									
+										<tr>
+											<td><b>현재 비밀번호</b></td>
+											<td><input type="password" value=${user.userPw } readonly></td>
+										</tr>  
+--%>
 									</thead>
 									<tbody>
 										<tr>			 
 														
-											<td><label for="userPw">비밀번호(수정 가능)</label></td>
+											<td><label for="userPw">변경 비밀번호 (수정 가능)</label></td>
 											<td><input id="userPw" name="userPw" type="password"></td>
 										</tr>
 										<tr>
-											<td><label for="confirm_password">비밀번호 확인(수정 가능)</label> </td>
+											<td><label for="confirm_password">변경 비밀번호 확인 (수정 가능)</label> </td>
 											<td><input id="confirm_password" name="confirm_password" type="password"></td>
 										</tr>
 										<tr>
@@ -139,7 +142,7 @@ label.error{
 										</tr>
 
 										<tr>
-											<td><b>이메일(수정 가능)</b></td>
+											<td><b>이메일 (수정 가능)</b></td>
 											<td><input type="text" name="email" value=${user.email } required></td>
 										</tr>
 

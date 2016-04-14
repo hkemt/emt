@@ -47,5 +47,11 @@ public class NoticeDaoImpl implements NoticeDao{
 		// TODO Auto-generated method stub
 		return noticeMapper.noticeCount();
 	}
+
+	@Override
+	public List<Notice> indexNoticeList(int page) {
+		// TODO Auto-generated method stub
+		return noticeMapper.indexNoticeList(page);
+	}
 	
 }
