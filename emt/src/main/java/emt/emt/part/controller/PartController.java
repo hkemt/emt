@@ -15,7 +15,7 @@ public class PartController {
 	@Autowired private PartService partService;
 	
 	// 파트별 1,2,3,4,5,6 페이지로 이동
-	@RequestMapping("part1")
+	@RequestMapping("user/part/part1")
 	public String part1(Question question,Model model){
 		
 		question.setQuestionType(1);
@@ -26,7 +26,7 @@ public class PartController {
 	}
 	
 	
-	@RequestMapping("part2")
+	@RequestMapping("user/part/part2")
 	public String part2(Question question,Model model){
 		
 		question.setQuestionType(2);
@@ -36,7 +36,7 @@ public class PartController {
 		return "/user/part/userPart";
 	}
 	
-	@RequestMapping("part3")
+	@RequestMapping("user/part/part3")
 	public String part3(Question question,Model model){
 		
 		question.setQuestionType(3);
@@ -46,7 +46,7 @@ public class PartController {
 		return "/user/part/userPart";
 	}
 	
-	@RequestMapping("part4")
+	@RequestMapping("user/part/art4")
 	public String part4(Question question,Model model){
 		
 		question.setQuestionType(4);
@@ -56,7 +56,7 @@ public class PartController {
 		return "/user/part/userPart";
 	}
 	
-	@RequestMapping("part5")
+	@RequestMapping("user/part/part5")
 	public String part5(Question question,Model model){
 		
 		question.setQuestionType(5);
@@ -66,7 +66,7 @@ public class PartController {
 		return "/user/part/userPart";
 	}
 	
-	@RequestMapping("part6")
+	@RequestMapping("user/part/part6")
 	public String part6(Question question,Model model){
 		
 		question.setQuestionType(6);

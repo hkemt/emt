@@ -59,12 +59,12 @@
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="part1">Part1</a></li>
-									<li><a href="part2">Part2</a></li>
-									<li><a href="part3">Part3</a></li>
-									<li><a href="part4">Part4</a></li>
-									<li><a href="part5">Part5</a></li>
-									<li><a href="part6">Part6</a></li>
+									<li><a href="/emt/user/part/part1">Part1</a></li>
+									<li><a href="/emt/user/part/part2">Part2</a></li>
+									<li><a href="/emt/user/part/part3">Part3</a></li>
+									<li><a href="/emt/user/part/part4">Part4</a></li>
+									<li><a href="/emt/user/part/part5">Part5</a></li>
+									<li><a href="/emt/user/part/part6">Part6</a></li>
 								</ul></li>
 						</ul>
 					</div>
@@ -85,7 +85,7 @@
 								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="/emt/user/review/userReview?sid=${sid }">복습</a></li>
-									<li><a href="/emt/userMemberList?userId=${sid }">정보수정</a></li>
+									<li><a href="/emt/user/member/userMemberList?userId=${sid }">정보수정</a></li>
 									<li id="logout"><a>로그아웃</a></li>
 								</ul></li>
 									<!-- 회원가입 -->

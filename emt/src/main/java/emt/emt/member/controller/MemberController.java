@@ -88,7 +88,7 @@ public class MemberController {
 	
 	//2_3본인정보관리 삭제
 	//2_4본인정보관리 상세보기
-	@RequestMapping("userMemberList")
+	@RequestMapping("user/member/userMemberList")
 	public String userMemberList(User user, Model model){
 		
 		user = memberService.memberView(user);
