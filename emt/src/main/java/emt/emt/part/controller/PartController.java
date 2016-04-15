@@ -46,7 +46,7 @@ public class PartController {
 		return "/user/part/userPart";
 	}
 	
-	@RequestMapping("user/part/art4")
+	@RequestMapping("user/part/part4")
 	public String part4(Question question,Model model){
 		
 		question.setQuestionType(4);
