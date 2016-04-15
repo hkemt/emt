@@ -1,4 +1,4 @@
-
+var color = ["info","success","danger","warning","info","success","danger"]
 	function memberList(page) {
 		
 		$.ajax({
@@ -13,7 +13,7 @@
 				for(var i=0; i<result.length; i++){
 					$("#memberTable").append("<tr>"
 													+"<td><input type='radio' name='userId' value="+result[i].userId+"></td>"
-													+"<td>"+result[i].userId+"</td>"
+													+"<td><span class='label label-"+color[i]+"'>"+result[i].userId+"</td>"
 													+"<td>"+result[i].email+"</td>"
 													+"<td>"+result[i].userDate+"</td></tr>");
 				}
