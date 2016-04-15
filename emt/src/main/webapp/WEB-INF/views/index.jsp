@@ -35,7 +35,7 @@
 			<nav class="navbar navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
-						<a href="index" class="navbar-brand"><b>English</b>Mock
+						<a href="/emt/index" class="navbar-brand"><b>English</b>Mock
 							Test</a>
 						<button type="button" class="navbar-toggle collapsed"
 							data-toggle="collapse" data-target="#navbar-collapse">
@@ -52,8 +52,8 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">게시판
 							<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="notice">공지사항</a>
-									<li><a href="board">문제공유</a>
+									<li><a href="/emt/notice">공지사항</a>
+									<li><a href="/emt/board">문제공유</a>
 								</ul>
 							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -84,8 +84,8 @@
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="user/review/userReview?sid=${sid }">복습</a></li>
-									<li><a href="userMemberList?userId=${sid }">정보수정</a></li>
+									<li><a href="/emt/user/review/userReview?sid=${sid }">복습</a></li>
+									<li><a href="/emt/userMemberList?userId=${sid }">정보수정</a></li>
 									<li id="logout"><a>로그아웃</a></li>
 								</ul></li>
 									<!-- 회원가입 -->
@@ -124,8 +124,8 @@
 						<div class="box-body">
 							<div class="box-body">
 								<div id="carousel-example-generic" class="carousel slide"
-									data-ride="carousel">
-									<ol class="carousel-indicators">
+									data-ride="carousel" >
+									<ol class="carousel-indicators" style="float:right">
 										<li data-target="#carousel-example-generic" data-slide-to="0"
 											class="active"></li>
 										<li data-target="#carousel-example-generic" data-slide-to="1"
