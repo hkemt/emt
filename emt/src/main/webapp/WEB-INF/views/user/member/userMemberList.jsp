@@ -34,7 +34,7 @@ label.error{
 			<nav class="navbar navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
-						<a href="index" class="navbar-brand"><b>English</b>Mock Test</a>
+						<a href="/emt/index" class="navbar-brand"><b>English</b>Mock Test</a>
 						<button type="button" class="navbar-toggle collapsed"
 							data-toggle="collapse" data-target="#navbar-collapse">
 							<i class="fa fa-bars"></i>
@@ -49,18 +49,18 @@ label.error{
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">게시판<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="notice">공지사항</a>
-									<li><a href="board">문제공유</a>
+									<li><a href="/emt/notice">공지사항</a>
+									<li><a href="/emt/board">문제공유</a>
 								</ul></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="partMove?no=1">Part1</a></li>
-									<li><a href="partMove?no=2">Part2</a></li>
-									<li><a href="partMove?no=3">Part3</a></li>
-									<li><a href="partMove?no=4">Part4</a></li>
-									<li><a href="partMove?no=5">Part5</a></li>
-									<li><a href="partMove?no=6">Part6</a></li>
+									<li><a href="/emt/part1">Part1</a></li>
+									<li><a href="/emt/part2">Part2</a></li>
+									<li><a href="/emt/part3">Part3</a></li>
+									<li><a href="/emt/part4">Part4</a></li>
+									<li><a href="/emt/part5">Part5</a></li>
+									<li><a href="/emt/part6">Part6</a></li>
 								</ul></li>
 						</ul>
 					</div>
@@ -71,9 +71,9 @@ label.error{
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="user/review/userReview?sid=${sid}">복습</a></li>
-									<li><a href="userMemberList?userId=${sid}">정보수정</a></li>
-									<li><a href="logout">로그아웃</a></li>
+									<li><a href="/emt/user/review/userReview?sid=${sid}">복습</a></li>
+									<li><a href="/emt/userMemberList?userId=${sid}">정보수정</a></li>
+									<li id="logout"><a>로그아웃</a></li>
 								</ul></li>
 						</ul>
 					</div>
