@@ -1,6 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<c:choose>
+	<c:when test="${loginMsg!=null }">
+		<script>
+			alert("${loginMsg}");
+			<%
+	    	session.removeAttribute("loginMsg");
+		    %>
+		</script>
+	</c:when>
+</c:choose>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,21 +58,23 @@
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="#">토익스피킹 모의고사</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">게시판<span class="caret"></span></a>
+							<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">게시판
+							<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="notice">공지사항</a>
-									<li><a href="boardList">문제공유</a>
-								</ul></li>
+									<li><a href="board">문제공유</a>
+								</ul>
+							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="partMove?no=1">Part1</a></li>
-									<li><a href="partMove?no=2">Part2</a></li>
-									<li><a href="partMove?no=3">Part3</a></li>
-									<li><a href="partMove?no=4">Part4</a></li>
-									<li><a href="partMove?no=5">Part5</a></li>
-									<li><a href="partMove?no=6">Part6</a></li>
+									<li><a href="part1">Part1</a></li>
+									<li><a href="part2">Part2</a></li>
+									<li><a href="part3">Part3</a></li>
+									<li><a href="part4">Part4</a></li>
+									<li><a href="part5">Part5</a></li>
+									<li><a href="part6">Part6</a></li>
 								</ul></li>
 						</ul>
 					</div>
@@ -68,13 +82,26 @@
 					<!-- Navbar Right Menu -->
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
+
+							<c:choose>
+								<c:when test="${sessionScope.sid==null }">
+									<li><a href="/emt/login/login"> 로그인 </a></li>
+									<li><a href="/emt/join/join"> 회원가입 </a>
+									</li>
+									<!-- 회원가입 -->
+								</c:when>
+								<c:otherwise>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">userId</a>
+								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="user/review/userReview?sid=${sid}">복습</a></li>
-									<li><a href="userMemberList?userId=${sid}">정보수정</a></li>
-									<li><a href="logout">로그아웃</a></li>
+									<li><a href="user/review/userReview?sid=${sid }">복습</a></li>
+									<li><a href="userMemberList?userId=${sid }">정보수정</a></li>
+									<li id="logout"><a>로그아웃</a></li>
 								</ul></li>
+									<!-- 회원가입 -->
+								</c:otherwise>
+							</c:choose>
+
 						</ul>
 					</div>
 					<!-- /.navbar-custom-menu -->
@@ -95,7 +122,7 @@
 
 					<div class="box box-info">
 						<div class="box-header with-border" style="text-align: center;">
-							<h3 id="title" class="box-title">이곳에 제목이 옵니다</h3>
+							<h3 id="title" class="box-title"></h3>
 							
 							<div class="box-tools pull-right">
 								<button class="btn btn-box-tool" data-widget="collapse">
@@ -135,9 +162,8 @@
 							</div>
 							<div id="updel" style="text-align: right;">
 								<input type="button" class="btn btn-default"
-									onclick="location.href='boardModify.html'" value="수정">
-									 <input type="button" class="btn btn-default"
-									onclick="location.href='boardModify.html'" value="삭제">
+									onclick="location.replace('notice')" value="목록보기">
+									 
 							</div>
 
 							<!-- /.table-responsive -->
@@ -176,33 +202,11 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
-	<script>
+	<!-- 로그아웃 스크립트 -->
+	<script src="<c:url value="/js/logout.js"/>"></script>
+	<!-- 공지사항 상세보기 -->
+	<script type="text/javascript">var no = "${boardNo}"</script>
+	<script src="<c:url value="/js/board/noticeDetailView.js"/>"></script>
 	
-		var no = "${boardNo}"
-		
-		
-		function noticeDetailView(){
-			
-			$.ajax({
-				url : "noticeDetailView",
-				method : "POST",
-				data : { boardNo : no},
-				success : function(result){
-					
-					$("#title").html(result.boardTitle);
-					
-					$("#noticeInfo").html("작성자 : "+ result.userId + " 작성일 : " 
-										+ result.boardDate + " 조회수 : " + result.boardCount);
-					
-					$("#noticeContent").html(result.boardContent)
-				}
-				
-			});
-		}
-		
-		$(document).ready(function(){
-			noticeDetailView();
-		});
-	</script>
 </body>
 </html>

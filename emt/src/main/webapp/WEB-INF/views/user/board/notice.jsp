@@ -45,40 +45,52 @@
 					<div class="collapse navbar-collapse pull-left"
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="../question/userQuestion.html">토익스피킹 모의고사</a></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">게시판<span class="caret"></span></a>
+							<li><a href="#">토익스피킹 모의고사</a></li>
+							<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">게시판
+							<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="notice">공지사항</a>
-									<li><a href="boardList">문제공유</a>
-								</ul></li>
+									<li><a href="board">문제공유</a>
+								</ul>
+							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="partMove?no=1">Part1</a></li>
-									<li><a href="partMove?no=2">Part2</a></li>
-									<li><a href="partMove?no=3">Part3</a></li>
-									<li><a href="partMove?no=4">Part4</a></li>
-									<li><a href="partMove?no=5">Part5</a></li>
-									<li><a href="partMove?no=6">Part6</a></li>
+									<li><a href="part1">Part1</a></li>
+									<li><a href="part2">Part2</a></li>
+									<li><a href="part3">Part3</a></li>
+									<li><a href="part4">Part4</a></li>
+									<li><a href="part5">Part5</a></li>
+									<li><a href="part6">Part6</a></li>
 								</ul></li>
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
 					<!-- Navbar Right Menu -->
 					<div class="navbar-custom-menu">
-						<div class="collapse navbar-collapse pull-left"
-							id="navbar-collapse">
-							<ul class="nav navbar-nav">
-								<li class="dropdown"><a href="#" class="dropdown-toggle"
-									data-toggle="dropdown">userId</a>
-									<ul class="dropdown-menu" role="menu">
-										<li><a href="user/review/userReview?sid=${sid }">복습</a></li>
-										<li><a href="userMemberList?userId=${sid }">정보수정</a></li>
-										<li><a href="logout">로그아웃</a></li>
-									</ul></li>
-							</ul>
-						</div>
+						<ul class="nav navbar-nav">
+
+							<c:choose>
+								<c:when test="${sessionScope.sid==null }">
+									<li><a href="/emt/login/login"> 로그인 </a></li>
+									<li><a href="/emt/join/join"> 회원가입 </a>
+									</li>
+									<!-- 회원가입 -->
+								</c:when>
+								<c:otherwise>
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">${sid }</a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="user/review/userReview?sid=${sid }">복습</a></li>
+									<li><a href="userMemberList?userId=${sid }">정보수정</a></li>
+									<li id="logout"><a>로그아웃</a></li>
+								</ul></li>
+									<!-- 회원가입 -->
+								</c:otherwise>
+							</c:choose>
+
+						</ul>
 					</div>
 					<!-- /.navbar-custom-menu -->
 				</div>
