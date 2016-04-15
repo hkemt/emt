@@ -116,7 +116,7 @@
 							
 							
 					<!-- 이곳에 문제내용이 들어갑니다. -->
-                     <div style="width:1000px; margin-left: auto; margin-right: auto; text-align: center">
+                     <div style="width:1000px;viligin-align:top; margin-left: auto; margin-right: auto; text-align: center">
 						
 						<c:set var="partQuestions" value="${partQuestion }"/>
 						<%
@@ -223,7 +223,7 @@
 					
 				} else {
 					
-					location.replace("index");
+					location.replace("/emt/index");
 						
 				}
 					

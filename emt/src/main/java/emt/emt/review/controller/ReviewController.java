@@ -37,7 +37,7 @@ public class ReviewController {
 	}
 	
 	// 파트별 문제 풀었던 것 저장
-	@RequestMapping(value="saveReview", method=RequestMethod.POST)
+	@RequestMapping(value="user/part/saveReview", method=RequestMethod.POST)
 	@ResponseBody
 	public int saveRevuew(Review review){
 		
