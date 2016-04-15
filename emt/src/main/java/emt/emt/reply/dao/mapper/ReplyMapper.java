@@ -2,9 +2,12 @@ package emt.emt.reply.dao.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
+
 import emt.emt.common.domain.Reply;
 
 public interface ReplyMapper {
+	@Insert("INSERT INTO reply values ( seq_reply_no.nextval, #{replyContent}, #{userId},sysdate, null)")
 	int replyInsert(Reply reply);
 	int replyUpdate(Reply reply);
 	int replyDelete(Reply reply);

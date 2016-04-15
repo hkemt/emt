@@ -39,6 +39,8 @@
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 </head>
+
+
 <body class="hold-transition skin-blue layout-top-nav">
 	<div class="wrapper">
 		<header class="main-header">
@@ -168,9 +170,10 @@
 							<!--댓글 시작  -->
 												<h3 id="title" class="box-title">댓글</h3>													
 												<div style="text-align: center;">
-													<form action="boardList.html">
-														<input type="text" style="width: 80%"> <input
-															class="btn btn-default" type="submit" style='width: 10%' value="등록">
+													<form id="replyInsert">
+														<input type="hidden" name="userId" id="userId" value='${sid}' >
+														<input type="text" name="replyContent"  id="replyContent" style="width: 85%"> 
+														<input class="btn btn-default" type="submit" style='width: 10%' value="등록">
 													</form>
 												</div>
 
@@ -220,6 +223,10 @@
 	<script type="text/javascript">var no = "${boardNo}"</script>
 	<script src="<c:url value="/js/notice/noticeDetailView.js"/>"></script>
 	<script src="<c:url value="/js/reply/replyList.js"/>"></script>
+	
+
+	
+	
 	
 </body>
 </html>
