@@ -166,6 +166,14 @@
 									 
 							</div>
 							<!--댓글 시작  -->
+												<h3 id="title" class="box-title">댓글</h3>													
+												<div style="text-align: center;">
+													<form action="boardList.html">
+														<input type="text" style="width: 80%"> <input
+															class="btn btn-default" type="submit" style='width: 10%' value="등록">
+													</form>
+												</div>
+
 							<div id="replyView" class="table-responsive"></div>
 							<div id="replyPage" style="text-align: right"></div>	
 							<!--댓글 끝  -->
