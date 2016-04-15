@@ -1,6 +1,6 @@
 $.validator.setDefaults({
     submitHandler : function() {
-        location.href("update");
+        location.href("/emt/update");
 
     }
 });

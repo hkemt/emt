@@ -1,0 +1,7 @@
+input.error, textarea.error{
+  border:thin solid red;
+}
+label.error{
+  margin-left:10px;
+  color:red;
+}

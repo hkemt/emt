@@ -15,19 +15,13 @@
 <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
+<link rel="stylesheet" href="<c:url value="/css/member/userMemberList.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 
-<style>
-input.error, textarea.error{
-  border:thin solid red;
-}
-label.error{
-  margin-left:10px;
-  color:red;
-}
-</style>
+
+
 <body class="hold-transition skin-blue layout-top-nav">
 	<div class="wrapper">
 		<header class="main-header">
@@ -104,7 +98,7 @@ label.error{
 							</div>
 						</div>
 						<!-- /.box-header -->
-						<form action="update" method="post" id="signupForm">
+						<form action="/emt/update" method="post" id="signupForm">
 						<div class="box-body">
 							<div class="table-responsive">
 
@@ -112,7 +106,7 @@ label.error{
 									<thead>
 										<tr>
 											<td><b>아이디</b></td>
-											<td><b>${user.userId }</b></td>
+											<td><b>${user.userId }<input type="hidden" name="userId" value="${user.userId }">	</b></td>
 										</tr>
 
 										
@@ -129,7 +123,7 @@ label.error{
 									</thead>
 									<tbody>
 										<tr>			 
-														
+													
 											<td><label for="userPw">변경 비밀번호 (수정 가능)</label></td>
 											<td><input id="userPw" name="userPw" type="password"></td>
 										</tr>

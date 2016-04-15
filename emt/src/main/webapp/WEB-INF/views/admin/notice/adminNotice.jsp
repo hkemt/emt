@@ -93,40 +93,54 @@
 
 						<!-- /.box-header -->
 						<div class="box-body">
-							<form action="#" >
-							<div id="noticeView" class="table-responsive">
-								<table class="table no-margin">
-									<thead>
-										<tr>
-											<th></th>
-											<th>공지번호</th>
-											<th>게시판번호</th>
-
-										</tr>
-									</thead>
-									<tbody>
-
-										<c:forEach var="notice" items="${notice }">
+							<form action="#">
+								<div id="noticeView" class="table-responsive">
+									<table class="table no-margin">
+										<thead>
 											<tr>
-												<td><input type="radio" name="noticeNo"
-													value="${notice.noticeNo }"></td>
-												<td>${notice.noticeNo }</td>
-												<td>${notice.boardNo }</td>
+												<th></th>
+												<th></th>
+												<th></th>
 											</tr>
-										</c:forEach>
-
-									</tbody>
-								</table>
+										</thead>
+										<tbody>
+											<tr>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								
+								
+							<!-- 페이징링크 -->	
+							<div id="pages" class="box-footer clearfix">
+								<ul  class="pagination pagination-sm no-margin pull-right">
+									<li><a href="#">«</a></li>
+									<li><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">»</a></li>
+								</ul>
 							</div>
-							
-							<input type="submit" style="float: right" value="삭제">
-							</form>	
-							<div id="noticePage" style="text-align: right"></div>	
+								
+								<div>
+								<input type="submit" style="float: right" value="삭제">
+								</div>
+							</form>
+
 
 							<!-- /.table-responsive -->
 						</div>
 						<!-- /.box-body -->
-						</div>
+					</div>
+
+
+
+
+
+
 				</section>
 				<!-- /.content -->
 			</div>
@@ -147,87 +161,6 @@
 	</div>
 	<!-- ./wrapper -->
 
-
-
-<script>
-	function noticeList(page) {
-		$.ajax({
-			url: "noticeList",
-			method: "GET",
-			data: {type: page},
-			success: function(result){
-				$("#noticeView").html("<table id='noticeTable' class='table no-margin'></table>");
-				$("#noticeTable").append("<thead><tr><th></th><th>번호</th><th>제목</th><th>아이디</th><th>날짜</th></thead>");
-				$("#noticeTable").append("<tbody>")
-				for(var i=0; i<result.length; i++){
-					$("#noticeTable").append(
-							"<tr>"
-							+"<td><input type='radio' name='boardNo' value='"+result[i].boardNo+"'></td>"
-							+"<td>"+result[i].boardNo+"</td>"
-							+"<td>"+result[i].boardTitle+"</td>"
-							+"<td>"+result[i].userId+"</td>"
-							+"<td>"+result[i].boardDate+"</td></tr>"); 	
-				}
-				$("#noticeTable").append("</tbody>");
-			}
-		});
-	};
-
-	var countAll;
-	var pageCount;
-	var prev;
-	var next;
-	
-	function noticePage(){
-		$.ajax({
-			url: "noticeCount",
-			method: "GET",
-			success: function(count){
-				countAll = count;
-				
-				if((countAll%7)>0) {
-					pageCount = Math.floor((countAll/7)+1);
-				}
-				else {
-					pageCount = countAll/7;
-				}
-				$("#noticePage").html("<ul id='myPage' class='pagination pagination-sm no-margin pull-right'>");
-				
-				for(var i=0; i<pageCount; i++){
-					$("#myPage").append("<li onclick='noticeList("+(i+1)+ ")'>"+"<a href='#'>"+(i+1)+"</a></li>");
-				}
-			}
-		});
-	};
-	
-	$(document).ready(function(){
-		noticeList(1);
-		noticePage();
-	})
-	
-	
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<!-- ./wrapper -->
-
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
 	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
@@ -239,3 +172,4 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
+	<script src="<c:url value="/js/notice/adminNoticeList.js"/>"></script>

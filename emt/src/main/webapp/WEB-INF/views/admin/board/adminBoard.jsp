@@ -120,32 +120,6 @@
 									</tbody>
 								</table>
 								
-								<table class="table no-margin">
-									<thead>
-										<tr>
-											<th></th>
-											<th>댓글번호</th>
-											<th>댓글내용</th>
-											<th>아이디</th>
-											<th>날짜</th>
-											<th>게시판번호</th>
-										</tr>
-									</thead>
-									<tbody>
-										<c:forEach var="reply" items="${reply }">
-											<tr>
-												<td><input type="radio" name="replyNo"
-													value="${reply.replyNo }"></td>
-												<td>${reply.replyNo }</td>
-												<td>${reply.replyContent }</td>
-												<td>${reply.userId }</td>
-												<td>${reply.replyDate }</td>
-												<td>${reply.boardNo }</td>
-
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
 								
 								
 							</div>
