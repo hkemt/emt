@@ -2,25 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page import="java.util.List, emt.emt.common.domain.Question" %>
-<c:choose>
-	<c:when test="${loginMsg!=null }">
-		<script>
-			alert("${loginMsg}");
-			<%
-	    	session.removeAttribute("loginMsg");
-		    %>
-		</script>
-	</c:when>
-</c:choose>
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>EMT - 파트별문제</title>
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <!-- Font Awesome -->

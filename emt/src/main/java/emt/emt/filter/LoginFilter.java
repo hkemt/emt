@@ -30,6 +30,7 @@ public class LoginFilter implements Filter {
 		//session에 sid가 없으면 login.jsp로 이동
 		if(sid==null){
 			session.setAttribute("loginMsg", "회원 전용 메뉴입니다. 로그인 후 이용해 주세요.");
+			System.out.println("if문");
 			res.sendRedirect("/emt/index");
 			/*String url="member/login.jsp";
 			RequestDispatcher disp = req.getRequestDispatcher(url);

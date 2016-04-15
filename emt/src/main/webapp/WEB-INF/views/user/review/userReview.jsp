@@ -1,14 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>Insert title here</title>
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <!-- Font Awesome -->
@@ -69,7 +63,7 @@
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">userId</a>
+								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="/emt/user/review/userReview?sid=${sid}">복습</a></li>
 									<li><a href="/emt/user/member/userMemberList?userId=${sid}">정보수정</a></li>

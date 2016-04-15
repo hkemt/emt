@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-						
+
 <c:choose>
 	<c:when test="${loginMsg!=null }">
 		<script>
 			alert("${loginMsg}");
-			<%
-	    	session.removeAttribute("loginMsg");
-		    %>
+		<%session.removeAttribute("loginMsg");%>
+			
 		</script>
 	</c:when>
-</c:choose>
+</c:choose> 
+
 
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
@@ -42,20 +42,18 @@
 							<i class="fa fa-bars"></i>
 						</button>
 					</div>
-	
+
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse pull-left"
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="#">토익스피킹 모의고사</a></li>
-							<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">게시판
-							<span class="caret"></span></a>
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">게시판 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="/emt/notice">공지사항</a>
 									<li><a href="/emt/board">문제공유</a>
-								</ul>
-							</li>
+								</ul></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
@@ -76,18 +74,18 @@
 							<c:choose>
 								<c:when test="${sessionScope.sid==null }">
 									<li><a href="/emt/login/login"> 로그인 </a></li>
-									<li><a href="/emt/join/join"> 회원가입 </a>
-									</li>
+									<li><a href="/emt/join/join"> 회원가입 </a></li>
 									<!-- 회원가입 -->
 								</c:when>
 								<c:otherwise>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">${sid }</a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="/emt/user/review/userReview?sid=${sid }">복습</a></li>
-									<li><a href="/emt/user/member/userMemberList?userId=${sid }">정보수정</a></li>
-									<li id="logout"><a>로그아웃</a></li>
-								</ul></li>
+									<li class="dropdown"><a href="#" class="dropdown-toggle"
+										data-toggle="dropdown">${sid }</a>
+										<ul class="dropdown-menu" role="menu">
+											<li><a href="/emt/user/review/userReview?sid=${sid }">복습</a></li>
+											<li><a
+												href="/emt/user/member/userMemberList?userId=${sid }">정보수정</a></li>
+											<li id="logout"><a>로그아웃</a></li>
+										</ul></li>
 									<!-- 회원가입 -->
 								</c:otherwise>
 							</c:choose>
@@ -124,8 +122,8 @@
 						<div class="box-body">
 							<div class="box-body">
 								<div id="carousel-example-generic" class="carousel slide"
-									data-ride="carousel" >
-									<ol class="carousel-indicators" style="float:right">
+									data-ride="carousel">
+									<ol class="carousel-indicators" style="float: right">
 										<li data-target="#carousel-example-generic" data-slide-to="0"
 											class="active"></li>
 										<li data-target="#carousel-example-generic" data-slide-to="1"
@@ -135,19 +133,18 @@
 									</ol>
 									<div class="carousel-inner">
 										<div class="item active">
-											<img src="<c:url value="/img/1.jpg"/>" alt="First slide" style="margin-left:auto; margin-right:auto;">
+											<img src="<c:url value="/img/1.jpg"/>" alt="First slide"
+												style="margin-left: auto; margin-right: auto;">
 											<div class="carousel-caption">First Slide</div>
 										</div>
 										<div class="item">
-											<img
-												src="<c:url value="/img/2.jpg"/>"
-												alt="Second slide" style="margin-left:auto; margin-right:auto;">
+											<img src="<c:url value="/img/2.jpg"/>" alt="Second slide"
+												style="margin-left: auto; margin-right: auto;">
 											<div class="carousel-caption">Second Slide</div>
 										</div>
 										<div class="item">
-											<img
-												src="<c:url value="/img/3.jpg"/>"
-												alt="Third slide" style="margin-left:auto; margin-right:auto;">
+											<img src="<c:url value="/img/3.jpg"/>" alt="Third slide"
+												style="margin-left: auto; margin-right: auto;">
 											<div class="carousel-caption">Third Slide</div>
 										</div>
 									</div>
@@ -183,9 +180,7 @@
 								</div>
 								<!-- /.box-header -->
 								<div class="box-body">
-									<div id="noticeView" class="table-responsive">
-
-									</div>
+									<div id="noticeView" class="table-responsive"></div>
 									<!-- /.table-responsive -->
 								</div>
 								<!-- /.box-body -->
@@ -208,10 +203,8 @@
 									</div>
 								</div>
 								<!-- /.box-header -->
-								<div  class="box-body">
-									<div id="boardView" class="table-responsive">
-										
-									</div>
+								<div class="box-body">
+									<div id="boardView" class="table-responsive"></div>
 									<!-- /.table-responsive -->
 								</div>
 								<!-- /.box-body -->
@@ -224,17 +217,17 @@
 				<!-- /.content -->
 			</div>
 			<!-- /.container -->
-		<!-- /.content-wrapper -->
-		<footer class="main-footer">
-			<div class="container">
-				<div class="pull-right hidden-xs">
-					<b>Version</b> 2.3.0
+			<!-- /.content-wrapper -->
+			<footer class="main-footer">
+				<div class="container">
+					<div class="pull-right hidden-xs">
+						<b>Version</b> 2.3.0
+					</div>
+					<strong>Copyright &copy; 2014-2015 <a
+						href="http://almsaeedstudio.com">Almsaeed Studio</a>.
+					</strong> All rights reserved.
 				</div>
-				<strong>Copyright &copy; 2014-2015 <a
-					href="http://almsaeedstudio.com">Almsaeed Studio</a>.
-				</strong> All rights reserved.
-			</div>
-		</footer>
+			</footer>
 		</div>
 	</div>
 	<!-- ./wrapper -->
@@ -252,8 +245,3 @@
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	<script src="<c:url value="/js/index/indexNotice.js"/>"></script>
 	<script src="<c:url value="/js/index/indexBoard.js"/>"></script>
-	
-	
-
-	
-	
