@@ -91,7 +91,7 @@
 			
 			if(count>=(pageCount-3)){
 				
-				boardList(prev+1);
+				noticeList(prev+1);
 				
 				$("#myPage").append("<li onclick='prevList("+prev+")'><a href='#'><<</a></li>");
 				
@@ -127,7 +127,7 @@
 			
 			if(count<=3){
 				
-				boardList(next+1);
+				noticeList(next+1);
 				
 				for(next; next<prev; next++){
 					
