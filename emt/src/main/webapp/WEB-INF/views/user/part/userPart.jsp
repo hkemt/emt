@@ -43,7 +43,7 @@
 			<nav class="navbar navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
-						<a href="../userMain.html" class="navbar-brand"><b>English</b>Mock
+						<a href="index" class="navbar-brand"><b>English</b>Mock
 							Test</a>
 						<button type="button" class="navbar-toggle collapsed"
 							data-toggle="collapse" data-target="#navbar-collapse">
@@ -56,8 +56,9 @@
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
 							<li><a href="userQuestion.html">토익스피킹 모의고사</a></li>
-							<li class="dropdown"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
-								>게시판<span class="caret"></span></a>
+							<li class="dropdown"><li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							게시판<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="notice">공지사항</a>
 									<li><a href="board">문제공유</a>
@@ -79,15 +80,6 @@
 					<!-- Navbar Right Menu -->
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
-
-							<c:choose>
-								<c:when test="${sessionScope.sid==null }">
-									<li><a href="/emt/login/login"> 로그인 </a></li>
-									<li><a href="/emt/join/join"> 회원가입 </a>
-									</li>
-									<!-- 회원가입 -->
-								</c:when>
-								<c:otherwise>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
@@ -95,10 +87,6 @@
 									<li><a href="userMemberList?userId=${sid }">정보수정</a></li>
 									<li id="logout"><a>로그아웃</a></li>
 								</ul></li>
-									<!-- 회원가입 -->
-								</c:otherwise>
-							</c:choose>
-
 						</ul>
 					</div>
 					<!-- /.navbar-custom-menu -->

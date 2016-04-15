@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Insert title here</title>
+<title>EMT-복습</title>
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
@@ -31,7 +31,7 @@
 			<nav class="navbar navbar-static-top">
 				<div class="container">
 					<div class="navbar-header">
-						<a href="../userMain.html" class="navbar-brand"><b>English</b>Mock
+						<a href="index" class="navbar-brand"><b>English</b>Mock
 							Test</a>
 						<button type="button" class="navbar-toggle collapsed"
 							data-toggle="collapse" data-target="#navbar-collapse">
@@ -43,9 +43,10 @@
 					<div class="collapse navbar-collapse pull-left"
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="userQuestion.html">토익스피킹 모의고사</a></li>
-							<li class="dropdown"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"
-								>게시판<span class="caret"></span></a>
+							<li><a href="#">토익스피킹 모의고사</a></li>
+							<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">게시판
+							<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="notice">공지사항</a>
 									<li><a href="board">문제공유</a>
@@ -54,12 +55,12 @@
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="partMove?no=1">Part1</a></li>
-									<li><a href="partMove?no=2">Part2</a></li>
-									<li><a href="partMove?no=3">Part3</a></li>
-									<li><a href="partMove?no=4">Part4</a></li>
-									<li><a href="partMove?no=5">Part5</a></li>
-									<li><a href="partMove?no=6">Part6</a></li>
+									<li><a href="part1">Part1</a></li>
+									<li><a href="part2">Part2</a></li>
+									<li><a href="part3">Part3</a></li>
+									<li><a href="part4">Part4</a></li>
+									<li><a href="part5">Part5</a></li>
+									<li><a href="part6">Part6</a></li>
 								</ul></li>
 						</ul>
 					</div>
