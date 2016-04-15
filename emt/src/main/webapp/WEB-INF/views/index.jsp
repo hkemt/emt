@@ -59,12 +59,12 @@
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="partMove?no=1">Part1</a></li>
-									<li><a href="partMove?no=2">Part2</a></li>
-									<li><a href="partMove?no=3">Part3</a></li>
-									<li><a href="partMove?no=4">Part4</a></li>
-									<li><a href="partMove?no=5">Part5</a></li>
-									<li><a href="partMove?no=6">Part6</a></li>
+									<li><a href="part1">Part1</a></li>
+									<li><a href="part2">Part2</a></li>
+									<li><a href="part3">Part3</a></li>
+									<li><a href="part4">Part4</a></li>
+									<li><a href="part5">Part5</a></li>
+									<li><a href="part6">Part6</a></li>
 								</ul></li>
 						</ul>
 					</div>

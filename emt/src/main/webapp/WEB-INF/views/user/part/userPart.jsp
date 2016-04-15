@@ -66,12 +66,12 @@
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="user/part1">Part1</a></li>
-									<li><a href="user/part2">Part2</a></li>
-									<li><a href="user/part3">Part3</a></li>
-									<li><a href="user/part4">Part4</a></li>
-									<li><a href="user/part5">Part5</a></li>
-									<li><a href="user/part6">Part6</a></li>
+									<li><a href="part1">Part1</a></li>
+									<li><a href="part2">Part2</a></li>
+									<li><a href="part3">Part3</a></li>
+									<li><a href="part4">Part4</a></li>
+									<li><a href="part5">Part5</a></li>
+									<li><a href="part6">Part6</a></li>
 								</ul></li>
 						</ul>
 					</div>
@@ -133,7 +133,7 @@
 							
 							
 					<!-- 이곳에 문제내용이 들어갑니다. -->
-                     <div style="width:500px; margin-left: auto; margin-right: auto; text-align: center">
+                     <div style="width:1000px; margin-left: auto; margin-right: auto; text-align: center">
 						
 						<c:set var="partQuestions" value="${partQuestion }"/>
 						<%
@@ -168,7 +168,7 @@
 						
 						<c:set var="file" value="<%=path+videoFile %>"/>
 						
-						<video onended="gogo()" id="videos" controls="controls" autoplay="autoplay" width="500px" height="500px">
+						<video onended="gogo()" id="videos" controls="controls" autoplay="autoplay" width="800px" height="800px">
 							<source src="<c:url value="/questions/${file }"/>" type="video/mp4"/>
 						</video>
 						
@@ -217,9 +217,10 @@
 		// 문제를 저장한다
 		alert("${part.questionType}");
 		var no = "${part.questionNo}";
-		var id = "${sid}";
+		var id = "${sessionScope.sid}";
+		var type = "${part.questionType}";
 		alert(no);
-		alert(userId);
+		alert(id);
 		$.ajax({
 			
 			url: "saveReview",
@@ -230,18 +231,20 @@
 			},
 			success : function(result){
 				if(result>0){
-					// 계속할지 묻는다
-					if(confirm("계속하시겠습니까?")){
-						
-						location.replace("part2?questionType=2");
-						
-					} else {
-						
-						location.replace("index");
-						
-					}
-					
+					alert("복습목록에 저장되었습니다");	
 				}
+				// 계속할지 묻는다
+				if(confirm("계속하시겠습니까?")){
+					
+					location.replace("part"+type);
+					
+				} else {
+					
+					location.replace("index");
+						
+				}
+					
+				
 			}
 		});
 	}

@@ -11,8 +11,19 @@
 	SELECT * FROM review WHERE user_id=#{userId} 
 	</select>
 	
-	
+	<!-- 문제를 푼 후 저장된 문제인지 확인 -->
+	<select id="reviewCheck" parameterType="emt.emt.common.domain.Review" resultMap="reviewMap">
+		
+		select * from review where user_id=#{userId} AND question_no=#{questionNo}
+		
+	</select> 
 
+	<!-- 문제를 푼후 저장 -->
+	<insert id="reviewInsert" parameterType="emt.emt.common.domain.Review">
+	
+		insert into review values(seq_review_no.nextval, #{userId}, #{questionNo})
+	
+	</insert>
 </mapper>
 
 

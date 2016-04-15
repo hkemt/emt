@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import emt.emt.common.domain.Review;
 import emt.emt.review.service.ReviewService;
@@ -33,6 +35,21 @@ public class ReviewController {
 		return "/user/review/userReview";
 		
 	}
+	
+	// 파트별 문제 풀었던 것 저장
+	@RequestMapping(value="saveReview", method=RequestMethod.POST)
+	@ResponseBody
+	public int saveRevuew(Review review){
+		
+		if(reviewService.reviewCheck(review)!=null){
+			
+			return 0;
+		}
+		else{
+			return reviewService.reviewInsert(review);
+		}
+	}
+	
 	
 	
 	//5_복습 상세보기

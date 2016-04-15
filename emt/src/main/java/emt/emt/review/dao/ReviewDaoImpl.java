@@ -41,4 +41,12 @@ public class ReviewDaoImpl implements ReviewDao{
 		return reviewMapper.reviewView(review);
 	}
 
+	@Override
+	public Review reviewCheck(Review review) {
+
+		return reviewMapper.reviewCheck(review);
+	}
+
+	
+
 }

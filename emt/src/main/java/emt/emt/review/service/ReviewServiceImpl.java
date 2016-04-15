@@ -42,4 +42,10 @@ public class ReviewServiceImpl implements ReviewService{
 		return reviewDao.reviewView(review);
 	}
 
+	@Override
+	public Review reviewCheck(Review review) {
+
+		return reviewDao.reviewCheck(review);
+	}
+
 }

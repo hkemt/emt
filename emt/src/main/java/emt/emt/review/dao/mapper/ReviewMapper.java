@@ -11,4 +11,6 @@ public interface ReviewMapper {
 	List<Review> reviewList(Review review);
 	Review reviewView(Review review);
 	
+	// 문제저장전 문제가 있는지 확인
+	Review reviewCheck(Review review);
 }
