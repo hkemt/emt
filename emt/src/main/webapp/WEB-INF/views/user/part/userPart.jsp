@@ -151,7 +151,7 @@
 						
 						<c:set var="file" value="<%=path+videoFile %>"/>
 						
-						<video onended="gogo()" id="videos" controls="controls" autoplay="autoplay" width="800px" height="800px">
+						<video onended="gogo()" width="700" height="500" id="videos" controls="controls" autoplay="autoplay" width="800px" height="800px">
 							<source src="<c:url value="/questions/${file }"/>" type="video/mp4"/>
 						</video>
 						
