@@ -165,7 +165,7 @@
 			<!-- /.container -->
 		</div>
 		<!-- /.content-wrapper -->
-		<footer class="main-footer">
+		<footer class="main-footer navbar-fixed-bottom">
 			<div class="container">
 				<div class="pull-right hidden-xs">
 					<b>Version</b> 2.3.0
