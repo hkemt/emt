@@ -165,6 +165,10 @@
 									onclick="location.replace('notice')" value="목록보기">
 									 
 							</div>
+							<!--댓글 시작  -->
+							<div id="replyView" class="table-responsive"></div>
+							<div id="replyPage" style="text-align: right"></div>	
+							<!--댓글 끝  -->
 
 							<!-- /.table-responsive -->
 						</div>
@@ -206,7 +210,8 @@
 	<script src="<c:url value="/js/logout.js"/>"></script>
 	<!-- 공지사항 상세보기 -->
 	<script type="text/javascript">var no = "${boardNo}"</script>
-	<script src="<c:url value="/js/board/noticeDetailView.js"/>"></script>
+	<script src="<c:url value="/js/notice/noticeDetailView.js"/>"></script>
+	<script src="<c:url value="/js/reply/replyList.js"/>"></script>
 	
 </body>
 </html>

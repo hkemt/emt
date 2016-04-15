@@ -23,5 +23,12 @@ function noticeDetailView() {
 $(document).ready(function() {
 	
 		noticeDetailView();
+		replyList(1);
+		replyPage();
 	
 });
+
+
+
+
+

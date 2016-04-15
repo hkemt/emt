@@ -31,15 +31,21 @@ public class ReplyDaoImpl implements ReplyDao{
 	}
 
 	@Override
-	public List<Reply> replyList() {
+	public List<Reply> replyList(int type) {
 		// TODO Auto-generated method stub
-		return replyMapper.replyList();
+		return replyMapper.replyList(type);
 	}
 
 	@Override
 	public Reply replyView(Reply reply) {
 		// TODO Auto-generated method stub
 		return replyMapper.replyView(reply);
+	}
+
+	@Override
+	public int replyCount() {
+		// TODO Auto-generated method stub
+		return replyMapper.replyCount();
 	}
 
 }

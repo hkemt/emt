@@ -31,15 +31,21 @@ public class ReplyServiceImpl implements ReplyService{
 	}
 
 	@Override
-	public List<Reply> replyList() {
+	public List<Reply> replyList(int type) {
 		// TODO Auto-generated method stub
-		return replyDao.replyList();
+		return replyDao.replyList(type);
 	}
 
 	@Override
 	public Reply replyView(Reply reply) {
 		// TODO Auto-generated method stub
 		return replyDao.replyView(reply);
+	}
+
+	@Override
+	public int replyCount() {
+		// TODO Auto-generated method stub
+		return replyDao.replyCount();
 	}
 
 }
