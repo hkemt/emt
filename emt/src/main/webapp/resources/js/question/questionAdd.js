@@ -25,4 +25,14 @@ $(function() {
 		// 위에 만든 함수를 실행함
 		readURL(this);
 	});
+	$("#add").click(function(){
+		var type=$("#questionType");
+		type.val($("input[type='radio'][name='_questionType']:checked").val());
+		if($("input[type='radio'][name='_questionType']:checked").val()==undefined){
+			alert("선택안함");
+			event.preventDefault();
+		} else{
+			
+		}
+	});
 });

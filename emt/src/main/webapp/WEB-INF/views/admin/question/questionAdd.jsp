@@ -72,16 +72,19 @@
 						</div> 
 						<!-- /.box-header -->
 						<div class="box-body">
-							<form enctype="multipart/form-data" method="post">
+							<form enctype="multipart/form-data" method="post" name="frm" id="frm">
 								<div class="table-responsive">
 									<table class="table no-margin">
 										<thead>
 											<tr>
 												<th>문제유형</th>
-												<td><input type="radio"> 1 &nbsp; <input
-													type="radio"> 2 &nbsp; <input type="radio">
-													3 &nbsp; <input type="radio"> 4 &nbsp; <input
-													type="radio"> 5 &nbsp; <input type="radio">
+												
+												<td>
+												<input type="hidden" name="questionType" id="questionType">
+												<input type="radio" name="_questionType" value="part1"> 1 &nbsp; <input
+													type="radio" name="_questionType" value="part2"> 2 &nbsp; <input type="radio" name="_questionType" value="part3">
+													3 &nbsp; <input type="radio" name="_questionType" value="part4"> 4 &nbsp; <input
+													type="radio" name="_questionType" value="part5"> 5 &nbsp; <input type="radio" name="_questionType" value="part6">
 													6 &nbsp;</td>
 											</tr>
 										</thead>

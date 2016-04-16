@@ -59,12 +59,13 @@ public class QuestionController {
 	}
 	
 	@RequestMapping(value="admin/question/questionAdd",method = RequestMethod.POST)
-	public String upload(MultipartFile uploadFile,HttpServletRequest request){
+	public String upload(MultipartFile uploadFile,String questionType,HttpServletRequest request){
+		System.out.println(questionType);
 		//String dir2 = request.getServletPath();
 		String dir = request.getServletContext().getRealPath(savePath);
 		System.out.println(dir);
 		String fileName = uploadFile.getOriginalFilename();
-		save(dir + "/" + fileName, uploadFile);
+		save(dir + "/" + questionType+"/"+ fileName, uploadFile);
 		return "admin/question/questionAdd";
 	}
 	
