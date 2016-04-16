@@ -99,18 +99,6 @@
 				<section class="content">
 					
 					<div class="box box-info">
-						<div class="box-header with-border">
-							<h3 class="box-title">Part</h3>
-							<div class="box-tools pull-right">
-								<button class="btn btn-box-tool" data-widget="collapse">
-									<i class="fa fa-minus"></i>
-								</button>
-								<button class="btn btn-box-tool" data-widget="remove">
-									<i class="fa fa-times"></i>
-								</button>
-							</div>
-						
-						</div>
 						<!-- /.box-header -->
 							<div class="box-body">
 							
@@ -168,7 +156,7 @@
 			<!-- /.container -->
 		</div>
 		<!-- /.content-wrapper -->
-		<footer class="main-footer">
+		<footer class="main-footer navbar-fixed-bottom">
 			<div class="container">
 				<div class="pull-right hidden-xs">
 					<b>Version</b> 2.3.0
