@@ -12,11 +12,21 @@
 					
 					$("#boardTable").append("<tbody>")
 					for(var i=0; i<result.length; i++){
-						$("#boardTable").append("<tr><td>"+result[i].boardNo
-												+"</td><td><a href='noticeDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle
-												+"</a></td><td>"+result[i].boardDate
-												+"</td><td>"+result[i].userId
-												+"</td><td>"+result[i].boardCount+"</td></tr>"); 
+						if(result[i].isFix=='T') {
+							$("#boardTable").append("<tr class='text-bold'><td>"
+									+"</td><td><a href='noticeDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle
+									+"</a></td><td>"+result[i].boardDate
+									+"</td><td>"
+									+"</td><td>"+result[i].boardCount+"</td></tr>"); 
+		
+						} else {
+							$("#boardTable").append("<tr><td>"+result[i].boardNo
+									+"</td><td><a href='noticeDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle
+									+"</a></td><td>"+result[i].boardDate
+									+"</td><td>"+result[i].userId
+									+"</td><td>"+result[i].boardCount+"</td></tr>"); 
+		
+						}
 					}
 					$("#boardTable").append("</tbody>");
 				}

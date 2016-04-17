@@ -1,52 +1,78 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="emt.emt.notice.dao.mapper.NoticeMapper">
-	<resultMap id="noticeMap" type="emt.emt.common.domain.Notice">
-	<!-- 	<result property="noticeNo" column="notice_no"/> -->
-		<result property="boardNo" column="board_no"/>
-
+<mapper namespace="emt.emt.board.dao.mapper.NoticeMapper">
+	<resultMap id="noticeMap" type="emt.emt.common.domain.NoticeBoard">
+		<result property="boardNo" column="board_no"/> 
+		<result property="boardTitle" column="board_title"/> 
+		<result property="boardContent" column="board_content"/> 
+		<result property="boardDate" column="board_date"/> 
+		<result property="boardCount" column="board_count"/> 
+		<result property="userId" column="user_id"/>
+		<result property="isFix" column="is_fix"/> 
 	</resultMap>
 	
-	<select id="noticeList" parameterType="int" resultMap="noticeMap">
+	<!-- 누르면 조회수 올리기 -->
+	<update id="hitPlus" parameterType="emt.emt.common.domain.NoticeBoard">
+			UPDATE noticeboard 
+			SET board_count = ( SELECT board_count 
+			   					FROM noticeboard
+			   					WHERE board_no=#{boardNo})+1
+			WHERE board_no=#{boardNo}
+	</update>
+	
+		<!-- 게시판상세보기 -->
+	<select id="boardView" parameterType="emt.emt.common.domain.NoticeBoard" resultMap="noticeMap">
+		
+		select *
+		from noticeboard
+		where board_no = #{boardNo}
+	
+	</select>
+	
+	<select id="boardList" parameterType="int" resultMap="noticeMap">
 		<![CDATA[
 		SELECT board_no boardNo, board_title boardTitle, board_content boardContent, board_date boardDate,
-			   board_count boardCount, user_id userId
+			   board_count boardCount, user_id userId, is_fix isFix
 		FROM (SELECT rownum AS rnum, M.* 
 			  FROM (
-			  		SELECT b.* 
-					FROM board b, notice n
-					WHERE b.board_no = n.board_no
-					ORDER BY board_date DESC
+			  		SELECT * 
+					FROM noticeboard 
+					ORDER BY is_fix DESC, board_date DESC
 			  		) M 
-			  WHERE rownum  < = 7*#{noticeCount})
-		WHERE rnum > 7*(#{noticeCount}-1)
+			  WHERE rownum  < = 7*#{type})
+		WHERE rnum > 7*(#{type}-1)
 		]]>
 	</select>
-
-	<select id="noticeCount" resultType="int">
-		<![CDATA[
+	
+	<select id="boardCount" resultType="int">
+	<![CDATA[
 		SELECT COUNT(*) 
-		FROM notice
-		]]>		
+		FROM noticeboard
+	]]>	
 	</select>
 	
-	<!-- 인덱스 최근공지사항 목록  -->
-	<select id="indexNoticeList" parameterType="int" resultMap="noticeMap">
+	
+	<!-- 인덱스 최근 게시판 목록  -->
+		<select id="indexBoardList" parameterType="int" resultMap="noticeMap">
 		<![CDATA[
 		SELECT board_no boardNo, board_title boardTitle, board_content boardContent, board_date boardDate,
 			   board_count boardCount, user_id userId
 		FROM (SELECT rownum AS rnum, M.* 
 			  FROM (
-			  		SELECT b.* 
-					FROM board b, notice n
-					WHERE b.board_no = n.board_no
+			  		SELECT * 
+					FROM noticeboard 
 					ORDER BY board_date DESC
 			  		) M 
-			  WHERE rownum  < = 4*#{noticeCount})
-		WHERE rnum > 4*(#{noticeCount}-1)
+			  WHERE rownum  < = 4*#{type})
+		WHERE rnum > 4*(#{type}-1)
 		]]>
 	</select>
 	
 	
-
+	
 </mapper>
+
+
+
+
+

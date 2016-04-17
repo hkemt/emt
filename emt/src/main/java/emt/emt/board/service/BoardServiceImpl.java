@@ -6,26 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import emt.emt.board.dao.BoardDao;
-import emt.emt.common.domain.Board;
+import emt.emt.common.domain.FreeBoard;
 
 @Service
 public class BoardServiceImpl implements BoardService{
 	@Autowired private BoardDao boardDao;
 
 	@Override
-	public List<Board> noticeList(int type) {
-
-		return boardDao.noticeList(type);
-	}
-
-	@Override
-	public int noticeCount() {
-		
-		return boardDao.noticeCount();
-	}
-
-	@Override
-	public List<Board> boardList(int type) {
+	public List<FreeBoard> boardList(int type) {
 
 		return boardDao.boardList(type);
 	}
@@ -37,37 +25,37 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public int boardInsert(Board board) {
+	public int boardInsert(FreeBoard board) {
 
 		return boardDao.boardInsert(board);
 	}
 
 	@Override
-	public int boardUpdate(Board board) {
+	public int boardUpdate(FreeBoard board) {
 		
 		return boardDao.boardUpdate(board);
 	}
 
 	@Override
-	public int boardDelete(Board board) {
+	public int boardDelete(FreeBoard board) {
 		
 		return boardDao.boardDelete(board);
 	}
 
 	@Override
-	public Board boardView(Board board) {
+	public FreeBoard boardView(FreeBoard board) {
 		
 		return boardDao.boardView(board);
 	}
 
 	@Override
-	public int hitPlus(Board board) {
+	public int hitPlus(FreeBoard board) {
 		
 		return boardDao.hitPlus(board);
 	}
 
 	@Override
-	public List<Board> indexBoardList(int type) {
+	public List<FreeBoard> indexBoardList(int type) {
 		// TODO Auto-generated method stub
 		return boardDao.indexBoardList(type);
 	}

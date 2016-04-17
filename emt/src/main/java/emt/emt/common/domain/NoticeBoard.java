@@ -2,7 +2,7 @@ package emt.emt.common.domain;
 
 import java.sql.Date;
 
-public class Notice {
+public class NoticeBoard {
 
 	/*
   	BOARD_NO		NUMBER
@@ -11,6 +11,7 @@ public class Notice {
 	USER_ID			VARCHAR2(20 BYTE)
 	BOARD_DATE		DATE
 	BOARD_COUNT		NUMBER
+	IS_FIX			CHAR(1)
 
 */
 	
@@ -20,6 +21,7 @@ public class Notice {
 	private String userId;
 	private Date boardDate;
 	private int boardCount;
+	private String isFix;
 
 		
 	public int getBoardNo() {
@@ -57,6 +59,12 @@ public class Notice {
 	}
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+	public String getIsFix() {
+		return isFix;
+	}
+	public void setIsFix(String isFix) {
+		this.isFix = isFix;
 	}
 	
 	

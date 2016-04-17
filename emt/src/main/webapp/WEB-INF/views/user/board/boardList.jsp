@@ -51,7 +51,7 @@
 								>게시판<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="/emt/notice">공지사항</a>
-									<li><a href="/emt/board">문제공유</a>
+									<li><a href="/emt/board">자유게시판</a>
 								</ul>
 							</li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -97,7 +97,7 @@
 
 						<div class="box box-info">
 							<div class="box-header with-border">
-								<h3 class="box-title">게시판</h3>
+								<h3 class="box-title">자유게시판</h3>
 								<div class="box-tools pull-right">
 									<button class="btn btn-box-tool" data-widget="collapse">
 										<i class="fa fa-minus"></i>
