@@ -104,7 +104,7 @@
 							
 							
 					<!-- 이곳에 문제내용이 들어갑니다. -->
-                     <div style="width:1000px;viligin-align:top; margin-left: auto; margin-right: auto; text-align: center">
+                     <div style="width:1000px;margin-left: auto; margin-right: auto; text-align: center">
 						
 						<c:set var="partQuestions" value="${partQuestion }"/>
 						<%
@@ -139,8 +139,8 @@
 						
 						<c:set var="file" value="<%=path+videoFile %>"/>
 						
-						<video onended="gogo()" width="700" height="500" id="videos" controls="controls" autoplay="autoplay" width="800px" height="800px">
-							<source src="<c:url value="/questions/${file }"/>" type="video/mp4"/>
+						<video onended="gogo()" width="700" height="500" id="videos" controls="controls"
+						src="<c:url value="/questions/${file }"/>" autoplay="autoplay" width="800px" height="800px">
 						</video>
 						
 						
@@ -186,12 +186,10 @@
 	function gogo(){
 			
 		// 문제를 저장한다
-		alert("${part.questionType}");
 		var no = "${part.questionNo}";
 		var id = "${sessionScope.sid}";
 		var type = "${part.questionType}";
-		alert(no);
-		alert(id);
+	
 		$.ajax({
 			
 			url: "saveReview",
