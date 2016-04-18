@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import emt.emt.common.domain.Question;
 import emt.emt.common.domain.Review;
 import emt.emt.review.service.ReviewService;
 
@@ -51,7 +52,20 @@ public class ReviewController {
 	}
 	
 	
-	
+	@RequestMapping("user/review/questionReview")
+	public String questionReview(HttpServletRequest req, Model model, Question question){
+		int questionNo= Integer.parseInt(req.getParameter("questionNo"));
+		question=reviewService.questionReview(questionNo);
+		int questionType=question.getQuestionType();
+		String questionVideo=question.getQuestionVideo();
+		
+		model.addAttribute("questionType", questionType);
+		model.addAttribute("questionVideo", questionVideo);
+		model.addAttribute("questionNo", questionNo);
+		System.out.println(questionType);
+		System.out.println(questionVideo);
+		return "user/review/questionReview";
+	}
 	//5_복습 상세보기
 	
 	

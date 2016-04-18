@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import emt.emt.common.domain.Question;
 import emt.emt.common.domain.Review;
 import emt.emt.review.dao.mapper.ReviewMapper;
 
@@ -45,6 +46,12 @@ public class ReviewDaoImpl implements ReviewDao{
 	public Review reviewCheck(Review review) {
 
 		return reviewMapper.reviewCheck(review);
+	}
+
+	@Override
+	public Question questionReview(int questionNo) {
+		// TODO Auto-generated method stub
+		return reviewMapper.questionReview(questionNo);
 	}
 
 	

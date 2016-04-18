@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import emt.emt.common.domain.Question;
 import emt.emt.common.domain.Review;
 import emt.emt.review.dao.ReviewDao;
 
@@ -46,6 +47,12 @@ public class ReviewServiceImpl implements ReviewService{
 	public Review reviewCheck(Review review) {
 
 		return reviewDao.reviewCheck(review);
+	}
+
+	@Override
+	public Question questionReview(int questionNo) {
+		// TODO Auto-generated method stub
+		return reviewDao.questionReview(questionNo);
 	}
 
 }

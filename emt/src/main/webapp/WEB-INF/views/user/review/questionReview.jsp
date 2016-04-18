@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="java.util.List, emt.emt.common.domain.Question" %>
 
-<title>Insert title here</title>
+<title>EMT - 파트별문제</title>
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <!-- Font Awesome -->
@@ -17,7 +18,6 @@
          folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 </head>
 <body class="hold-transition skin-blue layout-top-nav">
@@ -62,13 +62,26 @@
 					<!-- Navbar Right Menu -->
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
+
+							<c:choose>
+								<c:when test="${sessionScope.sid==null }">
+									<li><a href="/emt/login/login"> 로그인 </a></li>
+									<li><a href="/emt/join/join"> 회원가입 </a>
+									</li>
+									<!-- 회원가입 -->
+								</c:when>
+								<c:otherwise>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="/emt/user/review/userReview?sid=${sid}">복습</a></li>
-									<li><a href="/emt/user/member/userMemberList?userId=${sid}">정보수정</a></li>
+									<li><a href="/emt/user/review/userReview?sid=${sid }">복습</a></li>
+									<li><a href="/emt/user/member/userMemberList?userId=${sid }">정보수정</a></li>
 									<li id="logout"><a>로그아웃</a></li>
 								</ul></li>
+									<!-- 회원가입 -->
+								</c:otherwise>
+							</c:choose>
+
 						</ul>
 					</div>
 					<!-- /.navbar-custom-menu -->
@@ -84,66 +97,74 @@
 
 				<!-- Main content -->
 				<section class="content">
-
-					<div class="box box-info" style="margin-top: 50px;">
-						<div class="box-header with-border">
-							<h3 class="box-title">복습코너</h3>
-							<div class="box-tools pull-right">
-								<button class="btn btn-box-tool" data-widget="collapse">
-									<i class="fa fa-minus"></i>
-								</button>
-								<button class="btn btn-box-tool" data-widget="remove">
-									<i class="fa fa-times"></i>
-								</button>
-							</div>
-						</div>
+					
+					<div class="box box-info">
 						<!-- /.box-header -->
-						<div class="box-body">
-							<div class="table-responsive">
-								<table class="table no-margin">
-									<thead>
-										<tr>
-											<th>복습번호</th>
-											<th>문제유형</th>
-											<th>아이디</th>
-											<th>다시보기</th>
-										</tr>
-									</thead>
-									<tbody>
-										<c:forEach var="review" items="${review }">
-											<tr>
-												
-												<td><a href="#">${review.reviewNo }</a></td>
-												<td><span class="label label-success">${review.questionNo }</span></td>
-												<td>${review.userId }</td>
-												<td><a href="questionReview?questionNo=${review.questionNo }">다시보기</a></td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-							</div>
+							<div class="box-body">
+							
+							
+					<!-- 이곳에 문제내용이 들어갑니다. -->
+                     <div style="width:1000px;viligin-align:top; margin-left: auto; margin-right: auto; text-align: center">
+						
+						<c:set var="questionType" value="${questionType }"/>
+						<%
+						// 문제유형
+							int type=(Integer)request.getAttribute("questionType");
+							
+							
+							
+							// 파일 경로
+							String path="";
+							
+							switch (type)
+							{
+							case 1 : path="part1/"; break;
+							case 2 : path="part2/"; break;
+							case 3 : path="part3/"; break;
+							case 4 : path="part4/"; break;
+							case 5 : path="part5/"; break;
+							case 6 : path="part6/"; break;
+							}
+							
+							// 파일 이름
+							String videoFile = (String)request.getAttribute("questionVideo");
+						%>
+						<!-- 파일 경로와 유형을 jstl로 -->
+						
+						
+						<c:set var="file" value="<%=path+videoFile %>"/>
+						
+						<video onended="gogo()" width="700" height="500" id="videos" controls="controls" autoplay="autoplay" width="800px" height="800px">
+							<source src="<c:url value="/questions/${file }"/>" type="video/mp4"/>
+						</video>
+						
+						
+                     </div>	<!-- /.box-body -->
 							<!-- /.table-responsive -->
-						</div>
-						<!-- /.box-body -->
+					
+					</div>
+				</div>
+				
 				</section>
 				<!-- /.content -->
 			</div>
 			<!-- /.container -->
-			<!-- /.content-wrapper -->
-			<footer class="main-footer">
-				<div class="container">
-					<div class="pull-right hidden-xs">
-						<b>Version</b> 2.3.0
-					</div>
-					<strong>Copyright &copy; 2014-2015 <a
-						href="http://almsaeedstudio.com">Almsaeed Studio</a>.
-					</strong> All rights reserved.
-				</div>
-			</footer>
 		</div>
+		<!-- /.content-wrapper -->
+		<footer class="main-footer navbar-fixed-bottom">
+			<div class="container">
+				<div class="pull-right hidden-xs">
+					<b>Version</b> 2.3.0
+				</div>
+				<strong>Copyright &copy; 2014-2015 <a
+					href="http://almsaeedstudio.com">Almsaeed Studio</a>.
+				</strong> All rights reserved.
+			</div>
+			<!-- /.container -->
+		</footer>
 	</div>
 	<!-- ./wrapper -->
-	
+
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
 	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
@@ -155,3 +176,47 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
+	
+	<script type="text/javascript">
+	function gogo(){
+			
+		// 문제를 저장한다
+		alert("${part.questionType}");
+		var no = "${part.questionNo}";
+		var id = "${sessionScope.sid}";
+		var type = "${part.questionType}";
+		alert(no);
+		alert(id);
+		$.ajax({
+			
+			url: "saveReview",
+			method : "POST",
+			data : {
+				questionNo : no,
+				userId : id
+			},
+			success : function(result){
+				if(result>0){
+					alert("복습목록에 저장되었습니다");	
+				}
+				// 계속할지 묻는다
+				if(confirm("계속하시겠습니까?")){
+					
+					location.replace("part"+type);
+					
+				} else {
+					
+					location.replace("/emt/index");
+						
+				}
+					
+				
+			}
+		});
+	}
+	</script>
+	
+	<!-- 로그아웃 -->
+	<script src="<c:url value="/js/logout.js"/>"></script>
+</body>
+</html>
