@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import emt.emt.common.domain.Question;
 import emt.emt.common.domain.Review;
 import emt.emt.review.service.ReviewService;
 
