@@ -12,5 +12,3 @@
 		   maxActive="2" 
 		   minIdle="2"/>	   
 </Context>
-
-<!-- url="jdbc:oracle:thin:@192.168.4.128:1521:xe"  -->
