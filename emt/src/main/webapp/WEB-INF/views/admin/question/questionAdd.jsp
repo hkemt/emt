@@ -39,7 +39,7 @@
 							<li><a href="adminQuestion">문제관리</a></li>
 							<li><a href="adminBoard">게시판관리</a></li>
 							<li><a href="adminNotice">공지관리</a></li>
-							
+
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
@@ -67,31 +67,36 @@
 				<!-- Main content -->
 				<section class="content">
 					<div class="box box-info">
-				<div class="box-header with-border">
+						<div class="box-header with-border">
 							<h3 class="box-title">문제추가</h3>
-						</div> 
+						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<form enctype="multipart/form-data" method="post" name="frm" id="frm">
+							<form enctype="multipart/form-data" method="post" name="frm"
+								id="frm">
 								<div class="table-responsive">
 									<table class="table no-margin">
 										<thead>
 											<tr>
 												<th>문제유형</th>
-												
-												<td>
-												<input type="hidden" name="questionType" id="questionType">
-												<input type="radio" name="_questionType" value="part1"> 1 &nbsp; <input
-													type="radio" name="_questionType" value="part2"> 2 &nbsp; <input type="radio" name="_questionType" value="part3">
-													3 &nbsp; <input type="radio" name="_questionType" value="part4"> 4 &nbsp; <input
-													type="radio" name="_questionType" value="part5"> 5 &nbsp; <input type="radio" name="_questionType" value="part6">
-													6 &nbsp;</td>
+
+												<td><input type="hidden" name="questionType"
+													id="questionType"> <input type="radio"
+													name="_questionType" value="part1"> 1 &nbsp; <input
+													type="radio" name="_questionType" value="part2"> 2
+													&nbsp; <input type="radio" name="_questionType"
+													value="part3"> 3 &nbsp; <input type="radio"
+													name="_questionType" value="part4"> 4 &nbsp; <input
+													type="radio" name="_questionType" value="part5"> 5
+													&nbsp; <input type="radio" name="_questionType"
+													value="part6"> 6 &nbsp;</td>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
 												<th>동영상 파일</th>
-												<td><input type="file" name="uploadFile" id="uploadFile" placeholder="동영상 파일"></td>
+												<td><input type="file" name="uploadFile"
+													id="uploadFile" placeholder="동영상 파일"></td>
 											</tr>
 
 											<tr>
@@ -103,9 +108,9 @@
 									</table>
 								</div>
 								<div style="text-align: right;">
-									<input type="submit" id="add" class="btn btn-default" value="등록">
-
-									<input type="button" class="btn btn-default"
+									<input type="submit" id="add" class="btn btn-default"
+										value="등록"> <input type="button"
+										class="btn btn-default"
 										onclick="location.href='adminQuestionList.html'" value="돌아가기">
 
 								</div>
@@ -119,16 +124,15 @@
 			<!-- /.container -->
 		</div>
 		<!-- /.content-wrapper -->
-		<footer class="main-footer">
+		<footer class="main-footer navbar-fixed-bottom">
 			<div class="container">
 				<div class="pull-right hidden-xs">
-					<b>Version</b> 2.3.0
+					<b>Version</b> 1.0.0
 				</div>
-				<strong>Copyright &copy; 2014-2015 <a
-					href="http://almsaeedstudio.com">Almsaeed Studio</a>.
+				<strong>Copyright &copy; 2016 <a href="/emt/index">English
+						Mock Test</a>
 				</strong> All rights reserved.
 			</div>
-			<!-- /.container -->
 		</footer>
 	</div>
 	<!-- ./wrapper -->

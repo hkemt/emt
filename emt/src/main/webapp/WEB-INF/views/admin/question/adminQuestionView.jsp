@@ -45,7 +45,7 @@
 							<li><a href="adminQuestion">문제관리</a></li>
 							<li><a href="adminBoard">게시판관리</a></li>
 							<li><a href="adminNotice">공지관리</a></li>
-							
+
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
@@ -72,7 +72,7 @@
 
 				<!-- Main content -->
 				<section class="content">
-					
+
 					<div class="box box-info">
 						<div class="box-header with-border">
 							<h3 class="box-title">문제관리 상세보기</h3>
@@ -89,17 +89,19 @@
 						<div class="box-body">
 							<div class="table-responsive">
 
-								
-								
+
+
 								<table class="table no-margin">
 									<thead>
 										<tr>
 											<td><b>문제번호</b></td>
-											<td><div>${question.questionNo }</div> </td>
+											<td><div>${question.questionNo }</div></td>
 										</tr>
 										<tr>
 											<td><b>문제유형</b></td>
-											<td><div><span class="label label-success">${question.questionType }</span></div></td>
+											<td><div>
+													<span class="label label-success">${question.questionType }</span>
+												</div></td>
 										</tr>
 										<tr>
 											<td><b>경로</b></td>
@@ -110,43 +112,44 @@
 
 									</tbody>
 								</table>
-								
-								
-								
-								
-								
-								
+
+
+
+
+
+
 							</div>
-							<input class="btn btn-default" type="button" onclick="location.href='adminQuestion'" style="float: right" value="돌아가기"> 
+							<input class="btn btn-default" type="button"
+								onclick="location.href='adminQuestion'" style="float: right"
+								value="돌아가기">
 
 							<!-- /.table-responsive -->
 						</div>
 						<!-- /.box-body -->
-						</div>					
-					
-					
+					</div>
 
 
-					
-		
-					
-					
+
+
+
+
+
+
 				</section>
 				<!-- /.content -->
 			</div>
 			<!-- /.container -->
 		</div>
 		<!-- /.content-wrapper -->
-		<footer class="main-footer">
+		<footer class="main-footer navbar-fixed-bottom">
 			<div class="container">
 				<div class="pull-right hidden-xs">
-					<b>Version</b> 2.3.0
+					<b>Version</b> 1.0.0
 				</div>
-				<strong>Copyright &copy; 2014-2015 <a
-					href="http://almsaeedstudio.com">Almsaeed Studio</a>.
+				<strong>Copyright &copy; 2016 <a href="/emt/index">English
+						Mock Test</a>
 				</strong> All rights reserved.
 			</div>
-			<!-- /.container -->
 		</footer>
 	</div>
 	<!-- ./wrapper -->

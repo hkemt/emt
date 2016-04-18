@@ -86,7 +86,7 @@
 								</button>
 							</div>
 						</div>
-					
+
 						<!-- /.box-header -->
 						<div class="box-body">
 							<div class="table-responsive">
@@ -119,9 +119,9 @@
 										</c:forEach>
 									</tbody>
 								</table>
-								
-								
-								
+
+
+
 							</div>
 							<input type="button"
 								onclick="location.href='adminBoardList.html'"
@@ -131,27 +131,26 @@
 							<!-- /.table-responsive -->
 						</div>
 						<!-- /.box-body -->
-						</div>
+					</div>
 				</section>
 				<!-- /.content -->
 			</div>
 			<!-- /.container -->
 		</div>
 		<!-- /.content-wrapper -->
-		<footer class="main-footer">
+		<footer class="main-footer navbar-fixed-bottom">
 			<div class="container">
 				<div class="pull-right hidden-xs">
-					<b>Version</b> 2.3.0
+					<b>Version</b> 1.0.0
 				</div>
-				<strong>Copyright &copy; 2014-2015 <a
-					href="http://almsaeedstudio.com">Almsaeed Studio</a>.
+				<strong>Copyright &copy; 2016 <a href="/emt/index">English
+						Mock Test</a>
 				</strong> All rights reserved.
 			</div>
-			<!-- /.container -->
 		</footer>
 	</div>
 	<!-- ./wrapper -->
-	
+
 
 
 

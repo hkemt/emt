@@ -130,13 +130,13 @@
 			</div>
 			<!-- /.container -->
 			<!-- /.content-wrapper -->
-			<footer class="main-footer">
+			<footer class="main-footer navbar-fixed-bottom">
 				<div class="container">
 					<div class="pull-right hidden-xs">
-						<b>Version</b> 2.3.0
+						<b>Version</b> 1.0.0
 					</div>
-					<strong>Copyright &copy; 2014-2015 <a
-						href="http://almsaeedstudio.com">Almsaeed Studio</a>.
+					<strong>Copyright &copy; 2016 <a
+						href="/emt/index">English Mock Test</a>
 					</strong> All rights reserved.
 				</div>
 			</footer>
