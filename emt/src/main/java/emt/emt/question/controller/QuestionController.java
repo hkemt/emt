@@ -20,56 +20,64 @@ import emt.emt.question.service.QuestionService;
 
 @Controller
 public class QuestionController {
-	@Value("${savePath}") private String savePath;
-	@Autowired private QuestionService questionService;
-	
-	//2_1 문제관리 페이지 이동
+	@Value("${savePath}")
+	private String savePath;
+	@Autowired
+	private QuestionService questionService;
+
+	// 2_1 문제관리 페이지 이동
 	@RequestMapping("adminQuestion")
-	public String adminQuestion(Model model){
+	public String adminQuestion(Model model) {
 		return "admin/question/adminQuestion";
 	}
-	
-	//2_2 문제관리 전체목록
+
+	// 2_2 문제관리 전체목록
 	@RequestMapping("questionList")
 	@ResponseBody
-	public List<Question> questionList(int type){
-		
+	public List<Question> questionList(int type) {
+
 		return questionService.questionList(type);
 	}
-	
-	//2_3 문제관리 전체목록 수
+
+	// 2_3 문제관리 전체목록 수
 	@RequestMapping("questionCount")
 	@ResponseBody
-	public int questionCount(){
+	public int questionCount() {
 		return questionService.questionCount();
 	}
-	
-	//2_4 문제관리 상세보기
+
+	// 2_4 문제관리 상세보기
 	@RequestMapping("questionView")
-	public String questionView(Question question, Model model){
+	public String questionView(Question question, Model model) {
 		question = questionService.questionView(question);
 		model.addAttribute("question", question);
-		
+
 		return "admin/question/adminQuestionView";
 	}
-	
+
 	@RequestMapping("admin/question/questionAdd")
-	public String questionAdd(){
+	public String questionAdd() {
 		return "admin/question/questionAdd";
 	}
-	
-	@RequestMapping(value="admin/question/questionAdd",method = RequestMethod.POST)
-	public String upload(MultipartFile uploadFile,String questionType,HttpServletRequest request){
+
+	@RequestMapping(value = "admin/question/questionAdd", method = RequestMethod.POST)
+	public String upload(MultipartFile uploadFile, String questionType,
+			HttpServletRequest request) {
 		System.out.println(questionType);
-		//String dir2 = request.getServletPath();
+		// String dir2 = request.getServletPath();
 		String dir = request.getServletContext().getRealPath(savePath);
 		System.out.println(dir);
 		String fileName = uploadFile.getOriginalFilename();
-		save(dir + "/" + questionType+"/"+ fileName, uploadFile);
+		save(dir + "/" + questionType + "/" + fileName, uploadFile);
+
+		Question question = new Question();
+		question.setQuestionType(partType(questionType));
+		question.setQuestionVideo(fileName);
+		questionService.questionInsert(question);
 		return "admin/question/questionAdd";
 	}
-	
-	private void save(String fullFileName, MultipartFile uploadFile){
+
+	private void save(String fullFileName, MultipartFile uploadFile) {
 		try {
 			uploadFile.transferTo(new File(fullFileName));
 		} catch (IllegalStateException e) {
@@ -78,5 +86,24 @@ public class QuestionController {
 			e.printStackTrace();
 		}
 	}
-	
+
+	private int partType(String questionType) {
+		switch (questionType) {
+		case "part1":
+			return 1;
+		case "part2":
+			return 2;
+		case "part3":
+			return 3;
+		case "part4":
+			return 4;
+		case "part5":
+			return 5;
+		case "part6":
+			return 6;
+		default:
+			return 1;
+		}
+	}
+
 }

@@ -34,9 +34,7 @@
 		from question
 		where question_no=#{questionNo}
 	</select>
-	
-	
-	
-	
-
+	<insert id="questionInsert">
+		INSERT INTO QUESTION values(seq_question_no.nextval, #{questionType}, #{questionVideo})
+	</insert>	
 </mapper>

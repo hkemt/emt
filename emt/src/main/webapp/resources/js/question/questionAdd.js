@@ -1,3 +1,7 @@
+var file=false;
+function fileCheck(){
+	file = true;
+}
 $(function() {
 	function readURL(input) {
 		if (input.files && input.files[0]) {
@@ -25,6 +29,9 @@ $(function() {
 		// 위에 만든 함수를 실행함
 		readURL(this);
 	});
+	$("#uploadFile").change(function(){
+		fileCheck();
+	});
 	$("#add").click(function(){
 		var type=$("#questionType");
 		type.val($("input[type='radio'][name='_questionType']:checked").val());
@@ -32,8 +39,8 @@ $(function() {
 			alert("파트를 선택해주십시오.");
 			event.preventDefault();
 		}
-		if($("#uploadfile").val()==undefined){
-			alert("파일을 선택해주십시오.")
+		if(file==false){
+			alert("파일을 선택해주십시오.");
 			event.preventDefault();
 		}
 	});
