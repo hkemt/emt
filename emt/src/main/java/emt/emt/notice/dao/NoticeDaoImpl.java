@@ -5,58 +5,53 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import emt.emt.common.domain.NoticeBoard;
+import emt.emt.common.domain.Notice;
 import emt.emt.notice.dao.mapper.NoticeMapper;
 
 @Repository
 public class NoticeDaoImpl implements NoticeDao{
 	@Autowired private NoticeMapper noticeMapper;
-	@Override
-	public List<NoticeBoard> boardList(int type) {
-
-		return noticeMapper.boardList(type);
-	}
 
 	@Override
-	public int boardCount() {
-
-		return noticeMapper.boardCount();
-	}
-
-	@Override
-	public int boardInsert(NoticeBoard board) {
-
-		return noticeMapper.boardInsert(board);
-	}
-
-	@Override
-	public int boardUpdate(NoticeBoard board) {
-
-		return noticeMapper.boardUpdate(board);
-	}
-
-	@Override
-	public int boardDelete(NoticeBoard board) {
-	
-		return noticeMapper.boardDelete(board);
-	}
-
-	@Override
-	public NoticeBoard boardView(NoticeBoard board) {
-
-		return noticeMapper.boardView(board);
-	}
-
-	@Override
-	public int hitPlus(NoticeBoard board) {
-
-		return noticeMapper.hitPlus(board);
-	}
-
-	@Override
-	public List<NoticeBoard> indexBoardList(int type) {
+	public int noticeInsert(Notice notice) {
 		// TODO Auto-generated method stub
-		return noticeMapper.indexBoardList(type);
+		return noticeMapper.noticeInsert(notice);
 	}
 
+	@Override
+	public int noticeUpdate(Notice notice) {
+		// TODO Auto-generated method stub
+		return noticeMapper.noticeUpdate(notice);
+	}
+
+	@Override
+	public int noticeDelete(Notice notice) {
+		// TODO Auto-generated method stub
+		return noticeMapper.noticeDelete(notice);
+	}
+
+	@Override
+	public List<Notice> noticeList(int page) {
+		// TODO Auto-generated method stub
+		return noticeMapper.noticeList(page);
+	}
+
+	@Override
+	public Notice noticeView(Notice notice) {
+		// TODO Auto-generated method stub
+		return noticeMapper.noticeView(notice);
+	}
+
+	@Override
+	public int noticeCount() {
+		// TODO Auto-generated method stub
+		return noticeMapper.noticeCount();
+	}
+
+	@Override
+	public List<Notice> indexNoticeList(int page) {
+		// TODO Auto-generated method stub
+		return noticeMapper.indexNoticeList(page);
+	}
+	
 }

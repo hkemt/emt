@@ -4,12 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import emt.emt.board.service.BoardService;
-import emt.emt.common.domain.FreeBoard;
+import emt.emt.common.domain.Board;
 
 @Controller
 public class BoardController {
@@ -26,7 +27,7 @@ public class BoardController {
 	//1_2 게시판 불러오기
 	@RequestMapping(value="boardList", method=RequestMethod.POST)
 	@ResponseBody
-	public List<FreeBoard> boardList(int type){
+	public List<Board> boardList(int type){
 		// 페이지 숫자를 받아서 해당 데이터 가져옴
 		return boardService.boardList(type);
 	}
@@ -42,7 +43,7 @@ public class BoardController {
 	//3_1 인덱스 최근 게시판목록
 	@RequestMapping(value="indexBoardList")
 	@ResponseBody
-	public List<FreeBoard> indexBoardList(int type){
+	public List<Board> indexBoardList(int type){
 		// 페이지 숫자를 받아서 해당 데이터 가져옴
 		return boardService.indexBoardList(type);
 	}

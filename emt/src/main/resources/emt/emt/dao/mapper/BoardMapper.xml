@@ -1,30 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="emt.emt.board.dao.mapper.BoardMapper">
-	<resultMap id="boardMap" type="emt.emt.common.domain.FreeBoard">
+	<resultMap id="boardMap" type="emt.emt.common.domain.Board">
 		<result property="boardNo" column="board_no"/> 
 		<result property="boardTitle" column="board_title"/> 
 		<result property="boardContent" column="board_content"/> 
 		<result property="boardDate" column="board_date"/> 
 		<result property="boardCount" column="board_count"/> 
-		<result property="userId" column="user_id"/>
-		<result property="isFix" column="is_fix"/> 
+		<result property="userId" column="user_id"/> 
 	</resultMap>
 	
+<!-- 공지사항을 가져오는 쿼리 -->
+	<select id="noticeList" parameterType="int" resultMap="boardMap">
+		<![CDATA[
+		SELECT board_no boardNo, board_title boardTitle, board_content boardContent, board_date boardDate,
+			   board_count boardCount, user_id userId
+		FROM (SELECT rownum AS rnum, M.* 
+			  FROM (
+			  		SELECT b.* 
+					FROM board b, notice n
+					WHERE b.board_no = n.board_no
+					ORDER BY board_date DESC
+			  		) M 
+			  WHERE rownum  < = 7*#{type})
+		WHERE rnum > 7*(#{type}-1)
+		]]>
+	</select>
+	
+	<!-- 공지사항 총 갯수를 가져오는 쿼리 -->
+	<select id="noticeCount" resultType="int">
+	<![CDATA[
+		SELECT COUNT(*) 
+		FROM board b, notice n
+		WHERE b.board_no = n.board_no
+	]]>	
+	</select>
+	
 	<!-- 누르면 조회수 올리기 -->
-	<update id="hitPlus" parameterType="emt.emt.common.domain.FreeBoard">
-			UPDATE freeboard 
+	<update id="hitPlus" parameterType="emt.emt.common.domain.Board">
+			UPDATE board 
 			SET board_count = ( SELECT board_count 
-			   					FROM freeboard
+			   					FROM board
 			   					WHERE board_no=#{boardNo})+1
 			WHERE board_no=#{boardNo}
 	</update>
 	
 		<!-- 게시판상세보기 -->
-	<select id="boardView" parameterType="emt.emt.common.domain.FreeBoard" resultMap="boardMap">
+	<select id="boardView" parameterType="emt.emt.common.domain.Board" resultMap="boardMap">
 		
 		select *
-		from freeboard
+		from board
 		where board_no = #{boardNo}
 	
 	</select>
@@ -32,12 +57,13 @@
 	<select id="boardList" parameterType="int" resultMap="boardMap">
 		<![CDATA[
 		SELECT board_no boardNo, board_title boardTitle, board_content boardContent, board_date boardDate,
-			   board_count boardCount, user_id userId, is_fix isFix
+			   board_count boardCount, user_id userId
 		FROM (SELECT rownum AS rnum, M.* 
 			  FROM (
 			  		SELECT * 
-					FROM freeboard 
-					ORDER BY is_fix DESC, board_date DESC
+					FROM board 
+					WHERE user_id != 'admin'
+					ORDER BY board_date DESC
 			  		) M 
 			  WHERE rownum  < = 7*#{type})
 		WHERE rnum > 7*(#{type}-1)
@@ -47,7 +73,8 @@
 	<select id="boardCount" resultType="int">
 	<![CDATA[
 		SELECT COUNT(*) 
-		FROM freeboard
+		FROM board
+		WHERE user_id != 'admin'
 	]]>	
 	</select>
 	
@@ -60,7 +87,8 @@
 		FROM (SELECT rownum AS rnum, M.* 
 			  FROM (
 			  		SELECT * 
-					FROM freeboard 
+					FROM board 
+					WHERE user_id != 'admin'
 					ORDER BY board_date DESC
 			  		) M 
 			  WHERE rownum  < = 4*#{type})

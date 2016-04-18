@@ -6,14 +6,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import emt.emt.board.dao.mapper.BoardMapper;
-import emt.emt.common.domain.FreeBoard;
+import emt.emt.common.domain.Board;
 
 @Repository
 public class BoardDaoImpl implements BoardDao{
 	@Autowired private BoardMapper boardMapper;
 
 	@Override
-	public List<FreeBoard> boardList(int type) {
+	public List<Board> noticeList(int type) {
+
+		return boardMapper.noticeList(type);
+	}
+
+	@Override
+	public int noticeCount() {
+
+		return boardMapper.noticeCount();
+	}
+
+	@Override
+	public List<Board> boardList(int type) {
 
 		return boardMapper.boardList(type);
 	}
@@ -25,37 +37,37 @@ public class BoardDaoImpl implements BoardDao{
 	}
 
 	@Override
-	public int boardInsert(FreeBoard board) {
+	public int boardInsert(Board board) {
 
 		return boardMapper.boardInsert(board);
 	}
 
 	@Override
-	public int boardUpdate(FreeBoard board) {
+	public int boardUpdate(Board board) {
 
 		return boardMapper.boardUpdate(board);
 	}
 
 	@Override
-	public int boardDelete(FreeBoard board) {
+	public int boardDelete(Board board) {
 	
 		return boardMapper.boardDelete(board);
 	}
 
 	@Override
-	public FreeBoard boardView(FreeBoard board) {
+	public Board boardView(Board board) {
 
 		return boardMapper.boardView(board);
 	}
 
 	@Override
-	public int hitPlus(FreeBoard board) {
+	public int hitPlus(Board board) {
 
 		return boardMapper.hitPlus(board);
 	}
 
 	@Override
-	public List<FreeBoard> indexBoardList(int type) {
+	public List<Board> indexBoardList(int type) {
 		// TODO Auto-generated method stub
 		return boardMapper.indexBoardList(type);
 	}

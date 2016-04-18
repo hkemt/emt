@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import emt.emt.common.domain.NoticeBoard;
+import emt.emt.common.domain.Notice;
 import emt.emt.notice.dao.NoticeDao;
 
 @Service
@@ -13,51 +13,44 @@ public class NoticeServiceImpl implements NoticeService{
 	@Autowired private NoticeDao noticeDao;
 
 	@Override
-	public List<NoticeBoard> boardList(int type) {
-
-		return noticeDao.boardList(type);
-	}
-
-	@Override
-	public int boardCount() {
-
-		return noticeDao.boardCount();
-	}
-
-	@Override
-	public int boardInsert(NoticeBoard board) {
-
-		return noticeDao.boardInsert(board);
-	}
-
-	@Override
-	public int boardUpdate(NoticeBoard board) {
-		
-		return noticeDao.boardUpdate(board);
-	}
-
-	@Override
-	public int boardDelete(NoticeBoard board) {
-		
-		return noticeDao.boardDelete(board);
-	}
-
-	@Override
-	public NoticeBoard boardView(NoticeBoard board) {
-		
-		return noticeDao.boardView(board);
-	}
-
-	@Override
-	public int hitPlus(NoticeBoard board) {
-		
-		return noticeDao.hitPlus(board);
-	}
-
-	@Override
-	public List<NoticeBoard> indexBoardList(int type) {
+	public int noticeInsert(Notice notice) {
 		// TODO Auto-generated method stub
-		return noticeDao.indexBoardList(type);
+		return noticeDao.noticeInsert(notice);
 	}
 
+	@Override
+	public int noticeUpdate(Notice notice) {
+		// TODO Auto-generated method stub
+		return noticeDao.noticeUpdate(notice);
+	}
+
+	@Override
+	public int noticeDelete(Notice notice) {
+		// TODO Auto-generated method stub
+		return noticeDao.noticeDelete(notice);
+	}
+
+	@Override
+	public List<Notice> noticeList(int page) {
+		// TODO Auto-generated method stub
+		return noticeDao.noticeList(page);
+	}
+
+	@Override
+	public Notice noticeView(Notice notice) {
+		// TODO Auto-generated method stub
+		return noticeDao.noticeView(notice);
+	}
+
+	@Override
+	public int noticeCount() {
+		// TODO Auto-generated method stub
+		return noticeDao.noticeCount();
+	}
+
+	@Override
+	public List<Notice> indexNoticeList(int page) {
+		// TODO Auto-generated method stub
+		return noticeDao.indexNoticeList(page);
+	}
 }

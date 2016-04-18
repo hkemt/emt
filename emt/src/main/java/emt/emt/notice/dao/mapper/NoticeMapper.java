@@ -2,28 +2,22 @@ package emt.emt.notice.dao.mapper;
 
 import java.util.List;
 
-import emt.emt.common.domain.NoticeBoard;
+import emt.emt.common.domain.Notice;
 
 public interface NoticeMapper {
+	//공지사항 추가, 수정, 삭제, 상세보기 
+	int noticeInsert(Notice notice);
+	int noticeUpdate(Notice notice);
+	int noticeDelete(Notice notice);
+	Notice noticeView(Notice notice);
+	
+	//공지사항 목록보기
+	List<Notice> noticeList(int page);
+	
+	//공지사항 전체 목록 수 
+	int noticeCount();
 
-	// 눌렀을때 조회수 올리기
-	int hitPlus(NoticeBoard board);
-
-	// 게시판 게시글 가져오는 메서드
-	List<NoticeBoard> boardList(int type);
-
-	int boardCount();
-
-	// 글 등록, 수정, 삭제, 상세보기
-	int boardInsert(NoticeBoard board);
-
-	int boardUpdate(NoticeBoard board);
-
-	int boardDelete(NoticeBoard board);
-
-	NoticeBoard boardView(NoticeBoard board);
-
-	// 인덱스페이지 최근게시판
-	List<NoticeBoard> indexBoardList(int type);
+	//인덱스페이지 최근공지사항
+	List<Notice> indexNoticeList(int page);
 
 }
