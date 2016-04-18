@@ -51,7 +51,20 @@ public class ReviewController {
 	}
 	
 	
-	
+	@RequestMapping("user/review/questionReview")
+	public String questionReview(HttpServletRequest req, Model model, Question question){
+		int questionNo= Integer.parseInt(req.getParameter("questionNo"));
+		question=reviewService.questionReview(questionNo);
+		int questionType=question.getQuestionType();
+		String questionVideo=question.getQuestionVideo();
+		
+		model.addAttribute("questionType", questionType);
+		model.addAttribute("questionVideo", questionVideo);
+		model.addAttribute("questionNo", questionNo);
+		System.out.println(questionType);
+		System.out.println(questionVideo);
+		return "user/review/questionReview";
+	}
 	//5_복습 상세보기
 	
 	

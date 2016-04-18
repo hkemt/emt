@@ -2,28 +2,39 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="emt.emt.review.dao.mapper.ReviewMapper">
 	<resultMap id="reviewMap" type="emt.emt.common.domain.Review">
-		<result property="reviewNo" column="review_no"/>
-		<result property="userId" column="user_id"/>
-		<result property="questionNo" column="question_no"/>
+		<result property="reviewNo" column="review_no" />
+		<result property="userId" column="user_id" />
+		<result property="questionNo" column="question_no" />
 	</resultMap>
-	
-	<select id="reviewList" parameterType="emt.emt.common.domain.Review" resultMap="reviewMap"> 
-	SELECT * FROM review WHERE user_id=#{userId} 
+	<resultMap type="emt.emt.common.domain.Question" id="questionMap">
+		<result column="question_no" property="questionNo"/>
+		<result column="question_type" property="questionType"/>
+		<result column="question_video" property="questionVideo"/>
+	</resultMap>
+	<select id="reviewList" parameterType="emt.emt.common.domain.Review"
+		resultMap="reviewMap">
+		SELECT * FROM review WHERE user_id=#{userId}
 	</select>
-	
+
 	<!-- 문제를 푼 후 저장된 문제인지 확인 -->
-	<select id="reviewCheck" parameterType="emt.emt.common.domain.Review" resultMap="reviewMap">
-		
+	<select id="reviewCheck" parameterType="emt.emt.common.domain.Review"
+		resultMap="reviewMap">
+
 		select * from review where user_id=#{userId} AND question_no=#{questionNo}
-		
-	</select> 
+
+	</select>
 
 	<!-- 문제를 푼후 저장 -->
 	<insert id="reviewInsert" parameterType="emt.emt.common.domain.Review">
-	
+
 		insert into review values(seq_review_no.nextval, #{userId}, #{questionNo})
-	
+
 	</insert>
+
+	<select id="questionReview" resultMap="questionMap"
+		parameterType="emt.emt.common.domain.Question"> select question_no questionNo, question_type
+		questionType, question_video questionVideo from question where
+		question_no=#{questionNo} </select>
 </mapper>
 
 

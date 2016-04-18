@@ -104,19 +104,14 @@
 							
 							
 					<!-- 이곳에 문제내용이 들어갑니다. -->
-                     <div style="width:1000px;margin-left: auto; margin-right: auto; text-align: center">
+                     <div style="width:1000px;viligin-align:top; margin-left: auto; margin-right: auto; text-align: center">
 						
-						<c:set var="partQuestions" value="${partQuestion }"/>
+						<c:set var="questionType" value="${questionType }"/>
 						<%
-						
-							List<Question> parts = (List)request.getAttribute("partQuestion");
+						// 문제유형
+							int type=(Integer)request.getAttribute("questionType");
 							
-							int random = (int)(Math.random()*parts.size());
 							
-							Question part = parts.get(random);
-							
-							// 문제유형
-							int type=part.getQuestionType();
 							
 							// 파일 경로
 							String path="";
@@ -132,15 +127,15 @@
 							}
 							
 							// 파일 이름
-							String videoFile = part.getQuestionVideo();
+							String videoFile = (String)request.getAttribute("questionVideo");
 						%>
 						<!-- 파일 경로와 유형을 jstl로 -->
-						<c:set var="part" value="<%=part %>"/>
+						
 						
 						<c:set var="file" value="<%=path+videoFile %>"/>
 						
-						<video onended="gogo()" width="700" height="500" id="videos" controls="controls"
-						src="<c:url value="/questions/${file }"/>" autoplay="autoplay" width="800px" height="800px">
+						<video onended="gogo()" width="700" height="500" id="videos" controls="controls" autoplay="autoplay" width="800px" height="800px">
+							<source src="<c:url value="/questions/${file }"/>" type="video/mp4"/>
 						</video>
 						
 						
@@ -186,10 +181,12 @@
 	function gogo(){
 			
 		// 문제를 저장한다
+		alert("${part.questionType}");
 		var no = "${part.questionNo}";
 		var id = "${sessionScope.sid}";
 		var type = "${part.questionType}";
-	
+		alert(no);
+		alert(id);
 		$.ajax({
 			
 			url: "saveReview",
