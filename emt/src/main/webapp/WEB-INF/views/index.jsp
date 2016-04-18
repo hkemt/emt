@@ -11,7 +11,15 @@
 		</script>
 	</c:when>
 </c:choose> 
-
+<c:choose>
+	<c:when test="${adminMsg!=null }">
+		<script>
+			alert("${adminMsg}");
+		<%session.removeAttribute("adminMsg");%>
+			
+		</script>
+	</c:when>
+</c:choose>
 
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
