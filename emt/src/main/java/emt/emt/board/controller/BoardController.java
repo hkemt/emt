@@ -2,6 +2,8 @@ package emt.emt.board.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,11 +13,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import emt.emt.board.service.BoardService;
 import emt.emt.common.domain.Board;
+import emt.emt.common.domain.User;
 
 @Controller
 public class BoardController {
 	@Autowired private BoardService boardService;
 	
+
+	//1_0 관리자 공지관리 페이지 이동
+	@RequestMapping("adminBoard")
+	public String adminBoard(Model model) {
+		return "admin/board/adminBoard";
+	}
 
 	//1_1 게시판 페이지 이동
 	@RequestMapping("board")
@@ -48,5 +57,25 @@ public class BoardController {
 		return boardService.indexBoardList(type);
 	}
 	
+	//4_1 글쓰기
+	@RequestMapping("board/write")
+	public String boardWrite(){
+		return "user/board/boardWrite";
+	}
 	
+	//4_2 글 등록하기
+	@RequestMapping(value="board/addBoard", method=RequestMethod.POST)
+	@ResponseBody
+	public int boardAdd(HttpSession session, Board board, Model model){
+		board.setUserId((String)session.getAttribute("sid"));
+		int res=boardService.boardInsert(board);
+		model.addAttribute("board", board);
+		
+		if(res == 1) {
+			return board.getBoardNo();
+		}
+		else {
+			return 0;
+		}
+	}
 }

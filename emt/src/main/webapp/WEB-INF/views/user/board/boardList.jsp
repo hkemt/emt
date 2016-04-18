@@ -156,7 +156,7 @@
 								
 								
 								<div style="text-align: right">
-								<input type="button" class="btn btn-default" onclick="location.href='boardWrite.html'" style="float:right" value="글쓰기" >
+								<input type="button" class="btn btn-default" onclick="location.href='board/write'" style="float:right" value="글쓰기" >
 								</div>
 								<!-- /.table-responsive -->
 							</div>

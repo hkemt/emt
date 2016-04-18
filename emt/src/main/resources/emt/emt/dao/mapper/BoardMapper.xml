@@ -79,6 +79,14 @@
 	</select>
 	
 	
+	<insert id="boardInsert" parameterType="emt.emt.common.domain.Board">
+	  <selectKey keyProperty="boardNo" resultType="int" order="BEFORE">
+	  	select SEQ_BOARD_NO.nextval FROM DUAL
+	  </selectKey>
+		insert into board(BOARD_NO,BOARD_TITLE,BOARD_CONTENT,USER_ID,BOARD_DATE,BOARD_COUNT)
+			values(#{boardNo}, #{boardTitle}, #{boardContent}, #{userId}, SYSDATE, 0)
+	</insert>
+	
 	<!-- 인덱스 최근 게시판 목록  -->
 		<select id="indexBoardList" parameterType="int" resultMap="boardMap">
 		<![CDATA[

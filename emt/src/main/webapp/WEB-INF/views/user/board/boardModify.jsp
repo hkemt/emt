@@ -42,7 +42,7 @@
 
 
 <body class="hold-transition skin-blue layout-top-nav">
-<script type="text/javascript">var no = "${boardNo}"</script>
+<script type="text/javascript">var tmpBoardNo = "${boardNo}"</script>
 	<div class="wrapper">
 		<header class="main-header">
 			<nav class="navbar navbar-static-top">
@@ -125,7 +125,7 @@
 
 					<div class="box box-info">
 						<div class="box-header with-border" style="text-align: center;">
-							<h3 id="title" class="box-title"></h3>
+							<h3 id="title" class="box-title">글쓰기</h3>
 							
 							<div class="box-tools pull-right">
 								<button class="btn btn-box-tool" data-widget="collapse">
@@ -140,55 +140,30 @@
 						<div class="box-body">
 							<div class="table-responsive" style="text-align: center;">
 								<table class="table no-margin">
-									<thead>
-										<tr>
-											<th>
-											
-											<div id="noticeInfo" style="text-align: right">
-											</div>
-											
-											</th>
-										</tr>
-									</thead>
-									<tbody>
+										<thead>
+											<tr>
+												<th class="col-md-1">제목</th>
+												<td><input id="textTitle" type="text" style="width:90%;" placeholder="제목을 입력하시오."></td>
 
-										<tr>
-											<td>
-											<div id="noticeContent" style="height:300px;">
-											</div>
-											</td>
-										</tr>
+											</tr>
+										</thead>
+										<tbody>
 
-									</tbody>
-								</table>
+											<tr>
+
+												<th>내용</th>
+												<td><textarea id="textContent"
+												rows="15" style="width:90%;" placeholder="내용을 입력하시오."></textarea></td>
+
+											</tr>
+											<tr>
+												<th><input class="btn btn-default" type="button" onclick="location.href='/emt/board'" value="목록보기"></th>
+												<td><div style="text-align: right;"><input id="btnWrite" class="btn btn-default" type="button" value="등록하기"></div></td>
+											</tr>	
+										</tbody>
+									</table>
 
 							</div>
-							<div id="updel" style="text-align: right;">
-							<c:choose>
-								<c:when test="${sessionScope.sid.equals('admin') || sessionScope.sid.equals(boardUserId) }">
-									<input type="button" class="btn btn-default"
-										onclick="location.replace('noticeModify?boardNo=${boardNo}')" value="수정하기">
-								</c:when>
-							</c:choose>
-							
-								<input type="button" class="btn btn-default"
-									onclick="location.replace('notice')" value="목록보기">
-									 
-							</div>
-							<!--댓글 시작  -->
-												<h3 id="title" class="box-title">댓글</h3>													
-												<div style="text-align: center;">
-													<form id="replyInsert">
-														<input type="hidden" name="userId" id="userId" value='${sid}' >
-														<input type="text" name="replyContent"  id="replyContent" style="width: 85%"> 
-														<input class="btn btn-default" type="submit" style='width: 10%' value="등록">
-													</form>
-												</div>
-
-							<div id="replyView" class="table-responsive"></div>
-							<div id="replyPage" style="text-align: right"></div>	
-							<!--댓글 끝  -->
-
 							<!-- /.table-responsive -->
 						</div>
 						<!-- /.box-body -->
@@ -227,8 +202,9 @@
 	<!-- 로그아웃 스크립트 -->
 	<script src="<c:url value="/js/logout.js"/>"></script>
 	<!-- 공지사항 상세보기 -->
-	<script src="<c:url value="/js/notice/noticeDetailView.js"/>"></script>
-	<script src="<c:url value="/js/reply/replyList.js"/>"></script>
+	<script type="text/javascript">var no = "${boardNo}"</script>
+	<script src="<c:url value="/js/board/boardModify.js"/>"></script>
+	
 	
 
 	

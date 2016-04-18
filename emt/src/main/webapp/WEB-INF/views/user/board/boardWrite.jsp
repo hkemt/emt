@@ -124,7 +124,7 @@
 
 					<div class="box box-info">
 						<div class="box-header with-border" style="text-align: center;">
-							<h3 id="title" class="box-title"></h3>
+							<h3 id="title" class="box-title">글쓰기</h3>
 							
 							<div class="box-tools pull-right">
 								<button class="btn btn-box-tool" data-widget="collapse">
@@ -139,33 +139,30 @@
 						<div class="box-body">
 							<div class="table-responsive" style="text-align: center;">
 								<table class="table no-margin">
-									<thead>
-										<tr>
-											<th>
-											<input type="text" name="title" id="title" class="form-control"
-						placeholder="제목을 입력하시오">
-											
-											</th>
-										</tr>
-									</thead>
-									<tbody>
+										<thead>
+											<tr>
+												<th class="col-md-1">제목</th>
+												<td><input id="textTitle" type="text" style="width:90%;" placeholder="제목을 입력하시오."></td>
 
-										<tr>
-											<td>
-											<textarea rows="10" cols="40" name="noticeContent"></textarea>
-											</td>
-										</tr>
+											</tr>
+										</thead>
+										<tbody>
 
-									</tbody>
-								</table>
+											<tr>
+
+												<th>내용</th>
+												<td><textarea id="textContent"
+												rows="15" style="width:90%;" placeholder="내용을 입력하시오."></textarea></td>
+
+											</tr>
+											<tr>
+												<th><input class="btn btn-default" type="button" onclick="location.href='/emt/board'" value="목록보기"></th>
+												<td><div style="text-align: right;"><input id="btnWrite" class="btn btn-default" type="button" value="등록하기"></div></td>
+											</tr>	
+										</tbody>
+									</table>
 
 							</div>
-							<div id="updel" style="text-align: right;">
-								<input type="button" class="btn btn-default"
-									onclick="location.replace('notice')" value="목록보기">
-									 
-							</div>
-							
 							<!-- /.table-responsive -->
 						</div>
 						<!-- /.box-body -->
@@ -205,8 +202,8 @@
 	<script src="<c:url value="/js/logout.js"/>"></script>
 	<!-- 공지사항 상세보기 -->
 	<script type="text/javascript">var no = "${boardNo}"</script>
-	<script src="<c:url value="/js/notice/noticeDetailView.js"/>"></script>
-	<script src="<c:url value="/js/reply/replyList.js"/>"></script>
+	<script src="<c:url value="/js/board/boardWrite.js"/>"></script>
+	
 	
 
 	

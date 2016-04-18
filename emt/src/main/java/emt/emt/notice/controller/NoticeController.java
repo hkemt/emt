@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -71,6 +72,9 @@ public class NoticeController {
 		
 		model.addAttribute("boardNo", board.getBoardNo());
 		
+		board = boardService.boardView(board);
+		model.addAttribute("boardUserId", board.getUserId());
+		
 		return "user/board/noticeDetailView";
 		
 	}
@@ -78,11 +82,19 @@ public class NoticeController {
 	//2_5 공지사항 상세보기
 	@RequestMapping(value="noticeDetailView", method=RequestMethod.POST)
 	@ResponseBody
-	public Board noticeDetailView(Board board){
-		
+	public Board noticeDetailView(Board board, Model model){
+
 		return boardService.boardView(board);
 	}
 	
+	@RequestMapping("noticeModify")
+	public String noticeModify(Board board, Model model){
+		
+		model.addAttribute("boardNo", board.getBoardNo());
+		
+		return "user/board/boardModify";
+		
+	}
 	//3_1 인덱스 최근 공지사항 목록 불러오기
 	@RequestMapping("indexNoticeList")
 	@ResponseBody
