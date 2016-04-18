@@ -29,10 +29,12 @@ $(function() {
 		var type=$("#questionType");
 		type.val($("input[type='radio'][name='_questionType']:checked").val());
 		if($("input[type='radio'][name='_questionType']:checked").val()==undefined){
-			alert("선택안함");
+			alert("파트를 선택해주십시오.");
 			event.preventDefault();
-		} else{
-			
+		}
+		if($("#uploadfile").val()==undefined){
+			alert("파일을 선택해주십시오.")
+			event.preventDefault();
 		}
 	});
 });
