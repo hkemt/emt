@@ -170,6 +170,7 @@
 							</div>
 							<div style="text-align: right;">
 										<input type="hidden" id="grammarNo" name="grammarNo">
+										<input type="hidden" id="grammarInning" name="grammarInning">
 										<input type="button" onclick="grammarUpdate()" value="수정하기" class="btn btn-default">
 										<input type="button" onclick="grammarDelete()" value="삭제하기" class="btn btn-default">
 										<input type="button" onclick="location.replace('/emt/admin/grammarMove')" value="목록보기" class="btn btn-default">
@@ -226,6 +227,7 @@
 				data : {grammarNo : no},
 				success : function(result){
 					$("#grammarNo").val(result.grammarNo);
+					$("#grammarInning").val(result.grammarInning);
 					$("#grammarQuiz").val(result.grammarQuiz);
 					$("#grammarEx").val(result.grammarEx);
 					$("#grammarEx1").val(result.grammarEx1);
@@ -245,6 +247,7 @@
 				method : "POST",
 				data : {
 					grammarNo : $("#grammarNo").val(),
+					grammarInning : $("#grammarInning").val(),
 					grammarQuiz : $("#grammarQuiz").val(),
 					grammarEx : $("#grammarEx").val(),
 					grammarEx1 : $("#grammarEx1").val(),

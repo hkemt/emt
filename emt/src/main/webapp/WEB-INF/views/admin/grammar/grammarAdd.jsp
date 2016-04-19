@@ -34,11 +34,11 @@
 					<div class="collapse navbar-collapse pull-left"
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="adminMember">회원관리</a></li>
-							<li><a href="adminQuestion">문제관리</a></li>
-							<li><a href="adminBoard">게시판관리</a></li>
-							<li><a href="adminNotice">공지관리</a></li>
-
+							<li><a href="/emt/admin/adminMember">회원관리</a></li>
+							<li><a href="/emt/admin/adminQuestion">문제관리</a></li>
+							<li><a href="/emt/admin/adminBoard">게시판관리</a></li>
+							<li><a href="/emt/admin/adminNotice">공지관리</a></li>
+							<li><a href="/emt/admin/grammarMove">문법관리</a></li>
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
@@ -84,22 +84,22 @@
 										</tr>
 										<tr>
 											<td>
-												<input type="text" id="grammarEx1" name="grammarEx1" style="border:none; width:700px;" placeholder="선택1">
+												<input type="text" id="grammarEx1" name="grammarEx1" style="border:none; width:700px;" value="①">
 											</td>
 										</tr>
 										<tr>
 											<td>
-												<input type="text" id="grammarEx2" name="grammarEx2" style="border:none; width:700px;" placeholder="선택2">
+												<input type="text" id="grammarEx2" name="grammarEx2" style="border:none; width:700px;" value="②">
 											</td>
 										</tr>
 										<tr>
 											<td>
-												<input type="text" id="grammarEx3" name="grammarEx3" style="border:none; width:700px;" placeholder="선택3">
+												<input type="text" id="grammarEx3" name="grammarEx3" style="border:none; width:700px;" value="③">
 											</td>
 											</tr>
 										<tr>
 											<td>
-												<input type="text" id="grammarEx4" name="grammarEx4" style="border:none; width:700px;" placeholder="선택4">
+												<input type="text" id="grammarEx4" name="grammarEx4" style="border:none; width:700px;" value="④">
 											</td>
 										</tr>
 										<tr>

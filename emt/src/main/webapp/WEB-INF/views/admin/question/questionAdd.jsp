@@ -35,11 +35,11 @@
 					<div class="collapse navbar-collapse pull-left"
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="adminMember">회원관리</a></li>
-							<li><a href="adminQuestion">문제관리</a></li>
-							<li><a href="adminBoard">게시판관리</a></li>
-							<li><a href="adminNotice">공지관리</a></li>
-
+							<li><a href="/emt/admin/adminMember">회원관리</a></li>
+							<li><a href="/emt/admin/adminQuestion">문제관리</a></li>
+							<li><a href="/emt/admin/adminBoard">게시판관리</a></li>
+							<li><a href="/emt/admin/adminNotice">공지관리</a></li>
+							<li><a href="/emt/admin/grammarMove">문법관리</a></li>
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->

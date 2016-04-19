@@ -21,20 +21,20 @@ public class NoticeController {
 	@Autowired private BoardService boardService;
 	
 	//1_1 관리자 공지관리 페이지 이동
-	@RequestMapping("adminNotice")
+	@RequestMapping("/admin/adminNotice")
 	public String adminNotice(Model model) {
 		return "admin/notice/adminNotice";
 	}
 	
 	//1_2 관리자 공지관리 목록 불러오기
-	@RequestMapping("noticeList")
+	@RequestMapping("/admin/noticeList")
 	@ResponseBody
 	public List<Notice> noticeList(int type){
 		return noticeService.noticeList(type);
 	}
 	
 	//1_3 관리자 공지관리 전체 개수 확인
-	@RequestMapping("noticeCount")
+	@RequestMapping("/admin/noticeCount")
 	@ResponseBody
 	public int noticeCount(){
 		return noticeService.noticeCount();
