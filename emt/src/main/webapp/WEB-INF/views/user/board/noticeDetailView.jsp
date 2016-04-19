@@ -168,6 +168,7 @@
 								<c:when test="${sessionScope.sid.equals('admin') || sessionScope.sid.equals(boardUserId) }">
 									<input type="button" class="btn btn-default"
 										onclick="location.replace('noticeModify?boardNo=${boardNo}')" value="수정하기">
+									<input id="btnDelete" type="button" class="btn btn-default" value="삭제하기">
 								</c:when>
 							</c:choose>
 							

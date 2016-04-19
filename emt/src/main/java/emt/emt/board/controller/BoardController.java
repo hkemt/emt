@@ -20,7 +20,7 @@ public class BoardController {
 	@Autowired private BoardService boardService;
 	
 
-	//1_0 관리자 공지관리 페이지 이동
+	//1_0 관리자용 게시판 관리 페이지 이동
 	@RequestMapping("/admin/adminBoard")
 	public String adminBoard(Model model) {
 		return "admin/board/adminBoard";
@@ -41,7 +41,15 @@ public class BoardController {
 		return boardService.boardList(type);
 	}
 	
-	//1_3 게시판 전체 숫자 불러오기
+	//1_3 관리자용 게시판 불러오기
+	@RequestMapping("admin/boardList")
+	@ResponseBody
+	public List<Board> adminBoardList(int type){
+		// 페이지 숫자를 받아서 해당 데이터 가져옴
+		return boardService.boardList(type);
+	}
+	
+	//1_4 게시판 전체 숫자 불러오기
 	@RequestMapping(value="boardCount", method=RequestMethod.POST)
 	@ResponseBody
 	public int boardCount(){
@@ -78,4 +86,57 @@ public class BoardController {
 			return 0;
 		}
 	}
+	
+	//4_3 글 수정하기
+		@RequestMapping(value="updateBoard", method=RequestMethod.POST)
+		@ResponseBody
+		public int updateBoard(Board board, Model model){
+			int res=boardService.boardUpdate(board);
+			model.addAttribute("board", board);
+			
+			return res;
+		}
+		
+	//5_1 게시판 상세보기 페이지 이동
+		@RequestMapping("boardDetailMove")
+		public String noticeDetailMove(Board board, Model model){
+			
+			// 조회수 올리기
+			boardService.hitPlus(board);
+			
+			model.addAttribute("boardNo", board.getBoardNo());
+			
+			board = boardService.boardView(board);
+			model.addAttribute("boardUserId", board.getUserId());
+			
+			return "user/board/boardDetailView";
+			
+		}
+		
+	//5_2 게시판 상세보기
+		@RequestMapping(value="boardDetailView", method=RequestMethod.POST)
+		@ResponseBody
+		public Board noticeDetailView(Board board, Model model){
+
+			return boardService.boardView(board);
+		}
+		
+	//5_3 게시판 수정하기
+		@RequestMapping("boardModify")
+		public String boardModify(Board board, Model model){
+			
+			model.addAttribute("boardNo", board.getBoardNo());
+			
+			return "user/board/boardModify";
+			
+		}
+		
+	//5_4 게시판 삭제하기
+		@RequestMapping("boardDelete")
+		@ResponseBody
+		public int boardDelete(Board board, Model model){
+			
+			int res = boardService.boardDelete(board);
+			return res;
+		}
 }

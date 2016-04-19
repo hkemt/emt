@@ -30,6 +30,15 @@
 		]]>		
 	</select>
 	
+	<update id="noticeUpdate" parameterType="emt.emt.common.domain.Notice">
+	  update board set BOARD_TITLE=#{boardTitle}, BOARD_CONTENT=#{boardContent}
+	  	where BOARD_NO=#{boardNo}
+	</update>
+	
+	<delete id="noticeDelete" parameterType="emt.emt.common.domain.Notice">
+	  delete notice where BOARD_NO=#{boardNo}
+	</delete>
+	
 	<!-- 인덱스 최근공지사항 목록  -->
 	<select id="indexNoticeList" parameterType="int" resultMap="noticeMap">
 		<![CDATA[

@@ -71,5 +71,4 @@ public class BoardDaoImpl implements BoardDao{
 		// TODO Auto-generated method stub
 		return boardMapper.indexBoardList(type);
 	}
-
 }

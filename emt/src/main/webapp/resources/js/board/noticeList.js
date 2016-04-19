@@ -1,7 +1,7 @@
 		function noticeList(count){
 			$.ajax({
 				
-				url : "noticeBoardList",
+				url : "noticeView",
 				method : "POST",
 				data : {type : count},
 				success : function(result){
@@ -45,7 +45,7 @@
 		function noticePage(){
 			
 			$.ajax({
-				url: "noticeBoardCount",
+				url: "noticeCount",
 				method : "POST",
 				success : function(count){
 

@@ -17,7 +17,7 @@ $(function(){
 			success : function(result) {
 				if (result > 0) {
 					alert("등록 되었습니다.");
-					document.location.href = "/emt/noticeDetailMove?boardNo="+result;
+					document.location.href = "/emt/boardDetailMove?boardNo="+result;
 				} else {
 					alert("등록이 되지 않았습니다.");
 				}

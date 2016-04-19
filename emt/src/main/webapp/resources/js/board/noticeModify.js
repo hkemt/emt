@@ -2,10 +2,10 @@
  * 
  */
 
-function boardDetailView() {
+function noticeDetailView() {
 
 	$.ajax({
-		url : "boardDetailView",
+		url : "noticeDetailView",
 		method : "POST",
 		data : {
 			boardNo : tmpBoardNo
@@ -25,11 +25,11 @@ function boardDetailView() {
 }
 
 $(function(){
-	boardDetailView();
+	noticeDetailView();
 	$("#btnWrite").click(function(){
 		$.ajax({
 			method : "POST",
-			url : "updateBoard",
+			url : "updateNotice",
 			contentType : "application/x-www-form-urlencoded; charset=UTF-8",
 			data : {
 				boardNo : tmpBoardNo,
@@ -39,7 +39,7 @@ $(function(){
 			success : function(result) {
 				if (result > 0) {
 					alert("수정 되었습니다.");
-					document.location.href = "/emt/boardDetailMove?boardNo="+tmpBoardNo;
+					document.location.href = "/emt/noticeDetailMove?boardNo="+tmpBoardNo;
 				} else {
 					alert("수정이 되지 않았습니다.");
 				}

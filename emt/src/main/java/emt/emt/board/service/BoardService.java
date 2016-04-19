@@ -18,13 +18,13 @@ public interface BoardService {
 	List<Board> boardList(int type);
 	int boardCount();
 
-// 글 등록, 수정, 삭제, 상세보기
-int boardInsert(Board board);
-int boardUpdate(Board board);
-int boardDelete(Board board);
-Board boardView(Board board);
-
-//인덱스페이지 최근게시판
-List<Board> indexBoardList(int type);
+	// 글 등록, 수정, 삭제, 상세보기
+	int boardInsert(Board board);
+	int boardUpdate(Board board);
+	int boardDelete(Board board);
+	Board boardView(Board board);
+	
+	//인덱스페이지 최근게시판
+	List<Board> indexBoardList(int type);
 
 }

@@ -70,6 +70,15 @@
 					<!-- Navbar Right Menu -->
 					<div class="navbar-custom-menu">
 						<ul class="nav navbar-nav">
+
+							<c:choose>
+								<c:when test="${sessionScope.sid==null }">
+									<li><a href="/emt/login/login"> 로그인 </a></li>
+									<li><a href="/emt/join/join"> 회원가입 </a>
+									</li>
+									<!-- 회원가입 -->
+								</c:when>
+								<c:otherwise>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
@@ -77,6 +86,10 @@
 									<li><a href="/emt/user/member/userMemberList?userId=${sid }">정보수정</a></li>
 									<li id="logout"><a>로그아웃</a></li>
 								</ul></li>
+									<!-- 회원가입 -->
+								</c:otherwise>
+							</c:choose>
+
 						</ul>
 					</div>
 					<!-- /.navbar-custom-menu -->
@@ -154,10 +167,14 @@
 								</ul>
 							</div>
 								
+							<c:choose>
+								<c:when test="${sessionScope.sid != null && !sessionScope.sid.isEmpty()}">
+									<div style="text-align: right">
+										<input type="button" class="btn btn-default" onclick="location.href='board/write'" style="float:right" value="글쓰기" >
+									</div>
+								</c:when>
+							</c:choose>
 								
-								<div style="text-align: right">
-								<input type="button" class="btn btn-default" onclick="location.href='board/write'" style="float:right" value="글쓰기" >
-								</div>
 								<!-- /.table-responsive -->
 							</div>
 							<!-- /.box-body -->

@@ -157,7 +157,7 @@
 
 											</tr>
 											<tr>
-												<th><input class="btn btn-default" type="button" onclick="location.href='/emt/board'" value="목록보기"></th>
+												<th><input class="btn btn-default" type="button" onclick="location.href='/emt/notice'" value="목록보기"></th>
 												<td><div style="text-align: right;"><input id="btnWrite" class="btn btn-default" type="button" value="수정하기"></div></td>
 											</tr>	
 										</tbody>
@@ -203,7 +203,7 @@
 	<script src="<c:url value="/js/logout.js"/>"></script>
 	<!-- 공지사항 상세보기 -->
 	<script type="text/javascript">var no = "${boardNo}"</script>
-	<script src="<c:url value="/js/board/boardModify.js"/>"></script>
+	<script src="<c:url value="/js/board/noticeModify.js"/>"></script>
 	
 	
 

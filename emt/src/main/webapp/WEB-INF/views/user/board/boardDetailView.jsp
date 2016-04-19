@@ -42,6 +42,7 @@
 
 
 <body class="hold-transition skin-blue layout-top-nav">
+<script type="text/javascript">var no = "${boardNo}"</script>
 	<div class="wrapper">
 		<header class="main-header">
 			<nav class="navbar navbar-static-top">
@@ -163,8 +164,16 @@
 
 							</div>
 							<div id="updel" style="text-align: right;">
+							<c:choose>
+								<c:when test="${sessionScope.sid.equals('admin') || sessionScope.sid.equals(boardUserId) }">
+									<input type="button" class="btn btn-default"
+										onclick="location.replace('boardModify?boardNo=${boardNo}')" value="수정하기">
+									<input id="btnDelete" type="button" class="btn btn-default" value="삭제하기">
+								</c:when>
+							</c:choose>
+							
 								<input type="button" class="btn btn-default"
-									onclick="location.replace('notice')" value="목록보기">
+									onclick="location.replace('board')" value="목록보기">
 									 
 							</div>
 							<!--댓글 시작  -->
@@ -219,8 +228,7 @@
 	<!-- 로그아웃 스크립트 -->
 	<script src="<c:url value="/js/logout.js"/>"></script>
 	<!-- 공지사항 상세보기 -->
-	<script type="text/javascript">var no = "${boardNo}"</script>
-	<script src="<c:url value="/js/notice/noticeDetailView.js"/>"></script>
+	<script src="<c:url value="/js/board/boardDetailView.js"/>"></script>
 	<script src="<c:url value="/js/reply/replyList.js"/>"></script>
 	
 

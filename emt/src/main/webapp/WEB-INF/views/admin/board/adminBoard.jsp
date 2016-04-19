@@ -89,7 +89,7 @@
 
 						<!-- /.box-header -->
 						<div class="box-body">
-							<div class="table-responsive">
+							<div id="boardView" class="table-responsive">
 								<table class="table no-margin">
 									<thead>
 										<tr>
@@ -104,19 +104,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var="board" items="${board }">
-											<tr>
-												<td><input type="radio" name="boardNo"
-													value="${board.boardNo }"></td>
-												<td>${board.boardNo }</td>
-												<td>${board.boardTitle }</td>
-												<td>${board.boardContent }</td>
-												<td>${board.userId }</td>
-												<td>${board.boardDate }</td>
-												<td>${board.boardCount }</td>
-
-											</tr>
-										</c:forEach>
+										
 									</tbody>
 								</table>
 
@@ -184,3 +172,5 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
+	<!-- 관리자 게시판  -->
+	<script src="<c:url value="/js/board/adminBoardList.js"/>"></script>

@@ -92,9 +92,36 @@ public class NoticeController {
 		
 		model.addAttribute("boardNo", board.getBoardNo());
 		
-		return "user/board/boardModify";
+		return "user/board/noticeModify";
 		
 	}
+	
+	//2_6 공지사항 수정하기
+	@RequestMapping(value="updateNotice", method=RequestMethod.POST)
+	@ResponseBody
+	public int updateNotice(Notice notice, Model model){
+		int res=noticeService.noticeUpdate(notice);
+		model.addAttribute("notice", notice);
+		
+		return res;
+	}
+
+	//2_7 공지사항 삭제하기
+	@RequestMapping("noticeDelete")
+	@ResponseBody
+	public int noticeDelete(Notice notice, Model model){
+		
+		int res = noticeService.noticeDelete(notice);
+		if(res > 0) {
+			Board board = new Board();
+			board.setBoardNo(notice.getBoardNo());
+			
+			res = boardService.boardDelete(board);
+		}
+		
+		return res;
+	}
+	
 	//3_1 인덱스 최근 공지사항 목록 불러오기
 	@RequestMapping("indexNoticeList")
 	@ResponseBody

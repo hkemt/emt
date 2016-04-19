@@ -10,7 +10,6 @@
 		<result property="userId" column="user_id"/> 
 	</resultMap>
 	
-<!-- 공지사항을 가져오는 쿼리 -->
 	<select id="noticeList" parameterType="int" resultMap="boardMap">
 		<![CDATA[
 		SELECT board_no boardNo, board_title boardTitle, board_content boardContent, board_date boardDate,
@@ -27,7 +26,6 @@
 		]]>
 	</select>
 	
-	<!-- 공지사항 총 갯수를 가져오는 쿼리 -->
 	<select id="noticeCount" resultType="int">
 	<![CDATA[
 		SELECT COUNT(*) 
@@ -45,7 +43,7 @@
 			WHERE board_no=#{boardNo}
 	</update>
 	
-		<!-- 게시판상세보기 -->
+	<!-- 게시판상세보기 -->
 	<select id="boardView" parameterType="emt.emt.common.domain.Board" resultMap="boardMap">
 		
 		select *
@@ -86,6 +84,15 @@
 		insert into board(BOARD_NO,BOARD_TITLE,BOARD_CONTENT,USER_ID,BOARD_DATE,BOARD_COUNT)
 			values(#{boardNo}, #{boardTitle}, #{boardContent}, #{userId}, SYSDATE, 0)
 	</insert>
+	
+	<update id="boardUpdate" parameterType="emt.emt.common.domain.Board">
+	  update board set BOARD_TITLE=#{boardTitle}, BOARD_CONTENT=#{boardContent}
+	  	where BOARD_NO=#{boardNo}
+	</update>
+	
+	<delete id="boardDelete" parameterType="emt.emt.common.domain.Board">
+	  delete board where BOARD_NO=#{boardNo}
+	</delete>
 	
 	<!-- 인덱스 최근 게시판 목록  -->
 		<select id="indexBoardList" parameterType="int" resultMap="boardMap">

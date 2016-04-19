@@ -52,6 +52,5 @@ public class NoticeDaoImpl implements NoticeDao{
 	public List<Notice> indexNoticeList(int page) {
 		// TODO Auto-generated method stub
 		return noticeMapper.indexNoticeList(page);
-	}
-	
+	}	
 }

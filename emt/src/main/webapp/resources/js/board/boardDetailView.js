@@ -1,7 +1,7 @@
 function noticeDetailView() {
 
 	$.ajax({
-		url : "noticeDetailView",
+		url : "boardDetailView",
 		method : "POST",
 		data : {
 			boardNo : no
@@ -28,7 +28,7 @@ $(document).ready(function() {
 		$("#btnDelete").click(function(){
 			$.ajax({
 				method : "POST",
-				url : "noticeDelete",
+				url : "boardDelete",
 				contentType : "application/x-www-form-urlencoded; charset=UTF-8",
 				data : {
 					boardNo : no
@@ -36,7 +36,7 @@ $(document).ready(function() {
 				success : function(result) {
 					if (result > 0) {
 						alert("삭제 되었습니다.");
-						document.location.href = "/emt/notice";
+						document.location.href = "/emt/board";
 					} else {
 						alert("삭제가 되지 않았습니다.");
 					}
