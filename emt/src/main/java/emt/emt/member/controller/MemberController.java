@@ -22,7 +22,7 @@ public class MemberController {
 	@Autowired private JoinService joinService;
 	
 	//1_1회원관리 등록
-	@RequestMapping("adminMemberInsert")
+	@RequestMapping("/admin/adminMemberInsert")
 	public String memberInsert(){
 		return "admin/member/adminMemberInsert";
 	}
@@ -34,7 +34,7 @@ public class MemberController {
 		return user;
 	}
 	
-	@RequestMapping(value="addUser2",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/addUser2",method=RequestMethod.POST)
 	@ResponseBody
 	public int addUser(User user){
 		int res = joinService.joinUser(user);
@@ -43,7 +43,7 @@ public class MemberController {
 	//1_2회원관리 수정
 	
 	//1_3회원관리 삭제
-	@RequestMapping(value="adminMemberDelete", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/adminMemberDelete", method=RequestMethod.GET)
 	public String adminMemberDelete(HttpServletRequest req,Model model){
 		String userId=req.getParameter("userId");
 		System.out.println(userId);
@@ -54,18 +54,18 @@ public class MemberController {
 		return "admin/member/adminMember";
 	}
 	//1_4회원관리 목록보기
-	@RequestMapping("adminMember")
+	@RequestMapping("/admin/adminMember")
 	public String adminMember(Model model){
 		return "admin/member/adminMember";
 	}
 	
-	@RequestMapping("memberList")
+	@RequestMapping("/admin/memberList")
 	@ResponseBody
 	public List<User> memberList(int type) {
 		return memberService.memberList(type); 
 	}
 	
-	@RequestMapping("memberCount") 
+	@RequestMapping("/admin/memberCount") 
 	@ResponseBody
 	public int memberCount(){
 		return memberService.memberCount();

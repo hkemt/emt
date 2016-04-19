@@ -21,7 +21,7 @@ public class BoardController {
 	
 
 	//1_0 관리자 공지관리 페이지 이동
-	@RequestMapping("adminBoard")
+	@RequestMapping("/admin/adminBoard")
 	public String adminBoard(Model model) {
 		return "admin/board/adminBoard";
 	}
