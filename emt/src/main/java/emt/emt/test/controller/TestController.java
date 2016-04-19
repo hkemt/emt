@@ -33,6 +33,7 @@ public class TestController {
 		List<Question> part1 = partService.partQuestion(question);
 		int random = (int)(Math.random()*part1.size());
 		question = part1.get(random);
+		System.out.println(question);
 		model.addAttribute("part1", question.getQuestionVideo());
 		rv.setQuestionNo(random);
 		reviewService.reviewInsert(rv);
