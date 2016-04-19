@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
- 
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <!-- Font Awesome -->
@@ -18,10 +17,6 @@
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-
-
-
-
 
 <body class="hold-transition skin-blue layout-top-nav">
 	<div class="wrapper">
@@ -41,11 +36,11 @@
 					<div class="collapse navbar-collapse pull-left"
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="/emt/admin/adminMember">회원관리</a></li>
-							<li><a href="/emt/admin/adminQuestion">문제관리</a></li>
-							<li><a href="/emt/admin/adminBoard">게시판관리</a></li>
-							<li><a href="/emt/admin/adminNotice">공지관리</a></li>
-							<li><a href="/emt/admin/grammarMove">문법관리</a></li>
+							<li><a href="adminMember">회원관리</a></li>
+							<li><a href="adminQuestion">문제관리</a></li>
+							<li><a href="adminBoard">게시판관리</a></li>
+							<li><a href="adminNotice">공지관리</a></li>
+
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
@@ -72,35 +67,63 @@
 
 				<!-- Main content -->
 				<section class="content">
+
+					<div class="box box-info">
+						
 					
-					
-					
+						<!-- /.box-header -->
+						<div class="box-body">
+						
+						<!-- 문제 목록이 들어가는 부분 -->
+						<div id="grammarList" class="table-responsive" style="width:700px; margin-left: auto; margin-right: auto">
+							
+							<table class="table no-margin">
+								
+							</table>
+								
+						</div>
+							
+							<!-- 페이징링크 -->	
+							<div id="pages" class="box-footer clearfix">
+								<ul  class="pagination pagination-sm no-margin pull-right">
+									<li><a href="#">«</a></li>
+									<li><a href="#">1</a></li>
+									<li><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">»</a></li>
+								</ul>
+							</div>
+							<div style="text-align: center">
+							<!-- 문제등록 페이지 이동 -->
+								<input type="button" class="btn btn-default"
+								onclick="location.replace('/emt/admin/grammarAddMove')" style="height:70px; width:100px;" value="문제 등록">
+							</div>
+							<!-- /.table-responsive -->
+						</div>
+						<!-- /.box-body -->
+						</div>
+						
 				</section>
 				<!-- /.content -->
 			</div>
 			<!-- /.container -->
 		</div>
 		<!-- /.content-wrapper -->
-		<footer class="main-footer">
-			<div class="container">
-				<div class="pull-right hidden-xs">
-					<b>Version</b> 2.3.0
+		<footer class="main-footer navbar-fixed-bottom">
+				<div class="container">
+					<div class="pull-right hidden-xs">
+						<b>Version</b> 1.0.0
+					</div>
+					<strong>Copyright &copy; 2016 <a
+						href="/emt/index">English Mock Test</a>
+					</strong> All rights reserved.
 				</div>
-				<strong>Copyright &copy; 2014-2015 <a
-					href="http://almsaeedstudio.com">Almsaeed Studio</a>.
-				</strong> All rights reserved.
-			</div>
-			<!-- /.container -->
-		</footer>
+			</footer>
 	</div>
 	<!-- ./wrapper -->
 
 
-
-
-
-
-
+	<!-- ./wrapper -->
 
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
@@ -113,3 +136,6 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
+	
+	<script src="<c:url value="/js/grammar/admin/grammarList.js"/>"></script>
+	

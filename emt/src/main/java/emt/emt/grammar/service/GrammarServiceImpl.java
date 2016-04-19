@@ -10,36 +10,47 @@ import emt.emt.grammar.dao.GrammarDao;
 
 @Service
 public class GrammarServiceImpl implements GrammarService{
-	@Autowired private GrammarDao grammarDao;	
+	@Autowired private GrammarDao grammarDao;
 	
+	// 관리자 문제조회
 	@Override
-	public int grammarInsert(Grammar grammar) {
-		// TODO Auto-generated method stub
-		return grammarDao.grammarInsert(grammar);
+	public List<Grammar> grammarList(int page) {
+		
+		return grammarDao.grammarList(page);
 	}
 
+	// 관리자 문제조회 페이징
+	@Override
+	public int grammarCount() {
+
+		return grammarDao.grammarCount();
+	}
+
+	// 관리자 문제상세보기
+	@Override
+	public Grammar grammarView(Grammar grammar) {
+		
+		return grammarDao.grammarView(grammar);
+	}
+	
+	// 관리자 문제등록
+	@Override
+	public int grammarAdd(Grammar grammar) {
+
+		return grammarDao.grammarAdd(grammar);
+	}
+
+	// 관리자 문제수정
 	@Override
 	public int grammarUpdate(Grammar grammar) {
-		// TODO Auto-generated method stub
+		
 		return grammarDao.grammarUpdate(grammar);
 	}
 
+	// 관리자 문제삭제
 	@Override
-	public int gramarDelete(Grammar grammar) {
-		// TODO Auto-generated method stub
-		return grammarDao.gramarDelete(grammar);
-	}
+	public int grammarDelete(Grammar grammar) {
 
-	@Override
-	public List<Grammar> grammarList() {
-		// TODO Auto-generated method stub
-		return grammarDao.grammarList();
+		return grammarDao.grammarDelete(grammar);
 	}
-
-	@Override
-	public Grammar grammarView(Grammar grammar) {
-		// TODO Auto-generated method stub
-		return grammarDao.grammarView(grammar);
-	}
-
 }

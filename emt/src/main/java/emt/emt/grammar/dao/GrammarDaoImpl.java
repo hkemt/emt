@@ -12,34 +12,44 @@ import emt.emt.grammar.dao.mapper.GrammarMapper;
 public class GrammarDaoImpl implements GrammarDao{
 	@Autowired private GrammarMapper grammarMapper;
 	
+	// 관리자 문제조회
 	@Override
-	public int grammarInsert(Grammar grammar) {
-		// TODO Auto-generated method stub
-		return grammarMapper.grammarInsert(grammar);
+	public List<Grammar> grammarList(int page) {
+		
+		return grammarMapper.grammarList(page);
 	}
 
+	// 관리자 문제조회 페이징
+	@Override
+	public int grammarCount() {
+		return grammarMapper.grammarCount();
+	}
+
+	// 관리자 문제 상세보기
+	@Override
+	public Grammar grammarView(Grammar grammar) {
+
+		return grammarMapper.grammarView(grammar);
+	}
+	// 관리자 문제등록
+	@Override
+	public int grammarAdd(Grammar grammar) {
+		
+		return grammarMapper.grammarAdd(grammar);
+	}
+
+	// 관리자 문제수정
 	@Override
 	public int grammarUpdate(Grammar grammar) {
-		// TODO Auto-generated method stub
 		return grammarMapper.grammarUpdate(grammar);
 	}
 
+	// 관리자 문제삭제
 	@Override
-	public int gramarDelete(Grammar grammar) {
-		// TODO Auto-generated method stub
-		return grammarMapper.gramarDelete(grammar);
+	public int grammarDelete(Grammar grammar) {
+		return grammarMapper.grammarDelete(grammar);
 	}
 
-	@Override
-	public List<Grammar> grammarList() {
-		// TODO Auto-generated method stub
-		return grammarMapper.grammarList();
-	}
-
-	@Override
-	public Grammar grammarView(Grammar grammar) {
-		// TODO Auto-generated method stub
-		return grammarMapper.grammarView(grammar);
-	}
+	
 
 }

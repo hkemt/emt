@@ -3,22 +3,13 @@ package emt.emt.common.domain;
 import java.sql.Date;
 
 public class Score {
+	private int scoreNo;		// 점수번호
+	private String userId;		// 아이디
+	private int grammerInning;	// 회차
+	private int scoreGrade;		// 점수
+	private Date scoreDate;		// 시험일
+	private int grammerNo;		// 문제번호
 	
-/*
-	SCORE_NO			NUMBER
-	USER_ID				VARCHAR2(20 BYTE)
-	GRAMMAR_INNING		NUMBER
-	SCORE_GRADE			NUMBER
-	SCORE_DATE			DATE
-	GRAMMAR_NO			NUMBER
-*/	
-	
-	private int scoreNo;
-	private String userId;
-	private int grammarInning;
-	private int scoreGrade;
-	private Date scoreDate;
-	private int grammarNo;
 	
 	public int getScoreNo() {
 		return scoreNo;
@@ -32,11 +23,11 @@ public class Score {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public int getGrammarInning() {
-		return grammarInning;
+	public int getGrammerInning() {
+		return grammerInning;
 	}
-	public void setGrammarInning(int grammarInning) {
-		this.grammarInning = grammarInning;
+	public void setGrammerInning(int grammerInning) {
+		this.grammerInning = grammerInning;
 	}
 	public int getScoreGrade() {
 		return scoreGrade;
@@ -50,14 +41,12 @@ public class Score {
 	public void setScoreDate(Date scoreDate) {
 		this.scoreDate = scoreDate;
 	}
-	public int getGrammarNo() {
-		return grammarNo;
+	public int getGrammerNo() {
+		return grammerNo;
 	}
-	public void setGrammarNo(int grammarNo) {
-		this.grammarNo = grammarNo;
+	public void setGrammerNo(int grammerNo) {
+		this.grammerNo = grammerNo;
 	}
-	
-	
 	
 	
 }

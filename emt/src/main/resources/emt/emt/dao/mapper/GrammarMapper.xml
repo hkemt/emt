@@ -2,21 +2,75 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="emt.emt.grammar.dao.mapper.GrammarMapper">
 	<resultMap id="grammarMap" type="emt.emt.common.domain.Grammar">
-		<result property="grammarNo" column="grammar_no" />
-		<result property="grammarQuiz" column="grammar_quiz" />
-		<result property="grammarEx" column="grammar_ex" />
-		<result property="grammarEx1" column="grammar_ex1" />
-		<result property="grammarEx2" column="grammar_ex2" />
-		<result property="grammarEx3" column="grammar_ex3" />
-		<result property="grammarEx4" column="grammar_ex4" />
-		<result property="grammarInning" column="grammar_inning" />
-		<result property="grammarAnswer" column="grammar_answer" />	
+		<result property="grammarNo" column="grammar_no"/>
+		<result property="grammarQuiz" column="grammar_quiz"/>
+		<result property="grammarEx" column="grammar_ex"/>
+		<result property="grammarEx1" column="grammar_ex1"/>
+		<result property="grammarEx2" column="grammar_ex2"/>
+		<result property="grammarEx3" column="grammar_ex3"/>
+		<result property="grammarEx4" column="grammar_ex4"/>
+		<result property="grammarInning" column="grammar_inning"/>
+		<result property="grammarAnswer" column="grammar_answer"/>
 	</resultMap>
 	
-	<select id="grammarList" resultMap="grammarMap">
-		select *
-		from grammar
+	<!-- 관리자 문제조회 -->
+	<select id="grammarList" parameterType="int" resultMap="grammarMap">
+		<![CDATA[
+		SELECT grammar_no grammarNo, grammar_quiz grammarQuiz, grammar_ex grammarEx, grammar_ex1 grammarEx1,
+			   grammar_ex2 grammarEx2, grammar_ex3 grammarEx3, grammar_ex4 grammarEx4, grammar_inning grammarInning,
+			   grammar_answer grammarAnswer
+			   
+		FROM (SELECT rownum AS rnum, M.* 
+			  FROM (
+			  		SELECT * 
+					FROM grammar
+					ORDER BY grammar_no DESC
+			  		) M 
+			  WHERE rownum  < = 7*#{page})
+		WHERE rnum > 7*(#{page}-1)
+		]]>
 	</select>
 
+	<!-- 관리자 문제조회 페이징 -->
+	<select id="grammarCount" resultType="int">
+		<![CDATA[
+		SELECT COUNT(*) 
+		FROM grammar
+		]]>		
+	</select>
+	
+	<!-- 관리자 문제상세보기 -->
+	<select id="grammarView" parameterType="emt.emt.common.domain.Grammar" resultMap="grammarMap">
+		select *
+		from grammar
+		where grammar_no=#{grammarNo}
+	</select>
+	
+	<!--  관리자 문제등록 -->
+	<insert id="grammarAdd" parameterType="emt.emt.common.domain.Grammar">
+		insert into grammar values(seq_grammar_no.nextval, #{grammarQuiz}, #{grammarEx}, #{grammarEx1},
+		 #{grammarEx2}, #{grammarEx3}, #{grammarEx4}, #{grammarInning}, #{grammarAnswer})
+	</insert>
+	
+	<!-- 관리자 문제수정 -->
+	<update id="grammarUpdate" parameterType="emt.emt.common.domain.Grammar">
+		update grammar
+		<set>
+			<if test="grammarQuiz != null">grammar_quiz=#{grammarQuiz},</if>
+			<if test="grammarEx  != null">grammar_ex=#{grammarEx},</if>
+			<if test="grammarEx1 != null">grammar_ex1=#{grammarEx1},</if>
+			<if test="grammarEx2 != null">grammar_ex2=#{grammarEx2},</if>
+			<if test="grammarEx3 != null">grammar_ex3=#{grammarEx3},</if>
+			<if test="grammarEx4 != null">grammar_ex4=#{grammarEx4},</if>
+			<if test="grammarInning != null">grammar_inning=#{grammarInning},</if>
+			<if test="grammarAnswer != null">grammar_answer=#{grammarAnswer}</if>
+		</set>
+		where grammar_no=#{grammarNo}
+	</update>
+	
+	<!-- 관리자 문제삭제 -->
+	<delete id="grammarDelete" parameterType="emt.emt.common.domain.Grammar">
+		delete grammar where grammar_no=#{grammarNo}
+	</delete>
 
 </mapper>
