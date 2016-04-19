@@ -30,5 +30,9 @@ public class Question {
 	public void setQuestionVideo(String questionVideo) {
 		this.questionVideo = questionVideo;
 	}
-	
+	@Override
+	public String toString() {
+		return "Question [questionNo=" + questionNo + ", questionType="
+				+ questionType + ", questionVideo=" + questionVideo + "]";
+	}
 }
