@@ -101,10 +101,14 @@
 					<div class="box box-info">
 						<!-- /.box-header -->
 						<div class="box-body">
-							<video width="700" height="500" id="videoPlayer"
-								controls="controls" src="<c:url value="/upload/part1/${part1 }"/>"
-								autoplay="autoplay" width="800px" height="800px">
-							</video>
+							<div
+								style="width: 1000px; margin-left: auto; margin-right: auto; text-align: center">
+								<video width="700" height="500" id="videoPlayer"
+									controls="controls"
+									src="<c:url value="/upload/part1/${part1 }"/>"
+									autoplay="autoplay" width="800px" height="800px">
+								</video>
+							</div>
 						</div>
 						<!-- /.box-body -->
 						<!-- /.table-responsive -->
@@ -131,20 +135,34 @@
 	<!-- ./wrapper -->
 
 	<!-- 로그아웃 -->
-	
+
 	<script type="text/javascript">
-		var i=1;
-		var parts = [ "part1/" + "${part1}", "part2/" + "${part2}","part3/" + "${part3}", "part4/" + "${part4}",
+		var i = 1;
+		var parts = [ "part1/" + "${part1}", "part2/" + "${part2}",
+				"part3/" + "${part3}", "part4/" + "${part4}",
 				"part5/" + "${part5}", "part6/" + "${part6}" ];
 		var videoPlayer = document.getElementById("videoPlayer");
 		videoPlayer.onended = function() {
-			if(i==parts.length){
+			if (i == parts.length) {
 				alert("시험이 종료되었습니다.");
-				document.location.href="/emt/index";
+				document.location.href = "/emt/index";
 			}
-			videoPlayer.src = "/emt/upload/"+parts[i];
+			videoPlayer.src = "/emt/upload/" + parts[i];
 			i++;
 		}
 	</script>
+
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- Bootstrap 3.3.5 -->
+	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
+	<!-- SlimScroll -->
+	<script src="<c:url value="/js/jquery.slimscroll.min.js"/>"></script>
+	<!-- FastClick -->
+	<script src="<c:url value="/js/fastclick.min.js"/>"></script>
+	<!-- AdminLTE App -->
+	<script src="<c:url value="/js/app.min.js"/>"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="<c:url value="/js/demo.js"/>"></script>
+	<script src="<c:url value="/js/logout.js"/>"></script>
 </body>
 </html>
