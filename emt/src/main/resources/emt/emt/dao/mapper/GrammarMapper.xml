@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emt.emt.grammar.dao.mapper.GrammarMapper">
+	<resultMap id="grammarMap" type="emt.emt.common.domain.Grammar">
+		<result property="grammarNo" column="grammar_no" />
+		<result property="grammarQuiz" column="grammar_quiz" />
+		<result property="grammarEx" column="grammar_ex" />
+		<result property="grammarEx1" column="grammar_ex1" />
+		<result property="grammarEx2" column="grammar_ex2" />
+		<result property="grammarEx3" column="grammar_ex3" />
+		<result property="grammarEx4" column="grammar_ex4" />
+		<result property="grammarInning" column="grammar_inning" />
+		<result property="grammarAnswer" column="grammar_answer" />	
+	</resultMap>
+	
+	<select id="grammarList" resultMap="grammarMap">
+		select *
+		from grammar
+	</select>
+
+
+</mapper>
