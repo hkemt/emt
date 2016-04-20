@@ -155,8 +155,7 @@
 		var videoPlayer = document.getElementById("videoPlayer");
 		videoPlayer.onended = function() {
 			if (i == parts.length) {
-				//$("#mymodal").modal({show:true});
-				$("#confirmDelete").modal({
+				$("#mymodal").modal({show:true});
 					show : true
 				});
 			}
