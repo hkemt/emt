@@ -156,8 +156,6 @@
 		videoPlayer.onended = function() {
 			if (i == parts.length) {
 				$("#mymodal").modal({show:true});
-					show : true
-				});
 			}
 			videoPlayer.src = "/emt/upload/" + parts[i];
 			i++;
