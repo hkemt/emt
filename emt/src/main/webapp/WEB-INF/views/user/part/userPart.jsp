@@ -113,7 +113,7 @@
 							
 							int random = (int)(Math.random()*parts.size());
 							
-							Question part = parts.get(13);
+							Question part = parts.get(random);
 							
 							// 문제유형
 							int type=part.getQuestionType();
