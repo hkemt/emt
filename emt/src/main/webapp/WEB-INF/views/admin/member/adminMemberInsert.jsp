@@ -29,7 +29,7 @@
 <body class="hold-transition register-page">
 	<div class="register-box">
 		<div class="register-logo">
-			<a href="/emt/index"><b>English Mock</b>Test</a>
+			<a href="/emt/admin/adminMain"><b>English Mock</b>Test</a>
 		</div>
 
 		<div class="register-box-body">
