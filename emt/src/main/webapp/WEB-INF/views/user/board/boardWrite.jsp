@@ -7,7 +7,6 @@
 		<script>
 			alert("${loginMsg}");
 			<%
-	    	session.removeAttribute("loginMsg");
 		    %>
 		</script>
 	</c:when>
@@ -127,12 +126,7 @@
 							<h3 id="title" class="box-title">글쓰기</h3>
 							
 							<div class="box-tools pull-right">
-								<button class="btn btn-box-tool" data-widget="collapse">
-									<i class="fa fa-minus"></i>
-								</button>
-								<button class="btn btn-box-tool" data-widget="remove">
-									<i class="fa fa-times"></i>
-								</button>
+
 							</div>
 						</div>
 						<!-- /.box-header -->
