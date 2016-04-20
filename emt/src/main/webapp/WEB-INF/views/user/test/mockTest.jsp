@@ -133,7 +133,18 @@
 		</footer>
 	</div>
 	<!-- ./wrapper -->
-
+	<div class="modal" id="mymodal">
+		<div class="modal-dialog" id="sss">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h3>시험이 종료되었습니다. 확인 버튼을 누르시면 메인화면으로 돌아갑니다.</h3>
+				</div>
+				<div class="modal-footer">
+					<button id="goindex" type="button" class="btn btn-primary">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- 로그아웃 -->
 
 	<script type="text/javascript">
@@ -144,12 +155,17 @@
 		var videoPlayer = document.getElementById("videoPlayer");
 		videoPlayer.onended = function() {
 			if (i == parts.length) {
-				alert("시험이 종료되었습니다.");
-				document.location.href = "/emt/index";
+				//$("#mymodal").modal({show:true});
+				$("#confirmDelete").modal({
+					show : true
+				});
 			}
 			videoPlayer.src = "/emt/upload/" + parts[i];
 			i++;
 		}
+		$("#goindex").click(function() {
+			document.location.href = "/emt/index";
+		});
 	</script>
 
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
