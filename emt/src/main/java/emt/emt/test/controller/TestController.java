@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,47 +36,58 @@ public class TestController {
 		question = part1.get(random);
 		System.out.println(question);
 		model.addAttribute("part1", question.getQuestionVideo());
-		rv.setQuestionNo(random);
+		rv.setQuestionNo(question.getQuestionNo());
+		System.out.println(sid);
 		reviewService.reviewInsert(rv);
 		
 		question.setQuestionType(2);
 		List<Question> part2 = partService.partQuestion(question);
 		random = (int)(Math.random()*part2.size());
 		question = part2.get(random);
+		System.out.println(question);
 		model.addAttribute("part2", question.getQuestionVideo());
-		rv.setQuestionNo(random);
+		rv.setQuestionNo(question.getQuestionNo());
+		System.out.println(sid);
 		reviewService.reviewInsert(rv);
 		
 		question.setQuestionType(3);
 		List<Question> part3 = partService.partQuestion(question);
 		random = (int)(Math.random()*part3.size());
 		question = part3.get(random);
+		System.out.println(question);
 		model.addAttribute("part3", question.getQuestionVideo());
-		rv.setQuestionNo(random);
+		rv.setQuestionNo(question.getQuestionNo());
+		System.out.println(sid);
 		reviewService.reviewInsert(rv);
 		
 		question.setQuestionType(4);
 		List<Question> part4 = partService.partQuestion(question);
 		random = (int)(Math.random()*part4.size());
 		question = part4.get(random);
+		System.out.println(question);
 		model.addAttribute("part4", question.getQuestionVideo());
-		rv.setQuestionNo(random);
+		rv.setQuestionNo(question.getQuestionNo());
+		System.out.println(sid);
 		reviewService.reviewInsert(rv);
 		
 		question.setQuestionType(5);
 		List<Question> part5 = partService.partQuestion(question);
 		random = (int)(Math.random()*part5.size());
 		question = part5.get(random);
+		System.out.println(question);
 		model.addAttribute("part5", question.getQuestionVideo());
-		rv.setQuestionNo(random);
+		rv.setQuestionNo(question.getQuestionNo());
+		System.out.println(sid);
 		reviewService.reviewInsert(rv);
 		
 		question.setQuestionType(6);
 		List<Question> part6 = partService.partQuestion(question);
 		random = (int)(Math.random()*part6.size());
 		question = part6.get(random);
+		System.out.println(question);
 		model.addAttribute("part6", question.getQuestionVideo());
-		rv.setQuestionNo(random);
+		rv.setQuestionNo(question.getQuestionNo());
+		System.out.println(sid);
 		reviewService.reviewInsert(rv);
 		
 		return "/user/test/mockTest";
