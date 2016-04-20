@@ -13,5 +13,5 @@ public interface ReplyService {
 	//댓글 리스트 가져오기
 	List<Reply> replyList(int type);
 	//댓글을 해당 게시판 번호에 맞게 가져오기
-	int replyCount();
+	int replyCount(Reply reply);
 }

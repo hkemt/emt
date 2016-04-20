@@ -3,7 +3,8 @@ function replyList(page) {
 	$.ajax({
 		url: "replyList",
 		method: "POST",
-		data: {type: page},
+		data: {type: page
+			},
 		success: function(result){
 			$("#replyView").html("<table id='replyTable' class='table no-margin'></table>");
 			$("#replyTable").append("<thead><tr><th>번호</th><th>내용</th><th>아이디</th><th>작성일</th></thead>");
@@ -31,6 +32,9 @@ function replyPage(){
 	$.ajax({
 		url: "replyCount",
 		method: "POST",
+		data: {
+			boardNo: $("#boardNo").val()
+		},
 		success: function(count){
 			countAll = count;
 			
@@ -63,7 +67,8 @@ $(document).ready(function(){
 			method: "POST",
 			data: {
 				userId: $("#userId").val(),
-				replyContent: $("#replyContent").val()
+				replyContent: $("#replyContent").val(),
+				boardNo: $("#boardNo").val()
 			}
 		}).done(function(result){
 			alert('등록성공');

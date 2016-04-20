@@ -100,14 +100,14 @@
 								<table class="table no-margin">
 									<thead>
 										<tr>
-											<td><b>아이디</b></td>
-											<td><b>${user.userId }<input type="hidden" name="userId" value="${user.userId }">	</b></td>
+											<td width=150><b>아이디</b></td>
+											<td width=300><b>${user.userId }<input type="hidden" name="userId" value="${user.userId }">	</b></td>
 										</tr>
 
 										
 										<tr>
-											<td><b>가입일자</b></td>
-											<td><b>${user.userDate }</b></td>
+											<td width=150><b>가입일자</b></td>
+											<td width=300><b>${user.userDate }</b></td>
 										</tr>
 <%-- 									
 										<tr>
@@ -119,20 +119,20 @@
 									<tbody>
 										<tr>			 
 													
-											<td><label for="userPw">변경 비밀번호 (수정 가능)</label></td>
-											<td><input id="userPw" name="userPw" type="password"></td>
+											<td width=150><label for="userPw">변경 비밀번호 (수정 가능)</label></td>
+											<td width=300><input id="userPw" name="userPw" type="password"></td>
 										</tr>
 										<tr>
-											<td><label for="confirm_password">변경 비밀번호 확인 (수정 가능)</label> </td>
-											<td><input id="confirm_password" name="confirm_password" type="password"></td>
+											<td width=150><label for="confirm_password">변경 비밀번호 확인 (수정 가능)</label> </td>
+											<td width=300><input id="confirm_password" name="confirm_password" type="password"></td>
 										</tr>
 										<tr>
 
 										</tr>
 
 										<tr>
-											<td><b>이메일 (수정 가능)</b></td>
-											<td><input type="text" name="email" value=${user.email } required></td>
+											<td width=150><b>이메일 (수정 가능)</b></td>
+											<td width=300><input type="text" name="email" value=${user.email } required></td>
 										</tr>
 
 									</tbody>

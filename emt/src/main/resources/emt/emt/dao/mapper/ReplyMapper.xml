@@ -15,7 +15,8 @@
 		FROM (SELECT rownum AS rnum, M.* 
 			  FROM (
 			  		SELECT * 
-					FROM reply 
+					FROM reply
+					where board_No=#{boardNo}
 					ORDER BY reply_no DESC
 			  		) M 
 			  WHERE rownum  < = 4*#{replyCount})
@@ -27,6 +28,7 @@
 		<![CDATA[
 		SELECT COUNT(*) 
 		FROM reply
+		where board_no=#{boardNo}
 		]]>
 	</select>
 	

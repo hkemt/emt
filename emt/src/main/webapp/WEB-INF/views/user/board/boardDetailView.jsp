@@ -176,6 +176,7 @@
 												<div style="text-align: center;">
 													<form id="replyInsert">
 														<input type="hidden" name="userId" id="userId" value='${sid}' >
+														<input type="hidden" name="boardNo" id="boardNo" value='${boardNo}' >
 														<input type="text" name="replyContent"  id="replyContent" style="width: 85%"> 
 														<input class="btn btn-default" type="submit" style='width: 10%' value="등록">
 													</form>

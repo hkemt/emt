@@ -43,9 +43,9 @@ public class ReplyDaoImpl implements ReplyDao{
 	}
 
 	@Override
-	public int replyCount() {
+	public int replyCount(Reply reply) {
 		// TODO Auto-generated method stub
-		return replyMapper.replyCount();
+		return replyMapper.replyCount(reply);
 	}
 
 }

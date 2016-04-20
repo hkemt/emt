@@ -43,9 +43,9 @@ public class ReplyServiceImpl implements ReplyService{
 	}
 
 	@Override
-	public int replyCount() {
+	public int replyCount(Reply reply) {
 		// TODO Auto-generated method stub
-		return replyDao.replyCount();
+		return replyDao.replyCount(reply);
 	}
 
 }

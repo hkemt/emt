@@ -20,7 +20,8 @@ public class ReplyController {
 	//1_1 댓글 불러오기
 	@RequestMapping(value="replyList", method=RequestMethod.POST)
 	@ResponseBody
-	public List<Reply> replyList(int type){
+	public List<Reply> replyList(int type, Reply reply, Model model){
+		model.addAttribute("Reply", reply);
 		return replyService.replyList(type);
 		
 	}
@@ -28,8 +29,9 @@ public class ReplyController {
 	//댓글 해당 게시판의 전체 숫자 불러오기
 	@RequestMapping(value="replyCount", method=RequestMethod.POST)
 	@ResponseBody
-	public int replyCount(){
-		return replyService.replyCount();
+	public int replyCount(Reply reply){
+		
+		return replyService.replyCount(reply);
 	}
 	
 	//1_2 댓글 추가하기
