@@ -126,8 +126,7 @@
 							</div>
 														
 							<div>
-							<input type="button" onclick="location.href='#'" style="float: right" value="삭제"> 
-							<input type="button" onclick="location.href='#'" style="float: right" value="등록">
+							<input type="button" onclick="location.href='/emt/admin/question/questionAdd'" style="float: right" value="등록">
 							</div>
 							
 							<!-- /.table-responsive -->
