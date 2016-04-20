@@ -133,23 +133,25 @@
 		</footer>
 	</div>
 	<!-- ./wrapper -->
-	<div class="modal" id="mymodal">
-		<div class="modal-dialog" id="sss">
-			<div class="modal-content">
-				<div class="modal-body">
-					<h3>시험이 종료되었습니다. 확인 버튼을 누르시면 메인화면으로 돌아갑니다.</h3>
-				</div>
-				<div class="modal-footer">
-					<button id="goindex" type="button" class="btn btn-primary">확인</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 로그아웃 -->
 
+	<!-- 로그아웃 -->
+	
+	 <div class="modal" id="mymodal">
+        <div class="modal-dialog" id="sss">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h3>시험이 종료되었습니다. 확인 버튼을 누르시면 메인화면으로 돌아갑니다.</h3>
+                </div>
+                <div class="modal-footer">
+                    <button id="goindex" type="button" class="btn btn-primary">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+	
 	<script type="text/javascript">
 		var i = 1;
-		var parts = [ "part1/" + "${part1}", "part2/" + "${part2}",
+		var parts = [ "part1/" + "${part1}" , "part2/" + "${part2}",
 				"part3/" + "${part3}", "part4/" + "${part4}",
 				"part5/" + "${part5}", "part6/" + "${part6}" ];
 		var videoPlayer = document.getElementById("videoPlayer");
@@ -160,8 +162,8 @@
 			videoPlayer.src = "/emt/upload/" + parts[i];
 			i++;
 		}
-		$("#goindex").click(function() {
-			document.location.href = "/emt/index";
+		$("#goindex").click(function(){
+			document.location.href="/emt/index";
 		});
 	</script>
 
