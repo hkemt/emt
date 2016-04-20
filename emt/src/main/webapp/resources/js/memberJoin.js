@@ -1,9 +1,11 @@
 var exp = /^[a-z0-9]{5,10}$/;
 var mailExp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+var space = /\s/g;
 // id확인
+
 function idCheck() {
-	if (!exp.test($("#userId").val())) {
-		alert("아이디는 영문,숫자 5~10자리로 입력해주세요");
+	if ((!exp.test($("#userId").val()))) {
+		alert("아이디는 영문,숫자 5~10자리로 입력해주세요\n공백 문자 제외");
 		return false;
 	} else {
 		return true;
