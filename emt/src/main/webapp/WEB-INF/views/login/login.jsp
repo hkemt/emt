@@ -40,7 +40,7 @@
 <body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
-			<a href="top-nav.html"><b>English Mock</b>Test</a>
+			<a href="/emt/index"><b>English Mock</b>Test</a>
 		</div>
 		<!-- /.login-logo -->
 		<div class="login-box-body login-page">
@@ -68,7 +68,7 @@
 			</form>
 
 			<a href="#">아이디 / 비밀번호를 잊으셨나요? - 찾기</a><br> 
-			<a href="/emt/join/join2" class="text-center">회원가입을 안하셨나요? -회원가입</a>
+			<a href="/emt/join/join" class="text-center">회원가입을 안하셨나요? -회원가입</a>
 			<!--<div class="social-auth-links text-center"> <a href="#" class="btn btn-primary btn-block btn-flat"> 회원가입</a>
           <a href="#" class="btn btn-primary btn-block btn-flat"> 아이디/비밀번호 찾기</a> -->
 		</div>

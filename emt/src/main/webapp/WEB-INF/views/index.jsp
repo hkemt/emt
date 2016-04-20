@@ -57,12 +57,6 @@
 						<ul class="nav navbar-nav">
 							<li><a href="/emt/user/test/mockTest">토익스피킹 모의고사</a></li>
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
-								data-toggle="dropdown">게시판 <span class="caret"></span></a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="/emt/notice">공지사항</a>
-									<li><a href="/emt/board">문제공유</a>
-								</ul></li>
-							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">파트별문제풀기 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="/emt/user/part/part1">Part1</a></li>
@@ -73,6 +67,12 @@
 									<li><a href="/emt/user/part/part6">Part6</a></li>
 								</ul></li>
 							<li><a href="userGrammarList">문법문제</a></li>	
+							<li class="dropdown"><a href="#" class="dropdown-toggle"
+								data-toggle="dropdown">게시판 <span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="/emt/notice">공지사항</a>
+									<li><a href="/emt/board">문제공유</a>
+								</ul></li>
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
