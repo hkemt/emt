@@ -34,7 +34,10 @@
 		from question
 		where question_no=#{questionNo}
 	</select>
-	<insert id="questionInsert">
+	<insert id="questionInsert" parameterType="emt.emt.common.domain.Question">
 		INSERT INTO QUESTION values(seq_question_no.nextval, #{questionType}, #{questionVideo})
-	</insert>	
+	</insert>
+	<delete id="questionDelete" parameterType="emt.emt.common.domain.Question">
+		DELETE FROM QUESTION WHERE question_no=#{questionNo}
+	</delete>	
 </mapper>

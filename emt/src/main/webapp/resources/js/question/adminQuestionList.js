@@ -22,7 +22,7 @@
 					}
 					
 					
-					$("#questionTable").append("<tr>"	+"<td><input type='radio'></td>"
+					$("#questionTable").append("<tr>"	+"<td><input type='radio' name='questionNo' value="+result[i].questionNo+"></td>"
 														+"<td><a href='questionView?questionNo="+result[i].questionNo + "'>"+result[i].questionNo + "</a></td>"
 														+"<td><span class='label label-"+color+"'>"+result[i].questionType +"</span></td>"
 														+"<td>"+result[i].questionVideo +"</td></tr>");				

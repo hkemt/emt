@@ -15,6 +15,8 @@
          folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="<c:url value="/js/question/questionDelete.js" />"></script>
+<script src="<c:url value="/js/question/questionAdd.js" />"></script>
 <script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 
@@ -126,7 +128,8 @@
 							</div>
 														
 							<div>
-							<input type="button" onclick="location.href='/emt/admin/question/questionAdd'" style="float: right" value="등록">
+							<button class="btn btn-danger" type="button" id="delete" style="float: right">삭제</button>
+							<button class="btn btn-primary" type="button" onclick="location.href='/emt/admin/question/questionAdd'" style="float: right">등록</button>
 							</div>
 							
 							<!-- /.table-responsive -->

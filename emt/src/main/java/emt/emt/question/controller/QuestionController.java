@@ -55,11 +55,13 @@ public class QuestionController {
 		return "admin/question/adminQuestionView";
 	}
 
+	// 문제 등록 폼 부분
 	@RequestMapping("admin/question/questionAdd")
 	public String questionAdd() {
 		return "admin/question/questionAdd";
 	}
 
+	// 문제 등록 요청 처리 부분
 	@RequestMapping(value = "admin/question/questionAdd", method = RequestMethod.POST)
 	public String upload(MultipartFile uploadFile, String questionType,
 			HttpServletRequest request) {
@@ -85,6 +87,20 @@ public class QuestionController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	// ///////////////문제 삭제
+	@RequestMapping(value = "admin/question/questionDelete", method = RequestMethod.POST)
+	@ResponseBody
+	public int questionDelete(Question question,HttpServletRequest request) {
+		question = questionService.questionView(question);
+		String dir = request.getServletContext().getRealPath(savePath);
+		String path = dir+"\\part"+question.getQuestionType()+"\\"+question.getQuestionVideo();
+		File file = new File(path);
+		if(file.exists()){
+			file.delete();
+		}
+		return questionService.questionDelete(question);
 	}
 
 	private int partType(String questionType) {
