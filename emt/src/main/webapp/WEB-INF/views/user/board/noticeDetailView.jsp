@@ -132,7 +132,7 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<div class="table-responsive" style="text-align: right;">
+							<div class="table-responsive" style="text-align: center;">
 								<table class="table no-margin">
 									<thead>
 										<tr>
@@ -148,9 +148,9 @@
 
 										<tr>
 											<td>
-											<textarea id="noticeContent"  rows="15"
+											<div id="noticeContent"  rows="15"
 											 style="resize: none; outline-style:none; height:auto;width:100%; border: none;" readonly>
-											</textarea>
+											</div>
 											
 											</td>
 										</tr>
