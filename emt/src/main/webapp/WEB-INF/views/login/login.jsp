@@ -16,26 +16,45 @@
 	type="text/css">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="<c:url value="/js/adminLogin.js" />"></script>
-<title>무제 문서</title>
-<c:choose>
-	<c:when test="${msg!=null }">
-		<script>
-			alert("${msg}");
-		</script>
-	</c:when>
 
-	<c:when test="${sessionScope.sid=='admin' }">
-		<c:redirect url="/admin/adminMain" />
-	</c:when>
-	<c:when test="${sessionScope.sid==null }">
-	</c:when>
-	<c:otherwise>
-		<script>
-			document.location.href = "/emt/index";
-		</script>
-	</c:otherwise>
-</c:choose>
 <body class="hold-transition login-page">
+
+	<!-- 작은 모달 -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalHeader">
+		<button type="button"  class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent">
+			...
+	      </div>
+	      <div class="modal-footer" id="modalBtns">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
+	
+	<!-- 로그아웃용 작은 모달 -->
+	<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalHeader1">
+		<button type="button"  class="close" onclick="moveIndex()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle1">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent1">
+			로그아웃 되었습니다.
+	      </div>
+	      <div class="modal-footer" id="modalBtns1">
+		<button type="button" class="btn btn-primary" onclick="moveIndex()" >확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
+	
 	<div class="login-box">
 		<div class="login-logo">
 			<a href="/emt/index"><b>English Mock</b>Test</a>
@@ -59,7 +78,7 @@
 					<div class="social-auth-links text-center">
 						<input type="submit" name="Submit"
 							class="btn btn-primary btn-block btn-flat" value="로그인">
-						</button>
+						
 					</div>
 					<!-- /.col -->
 				</div>
@@ -71,8 +90,37 @@
           <a href="#" class="btn btn-primary btn-block btn-flat"> 아이디/비밀번호 찾기</a> -->
 		</div>
 		<!-- /.social-auth-links -->
-
+		
 
 
 	</div>
-	<!-- /.login-box-body -->
+	
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- Bootstrap 3.3.5 -->
+	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
+	<!-- SlimScroll -->
+	<script src="<c:url value="/js/jquery.slimscroll.min.js"/>"></script>
+	<!-- FastClick -->
+	<script src="<c:url value="/js/fastclick.min.js"/>"></script>
+	<!-- AdminLTE App -->
+	<script src="<c:url value="/js/app.min.js"/>"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="<c:url value="/js/demo.js"/>"></script>
+	
+	
+<c:choose>
+	<c:when test="${msg!=null }">
+		<script>
+		$("#modalContent").html("${msg}");
+		$("#modal").modal({show:true});
+		</script>
+	</c:when>
+
+	<c:when test="${sessionScope.sid=='admin' }">
+		<c:redirect url="/admin/adminMain" />
+	</c:when>
+	<c:when test="${sessionScope.sid==null }">
+	</c:when>
+	
+</c:choose>
+	</body><!-- /.login-box-body -->

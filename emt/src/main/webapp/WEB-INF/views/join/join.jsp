@@ -8,7 +8,6 @@
 	name="viewport">
 
 <!-- Bootstrap 3.3.5 -->
-
 <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet"
 	type="text/css">
 <!-- Font Awesome -->
@@ -27,6 +26,43 @@
 <script src="<c:url value="/js/memberJoin.js"/>"></script>
 
 <body class="hold-transition register-page">
+
+<!-- 작은 모달 -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalheader">
+		<button type="button"  class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent">
+			...
+	      </div>
+	      <div class="modal-footer" id="modalBtns">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
+
+	<!-- 로그아웃용 작은 모달 -->
+	<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalHeader1">
+		<button type="button"  class="close" onclick="moveIndex()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle1">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent1">
+			로그아웃 되었습니다.
+	      </div>
+	      <div class="modal-footer" id="modalBtns1">
+		<button type="button" class="btn btn-primary" onclick="moveIndex()" >확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
+	
 	<div class="register-box">
 		<div class="register-logo">
 			<a href="/emt/index"><b>English Mock</b>Test</a>
@@ -72,4 +108,17 @@
 		</div>
 		<!-- /.form-box -->
 	</div>
+	
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- Bootstrap 3.3.5 -->
+	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
+	<!-- SlimScroll -->
+	<script src="<c:url value="/js/jquery.slimscroll.min.js"/>"></script>
+	<!-- FastClick -->
+	<script src="<c:url value="/js/fastclick.min.js"/>"></script>
+	<!-- AdminLTE App -->
+	<script src="<c:url value="/js/app.min.js"/>"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="<c:url value="/js/demo.js"/>"></script>
+	
 	<!-- /.register-box -->
