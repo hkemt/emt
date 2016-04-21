@@ -5,7 +5,9 @@ var space = /\s/g;
 
 function idCheck() {
 	if ((!exp.test($("#userId").val()))) {
-		alert("아이디는 영문,숫자 5~10자리로 입력해주세요\n공백 문자 제외");
+		$("#modalContent").html("아이디는 영문,숫자 5~10자리로 입력해주세요\n공백 문자 제외");
+		$("#modal").modal({show : true});
+		
 		return false;
 	} else {
 		return true;
@@ -14,7 +16,10 @@ function idCheck() {
 // pw확인
 function pwCheck() {
 	if (!exp.test($("#userPw").val())) {
-		alert("비밀번호는 영문,숫자 5~10자리로 입력해주세요");
+		
+		$("#modalContent").html("비밀번호는 영문,숫자 5~10자리로 입력해주세요");
+		$("#modal").modal({show : true});
+		
 		return false;
 	} else {
 		return true;
@@ -23,7 +28,10 @@ function pwCheck() {
 // 비밀번호와 비밀번호 확인 일치여부
 function pwCheck2() {
 	if ($("#userPwCh").val() != frmJoin.userPw.value) {
-		alert("비밀번호확인과 비밀번호가 일치하지 않습니다.");
+		
+		$("#modalContent").html("비밀번호확인과 비밀번호가 일치하지 않습니다.");
+		$("#modal").modal({show : true});
+
 		return false;
 	} else {
 		return true;
@@ -32,7 +40,10 @@ function pwCheck2() {
 // 메일 확인
 function mailCheck() {
 	if (!mailExp.test($("#email").val())) {
-		alert("메일 형식은 abc@abc.com입니다.");
+		
+		$("#modalContent").html("메일 형식은 abc@abc.com입니다.");
+		$("#modal").modal({show : true});
+
 		return false;
 	} else {
 		return true;
@@ -57,7 +68,7 @@ $(function() {
 	var duplch = false;
 	// /////////// var userId = $("#userId").val();
 	$("#userId").change(function() {
-	//	duplch=false;
+		duplch=false;
 		idCheck();
 	});
 	$("#duplbtn").click(function() {
@@ -72,9 +83,14 @@ $(function() {
 			success : function(result) {
 				if (result == "") {
 					duplch = true;
-					alert("사용하실 수 있는 ID입니다.");
+					
+					$("#modalContent").html("사용하실 수 있는 ID입니다.");
+					$("#modal").modal({show : true});
+
 				} else {
-					alert("사용하실 수 없는 ID입니다.");
+					
+					$("#modalContent").html("사용하실 수 없는 ID입니다.");
+					$("#modal").modal({show : true});
 				}
 			},
 			error : function(request, status, error) {
@@ -106,10 +122,13 @@ $(function() {
 											},
 											success : function(result) {
 												if (result == 1) {
-													alert("회원가입 되었습니다.");
-													document.location.href = "/emt/index";
+													
+													$("#modalContent1").html("회원가입 되었습니다.");
+													$("#modal1").modal({show : true});
+													
 												} else {
-													alert("회원가입 되지 않았습니다.");
+													$("#modalContent").html("회원가입 되지 않았습니다.");
+													$("#modal").modal({show : true});
 												}
 											},
 											error : function(request, status,
@@ -120,8 +139,15 @@ $(function() {
 											}
 										});
 							} else if (!duplch) {
-								alert("ID 중복 확인 해주십시오.");
+								
+								$("#modalContent").html("ID 중복 확인 해주십시오.");
+								$("#modal").modal({show : true});
 							}
 						}
 					});
 });
+
+
+function moveIndex(){
+	document.location.href = "/emt/index";
+}
