@@ -148,9 +148,9 @@
 
 										<tr>
 											<td>
-											<textarea id="noticeContent"  rows="15"
+											<div id="noticeContent"  rows="15"
 											 style="resize: none; outline-style:none; height:auto;width:100%; border: none;" readonly>
-											</textarea>
+											</div>
 											
 											</td>
 										</tr>
