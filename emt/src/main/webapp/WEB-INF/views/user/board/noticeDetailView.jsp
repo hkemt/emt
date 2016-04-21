@@ -132,7 +132,7 @@
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
-							<div class="table-responsive" style="text-align: center;">
+							<div class="table-responsive" style="text-align: right;">
 								<table class="table no-margin">
 									<thead>
 										<tr>
