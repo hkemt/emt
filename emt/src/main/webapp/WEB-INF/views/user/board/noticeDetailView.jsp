@@ -148,8 +148,10 @@
 
 										<tr>
 											<td>
-											<div id="noticeContent" style="height:300px;">
-											</div>
+											<textarea id="noticeContent"  rows="15"
+											 style="resize: none; outline-style:none; height:auto;width:100%; border: none;" readonly>
+											</textarea>
+											
 											</td>
 										</tr>
 
