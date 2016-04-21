@@ -127,15 +127,15 @@
 		</div>
 		<!-- /.content-wrapper -->
 		<footer class="main-footer navbar-fixed-bottom">
-			<div class="container">
-				<div class="pull-right hidden-xs">
-					<b>Version</b> 1.0.0
+				<div class="container">
+					<div class="pull-right hidden-xs">
+						<b>Version</b> 1.0.0
+					</div>
+					<strong>Copyright &copy; 2016 <a
+						href="/emt/index">English Mock Test</a>
+					</strong> All rights reserved.
 				</div>
-				<strong>Copyright &copy; 2016 <a href="/emt/index">English
-						Mock Test</a>
-				</strong> All rights reserved.
-			</div>
-		</footer>
+			</footer>
 	</div>
 	<!-- ./wrapper -->
 

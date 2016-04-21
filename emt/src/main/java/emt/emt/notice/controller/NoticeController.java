@@ -40,6 +40,27 @@ public class NoticeController {
 		return noticeService.noticeCount();
 	}
 	
+	// 관리자 공지글쓰기 페이지 이동
+	@RequestMapping("/admin/adminNoticeAddMove")
+	public String noticeAddMove(){
+		
+		return "admin/notice/adminNoticeAdd";
+	}
+	
+	// 관리자 공지글 쓰기
+	@RequestMapping(value="/admin/noticeAdd", method=RequestMethod.POST)
+	@ResponseBody
+	public int noticeAdd(Board board){
+		
+		return noticeService.noticeInsert(board);
+	}
+	
+	
+	
+	
+	
+	
+	
 	//2_1 공지사항 페이지 이동
 	@RequestMapping("notice")
 	public String notice(){

@@ -50,9 +50,9 @@
 				prev=0;
 				next=prev+3;
 				
-				if(pageCount<3){
+				if(pageCount<=3){
 					
-					for(prev; prev<next; prev++)
+					for(prev; prev<pageCount; prev++)
 					$("#myPage").append("<li onclick='noticeList("+(prev+1)+")'>"+"<a href='#'>"+(prev+1)+"</a></li>");
 					
 				} else {

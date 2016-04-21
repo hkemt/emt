@@ -18,11 +18,6 @@
 <script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 
-
-
-
-
-
 <body class="hold-transition skin-blue layout-top-nav">
 	<div class="wrapper">
 		<header class="main-header">
@@ -125,8 +120,10 @@
 								</ul>
 							</div>
 								
-								<div>
-								<input type="submit" style="float: right" value="삭제">
+								<div style="text-align: center">
+								<input type="button" class="btn btn-default" style="width:100px; height:50px;"
+								value="글 등록" onclick="location.replace('/emt/admin/adminNoticeAddMove')">
+								<input type="submit" class="btn btn-default" style="width:100px; height:50px;" value="삭제">
 								</div>
 							</form>
 
@@ -147,17 +144,16 @@
 			<!-- /.container -->
 		</div>
 		<!-- /.content-wrapper -->
-		<footer class="main-footer">
-			<div class="container">
-				<div class="pull-right hidden-xs">
-					<b>Version</b> 2.3.0
+		<footer class="main-footer navbar-fixed-bottom">
+				<div class="container">
+					<div class="pull-right hidden-xs">
+						<b>Version</b> 1.0.0
+					</div>
+					<strong>Copyright &copy; 2016 <a
+						href="/emt/index">English Mock Test</a>
+					</strong> All rights reserved.
 				</div>
-				<strong>Copyright &copy; 2014-2015 <a
-					href="http://almsaeedstudio.com">Almsaeed Studio</a>.
-				</strong> All rights reserved.
-			</div>
-			<!-- /.container -->
-		</footer>
+			</footer>
 	</div>
 	
 	<!-- ./wrapper -->

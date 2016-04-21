@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import emt.emt.common.domain.Board;
 import emt.emt.common.domain.Notice;
 import emt.emt.notice.dao.mapper.NoticeMapper;
 
@@ -13,44 +14,50 @@ public class NoticeDaoImpl implements NoticeDao{
 	@Autowired private NoticeMapper noticeMapper;
 
 	@Override
-	public int noticeInsert(Notice notice) {
-		// TODO Auto-generated method stub
-		return noticeMapper.noticeInsert(notice);
+	public int noticeInsert(Board board) {
+
+		return noticeMapper.noticeInsert(board);
 	}
 
 	@Override
 	public int noticeUpdate(Notice notice) {
-		// TODO Auto-generated method stub
+
 		return noticeMapper.noticeUpdate(notice);
 	}
 
 	@Override
 	public int noticeDelete(Notice notice) {
-		// TODO Auto-generated method stub
+
 		return noticeMapper.noticeDelete(notice);
 	}
 
 	@Override
 	public List<Notice> noticeList(int page) {
-		// TODO Auto-generated method stub
+
 		return noticeMapper.noticeList(page);
 	}
 
 	@Override
 	public Notice noticeView(Notice notice) {
-		// TODO Auto-generated method stub
+
 		return noticeMapper.noticeView(notice);
 	}
 
 	@Override
 	public int noticeCount() {
-		// TODO Auto-generated method stub
+
 		return noticeMapper.noticeCount();
 	}
 
 	@Override
 	public List<Notice> indexNoticeList(int page) {
-		// TODO Auto-generated method stub
+
 		return noticeMapper.indexNoticeList(page);
+	}
+
+	@Override
+	public int noticeSequence() {
+
+		return noticeMapper.noticeSequence();
 	}	
 }

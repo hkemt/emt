@@ -30,6 +30,26 @@
 		]]>		
 	</select>
 	
+	<select id="noticeSequence" resultType="int">
+		select seq_board_no.nextval
+		from dual
+	</select>
+	
+	<insert id="noticeInsert" parameterType="emt.emt.common.domain.Board">
+		
+		insert all
+  		into board values(board_no, board_title, board_content, user_id, board_date, board_count)
+ 		into notice values(board_no)
+  		select #{boardNo} as board_no, 
+  				#{boardTitle} as board_title, 
+  				#{boardContent} as board_content,
+        		#{userId} as user_id, 
+        		sysdate as board_date,
+        		 0 as board_count
+        from dual
+	</insert>
+	
+	
 	<update id="noticeUpdate" parameterType="emt.emt.common.domain.Notice">
 	  update board set BOARD_TITLE=#{boardTitle}, BOARD_CONTENT=#{boardContent}
 	  	where BOARD_NO=#{boardNo}
