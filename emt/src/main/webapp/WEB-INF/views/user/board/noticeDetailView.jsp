@@ -209,19 +209,7 @@
 									onclick="location.replace('notice')" value="목록보기">
 									 
 							</div>
-							<!--댓글 시작  -->
-												<h3 id="title" class="box-title">댓글</h3>													
-												<div style="text-align: center;">
-													<form id="replyInsert">
-														<input type="hidden" name="userId" id="userId" value='${sid}' >
-														<input type="text" name="replyContent"  id="replyContent" style="width: 85%"> 
-														<input class="btn btn-default" type="submit" style='width: 10%' value="등록">
-													</form>
-												</div>
 
-							<div id="replyView" class="table-responsive"></div>
-							<div id="replyPage" style="text-align: right"></div>	
-							<!--댓글 끝  -->
 
 							<!-- /.table-responsive -->
 						</div>
@@ -262,7 +250,6 @@
 	<script src="<c:url value="/js/logout.js"/>"></script>
 	<!-- 공지사항 상세보기 -->
 	<script src="<c:url value="/js/notice/noticeDetailView.js"/>"></script>
-	<script src="<c:url value="/js/reply/replyList.js"/>"></script>
 	
 
 	
