@@ -31,8 +31,6 @@
 	</c:when>
 	<c:otherwise>
 		<script>
-			alert("${sid}" + "님환영합니다.");
-			
 			document.location.href = "/emt/index";
 		</script>
 	</c:otherwise>
