@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import emt.emt.common.domain.Reply;
+import emt.emt.common.domain.ReplyParameter;
 import emt.emt.reply.dao.ReplyDao;
 
 @Service
@@ -31,9 +32,9 @@ public class ReplyServiceImpl implements ReplyService{
 	}
 
 	@Override
-	public List<Reply> replyList(int type) {
+	public List<Reply> replyList(ReplyParameter rep) {
 		// TODO Auto-generated method stub
-		return replyDao.replyList(type);
+		return replyDao.replyList(rep);
 	}
 
 	@Override

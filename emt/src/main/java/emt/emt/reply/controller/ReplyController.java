@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import emt.emt.common.domain.Reply;
+import emt.emt.common.domain.ReplyParameter;
 import emt.emt.common.domain.User;
 import emt.emt.reply.service.ReplyService;
 
@@ -20,9 +21,11 @@ public class ReplyController {
 	//1_1 댓글 불러오기
 	@RequestMapping(value="replyList", method=RequestMethod.POST)
 	@ResponseBody
-	public List<Reply> replyList(int type, Reply reply, Model model){
-		model.addAttribute("Reply", reply);
-		return replyService.replyList(type);
+	public List<Reply> replyList(int type, int boardNo,ReplyParameter rep){
+		rep.setType(type);
+		rep.setBoardNo(boardNo);
+		System.out.println(rep.getBoardNo());
+		return replyService.replyList(rep);
 		
 	}
 	

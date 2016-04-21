@@ -3,7 +3,8 @@ function replyList(page) {
 	$.ajax({
 		url: "replyList",
 		method: "POST",
-		data: {type: page
+		data: {type: page,
+			boardNo: $("#boardNo").val()
 			},
 		success: function(result){
 			$("#replyView").html("<table id='replyTable' class='table no-margin'></table>");
@@ -73,6 +74,7 @@ $(document).ready(function(){
 		}).done(function(result){
 			alert('등록성공');
 			replyList(1);
+			replyPage();
 		})
 		
 		

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import emt.emt.common.domain.Reply;
+import emt.emt.common.domain.ReplyParameter;
 import emt.emt.reply.dao.mapper.ReplyMapper;
 
 @Repository
@@ -31,9 +32,9 @@ public class ReplyDaoImpl implements ReplyDao{
 	}
 
 	@Override
-	public List<Reply> replyList(int type) {
+	public List<Reply> replyList(ReplyParameter rep) {
 		// TODO Auto-generated method stub
-		return replyMapper.replyList(type);
+		return replyMapper.replyList(rep);
 	}
 
 	@Override

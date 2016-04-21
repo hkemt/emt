@@ -9,7 +9,7 @@
 		<result property="boardNo" column="board_no"/>
 	</resultMap>
 	
-	<select id="replyList" parameterType="int" resultMap="replyMap"> 
+	<select id="replyList" parameterType="emt.emt.common.domain.ReplyParameter" resultMap="replyMap"> 
 		<![CDATA[
 		SELECT reply_no replyNo, reply_content replyContent, user_id userId, reply_date replyDate, board_no boardNo
 		FROM (SELECT rownum AS rnum, M.* 
@@ -19,8 +19,8 @@
 					where board_No=#{boardNo}
 					ORDER BY reply_no DESC
 			  		) M 
-			  WHERE rownum  < = 4*#{replyCount})
-		WHERE rnum > 4*(#{replyCount}-1)
+			  WHERE rownum  < = 4*#{type})
+		WHERE rnum > 4*(#{type}-1)
 		]]>
 	</select>
 	
