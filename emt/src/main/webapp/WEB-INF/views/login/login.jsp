@@ -121,6 +121,10 @@
 	</c:when>
 	<c:when test="${sessionScope.sid==null }">
 	</c:when>
-	
+	<c:otherwise>
+		<script>
+			document.location.href='/emt/index'
+		</script>
+	</c:otherwise>
 </c:choose>
 	</body><!-- /.login-box-body -->
