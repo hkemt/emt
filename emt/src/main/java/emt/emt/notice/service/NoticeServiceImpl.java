@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import emt.emt.common.domain.Board;
 import emt.emt.common.domain.Notice;
 import emt.emt.notice.dao.NoticeDao;
 
@@ -13,44 +14,50 @@ public class NoticeServiceImpl implements NoticeService{
 	@Autowired private NoticeDao noticeDao;
 
 	@Override
-	public int noticeInsert(Notice notice) {
-		// TODO Auto-generated method stub
-		return noticeDao.noticeInsert(notice);
+	public int noticeInsert(Board board) {
+
+		// 시퀸스의 값을 가져와서 넣는다
+		int boardNo = noticeDao.noticeSequence();
+		board.setBoardNo(boardNo);
+		
+		return noticeDao.noticeInsert(board);
 	}
 
 	@Override
 	public int noticeUpdate(Notice notice) {
-		// TODO Auto-generated method stub
+
 		return noticeDao.noticeUpdate(notice);
 	}
 
 	@Override
 	public int noticeDelete(Notice notice) {
-		// TODO Auto-generated method stub
+
 		return noticeDao.noticeDelete(notice);
 	}
 
 	@Override
 	public List<Notice> noticeList(int page) {
-		// TODO Auto-generated method stub
+
 		return noticeDao.noticeList(page);
 	}
 
 	@Override
 	public Notice noticeView(Notice notice) {
-		// TODO Auto-generated method stub
+
 		return noticeDao.noticeView(notice);
 	}
 
 	@Override
 	public int noticeCount() {
-		// TODO Auto-generated method stub
+
 		return noticeDao.noticeCount();
 	}
 
 	@Override
 	public List<Notice> indexNoticeList(int page) {
-		// TODO Auto-generated method stub
+
 		return noticeDao.indexNoticeList(page);
 	}
+
+
 }
