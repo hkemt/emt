@@ -95,7 +95,7 @@
 											<th></th>
 											<th>문제번호</th>
 											<th>문제유형</th>
-											<th>문제Video경로</th>
+											<th>동영상 파일</th>
 										</tr>
 									</thead>
 									<tbody>

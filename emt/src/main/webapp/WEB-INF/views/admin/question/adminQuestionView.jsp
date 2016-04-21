@@ -105,16 +105,18 @@
 										</tr>
 										<tr>
 											<td><b>경로</b></td>
-											<td><div>${question.questionVideo }</div></td>
+											<td><div>
+													<video width='800px' height='500px' controls='controls'
+														autoplay='autoplay'>
+														<source src='<c:url value="/upload/part${question.questionType }/${question.questionVideo }"/>' type='video/mp4' />
+													</video>
+												</div></td>
 										</tr>
 									</thead>
 									<tbody>
 
 									</tbody>
 								</table>
-
-
-
 
 
 
@@ -127,12 +129,6 @@
 						</div>
 						<!-- /.box-body -->
 					</div>
-
-
-
-
-
-
 
 
 				</section>
@@ -152,28 +148,6 @@
 			</div>
 		</footer>
 	</div>
-	<!-- ./wrapper -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	<!-- ./wrapper -->
 
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
