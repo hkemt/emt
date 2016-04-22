@@ -12,13 +12,13 @@
 				$("#userGrammarTable").append("<thead><tr><th></th><th></th></thead>");
 				$("#userGrammarTable").append("<tbody>")
 				
-				for(var i=0; i<2; i++){
+				for(var i=0; i<result.length; i++){
 
 					answer[i] = result[i].grammarAnswer;					
 
 					$("#userGrammarTable").append(
 							"<tr>"
-							+"<td colspan='2'>"+result[i].grammarInning+"회 "+result[i].grammarNo+"번 "+result[i].grammarQuiz+" 정답:"+answer[i]+"</td>"
+							+"<td colspan='2'><p class='lime'>"+result[i].grammarInning+"회 "+(i+1)+"번 "+result[i].grammarQuiz+" 정답:"+answer[i]+"</p></td>"
 							+"</tr>"
 							
 							+"<tr>"
@@ -71,7 +71,7 @@
 					
 					$("#userGrammarTable").append(
 							"<tr>"
-							+"<td colspan='2'>"+result[i].grammarInning+"회 "+result[i].grammarNo+"번 "+result[i].grammarQuiz+" 정답:"+answer[i]+"</td>"
+							+"<td colspan='2'><p class='lime'>"+result[i].grammarInning+"회 "+(i+1)+"번 "+result[i].grammarQuiz+" 정답:"+answer[i]+"</p></td>"
 							+"</tr>"
 							
 							+"<tr>"
