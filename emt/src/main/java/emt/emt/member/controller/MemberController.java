@@ -43,7 +43,7 @@ public class MemberController {
 	//1_2회원관리 수정
 	
 	//1_3회원관리 삭제
-	@RequestMapping(value="adminMemberDelete", method=RequestMethod.GET)
+	@RequestMapping(value="/admin/adminMemberDelete", method=RequestMethod.GET)
 	public String adminMemberDelete(HttpServletRequest req,Model model){
 		String userId=req.getParameter("userId");
 		System.out.println(userId);

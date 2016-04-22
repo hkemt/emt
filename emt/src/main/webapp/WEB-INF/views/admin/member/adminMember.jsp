@@ -83,7 +83,7 @@
 					
 						<!-- /.box-header -->
 						<div class="box-body">
-						<form action="adminMemberDelete">
+						<form action="/emt/admin/adminMemberDelete">
 							<div id="memberView" class="table-responsive">
 							
 								<table class="table no-margin">
@@ -136,12 +136,13 @@
 			</footer>
 	</div>
 	<!-- ./wrapper -->
-
 <script>
 var result=${result };
 if(result=1){
-	alert("삭제되었습니다.");
+	alert("tq");
+	$("#modal1").modal({show:true});
 }
+location.href='/emt/admin/adminMember';
 </script>
 
 

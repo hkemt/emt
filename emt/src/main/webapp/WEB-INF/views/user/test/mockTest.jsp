@@ -18,7 +18,6 @@
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-<script src="<c:url value="/js/test/test.js"/>"></script>
 </head>
 <body class="hold-transition skin-blue layout-top-nav">
 	
@@ -189,9 +188,10 @@
 	<script type="text/javascript">
 		var i = 1;
 		
-		var parts = [ "part1/" + "${part1}" , "part2/" + "${part2}",
+		var parts = [ "part1/" + "${part1}"];
+		              /* , "part2/" + "${part2}",
 				"part3/" + "${part3}", "part4/" + "${part4}",
-				"part5/" + "${part5}", "part6/" + "${part6}" ];
+				"part5/" + "${part5}", "part6/" + "${part6}" ]; */
 		var videoPlayer = document.getElementById("videoPlayer");
 		videoPlayer.onended = function() {
 			if (i == parts.length) {
