@@ -46,6 +46,7 @@
 	<mybatis:scan base-package="emt.emt.notice.dao.mapper" />
 	<mybatis:scan base-package="emt.emt.grammar.dao.mapper" />
 	<mybatis:scan base-package="emt.emt.score.dao.mapper" />
+	<mybatis:scan base-package="emt.emt.find.dao.mapper" />
 
 	<!-- ch03: file upload -->
 	<bean id="multipartResolver"

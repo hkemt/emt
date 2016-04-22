@@ -101,13 +101,14 @@
 				<!-- /.col -->
 
 			</form>
-			<a href="/emt/login/login" class="text-center">ID/PW 찾기</a>
+			<a href="/emt/findId" class="text-center">ID/</a>
+			<a href="/emt/findPw" class="text-center">PW찾기</a>
 			<br> <a href="/emt/login/login" class="text-center">기존에 가입하신
 				회원입니까? - 로그인</a>
 		</div>
 		<!-- /.form-box -->
 	</div>
-	
+
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
 	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
