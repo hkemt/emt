@@ -12,17 +12,7 @@
 		</script>
 	</c:when>
 </c:choose>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 <title>Insert title here</title>
-<meta
-	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-	name="viewport">
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <!-- Font Awesome -->
@@ -42,6 +32,41 @@
 
 
 <body class="hold-transition skin-blue layout-top-nav">
+<!-- 작은 모달 -->
+	<div class="modal fade" id="modalUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalHeader">
+		<button type="button"  class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent">
+			변경 되었습니다.
+	      </div>
+	      <div class="modal-footer" id="modalBtns">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
+	<!-- confirm용 작은 모달 -->
+	<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalHeader2">
+		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle2">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent2">
+		...
+	      </div>
+	      <div class="modal-footer" id="modalBtns2">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 	<div class="wrapper">
 		<header class="main-header">
 			<nav class="navbar navbar-static-top">
@@ -158,7 +183,7 @@
 										<input type="hidden" id="grammarNo" name="grammarNo">
 										<input type="hidden" id="grammarInning" name="grammarInning">
 										<input type="button" onclick="grammarUpdate()" value="수정하기" class="btn btn-default">
-										<input type="button" onclick="grammarDelete()" value="삭제하기" class="btn btn-default">
+										<input type="button" onclick="DelConfirm()" value="삭제하기" class="btn btn-default">
 										<input type="button" onclick="location.replace('/emt/admin/grammarMove')" value="목록보기" class="btn btn-default">
 							</div>
 							<!-- /.table-responsive -->
@@ -244,32 +269,43 @@
 				},
 				success : function(result){
 					if(result>0){
-						alert("문제 내용을 변경했습니다.");
+						$("#modalContent").html("문제 내용을 변경했습니다."); 
+						$("#modalUpdate").modal({show:true});
 					}
 					else {
-						alert("문제 변경 실패했습니다.")
+						$("#modalContent").html("문제 내용을 변경했습니다."); 
+						$("#modalUpdate").modal({show:true});
 					}
 				}
 			});
 		}
 		
+		function DelConfirm(){
+			
+			$("#modalContent2").html("정말 삭제하시겠습니까?");
+			$("#modalBtns2").html("<button type='button' class='btn btn-default' data-dismiss='modal'>아니오</button>"+
+					"<button type='button' onclick='grammarDelete()' class='btn btn-primary'>삭제</button>");
+			$("#modal2").modal('show');
+			
+		}
+		
 		function grammarDelete(){
-			if(confirm("정말 삭제하시겠습니까?")){
 				$.ajax({
 					url : "/emt/admin/grammarDelete",
 					method : "POST",
 					data : { grammarNo : $("#grammarNo").val()},
 					success : function(result){
+						$("#modal2").modal('hide');
 						if(result>0){
-							alert("문제를 삭제했습니다.");
-							location.replace('/emt/admin/grammarMove');
+							$("#modalContent").html("문제를 삭제했습니다."); 
+							$("#modalUpdate").modal({show:true});
 						}
 						else{
-							alert("관리자님 문제삭제가 실패했습니다.");
+							$("#modalContent").html("삭제하지 못했습니다."); 
+							$("#modalUpdate").modal({show:true});
 						}
 					}
 				});
-			}
 		}
 		$(document).ready(function(){
 			
@@ -279,7 +315,9 @@
 				
 				grammarView(grammarNo);
 			}
-			
+		});
+		$("#modalUpdate").on('hidden.bs.modal', function(){
+			location.href="/emt/admin/grammarMove";
 		});
 	</script>
 

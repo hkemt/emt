@@ -20,9 +20,9 @@
 				},
 				success : function(result){
 					if (result) {
-
-						alert('추가성공');
-
+						
+						$("#modalAdd").modal({show:true});
+						
 						$("#grammarQuiz").val("");
 						$("#grammarEx").val("");
 						$("#grammarEx1").val("①");
@@ -31,9 +31,8 @@
 						$("#grammarEx4").val("④");
 						$("#grammarQuiz").focus();
 					} else {
-
-						alert('추가실패');
-						
+						$("#modalContent").html("문제를 등록하지 못했습니다.");
+						$("#modalDel").modal({show:true});
 					} 
 				}
 			})

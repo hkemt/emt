@@ -17,6 +17,23 @@
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-blue layout-top-nav">
+<!-- 작은 모달 -->
+	<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalHeader">
+		<button type="button"  class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent">
+			등록 되었습니다.
+	      </div>
+	      <div class="modal-footer" id="modalBtns">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
 	<div class="wrapper">
 		<header class="main-header">
 			<nav class="navbar navbar-static-top">
@@ -74,32 +91,32 @@
 							<table class="table no-margin">
 									<thead>
 										<tr>
-											<td><input id="grammarQuiz" name="grammarQuiz" type="text" style="width:700px; border:none;" placeholder="질문"></td>
+											<td><input id="grammarQuiz" name="grammarQuiz" required type="text" style="width:700px; border:none;" placeholder="질문"></td>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td><textarea id="grammarEx" name="grammarEx"
-											rows="7" style="width:700px; resize:none; border:none;" placeholder="보기"></textarea></td>
+											rows="7" style="width:700px; resize:none; border:none;"required  placeholder="보기"></textarea></td>
 										</tr>
 										<tr>
 											<td>
-												<input type="text" id="grammarEx1" name="grammarEx1" style="border:none; width:700px;" value="①">
+												<input type="text" id="grammarEx1" name="grammarEx1"required  style="border:none; width:700px;" value="①">
 											</td>
 										</tr>
 										<tr>
 											<td>
-												<input type="text" id="grammarEx2" name="grammarEx2" style="border:none; width:700px;" value="②">
+												<input type="text" id="grammarEx2" name="grammarEx2"required  style="border:none; width:700px;" value="②">
 											</td>
 										</tr>
 										<tr>
 											<td>
-												<input type="text" id="grammarEx3" name="grammarEx3" style="border:none; width:700px;" value="③">
+												<input type="text" id="grammarEx3" name="grammarEx3"required  style="border:none; width:700px;" value="③">
 											</td>
 											</tr>
 										<tr>
 											<td>
-												<input type="text" id="grammarEx4" name="grammarEx4" style="border:none; width:700px;" value="④">
+												<input type="text" id="grammarEx4" name="grammarEx4" required style="border:none; width:700px;" value="④">
 											</td>
 										</tr>
 										<tr>
@@ -123,7 +140,7 @@
 										<tr>
 											<td>
 												<input type="number" id="grammarAnswer" name="grammarAnswer"
-													placeholder="답"	min="1" max="4" style="border:none; width:650px;">
+													placeholder="답"	min="1" max="4" required style="border:none; width:650px;">
 											</td>
 										</tr>
 									</tbody>
@@ -158,7 +175,19 @@
 			</footer>
 	</div>
 	<!-- ./wrapper -->
+	
 	<!-- 문제등록 스크립트파일 외부링크 -->
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- Bootstrap 3.3.5 -->
+	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
+	<!-- SlimScroll -->
+	<script src="<c:url value="/js/jquery.slimscroll.min.js"/>"></script>
+	<!-- FastClick -->
+	<script src="<c:url value="/js/fastclick.min.js"/>"></script>
+	<!-- AdminLTE App -->
+	<script src="<c:url value="/js/app.min.js"/>"></script>
+	<!-- AdminLTE for demo purposes -->
+	<script src="<c:url value="/js/demo.js"/>"></script>
 	<script src="<c:url value="/js/grammar/admin/grammarAdd.js"/>"></script>
 </body>
 </html>

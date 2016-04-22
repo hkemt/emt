@@ -67,6 +67,11 @@ public class GrammarController {
 		return "admin/grammar/grammarAdd";
 	}
 	
+	@RequestMapping("/admin/grammarAdd")
+	public String grammarAdd(){
+		return "/admin/grammarAdd";
+	}
+	
 	// 관리자 문제등록
 	@RequestMapping(value="/admin/grammarAdd", method=RequestMethod.POST)
 	@ResponseBody
@@ -92,13 +97,13 @@ public class GrammarController {
 	}
 	
 	//2_1 사용자 문법 문제 페이지 이동
-	@RequestMapping("userGrammarList")
+	@RequestMapping("userGrammar")
 	public String userGrammar() {
 		return "user/grammar/userGrammarList";
 	}
 	
 	//2_2 사용자 문법 문제 출력
-	@RequestMapping("userGrammarTest")
+	@RequestMapping("userGrammarList")
 	@ResponseBody
 	public List<Grammar> userGrammarList(int type, int grammarInning, GrammarParameter grp){
 		grp.setGrammarInning(grammarInning);
