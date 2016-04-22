@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import emt.emt.common.domain.Grammar;
+import emt.emt.common.domain.GrammarParameter;
 import emt.emt.grammar.dao.GrammarDao;
 
 @Service
@@ -52,5 +53,11 @@ public class GrammarServiceImpl implements GrammarService{
 	public int grammarDelete(Grammar grammar) {
 
 		return grammarDao.grammarDelete(grammar);
+	}
+
+	@Override
+	public List<Grammar> userGrammarList(GrammarParameter grp) {
+		// TODO Auto-generated method stub
+		return grammarDao.userGrammarList(grp);
 	}
 }

@@ -72,5 +72,20 @@
 	<delete id="grammarDelete" parameterType="emt.emt.common.domain.Grammar">
 		delete grammar where grammar_no=#{grammarNo}
 	</delete>
+	
+	
+	<!-- 사용자 문제출력 -->
+	<select id="userGrammarList" parameterType="emt.emt.common.domain.Grammar" resultMap="grammarMap">
+		SELECT grammar_no grammarNo, grammar_quiz grammarQuiz, grammar_ex grammarEx, grammar_ex1 grammarEx1,
+			   grammar_ex2 grammarEx2, grammar_ex3 grammarEx3, grammar_ex4 grammarEx4, grammar_inning grammarInning,
+			   grammar_answer grammarAnswer
+		FROM grammar
+		WHERE grammar_inning=#{grammarInning}
+	
+	</select>
+	
+	
+	
+	
 
 </mapper>

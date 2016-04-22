@@ -3,6 +3,7 @@ package emt.emt.grammar.service;
 import java.util.List;
 
 import emt.emt.common.domain.Grammar;
+import emt.emt.common.domain.GrammarParameter;
 
 public interface GrammarService {
 
@@ -23,4 +24,7 @@ public interface GrammarService {
 		
 	// 관리자 문제삭제
 	int grammarDelete(Grammar grammar);
+	
+	//사용자 문제출력
+	List<Grammar> userGrammarList(GrammarParameter grp);
 }

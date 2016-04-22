@@ -86,57 +86,52 @@
 				<!-- Main content -->
 				<section class="content">
 
-					<div class="box box-info">
+				<div class="box box-info">
 						<div class="box-header with-border">
 							<h3 class="box-title">문법 문제</h3>
 							<div class="box-tools pull-right">
-
+								<!-- 회차선택   -->
+								<select id="selecter" name="selecter">
+						 				<option value="">회차선택</option>
+						 				<option value="1">1회</option>
+						 				<option value="2">2회</option>
+						 				<option value="3">3회</option>
+										<option value="4">4회</option>
+						 				<option value="5">5회</option>
+						 				<option value="6">6회</option>
+						 				<option value="7">7회</option>
+						 				<option value="8">8회</option>
+						 				<option value="9">9회</option>
+						 				<option value="10">10회</option>
+						 		</select><button onclick='userGrammarInnning()'>이동</button>
 							</div>
 						</div>
+						<form action="#">
 						<!-- /.box-header -->
 						<div class="box-body">
-							<div class="table-responsive">
+							<div id="userGrammarView" class="table-responsive">
 
-								<table class="table no-margin">
-									<c:forEach var="grammar" items="${grammar }">
+								<table class="table no-margin">									
 									<thead>									
 										<tr>
-											<td colspan="2">${grammar.grammarInning }회_${grammar.grammarNo }번_ ${grammar.grammarQuiz }</td>
-										</tr>
-										<tr>
 											<td></td>
 											<td></td>
 										</tr>
-
-									</thead>
-																		
+									</thead>									
 									<tbody>
 										<tr>			 											
-											 <td colspan="2"><div style="border: 1px solid #48BAE4; height: auto; width: 500px">${grammar.grammarEx }</div></td>
-										</tr>
-										<tr>
-											<td style="width:10px"><input type="radio" name="${grammar.grammarNo }" value="grammarEx1"></td>
-												<td>${grammar.grammarEx1 }</td>
-										</tr>
-										<tr>
-											<td style="width:10px"><input type="radio" name="${grammar.grammarNo }" value="grammarEx2"></td>
-											<td>${grammar.grammarEx2 }</td>
-										</tr>
-										<tr>
-											<td style="width:10px"><input type="radio" name="${grammar.grammarNo }" value="grammarEx3"></td>
- 											<td>${grammar.grammarEx3 }</td>
-										</tr>
-										<tr>
-											<td style="width:10px"><input type="radio" name="${grammar.grammarNo }" value="grammarEx4"></td>
-											<td>${grammar.grammarEx4 }</td>
+											<td></td>
+											<td></td>
 										</tr>
 									</tbody>
-										</c:forEach>
+
 								</table>
 							</div>
 							<!-- /.table-responsive -->
-						</div>
+							<input type="button" onclick="answerChk()" value="제출">
 
+						</div>
+						</form>
 						<!-- /.box-body -->
 					</div>
 					
@@ -174,4 +169,20 @@
 	<!-- AdminLTE App -->
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
-	<script src="<c:url value="/js/demo.js"/>"></script>	
+	<script src="<c:url value="/js/demo.js"/>"></script>
+		<script src="<c:url value="/js/grammar/user/userGrammarList.js"/>"></script>
+<script>
+var sum;
+function answerChk(){
+	sum = 0;
+	for(var i=0; i<answer.length; i++){
+		if(answer[i] == $("input[type='radio'][name='"+i+"']:checked").val()){
+			sum += 1;
+		} else{
+
+		}
+	
+	}
+	alert("맞은갯수"+sum);
+}
+</script>	
