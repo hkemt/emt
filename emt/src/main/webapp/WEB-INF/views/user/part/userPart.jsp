@@ -45,18 +45,40 @@
 	  <div class="modal-dialog modal-sm">
 	    <div class="modal-content">
 	      <div class="modal-header" id="modalHeader1">
-		<button type="button"  class="close" onclick="moveIndex()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<button type="button" class="close" data-dismiss="modal">
+		<span aria-hidden="true">×</span>
+		<span class="sr-only">Close</span>
+		</button>
 		<h4 class="modal-title" id="modalTitle1">EMT 알림메시지</h4>
 	      </div>
 	      <div class="modal-body" id="modalContent1">
 			로그아웃 되었습니다.
 	      </div>
 	      <div class="modal-footer" id="modalBtns1">
-		<button type="button" class="btn btn-primary" onclick="moveIndex()" >확인</button>
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
 	      </div>
 	    </div>
 	  </div>
 	</div><!-- 모달 END -->
+
+	<!-- confirm용 작은 모달 -->
+	<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalHeader2">
+		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle2">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent2">
+		...
+	      </div>
+	      <div class="modal-footer" id="modalBtns2">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
 	<div class="wrapper">
 		<header class="main-header">
@@ -219,40 +241,92 @@
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	
 	<script type="text/javascript">
+	var no;
+	var id;
+	var type;
+	var tf=true;
+	
 	function gogo(){
 			
 		// 문제를 저장한다
-		var no = "${part.questionNo}";
-		var id = "${sessionScope.sid}";
-		var type = "${part.questionType}";
+		no = "${part.questionNo}";
+		id = "${sessionScope.sid}";
+		type = "${part.questionType}";
+		
+ 		
+		
+		// 저장여부를 묻는 모달 출력, tf=0이므로 다시시작함수 실행시킴
+		$("#modalContent2").html("문제를 저장하시겠습니까?<br>저장된 문제는 복습에서 다시 풀수 있습니다.");
+		$("#modalBtns2").html("<button type='button' class='btn btn-default' data-dismiss='modal'>안함</button>"+
+				"<button type='button' onclick='savePart()' class='btn btn-primary'>저장</button>");
+		
+		$("#modal2").modal({show:true});
+		
+		$("#modal2").on("hidden.bs.modal", function(){
+			if(tf){
+				restart();
+			}
+		}); 
+	};
+		
 	
-		$.ajax({
+	function savePart(){
+		 $.ajax({
 			
-			url: "saveReview",
+			url: "/emt/user/part/saveReview",
 			method : "POST",
 			data : {
 				questionNo : no,
 				userId : id
 			},
 			success : function(result){
+				
+				tf=false; 
+				
+				// 저장성공시
 				if(result>0){
-					alert("복습목록에 저장되었습니다");	
-				}
-				// 계속할지 묻는다
-				if(confirm("계속하시겠습니까?")){
 					
-					location.replace("part"+type);
+					
+					$("#modal2").modal('hide');
+					$("#modalContent").html("저장되었습니다.");
+					$("#modalBtns").html("<button type='button' class='btn btn-primary' data-dismiss='modal'>확인</button>");
+					$("#modal").modal({show:true});
+					
 					
 				} else {
-					
-					location.replace("/emt/index");
-						
-				}
-					
+					$("#modal2").modal('hide');
+					$("#modalContent").html("이미 복습목록에 있습니다.");
+					$("#modalBtns").html("<button type='button' class='btn btn-primary' data-dismiss='modal'>확인</button>");
+					$("#modal").modal({show:true});
+				};
 				
+				$("#modal").on("hidden.bs.modal", function(){
+					//tf=true;
+					restart();
+				});
 			}
+		}); 
+	
+	}
+	
+	function restart(){
+		
+		$("#modalContent2").html("계속 하시겠습니까?");
+		$("#modalBtns2").html("<button type='button' class='btn btn-default' data-dismiss='modal'>취소</button>"+
+				"<button type='button' onclick='part()' class='btn btn-primary'>다시하기</button>");
+		$("#modal2").modal('show');
+		
+		// 닫힐시 인덱스이동
+		$("#modal2").on("hidden.bs.modal", function(){
+				location.replace('/emt/index');
 		});
 	}
+	
+	function part(){
+		location.replace('/emt/user/part/part'+type);
+	}
+	
+	
 	</script>
 	
 	<!-- 로그아웃 -->

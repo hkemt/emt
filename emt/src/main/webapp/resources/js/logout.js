@@ -18,9 +18,10 @@ $(function(){
 	});
 });
 
-$('#modal1').on('hidden.bs.modal', function () {moveIndex();});
+
 
 // 메인페이지 이동
-function moveIndex(){
-	document.location.href = "/emt/index";
-}
+$("#modal1").on("hidden.bs.modal", function(){
+	document.location.href="/emt/index";
+});
+

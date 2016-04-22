@@ -18,6 +18,7 @@
          folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 <body class="hold-transition skin-blue layout-top-nav">
 	
@@ -44,14 +45,17 @@
 	  <div class="modal-dialog modal-sm">
 	    <div class="modal-content">
 	      <div class="modal-header" id="modalHeader1">
-		<button type="button"  class="close" onclick="moveIndex()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<button type="button" class="close" data-dismiss="modal">
+		<span aria-hidden="true">×</span>
+		<span class="sr-only">Close</span>
+		</button>
 		<h4 class="modal-title" id="modalTitle1">EMT 알림메시지</h4>
 	      </div>
 	      <div class="modal-body" id="modalContent1">
 			로그아웃 되었습니다.
 	      </div>
 	      <div class="modal-footer" id="modalBtns1">
-		<button type="button" class="btn btn-primary" onclick="moveIndex()" >확인</button>
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
 	      </div>
 	    </div>
 	  </div>
@@ -85,7 +89,7 @@
 									<li><a href="/emt/user/part/part5">Part5</a></li>
 									<li><a href="/emt/user/part/part6">Part6</a></li>
 								</ul></li>
-							<li><a href="userGrammar">문법문제</a></li>	
+							<li><a href="userGrammarList">문법문제</a></li>	
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">게시판 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
@@ -251,7 +255,6 @@
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	<script src="<c:url value="/js/index/indexNotice.js"/>"></script>
 	<script src="<c:url value="/js/index/indexBoard.js"/>"></script>
-	<!-- logout.js -->
 	<script src="<c:url value="/js/logout.js"/>"></script>
 	
 	<c:choose>
@@ -269,11 +272,17 @@
 <c:choose>
 	<c:when test="${adminMsg!=null }">
 		<script>
-		$("#indexModalContent").html("${adminMsg}");
-		$("#indexModal").modal('show');
+		$("#modalContent").html("${adminMsg}");
+		$("#modal").modal('show');
 		
 		<%session.removeAttribute("adminMsg");%>
 			
 		</script>
 	</c:when>
 </c:choose>
+
+<script>
+	$("#modal").on("hidden.bs.modal", function(){
+		document.location.href="/emt/login/login";
+	});
+</script>

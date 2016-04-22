@@ -45,14 +45,17 @@
 	  <div class="modal-dialog modal-sm">
 	    <div class="modal-content">
 	      <div class="modal-header" id="modalHeader1">
-		<button type="button"  class="close" onclick="moveIndex()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<button type="button" class="close" data-dismiss="modal">
+		<span aria-hidden="true">×</span>
+		<span class="sr-only">Close</span>
+		</button>
 		<h4 class="modal-title" id="modalTitle1">EMT 알림메시지</h4>
 	      </div>
 	      <div class="modal-body" id="modalContent1">
 			로그아웃 되었습니다.
 	      </div>
 	      <div class="modal-footer" id="modalBtns1">
-		<button type="button" class="btn btn-primary" onclick="moveIndex()" >확인</button>
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
 	      </div>
 	    </div>
 	  </div>
@@ -216,39 +219,7 @@
 	<script type="text/javascript">
 	function gogo(){
 			
-		// 문제를 저장한다
-		alert("${part.questionType}");
-		var no = "${part.questionNo}";
-		var id = "${sessionScope.sid}";
-		var type = "${part.questionType}";
-		alert(no);
-		alert(id);
-		$.ajax({
-			
-			url: "saveReview",
-			method : "POST",
-			data : {
-				questionNo : no,
-				userId : id
-			},
-			success : function(result){
-				if(result>0){
-					alert("복습목록에 저장되었습니다");	
-				}
-				// 계속할지 묻는다
-				if(confirm("계속하시겠습니까?")){
-					
-					location.replace("part"+type);
-					
-				} else {
-					
-					location.replace("/emt/index");
-						
-				}
-					
-				
-			}
-		});
+		document.location.href="/emt/user/review/userReview?sid=${sid }";
 	}
 	</script>
 	

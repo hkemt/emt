@@ -148,6 +148,6 @@ $(function() {
 });
 
 
-function moveIndex(){
-	document.location.href = "/emt/index";
-}
+$("#modal1").on("hidden.bs.modal", function(){
+	document.location.href="/emt/index";
+});
