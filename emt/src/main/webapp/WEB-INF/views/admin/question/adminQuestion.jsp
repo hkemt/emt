@@ -15,12 +15,27 @@
          folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="<c:url value="/js/question/questionDelete.js" />"></script>
 <script src="<c:url value="/js/question/questionAdd.js" />"></script>
 <script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 
 <body class="hold-transition skin-blue layout-top-nav">
+<div class="modal fade" id="modalDel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalHeader">
+		<button type="button"  class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent">
+	      	삭제 되었습니다.
+	      </div>
+	      <div class="modal-footer" id="modalBtns">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
 	<div class="wrapper">
 		<header class="main-header">
 			<nav class="navbar navbar-static-top">
@@ -173,7 +188,7 @@
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	<script src="<c:url value="/js/question/adminQuestionList.js"/>"></script>
-	
+	<script src="<c:url value="/js/question/questionDelete.js" />"></script>
 	
 	
 	

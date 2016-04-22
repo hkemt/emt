@@ -2,7 +2,8 @@ $(function() {
 	$("#delete").on('click',function(){
 		var questionNo=$("input[type='radio'][name='questionNo']:checked");
 		if($("input[type='radio'][name='questionNo']:checked").val()==undefined){
-			alert("삭제할 문제를 선택해주세요.");
+			$("#modalContent").html("삭제할 문제를 선택해주세요."); 
+			$("#modalDel").modal({show:true});
 		}else{
 			$.ajax({
 				method : "POST",
@@ -12,8 +13,7 @@ $(function() {
 				},
 				success : function(result) {
 						if(result>0){
-							alert("삭제되었습니다.");
-							document.location.href="/emt/admin/adminMain";
+							$("#modalDel").modal({show:true});
 						}
 				},
 				error : function(request, status,
@@ -24,5 +24,8 @@ $(function() {
 				}
 			});
 		}
+	});
+	$("#modalDel").on('hidden.bs.modal', function(){
+		location.href="/emt/admin/adminQuestion";
 	});
 });

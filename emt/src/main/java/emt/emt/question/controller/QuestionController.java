@@ -64,7 +64,7 @@ public class QuestionController {
 	// 문제 등록 요청 처리 부분
 	@RequestMapping(value = "admin/question/questionAdd", method = RequestMethod.POST)
 	public String upload(MultipartFile uploadFile, String questionType,
-			HttpServletRequest request) {
+			HttpServletRequest request,Model model) {
 		System.out.println(questionType);
 		// String dir2 = request.getServletPath();
 		String dir = request.getServletContext().getRealPath(savePath);
@@ -75,7 +75,8 @@ public class QuestionController {
 		Question question = new Question();
 		question.setQuestionType(partType(questionType));
 		question.setQuestionVideo(fileName);
-		questionService.questionInsert(question);
+		int result=	questionService.questionInsert(question);
+		model.addAttribute("result", result);
 		return "admin/question/questionAdd";
 	}
 
