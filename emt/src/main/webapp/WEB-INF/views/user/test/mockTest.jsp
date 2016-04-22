@@ -184,32 +184,6 @@
             </div>
         </div>
     </div>
-	
-	<script type="text/javascript">
-		var i = 1;
-		
-		var parts = [ "part1/" + "${part1}"];
-		              /* , "part2/" + "${part2}",
-				"part3/" + "${part3}", "part4/" + "${part4}",
-				"part5/" + "${part5}", "part6/" + "${part6}" ]; */
-		var videoPlayer = document.getElementById("videoPlayer");
-		videoPlayer.onended = function() {
-			if (i == parts.length) {
-				$("#modalContent1").html("토익스피킹이 끝났습니다.<br>" + 
-										"확인버튼을 누르면 메인으로 돌아갑니다.");
-				$("#modal1").modal({show:true});
-			}
-			videoPlayer.src = "/emt/upload/" + parts[i];
-			i++;
-		}
-		
-		// 메인페이지 이동
-		function moveIndex(){
-			document.location.href = "/emt/index";
-		}
-		
-	</script>
-
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
 	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
@@ -222,5 +196,29 @@
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	<script src="<c:url value="/js/logout.js"/>"></script>
+	<script type="text/javascript">
+		var i = 1;
+		
+		var parts = [ "part1/" + "${part1}"];
+		              /* , "part2/" + "${part2}",
+				"part3/" + "${part3}", "part4/" + "${part4}",
+				"part5/" + "${part5}", "part6/" + "${part6}" ];
+		var videoPlayer = document.getElementById("videoPlayer");
+		videoPlayer.onended = function() {
+			if (i == parts.length) {
+				$("#modalContent1").html("토익스피킹이 끝났습니다.<br>" + 
+										"확인버튼을 누르면 메인으로 돌아갑니다.");
+				$("#modal1").modal({show:true});
+			}
+			videoPlayer.src = "/emt/upload/" + parts[i];
+			i++;
+		}
+		
+		$("#modal1").on('hidden.bs.modal', function(){
+			location.href="/emt/index";
+		});
+		
+	</script>
+
 </body>
 </html>
