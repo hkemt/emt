@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import emt.emt.common.domain.Grammar;
+import emt.emt.common.domain.GrammarParameter;
 import emt.emt.grammar.service.GrammarService;
 
 @Controller
@@ -89,4 +90,32 @@ public class GrammarController {
 		
 		return grammarService.grammarDelete(grammar);
 	}
+	
+	//2_1 사용자 문법 문제 페이지 이동
+	@RequestMapping("userGrammar")
+	public String userGrammar() {
+		return "user/grammar/userGrammarList";
+	}
+	
+	//2_2 사용자 문법 문제 출력
+	@RequestMapping("userGrammarList")
+	@ResponseBody
+	public List<Grammar> userGrammarList(int type, int grammarInning, GrammarParameter grp){
+		grp.setGrammarInning(grammarInning);
+		grp.setType(type);
+
+		return grammarService.userGrammarList(grp);
+	}
+	
+	//2_3 사용자 회차별 문법 문제 출력
+	@RequestMapping("userGrammarInning")
+	@ResponseBody
+	public List<Grammar> userGrammarInning(int type, int grammarInning, GrammarParameter grp){
+		grp.setGrammarInning(grammarInning);
+		grp.setType(type);
+
+		return grammarService.userGrammarList(grp);
+	}
+	
+	
 }

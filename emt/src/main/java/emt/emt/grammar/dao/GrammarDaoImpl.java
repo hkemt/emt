@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import emt.emt.common.domain.Grammar;
+import emt.emt.common.domain.GrammarParameter;
 import emt.emt.grammar.dao.mapper.GrammarMapper;
 
 @Repository
@@ -48,6 +49,12 @@ public class GrammarDaoImpl implements GrammarDao{
 	@Override
 	public int grammarDelete(Grammar grammar) {
 		return grammarMapper.grammarDelete(grammar);
+	}
+
+	@Override
+	public List<Grammar> userGrammarList(GrammarParameter grp) {
+		// TODO Auto-generated method stub
+		return grammarMapper.userGrammarList(grp);
 	}
 
 	
