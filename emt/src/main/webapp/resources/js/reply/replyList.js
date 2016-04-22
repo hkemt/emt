@@ -63,21 +63,37 @@ $(document).ready(function(){
 	$('#replyInsert').submit(function(e) {
 		e.preventDefault();
 		
-		$.ajax({
-			url : "replyInsert",
-			method: "POST",
-			data: {
-				userId: $("#userId").val(),
-				replyContent: $("#replyContent").val(),
-				boardNo: $("#boardNo").val()
+		var id = $("#userId").val();
+		var content = $("#replyContent").val();
+		
+		if(id.length != 0 && content.length != 0){
+		
+			$.ajax({
+				url : "replyInsert",
+				method: "POST",
+				data: {
+					userId: id,
+					replyContent: content,
+					boardNo: $("#boardNo").val()
+				}
+			}).done(function(result){
+				$("#modalContent").html("등록성공");
+				$("#modal").modal("show");
+
+				replyList(1);
+				replyPage();
+			})
+		
+		} else {
+			if(id.length==0){
+				$("#modalContent").html("로그인을 해야합니다.");
+				$("#modal").modal("show");
 			}
-		}).done(function(result){
-			alert('등록성공');
-			replyList(1);
-			replyPage();
-		})
-		
-		
+			else if(content.length == 0){
+				$("#modalContent").html("내용을 입력하세요.");
+				$("#modal").modal("show");
+			}
+		}
 	})
 })
 

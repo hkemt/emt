@@ -35,10 +35,17 @@ $(document).ready(function() {
 				},
 				success : function(result) {
 					if (result > 0) {
-						alert("삭제 되었습니다.");
-						document.location.href = "/emt/board";
+						
+						$("#modalContent").html("삭제 되었습니다.");
+						$("#modal").modal("show");
+
+						$("#modal").on("hidden.bs.modal", function(){
+							
+							document.location.href = "/emt/board";
+						});
 					} else {
-						alert("삭제가 되지 않았습니다.");
+						$("#modalContent").html("삭제가 되지 않았습니다.");
+						$("#modal").modal("show");
 					}
 				},
 				error : function(request, status,

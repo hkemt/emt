@@ -38,10 +38,17 @@ $(function(){
 			},
 			success : function(result) {
 				if (result > 0) {
-					alert("수정 되었습니다.");
-					document.location.href = "/emt/boardDetailMove?boardNo="+tmpBoardNo;
+					$("#modalContent").html("수정 되었습니다.");
+					$("#modal").modal("show");
+					
+					$("#modal").on("hidden.bs.modal", function(){
+						
+						document.location.href = "/emt/boardDetailMove?boardNo="+tmpBoardNo;
+					});
 				} else {
-					alert("수정이 되지 않았습니다.");
+					
+					$("#modalContent").html("수정이 되지 않았습니다.");
+					$("#modal").modal("show");
 				}
 			},
 			error : function(request, status,

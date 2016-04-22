@@ -39,10 +39,7 @@
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 </head>
-
-
 <body class="hold-transition skin-blue layout-top-nav">
-<script type="text/javascript">var no = "${boardNo}"</script>
 
 	<!-- 작은 모달 -->
 	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -260,11 +257,9 @@
 	<!-- 로그아웃 스크립트 -->
 	<script src="<c:url value="/js/logout.js"/>"></script>
 	<!-- 공지사항 상세보기 -->
+	<script type="text/javascript">var no = "${boardNo}"</script>
 	<script src="<c:url value="/js/board/boardDetailView.js"/>"></script>
 	<script src="<c:url value="/js/reply/replyList.js"/>"></script>
-	
-
-	
 	
 	
 </body>

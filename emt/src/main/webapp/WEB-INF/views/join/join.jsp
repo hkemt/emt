@@ -23,7 +23,6 @@
 <link href="<c:url value="/css/blue.css"/>" rel="stylesheet" type="text/css">
 
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="<c:url value="/js/memberJoin.js"/>"></script>
 
 <body class="hold-transition register-page">
 
@@ -120,5 +119,5 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
-	
+	<script src="<c:url value="/js/memberJoin.js"/>"></script>
 	<!-- /.register-box -->

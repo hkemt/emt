@@ -41,6 +41,9 @@ public class ReplyController {
 	@RequestMapping(value="replyInsert", method=RequestMethod.POST)
 	@ResponseBody
 	public int replyInsert(Reply reply){
+		
+		System.out.println(reply.getUserId()+"sa"+reply.getReplyContent()+":"+reply.getBoardNo());
+		
 		int res = replyService.replyInsert(reply);
 		return res;
 	}

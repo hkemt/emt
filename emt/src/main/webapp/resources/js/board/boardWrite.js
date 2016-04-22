@@ -15,11 +15,19 @@ $(function(){
 				boardContent : $("#textContent").val()
 			},
 			success : function(result) {
+				
 				if (result > 0) {
-					alert("등록 되었습니다.");
-					document.location.href = "/emt/boardDetailMove?boardNo="+result;
+					$("#modalContent").html("등록 되었습니다.");
+					$("#modal").modal("show");
+					
+					$("#modal").on("hidden.bs.modal", function(){
+						
+						document.location.href = "/emt/boardDetailMove?boardNo="+result;
+					});
+					
 				} else {
-					alert("등록이 되지 않았습니다.");
+					$("#modalContent").html("등록이 되지 않았습니다.");
+					$("#modal").modal("show");
 				}
 			},
 			error : function(request, status,

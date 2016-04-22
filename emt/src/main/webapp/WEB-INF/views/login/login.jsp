@@ -37,24 +37,6 @@
 	  </div>
 	</div><!-- 모달 END -->
 	
-	<!-- 로그아웃용 작은 모달 -->
-	<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-sm">
-	    <div class="modal-content">
-	      <div class="modal-header" id="modalHeader1">
-		<button type="button"  class="close" onclick="moveIndex()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-		<h4 class="modal-title" id="modalTitle1">EMT 알림메시지</h4>
-	      </div>
-	      <div class="modal-body" id="modalContent1">
-			로그아웃 되었습니다.
-	      </div>
-	      <div class="modal-footer" id="modalBtns1">
-		<button type="button" class="btn btn-primary" onclick="moveIndex()" >확인</button>
-	      </div>
-	    </div>
-	  </div>
-	</div><!-- 모달 END -->
-	
 	<div class="login-box">
 		<div class="login-logo">
 			<a href="/emt/index"><b>English Mock</b>Test</a>
