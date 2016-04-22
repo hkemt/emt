@@ -17,10 +17,7 @@
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/member/userMemberList.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-
-
 
 <body class="hold-transition skin-blue layout-top-nav">
 	<div class="wrapper">
@@ -160,6 +157,56 @@
 	</div>
 
 
+	
+	
+	<!-- 작은 모달 -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	    <!-- 모달의 헤더 -->
+	      <div class="modal-header" id="modalHeader">
+	      <!-- 모달의 닫기버튼 span에 클래스를 주어서 변경 (우상단의 닫기버튼) -->
+		<button type="button"  class="close" data-dismiss="modal">
+		<span aria-hidden="true">×</span>
+		<span class="sr-only">Close</span></button>
+		
+		<!-- 모달의 제목(헤더의 내용) -->
+		<h4 class="modal-title" id="modalTitle">EMT 알림메시지</h4>
+	      </div>
+	      <!-- 모달의 내용(메시지) -->
+	      <div class="modal-body" id="modalContent">
+			...
+	      </div>
+	      <!-- 확인, 취소등의 버튼을 넣는곳 -->
+	      <div class="modal-footer" id="modalBtns">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
+	
+	<!-- 로그아웃용 작은 모달 -->
+	<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalHeader1">
+		<button type="button" class="close" data-dismiss="modal">
+		<span aria-hidden="true">×</span>
+		<span class="sr-only">Close</span>
+		</button>
+		<h4 class="modal-title" id="modalTitle1">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent1">
+			로그아웃 되었습니다.
+	      </div>
+	      <div class="modal-footer" id="modalBtns1">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
+	
+
 	<!-- ./wrapper -->
 
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -173,6 +220,7 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
+	<script src="<c:url value="/js/logout.js"/>"></script>
 		<script src="<c:url value="/js/grammar/user/userGrammarList.js"/>"></script>
 <script>
 var sum;
@@ -191,6 +239,12 @@ function answerChk(){
 		}
 	
 	}
-	alert("맞은갯수"+sum);
+	// 모달 내용(메시지)가 들어가는 div에 메시지를 새로 씁니다.
+	$("#modalContent").html('맞은갯수' + sum);
+	
+	// 모달을 보이게 하는 소스
+	$("#modal").modal('show');
+	
+	//alert("맞은갯수"+sum);
 }
 </script>	
