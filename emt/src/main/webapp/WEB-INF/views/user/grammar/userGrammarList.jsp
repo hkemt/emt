@@ -130,6 +130,10 @@
 							<!-- /.table-responsive -->
 							<input type="button" onclick="answerChk()" value="제출">
 
+	<p class="red">lime0</p>
+	<p class="red">lime1</p>
+
+
 						</div>
 						</form>
 						<!-- /.box-body -->
@@ -174,6 +178,12 @@
 <script>
 var sum;
 function answerChk(){
+	
+	var limes = document.getElementsByClassName("red");
+	for (var i = 0; i < limes.length; i++) {
+		limes[1].style.backgroundColor= "red";	
+	}
+	
 	sum = 0;
 	for(var i=0; i<answer.length; i++){
 		if(answer[i] == $("input[type='radio'][name='"+i+"']:checked").val()){

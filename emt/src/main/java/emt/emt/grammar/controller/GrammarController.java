@@ -92,13 +92,13 @@ public class GrammarController {
 	}
 	
 	//2_1 사용자 문법 문제 페이지 이동
-	@RequestMapping("userGrammar")
+	@RequestMapping("userGrammarList")
 	public String userGrammar() {
 		return "user/grammar/userGrammarList";
 	}
 	
 	//2_2 사용자 문법 문제 출력
-	@RequestMapping("userGrammarList")
+	@RequestMapping("userGrammarTest")
 	@ResponseBody
 	public List<Grammar> userGrammarList(int type, int grammarInning, GrammarParameter grp){
 		grp.setGrammarInning(grammarInning);

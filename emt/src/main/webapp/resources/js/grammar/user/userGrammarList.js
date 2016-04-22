@@ -1,7 +1,7 @@
 		var answer= new Array();
 	function userGrammarList() {
 		$.ajax({
-			url: "userGrammarList",
+			url: "userGrammarTest",
 			method: "GET",
 			data: { type: 1,
 				grammarInning: 1
