@@ -40,7 +40,9 @@ public class TestController {
 			question = part1.get(random);
 			model.addAttribute("part1", question.getQuestionVideo());
 			rv.setQuestionNo(question.getQuestionNo());
-			reviewService.reviewInsert(rv);
+			if(reviewService.reviewCheck(rv)==null){
+				reviewService.reviewInsert(rv);
+			}
 
 			question.setQuestionType(2);
 			List<Question> part2 = partService.partQuestion(question);
@@ -48,16 +50,20 @@ public class TestController {
 			question = part2.get(random);
 			model.addAttribute("part2", question.getQuestionVideo());
 			rv.setQuestionNo(question.getQuestionNo());
-			reviewService.reviewInsert(rv);
-
+			if(reviewService.reviewCheck(rv)==null){
+				reviewService.reviewInsert(rv);
+			}
+			
 			question.setQuestionType(3);
 			List<Question> part3 = partService.partQuestion(question);
 			random = (int) (Math.random() * part3.size());
 			question = part3.get(random);
 			model.addAttribute("part3", question.getQuestionVideo());
 			rv.setQuestionNo(question.getQuestionNo());
-			reviewService.reviewInsert(rv);
-
+			if(reviewService.reviewCheck(rv)==null){
+				reviewService.reviewInsert(rv);
+			}
+			
 			question.setQuestionType(4);
 			List<Question> part4 = partService.partQuestion(question);
 			random = (int) (Math.random() * part4.size());
@@ -72,16 +78,20 @@ public class TestController {
 			question = part5.get(random);
 			model.addAttribute("part5", question.getQuestionVideo());
 			rv.setQuestionNo(question.getQuestionNo());
-			reviewService.reviewInsert(rv);
-
+			if(reviewService.reviewCheck(rv)==null){
+				reviewService.reviewInsert(rv);
+			}
+			
 			question.setQuestionType(6);
 			List<Question> part6 = partService.partQuestion(question);
 			random = (int) (Math.random() * part6.size());
 			question = part6.get(random);
 			model.addAttribute("part6", question.getQuestionVideo());
 			rv.setQuestionNo(question.getQuestionNo());
-			reviewService.reviewInsert(rv);
-
+			if(reviewService.reviewCheck(rv)==null){
+				reviewService.reviewInsert(rv);
+			}
+			
 			return "/user/test/mockTest";
 		} else {
 			return "/user/test/mockTest";
