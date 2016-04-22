@@ -1,27 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:choose>
 	<c:when test="${loginMsg!=null }">
 		<script>
 			alert("${loginMsg}");
-			<%
-		    %>
+		<%%>
+			
 		</script>
 	</c:when>
 </c:choose>
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 <title>EMT</title>
-<meta
-	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-	name="viewport">
 <!-- Bootstrap 3.3.5 -->
 <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>">
 <!-- Font Awesome -->
@@ -37,10 +27,26 @@
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
-</head>
-
-
 <body class="hold-transition skin-blue layout-top-nav">
+	<!-- 작은 모달 -->
+	<div class="modal fade" id="modalAdd" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header" id="modalHeader">
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<h4 class="modal-title" id="modalTitle">EMT 알림메시지</h4>
+				</div>
+				<div class="modal-body" id="modalContent">등록 되었습니다.</div>
+				<div class="modal-footer" id="modalBtns">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 모달 END -->
 	<div class="wrapper">
 		<header class="main-header">
 			<nav class="navbar navbar-static-top">
@@ -55,7 +61,7 @@
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
-						<!-- Collect the nav links, forms, and other content for toggling -->
+					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse pull-left"
 						id="navbar-collapse">
 						<ul class="nav navbar-nav">
@@ -96,10 +102,8 @@
 					<div class="box box-info">
 						<div class="box-header with-border" style="text-align: center;">
 							<h3 id="title" class="box-title">글쓰기</h3>
-							
-							<div class="box-tools pull-right">
 
-							</div>
+							<div class="box-tools pull-right"></div>
 						</div>
 						<!-- /.box-header -->
 						<div class="box-body">
@@ -108,20 +112,26 @@
 									<thead>
 										<tr>
 											<th class="col-md-1">제목</th>
-											<td><input id="noticeTitle" type="text" style="width:80%;" placeholder="제목을 입력하시오."></td>
-											
+											<td><input id="noticeTitle" type="text"
+												style="width: 80%;" placeholder="제목을 입력하시오."></td>
+
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<th>내용</th>
-											<td><textarea id="noticeContent"
-											rows="15" style="width:80%; resize:none" placeholder="내용을 입력하시오."></textarea></td>
+											<td><textarea id="noticeContent" rows="15"
+													style="width: 80%; resize: none" placeholder="내용을 입력하시오."></textarea></td>
 										</tr>
 										<tr>
-											<th><input class="btn btn-default" type="button" onclick="location.href='/emt/admin/adminNotice'" value="목록보기"></th>
-											<td><div style="text-align: right;"><input class="btn btn-default" onclick="noticeAdd()" type="button" value="등록하기"></div></td>
-										</tr>	
+											<th><input class="btn btn-default" type="button"
+												onclick="location.href='/emt/admin/adminNotice'"
+												value="목록보기"></th>
+											<td><div style="text-align: right;">
+													<input class="btn btn-default" onclick="noticeAdd()"
+														type="button" value="등록하기">
+												</div></td>
+										</tr>
 									</tbody>
 								</table>
 
@@ -138,15 +148,15 @@
 		</div>
 		<!-- /.content-wrapper -->
 		<footer class="main-footer navbar-fixed-bottom">
-				<div class="container">
-					<div class="pull-right hidden-xs">
-						<b>Version</b> 1.0.0
-					</div>
-					<strong>Copyright &copy; 2016 <a
-						href="/emt/index">English Mock Test</a>
-					</strong> All rights reserved.
+			<div class="container">
+				<div class="pull-right hidden-xs">
+					<b>Version</b> 1.0.0
 				</div>
-			</footer>
+				<strong>Copyright &copy; 2016 <a href="/emt/index">English
+						Mock Test</a>
+				</strong> All rights reserved.
+			</div>
+		</footer>
 	</div>
 	<!-- ./wrapper -->
 
@@ -163,19 +173,18 @@
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	<!-- 로그아웃 스크립트 -->
 	<script src="<c:url value="/js/logout.js"/>"></script>
-	
+
 	<!-- 공지사항 글등록 -->
 	<script>
-		function noticeAdd(){
-			
+		function noticeAdd() {
 			var id = "${sid}";
 			var title = $("#noticeTitle").val();
 			var content = $("#noticeContent").val();
-			
-			if(id != null){
-				
+
+			if (id != null) {
+
 				$.ajax({
-					
+
 					url : "/emt/admin/noticeAdd",
 					method : "POST",
 					data : {
@@ -183,21 +192,26 @@
 						boardTitle : title,
 						boardContent : content
 					},
-					
-					success : function(result){
-						if(result>0){
-							alert("등록성공했습니다.");
-							location.replace("/emt/admin/adminNotice");
-						}
-						else {
-							alert("등록 실패했습니다.");
+
+					success : function(result) {
+						if (result > 0) {
+							$("#modalAdd").modal({
+								show : true
+							});
+						} else {
+							$("#modalContent").html("문제를 등록하지 못했습니다.");
+							$("#modalDel").modal({
+								show : true
+							});
 						}
 					}
-					
-					
+
 				});
 			}
 		}
-	</script>	
+		$("#modalAdd").on('hidden.bs.modal', function(){
+			location.href="/emt/admin/adminNotice";
+		});
+	</script>
 </body>
 </html>
