@@ -101,7 +101,7 @@
 				<!-- /.col -->
 
 			</form>
-			
+			<a href="/emt/login/login" class="text-center">ID/PW 찾기</a>
 			<br> <a href="/emt/login/login" class="text-center">기존에 가입하신
 				회원입니까? - 로그인</a>
 		</div>

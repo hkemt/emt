@@ -45,7 +45,15 @@
 	</repositories>
 
 	<dependencies>
+	
 		<!-- 추가 시작 -->
+		<!-- 메일 -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<!-- 메일 끝 -->
 		<!-- mybatis-spring -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
