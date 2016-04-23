@@ -225,6 +225,7 @@
 <script>
 //정답체크 
 var sum;
+
 function answerChk(){
 	
 	//색깔 변경하는 css의 클래스 lime의 배열
@@ -232,34 +233,48 @@ function answerChk(){
 	
 	//정답 오답을 넣어놓는 배열
 	var result = new Array();
-	
+	//문제 문항 선택 값을 넣어놓는 배열
+	var selected = new Array();
+	//정답시 초록색 오답시 빨간색을 넣는 배열
+	var color = new Array();
 	//맞은 개수를 넣는 sum
 	sum = 0;
 	for(var i=0; i<answer.length; i++){
-		if(answer[i] == $("input[type='radio'][name='"+i+"']:checked").val()){
+		
+		selected[i] = $("input[type='radio'][name='"+i+"']:checked").val();
+		
+		if(answer[i] == selected[i]){
 			result[i] = "정답";
+			color[i] = "blue";
 			sum += 1;
 			limes[i].style.backgroundColor= "lime";	
 			
 		} else{
+			if(selected[i] == null){
+				selected[i] = "체크안함";
+			} else{
+				selected[i] = $("input[type='radio'][name='"+i+"']:checked").val();	
+			}
+			
 			result[i] = "오답";
+			color[i] = "red";
 			limes[i].style.backgroundColor= "red";	
 		}
 	
 	}
 	// 모달 내용(메시지)가 들어가는 div에 메시지를 새로 씁니다.
 	$("#modalContent").html(
-					  "<div>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;선택" +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/정답"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/결과"+"</div>"	
-					+ "<div>"+"1번"+" "+$("input[type='radio'][name='"+0+"']:checked").val()+" ,"+ answer[0]+ " :"+result[0]+"<div>"
-					+ "<div>"+"2번"+" "+$("input[type='radio'][name='"+1+"']:checked").val()+" ,"+ answer[1]+ " :"+result[1]+"<div>"
-					+ "<div>"+"3번"+" "+$("input[type='radio'][name='"+2+"']:checked").val()+" ,"+ answer[2]+ " :"+result[2]+"<div>"
-					+ "<div>"+"4번"+" "+$("input[type='radio'][name='"+3+"']:checked").val()+" ,"+ answer[3]+ " :"+result[3]+"<div>"
-					+ "<div>"+"5번"+" "+$("input[type='radio'][name='"+4+"']:checked").val()+" ,"+ answer[4]+ " :"+result[4]+"<div>"
-					+ "<div>"+"6번"+" "+$("input[type='radio'][name='"+5+"']:checked").val()+" ,"+ answer[5]+ " :"+result[5]+"<div>"
-					+ "<div>"+"7번"+" "+$("input[type='radio'][name='"+6+"']:checked").val()+" ,"+ answer[6]+ " :"+result[6]+"<div>"
-					+ "<div>"+"8번"+" "+$("input[type='radio'][name='"+7+"']:checked").val()+" ,"+ answer[7]+ " :"+result[7]+"<div>"
-					+ "<div>"+"9번"+" "+$("input[type='radio'][name='"+8+"']:checked").val()+" ,"+ answer[8]+ " :"+result[8]+"<div>"
-					+ "<div>"+"10번"+" "+$("input[type='radio'][name='"+9+"']:checked").val()+" ,"+ answer[9]+ " :"+result[9]+"<div>"
+					  "<div>"+"문항번호 /선택 / 정답 : 채점결과" +"</div>"	
+					+ "<div style='color:"+color[0]+"'>"+"1번"+" /"+selected[0]+" /"+ answer[0]+ " :"+result[0]+"</div>"
+					+ "<div style='color:"+color[1]+"'>"+"2번"+" /"+selected[1]+" /"+ answer[1]+ " :"+result[1]+"</div>"
+					+ "<div style='color:"+color[2]+"'>"+"3번"+" /"+selected[2]+" /"+ answer[2]+ " :"+result[2]+"</div>"
+					+ "<div style='color:"+color[3]+"'>"+"4번"+" /"+selected[3]+" /"+ answer[3]+ " :"+result[3]+"</div>"
+					+ "<div style='color:"+color[4]+"'>"+"5번"+" /"+selected[4]+" /"+ answer[4]+ " :"+result[4]+"</div>"
+					+ "<div style='color:"+color[5]+"'>"+"6번"+" /"+selected[5]+" /"+ answer[5]+ " :"+result[5]+"</div>"
+					+ "<div style='color:"+color[6]+"'>"+"7번"+" /"+selected[6]+" /"+ answer[6]+ " :"+result[6]+"</div>"
+					+ "<div style='color:"+color[7]+"'>"+"8번"+" /"+selected[7]+" /"+ answer[7]+ " :"+result[7]+"</div>"
+					+ "<div style='color:"+color[8]+"'>"+"9번"+" /"+selected[8]+" /"+ answer[8]+ " :"+result[8]+"</div>"
+					+ "<div style='color:"+color[9]+"'>"+"10번"+" /"+selected[9]+" /"+ answer[9]+ " :"+result[9]+"</div>"
 					+"수고하셨습니다. 최종 맞은 갯수" + sum +" / 10개"
 
 
