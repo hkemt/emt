@@ -223,28 +223,51 @@
 	<script src="<c:url value="/js/logout.js"/>"></script>
 		<script src="<c:url value="/js/grammar/user/userGrammarList.js"/>"></script>
 <script>
+//정답체크 
 var sum;
 function answerChk(){
 	
+	//색깔 변경하는 css의 클래스 lime의 배열
 	var limes = document.getElementsByClassName("lime");
 	
+	//정답 오답을 넣어놓는 배열
+	var result = new Array();
+	
+	//맞은 개수를 넣는 sum
 	sum = 0;
 	for(var i=0; i<answer.length; i++){
 		if(answer[i] == $("input[type='radio'][name='"+i+"']:checked").val()){
+			result[i] = "정답";
 			sum += 1;
 			limes[i].style.backgroundColor= "lime";	
 			
 		} else{
+			result[i] = "오답";
 			limes[i].style.backgroundColor= "red";	
 		}
 	
 	}
 	// 모달 내용(메시지)가 들어가는 div에 메시지를 새로 씁니다.
-	$("#modalContent").html('맞은갯수' + sum);
-	
-	// 모달을 보이게 하는 소스
-	$("#modal").modal('show');
-	
-	//alert("맞은갯수"+sum);
-}
+	$("#modalContent").html(
+					  "<div>"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;선택" +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/정답"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/결과"+"</div>"	
+					+ "<div>"+"1번"+" "+$("input[type='radio'][name='"+0+"']:checked").val()+" ,"+ answer[0]+ " :"+result[0]+"<div>"
+					+ "<div>"+"2번"+" "+$("input[type='radio'][name='"+1+"']:checked").val()+" ,"+ answer[1]+ " :"+result[1]+"<div>"
+					+ "<div>"+"3번"+" "+$("input[type='radio'][name='"+2+"']:checked").val()+" ,"+ answer[2]+ " :"+result[2]+"<div>"
+					+ "<div>"+"4번"+" "+$("input[type='radio'][name='"+3+"']:checked").val()+" ,"+ answer[3]+ " :"+result[3]+"<div>"
+					+ "<div>"+"5번"+" "+$("input[type='radio'][name='"+4+"']:checked").val()+" ,"+ answer[4]+ " :"+result[4]+"<div>"
+					+ "<div>"+"6번"+" "+$("input[type='radio'][name='"+5+"']:checked").val()+" ,"+ answer[5]+ " :"+result[5]+"<div>"
+					+ "<div>"+"7번"+" "+$("input[type='radio'][name='"+6+"']:checked").val()+" ,"+ answer[6]+ " :"+result[6]+"<div>"
+					+ "<div>"+"8번"+" "+$("input[type='radio'][name='"+7+"']:checked").val()+" ,"+ answer[7]+ " :"+result[7]+"<div>"
+					+ "<div>"+"9번"+" "+$("input[type='radio'][name='"+8+"']:checked").val()+" ,"+ answer[8]+ " :"+result[8]+"<div>"
+					+ "<div>"+"10번"+" "+$("input[type='radio'][name='"+9+"']:checked").val()+" ,"+ answer[9]+ " :"+result[9]+"<div>"
+					+"수고하셨습니다. 최종 맞은 갯수" + sum +" / 10개"
+
+
+		);
+
+		// 모달을 보이게 하는 소스
+		$("#modal").modal('show');
+
+		//alert("맞은갯수"+sum);
+	}
 </script>	
