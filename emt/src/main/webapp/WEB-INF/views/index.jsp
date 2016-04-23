@@ -114,6 +114,7 @@
 										data-toggle="dropdown">${sid }</a>
 										<ul class="dropdown-menu" role="menu">
 											<li><a href="/emt/user/review/userReview?sid=${sid }">복습</a></li>
+											<li><a href="/emt/user/score/userScore">문법점수</a></li>
 											<li><a href="/emt/user/member/userMemberList?userId=${sid }">정보수정</a></li>
 											<li id="logout"><a>로그아웃</a></li>
 										</ul></li>

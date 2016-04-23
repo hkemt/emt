@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="emt.emt.score.dao.mapper.ScoreMapper">
+
+	<resultMap id="scoreMap" type="emt.emt.common.domain.Score">
+		<result property="scoreNo" column="score_no" />
+		<result property="userId" column="user_id" />
+		<result property="grammarInning" column="grammar_inning" />
+		<result property="scoreGrade" column="score_grade" />
+		<result property="scoreDate" column="score_date" />	
+	</resultMap>
+
+	<select id="scoreList" resultMap="scoreMap">
+		select score_no scoreNo, user_id userId, grammar_inning grammarInning, score_grade scoreGrade, score_date scoreDate
+		from score	
+	</select>
+
 </mapper>

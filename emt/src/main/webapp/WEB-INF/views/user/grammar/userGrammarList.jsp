@@ -262,6 +262,28 @@ function answerChk(){
 		}
 	
 	}
+	
+	var id = 'user1';
+	var grammarInning = $("#selecter :selected").val();
+	
+	if(grammarInning.length == 0){
+		grammarInning = 1;
+	} else {
+		grammarInning = $("#selecter :selected").val();
+	}
+
+	$.ajax({
+		url: "/emt/user/score/scoreInsert",
+		method: "POST",
+		data: {
+			userId: id,
+			grammarInning: grammarInning,
+			scoreGrade: sum
+		}
+	}).done(function(result){
+		alert("점수등록성공");
+	})
+	
 	// 모달 내용(메시지)가 들어가는 div에 메시지를 새로 씁니다.
 	$("#modalContent").html(
 					  "<div>"+"문항번호 /선택 / 정답 : 채점결과" +"</div>"	
@@ -284,5 +306,11 @@ function answerChk(){
 		$("#modal").modal('show');
 
 		//alert("맞은갯수"+sum);
+		
+		
+
+		
+		
+		
 	}
 </script>	

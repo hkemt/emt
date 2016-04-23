@@ -5,10 +5,9 @@ import java.sql.Date;
 public class Score {
 	private int scoreNo;		// 점수번호
 	private String userId;		// 아이디
-	private int grammerInning;	// 회차
+	private int grammarInning;	// 회차
 	private int scoreGrade;		// 점수
 	private Date scoreDate;		// 시험일
-	private int grammerNo;		// 문제번호
 	
 	
 	public int getScoreNo() {
@@ -23,11 +22,11 @@ public class Score {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public int getGrammerInning() {
-		return grammerInning;
+	public int getGrammarInning() {
+		return grammarInning;
 	}
-	public void setGrammerInning(int grammerInning) {
-		this.grammerInning = grammerInning;
+	public void setGrammarInning(int grammarInning) {
+		this.grammarInning = grammarInning;
 	}
 	public int getScoreGrade() {
 		return scoreGrade;
@@ -41,12 +40,7 @@ public class Score {
 	public void setScoreDate(Date scoreDate) {
 		this.scoreDate = scoreDate;
 	}
-	public int getGrammerNo() {
-		return grammerNo;
-	}
-	public void setGrammerNo(int grammerNo) {
-		this.grammerNo = grammerNo;
-	}
+
 	
 	
 }
