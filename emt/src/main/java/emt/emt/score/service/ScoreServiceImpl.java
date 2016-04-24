@@ -31,9 +31,9 @@ public class ScoreServiceImpl implements ScoreService{
 	}
 
 	@Override
-	public List<Score> scoreList() {
+	public List<Score> scoreList(Score score) {
 		// TODO Auto-generated method stub
-		return scoreDao.scoreList();
+		return scoreDao.scoreList(score);
 	}
 
 	@Override

@@ -8,7 +8,7 @@ public interface ScoreDao {
 	int ScoreInsert(Score score);
 	int ScoreUpdate(Score score);
 	int ScoreDelete(Score score);
-	List<Score> scoreList();
+	List<Score> scoreList(Score score);
 	Score scoreView(Score score);
 
 }

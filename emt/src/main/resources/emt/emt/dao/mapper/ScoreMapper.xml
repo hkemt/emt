@@ -11,8 +11,10 @@
 	</resultMap>
 
 	<select id="scoreList" resultMap="scoreMap">
-		select score_no scoreNo, user_id userId, grammar_inning grammarInning, score_grade scoreGrade, score_date scoreDate
-		from score	
+		SELECT score_no scoreNo, user_id userId, grammar_inning grammarInning, score_grade scoreGrade, score_date scoreDate
+		FROM score
+		WHERE user_id = #{userId}
+		ORDER BY score_date DESC	
 	</select>
 
 </mapper>

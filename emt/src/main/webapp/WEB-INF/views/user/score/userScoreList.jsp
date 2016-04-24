@@ -97,37 +97,33 @@
 							<div id="userScoreView" class="table-responsive">
 
 								<table class="table no-margin">	
-								<tr>
-									<td>스코어번호</td>
-									<td>아이디</td>
-									<td>회차</td>
-									<td>점수</td>
-									<td>날짜</td>
-								</tr>								
-			<c:forEach var="score" items="${score }">
-	<tr>
-		<td>${score.scoreNo }</td>
-  		<td>${score.userId }</td>
- 		<td>${score.grammarInning }</td>
- 		<td>${score.scoreGrade }</td>
- 		<td>${score.scoreDate }</td>
- 		
-	</tr>
-	</c:forEach>
-
+									<tr>
+										<td></td>
+										<td></td>
+									</tr>	
 								</table>
 							</div>
 							<!-- /.table-responsive -->
 
-						
-
 						</div>
 						<!-- /.box-body -->
+						
+						
+						<!-- 그래프 -->
+						<div class="box-header with-border">
+							<h3 class="box-title">Graph</h3>
+						</div>
+
+						<!-- /.box-header -->
+						<div class="box-body">
+							<p id="userScoreGraph"></p>
+						</div>
+						<!-- /.box-body -->
+						
 					</div>
 					
 					
 
-					
 				</section>
 				<!-- /.content -->
 			</div>
@@ -160,3 +156,5 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
+	<script src="<c:url value="/js/score/userScoreList.js"/>"></script>
+	

@@ -7,8 +7,7 @@ public class Score {
 	private String userId;		// 아이디
 	private int grammarInning;	// 회차
 	private int scoreGrade;		// 점수
-	private Date scoreDate;		// 시험일
-	
+	private Date scoreDate;		// 시험일	
 	
 	public int getScoreNo() {
 		return scoreNo;
@@ -39,8 +38,6 @@ public class Score {
 	}
 	public void setScoreDate(Date scoreDate) {
 		this.scoreDate = scoreDate;
-	}
-
-	
+	}	
 	
 }

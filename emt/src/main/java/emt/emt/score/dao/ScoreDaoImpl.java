@@ -32,9 +32,9 @@ public class ScoreDaoImpl implements ScoreDao{
 	}
 
 	@Override
-	public List<Score> scoreList() {
+	public List<Score> scoreList(Score score) {
 		// TODO Auto-generated method stub
-		return scoreMapper.scoreList();
+		return scoreMapper.scoreList(score);
 	}
 
 	@Override

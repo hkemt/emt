@@ -263,7 +263,8 @@ function answerChk(){
 	
 	}
 	
-	var id = 'user1';
+
+	var id= "${sid}";
 	var grammarInning = $("#selecter :selected").val();
 	
 	if(grammarInning.length == 0){
