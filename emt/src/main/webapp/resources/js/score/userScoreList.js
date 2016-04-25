@@ -1,5 +1,5 @@
 var scoreWidth = new Array();
-var color = ["red","orange","blue","green","yellow","lime","red","orange","blue","green","yellow","lime","red","orange","blue","green","yellow","lime"];
+var color = ["red","orange","yellow","green","blue","lime","red","orange","blue","green","yellow","lime","red","orange","blue","green","yellow","lime"];
 var graphWidth;
 var graphScore;
 
@@ -37,31 +37,64 @@ function userScoreList() {
 					context.beginPath();
 					
 					/*그래프 색깔과 두께*/
-					context.strokeStyle = "red";
-					context.lineWidth = 2;
+					context.strokeStyle = "black";
+					context.lineWidth = 1;
 					
 					/*텍스트 크기와 색깔*/
 				    context.fillStyle = '"#003300';
 				    context.font = 'italic bold 14px sans-serif';
 				    context.textBaseline = 'bottom';
-					
+				    graphWidth = 0;
 					/*그래프와 텍스트 입력*/
-					context.moveTo(25, 290);
+					context.moveTo(graphWidth+50, 380-((result[0].scoreGrade +20)*10));
 					/*그래프가 가로로 늘어나는 길이*/
-					graphWidth = 0;
+					
 				    for(var i=0; i<10; i++){
 				    	graphWidth += 50;
-				    	 
-						context.lineTo(graphWidth, 480-((result[i].scoreGrade +20)*10));
+				    	
+				    	
+
+				    	
+						context.lineTo(graphWidth, 380-((result[i].scoreGrade +20)*10));
 						context.font = 'italic bold 14px sans-serif';
-					    context.fillText(result[i].scoreGrade , graphWidth, 480-((result[i].scoreGrade +20)*10));
+					    context.fillText(result[i].scoreGrade , graphWidth, 380-((result[i].scoreGrade +20)*10));
 					    context.font = 'italic bold 5px sans-serif';
-					    context.fillText( (i+1), graphWidth, 300);
+					    context.fillText( (i+1), graphWidth, 200);
+					    	
+					    /*해당 내용 출력*/
+						context.stroke();
 				    }
 			/*그래프 그리기 끝*/	    	
+				    
+				    /*막대 그래프 추가*/
+				    graphWidth =0;
+				    for(var i=0; i<10; i++){
+				    	graphWidth += 50;
+				    	
+				    	/*점수에 따라 그래프  색깔 변경*/
+				    	switch (result[i].scoreGrade) {
+						case 1: changeColor = color[5];break;
+						case 2: changeColor = color[5];break;	
+						case 3: changeColor = color[5];break;	
+						case 4: changeColor = color[5];break;	
+						case 5: changeColor = color[5];break;	
+						case 6: changeColor = color[4];break;	
+						case 7: changeColor = color[3];break;	
+						case 8: changeColor = color[2];break;	
+						case 9: changeColor = color[1];break;	
+						case 10: changeColor = color[0];break;	
 
-		    /*해당 내용 출력*/
-			context.stroke();
+						default:
+							break;
+						}
+				    	
+				   
+				    	context.fillStyle = changeColor;
+						context.fillRect(graphWidth-5,180-(result[i].scoreGrade *10), 10,(result[i].scoreGrade *10));
+						context.stroke();
+						
+				    }	
+				    /*막대 그래프 끝*/
 			
 		}
 	})

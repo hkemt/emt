@@ -89,7 +89,7 @@
 				<!-- 점수 그래프 출력 -->
 					<div class="box box-info">
 						<div class="box-header with-border">
-							<h3 class="box-title">그래프</h3>
+							<h3 class="box-title">최근 10회 점수 그래프</h3>
 
 						</div>
 
@@ -97,7 +97,7 @@
 						<div class="box-body">
 							<div id="#" class="table-responsive">
 								
-								<canvas id="canvas" width="600" height="300"></canvas>						
+								<canvas id="canvas" width="600" height="200"></canvas>						
 								
 								
 							</div>
