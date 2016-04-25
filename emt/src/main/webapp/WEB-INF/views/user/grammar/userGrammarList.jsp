@@ -126,8 +126,38 @@
 							</div>
 							<!-- /.table-responsive -->
 							<input type="button" onclick="answerChk()" value="제출">
+<style>
+canvas { border: thin solid black; }
+</style>
+<canvas id="canvas" width="300" height="300"></canvas>
+<script>
+var canvas = document.getElementById('canvas');
+var context = canvas.getContext('2d');
+
+//채워지지 않은 사각형
+context.strokeStyle = "rgb(0, 0, 255)"
+context.strokeRect (10, 10 ,150, 30); //x,y좌표 다음은 가로 세로
+
+//채워진 사각형
+context.fillStyle = "rgb(0, 0, 255)"
+context.fillRect (10, 50 ,150, 30);
+
+//알파값 넣기
+context.fillStyle = "rgba(0, 0, 255, 0.5)"
+context.fillRect (10, 100 ,150, 30);
+
+context.globalAlpha = 0.3; //나머지 색깔에 글로벌 알파값을 주기
 
 
+context.fillStyle = "rgb(0, 255, 0)"
+context.fillRect (10, 150 ,150, 30);
+
+context.fillStyle = "rgb(255, 0, 0)"
+context.fillRect (10, 200 ,150, 30);
+
+
+
+</script>
 
 
 						</div>
@@ -247,7 +277,7 @@ function answerChk(){
 			result[i] = "정답";
 			color[i] = "blue";
 			sum += 1;
-			limes[i].style.backgroundColor= "lime";	
+			limes[i].style.color= "blue";	
 			
 		} else{
 			if(selected[i] == null){
@@ -258,7 +288,7 @@ function answerChk(){
 			
 			result[i] = "오답";
 			color[i] = "red";
-			limes[i].style.backgroundColor= "red";	
+			limes[i].style.color= "red";	
 		}
 	
 	}

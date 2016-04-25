@@ -18,33 +18,16 @@
 
 					$("#userGrammarTable").append(
 							"<tr>"
-							+"<td colspan='2'><p class='lime'>"+result[i].grammarInning+"회 "+(i+1)+"번 "+result[i].grammarQuiz+" 정답:"+answer[i]+"</p></td>"
+							+"<td>"
+							+"<div class='lime'>"+result[i].grammarInning+"회 "+(i+1)+"번 "+result[i].grammarQuiz+"</div>"
+							+"<pre style='word-wrap: break-word;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-break:break-all;'>"+result[i].grammarEx+"</pre>"
+							+"<div><input type='radio' name='"+i+"' value='1'>"+result[i].grammarEx1+"</div>"
+							+"<div><input type='radio' name='"+i+"' value='2'>"+result[i].grammarEx2+"</div>"
+							+"<div><input type='radio' name='"+i+"' value='3'>"+result[i].grammarEx3+"</div>"
+							+"<div><input type='radio' name='"+i+"' value='4'>"+result[i].grammarEx4+"</div>"
+							+"<div style='text-align:right' >정답:"+answer[i]+"</div>"
+							+"</td>"
 							+"</tr>"
-							
-							+"<tr>"
-							+"<td colspan='2'><div style=' height: auto; width: 500px'>"+result[i].grammarEx+"</div></td>"
-							+"</tr>"
-							
-							+"<tr>"
-							+"<td style='width:10px'><input type='radio' name='"+i+"' value='1'></td>"
-							+"<td>"+result[i].grammarEx1+"</td>"
-							+"</tr>"
-							
-							+"<tr>"
-							+"<td style='width:10px'><input type='radio' name='"+i+"' value='2'></td>"
-							+"<td>"+result[i].grammarEx2+"</td>"
-							+"</tr>"
-							
-							+"<tr>"
-							+"<td style='width:10px'><input type='radio' name='"+i+"' value='3'></td>"
-							+"<td>"+result[i].grammarEx3+"</td>"
-							+"</tr>"
-							
-							+"<tr>"
-							+"<td style='width:10px'><input type='radio' name='"+i+"' value='4'></td>"
-							+"<td>"+result[i].grammarEx4+"</td>"
-							+"</tr>"
-							
 							); 	
 				}
 				$("#userGrammarTable").append("</tbody>");
@@ -71,33 +54,16 @@
 					
 					$("#userGrammarTable").append(
 							"<tr>"
-							+"<td colspan='2'><p class='lime'>"+result[i].grammarInning+"회 "+(i+1)+"번 "+result[i].grammarQuiz+" 정답:"+answer[i]+"</p></td>"
+							+"<td>"
+							+"<div class='lime'>"+result[i].grammarInning+"회 "+(i+1)+"번 "+result[i].grammarQuiz+"</div>"
+							+"<pre style='word-wrap: break-word;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-break:break-all;'>"+result[i].grammarEx+"</pre>"
+							+"<div><input type='radio' name='"+i+"' value='1'>"+result[i].grammarEx1+"</div>"
+							+"<div><input type='radio' name='"+i+"' value='2'>"+result[i].grammarEx2+"</div>"
+							+"<div><input type='radio' name='"+i+"' value='3'>"+result[i].grammarEx3+"</div>"
+							+"<div><input type='radio' name='"+i+"' value='4'>"+result[i].grammarEx4+"</div>"
+							+"<div style='text-align:right' >정답:"+answer[i]+"</div>"
+							+"</td>"
 							+"</tr>"
-							
-							+"<tr>"
-							+"<td colspan='2'><div style='border: 1px solid #48BAE4; height: auto; width: 500px'>"+result[i].grammarEx+"</div></td>"
-							+"</tr>"
-							
-							+"<tr>"
-							+"<td style='width:10px'><input type='radio' name='"+i+"' value='1'></td>"
-							+"<td>"+result[i].grammarEx1+"</td>"
-							+"</tr>"
-							
-							+"<tr>"
-							+"<td style='width:10px'><input type='radio' name='"+i+"' value='2'></td>"
-							+"<td>"+result[i].grammarEx2+"</td>"
-							+"</tr>"
-							
-							+"<tr>"
-							+"<td style='width:10px'><input type='radio' name='"+i+"' value='3'></td>"
-							+"<td>"+result[i].grammarEx3+"</td>"
-							+"</tr>"
-							
-							+"<tr>"
-							+"<td style='width:10px'><input type='radio' name='"+i+"' value='4'></td>"
-							+"<td>"+result[i].grammarEx4+"</td>"
-							+"</tr>"
-							
 							); 	
 				}
 				$("#userGrammarTable").append("</tbody>");

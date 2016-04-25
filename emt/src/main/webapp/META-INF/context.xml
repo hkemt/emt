@@ -8,7 +8,7 @@
 		   password="emt"              
 		   driverClassName="oracle.jdbc.driver.OracleDriver"
 		   factory="org.apache.tomcat.dbcp.dbcp.BasicDataSourceFactory"
-		   url="jdbc:oracle:thin:@localhost:1521:xe" 
+		   url="jdbc:oracle:thin:@192.168.4.121:1521:xe" 
 		   maxActive="2" 
 		   minIdle="2"/>	   
 </Context>
