@@ -151,3 +151,7 @@ $(function() {
 $("#modal1").on("hidden.bs.modal", function(){
 	document.location.href="/emt/index";
 });
+
+function moveIndex(){
+	document.location.href="/emt/index";
+};
