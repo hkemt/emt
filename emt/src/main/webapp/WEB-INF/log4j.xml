@@ -14,7 +14,7 @@
      
     <!-- 날짜별 로그 파일 생성 -->
     <appender name="rollingFile" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="d:/LOG/login.log"/>
+        <param name="File" value="d:/emtLog/login.log"/>
         <param name="Append" value="true"/>
         <!-- param name="MaxFileSize" value="100MB"/ -->
         <!-- param name="MaxBackupIndex" value="2"></param -->
@@ -53,10 +53,10 @@
   <logger name="org.apache.ibatis">
         <level value="DEBUG"/>
     </logger>
-    <logger name="org.springframework">
+   <!--  <logger name="org.springframework">
         <level value="DEBUG"/>
         <appender-ref ref="springFile" />
-    </logger>
+    </logger> -->
     <logger name="java.sql">
         <level value="DEBUG"/>
     </logger>
