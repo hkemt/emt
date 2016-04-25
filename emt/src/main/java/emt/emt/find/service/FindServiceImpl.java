@@ -1,5 +1,7 @@
 package emt.emt.find.service;
 
+import java.util.List;
+
 import javax.mail.MessagingException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
@@ -35,7 +37,7 @@ public class FindServiceImpl implements FindService{
 	}
 
 	@Override
-	public User FindId(User user) {
+	public List<User> FindId(User user) {
 		return findDao.FindId(user);
 	}
 

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="emt.emt.find.dao.mapper.FindMapper">
+
+<select id="FindId" parameterType="emt.emt.common.domain.User">
+
+	</select>
+	
+
 </mapper>
-
-
-
-
-
