@@ -85,7 +85,30 @@
 
 				<!-- Main content -->
 				<section class="content">
+				
+				<!-- 점수 그래프 출력 -->
+					<div class="box box-info">
+						<div class="box-header with-border">
+							<h3 class="box-title">그래프</h3>
 
+						</div>
+
+						<!-- /.box-header -->
+						<div class="box-body">
+							<div id="#" class="table-responsive">
+								
+								<canvas id="canvas" width="600" height="300"></canvas>						
+								
+								
+							</div>
+							<!-- /.table-responsive -->
+
+						</div>
+						<!-- /.box-body -->
+						
+					</div>
+
+				<!-- 점수 출력 -->
 				<div class="box box-info">
 						<div class="box-header with-border">
 							<h3 class="box-title">내 점수</h3>
@@ -105,18 +128,6 @@
 							</div>
 							<!-- /.table-responsive -->
 
-						</div>
-						<!-- /.box-body -->
-						
-						
-						<!-- 그래프 -->
-						<div class="box-header with-border">
-							<h3 class="box-title">Graph</h3>
-						</div>
-
-						<!-- /.box-header -->
-						<div class="box-body">
-							<p id="userScoreGraph"></p>
 						</div>
 						<!-- /.box-body -->
 						
@@ -157,4 +168,5 @@
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	<script src="<c:url value="/js/score/userScoreList.js"/>"></script>
+	
 	
