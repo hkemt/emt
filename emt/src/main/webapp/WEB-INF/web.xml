@@ -81,4 +81,14 @@
     <url-pattern>/admin/*</url-pattern>
    
   </filter-mapping>
+  
+    <!-- log4J 추가 -->
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>/WEB-INF/log4j.xml</param-value>
+    </context-param>
+ 
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
 </web-app>

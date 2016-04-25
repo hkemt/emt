@@ -45,6 +45,14 @@
 	</repositories>
 
 	<dependencies>
+		<!-- log4j 추가 -->
+		<dependency>
+     	 	<groupId>log4j</groupId>
+      		<artifactId>log4j</artifactId>
+      		<version>1.2.14</version>
+      		<scope>runtime</scope>
+   		</dependency>
+		<!-- 추가 끝 -->
 	
 		<!-- 추가 시작 -->
 		<!-- 메일 -->
