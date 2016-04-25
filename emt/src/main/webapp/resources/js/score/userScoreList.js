@@ -12,14 +12,23 @@ function userScoreList() {
 			$("#userScoreTable").append("<thead><tr><th>번호</th><th>아이디</th><th>회차</th><th>점수</th><th>날짜</th></thead>");
 			$("#userScoreTable").append("<tbody>")
 			
+			/*10개의 그래프와 점수만 나오도록 하기위한 출력 길이*/
+		    var length;
+		    if(result.length >10){
+		    	length = 10;
+		    } else if(result.length < 10){
+		    	length = result.length;
+		    }
+			
+			
 
-			for(var i=0; i<result.length; i++){
+			for(var i=0; i<length; i++){
 				
 				
 				/*점수 테이블 그리기*/
 				$("#userScoreTable").append(
 						"<tr>"
-						+"<td>"+	(i+1)						+"</td>"		
+						+"<td>"+	(length-i)						+"</td>"		
 						+"<td>"+	result[i].userId		+"</td>"		
 						+"<td>"+	result[i].grammarInning	+"</td>"		
 						+"<td>"+	result[i].scoreGrade	+"</td>"		
@@ -52,9 +61,13 @@ function userScoreList() {
 					context.moveTo(graphWidth+50, 380-((result[0].scoreGrade +20)*10));
 					/*그래프가 가로로 늘어나는 길이*/
 					
-
+					
 					 graphWidth = 0;
-				    for(var i=0; i<10; i++){
+					 
+					 
+
+					 
+				    for(var i=0; i<length; i++){
 				    	graphWidth += 50;
 				    	
 				    	
@@ -68,16 +81,20 @@ function userScoreList() {
 
 					    /*하단 번호 텍스트*/
 					    context.font = 'italic bold 5px sans-serif';
-					    context.fillText( (i+1), graphWidth, 200);
+					    context.fillText( (length-i), graphWidth, 200);
 					    	
 					    /*해당 내용 출력*/
-						context.stroke();
+					    context.stroke();
 				    }
 			/*그래프 그리기 끝*/	    	
 				    
+				    
+				    
+
+				    
 				    /*막대 그래프 추가*/
 				    graphWidth =0;
-				    for(var i=0; i<10; i++){
+				    for(var i=0; i<length; i++){
 				    	graphWidth += 50;
 				    	
 				    	/*점수에 따라 그래프  색깔 변경*/
