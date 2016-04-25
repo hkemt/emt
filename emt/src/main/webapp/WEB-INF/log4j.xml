@@ -50,7 +50,7 @@
     </appender> -->
      
     <!-- 특정 패키지 출력 설정 -->
-    <logger name="org.apache.ibatis">
+  <!--   <logger name="org.apache.ibatis">
         <level value="DEBUG"/>
     </logger>
     <logger name="org.springframework">
@@ -59,7 +59,7 @@
     </logger>
     <logger name="java.sql">
         <level value="DEBUG"/>
-    </logger>
+    </logger> -->
  
     <!-- 기본 출력 설정 -->
     <root>
