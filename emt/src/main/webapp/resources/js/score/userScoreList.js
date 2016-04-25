@@ -14,8 +14,7 @@ function userScoreList() {
 			
 
 			for(var i=0; i<result.length; i++){
-				/*그래프의 길이*/
-				scoreWidth[i] = (result[i].scoreGrade+ 20)*10;
+				
 				
 				/*점수 테이블 그리기*/
 				$("#userScoreTable").append(
@@ -36,19 +35,25 @@ function userScoreList() {
 					var context = canvas.getContext('2d');
 					context.beginPath();
 					
-					/*그래프 색깔과 두께*/
-					context.strokeStyle = "black";
+					/*그래프 색깔과 두께 알파값으로 그래프색깔연하게*/
+					context.strokeStyle = "gray";
 					context.lineWidth = 1;
 					
+					context.globalAlpha = 0.6;
+					
 					/*텍스트 크기와 색깔*/
-				    context.fillStyle = '"#003300';
+				    context.fillStyle = '"black';
 				    context.font = 'italic bold 14px sans-serif';
 				    context.textBaseline = 'bottom';
-				    graphWidth = 0;
+				    
+				    
+				   
 					/*그래프와 텍스트 입력*/
 					context.moveTo(graphWidth+50, 380-((result[0].scoreGrade +20)*10));
 					/*그래프가 가로로 늘어나는 길이*/
 					
+
+					 graphWidth = 0;
 				    for(var i=0; i<10; i++){
 				    	graphWidth += 50;
 				    	
@@ -56,8 +61,12 @@ function userScoreList() {
 
 				    	
 						context.lineTo(graphWidth, 380-((result[i].scoreGrade +20)*10));
+						
+						/*점수 텍스트*/
 						context.font = 'italic bold 14px sans-serif';
-					    context.fillText(result[i].scoreGrade , graphWidth, 380-((result[i].scoreGrade +20)*10));
+					    context.fillText(result[i].scoreGrade , (graphWidth+3), 380-((result[i].scoreGrade +20)*10));				    
+
+					    /*하단 번호 텍스트*/
 					    context.font = 'italic bold 5px sans-serif';
 					    context.fillText( (i+1), graphWidth, 200);
 					    	

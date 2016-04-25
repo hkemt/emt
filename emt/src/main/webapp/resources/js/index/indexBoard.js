@@ -13,7 +13,7 @@
 					$("#boardTable").append("<tbody>")
 					for(var i=0; i<result.length; i++){
 						$("#boardTable").append("<tr>"
-												+"<td><a href='noticeDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle+"</a></td>"
+												+"<td><a href='boardDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle+"</a></td>"
 												+"<td><span class='label label-warning'>"+result[i].userId+"</span></td>"
 												+"<td>"+result[i].boardDate+"</td></tr>"); 
 					}
