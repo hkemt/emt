@@ -73,6 +73,7 @@ function userScoreList() {
 				    	
 				    	/*점수에 따라 그래프  색깔 변경*/
 				    	switch (result[i].scoreGrade) {
+				    	case 0: changeColor = color[5];break;
 						case 1: changeColor = color[5];break;
 						case 2: changeColor = color[5];break;	
 						case 3: changeColor = color[5];break;	
