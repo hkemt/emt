@@ -88,7 +88,7 @@
 
 						<!-- /.box-header -->
 						<div class="box-body">
-							<form action="#">
+							<form action="#" name="noticeForm" id="noticeForm">
 								<div id="noticeView" class="table-responsive">
 									<table class="table no-margin">
 										<thead>

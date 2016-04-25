@@ -56,7 +56,17 @@ public class NoticeController {
 	}
 	
 	
-	
+	// 관리자 공지사항 삭제하기
+	@RequestMapping(value="/admin/noticeDelete", method=RequestMethod.POST)
+	@ResponseBody
+	public int noticeDelete(Board board, Model model){
+		
+		// 공지글 삭제
+		int res = boardService.boardDelete(board);
+		
+		
+		return res;
+	}
 	
 	
 	
@@ -127,21 +137,7 @@ public class NoticeController {
 		return res;
 	}
 
-	//2_7 공지사항 삭제하기
-	@RequestMapping("noticeDelete")
-	@ResponseBody
-	public int noticeDelete(Notice notice, Model model){
-		
-		int res = noticeService.noticeDelete(notice);
-		if(res > 0) {
-			Board board = new Board();
-			board.setBoardNo(notice.getBoardNo());
-			
-			res = boardService.boardDelete(board);
-		}
-		
-		return res;
-	}
+
 	
 	//3_1 인덱스 최근 공지사항 목록 불러오기
 	@RequestMapping("indexNoticeList")

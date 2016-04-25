@@ -150,6 +150,41 @@
 	$(document).ready(function(){
 		noticeList(1);
 		noticePage();
-	})
+		
+		$("#noticeForm").submit(function(e) {
+
+			e.preventDefault();
+			if($("input[name='boardNo']:checked").length >0){
+			var radio_value = $("input[name='boardNo']:checked").val();
+			
+			$.ajax({
+				method : "POST",
+				url : "/emt/admin/noticeDelete",
+				data : {
+					boardNo : radio_value
+				},
+				success : function(result){
+					if(result>0){
+						alert("삭제성공 " +
+								" 게시판의board_no로 삭제했습니다." +
+								" notice의 board_no는 게시판 테이블의 board_no삭제시" +
+								" 자동으로 삭제 됩니다.");
+						noticeList(1);
+						noticePage();
+					}
+					else {
+						alert("삭제 실패");
+					}
+				}
+			
+			})
+			}
+			else {
+				alert("삭제할 글을 체크하셔야 합니다.")
+			}
+	});
+	});
 	
+		
 	
+		
