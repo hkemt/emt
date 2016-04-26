@@ -81,3 +81,19 @@
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	</body><!-- /.login-box-body -->
+	<script>
+	var pw = "${pw}";
+	
+	if(pw==""){
+		
+	} else if(pw=="1"+null){
+		$("#modalContent").html("일치하는 회원정보가 없습니다.");
+		$("#modal").modal({show:true});
+	} else{
+		$("#modalContent").html("비밀번호가 메일로 전송되었습니다. 메일을 확인해주세요.");
+		$("#modal").modal({show:true});
+	}
+	$("#modal").on('hidden.bs.modal', function(){
+		location.href="/emt/index";
+	});
+	</script>
