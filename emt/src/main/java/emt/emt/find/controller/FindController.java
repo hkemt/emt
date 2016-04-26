@@ -29,4 +29,9 @@ public class FindController {
 	public String findId(User user){
 		return "user/find/findId";
 	}
+	@RequestMapping(value="/findIdResult",method = RequestMethod.POST )
+	public String findIdResult(User user, Model model){
+		model.addAttribute("idList", findService.FindId(user));
+		return "user/find/findIdResult";
+	}
 }

@@ -19,24 +19,6 @@
 
 <body class="hold-transition login-page">
 
-	<!-- 작은 모달 -->
-	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-sm">
-	    <div class="modal-content">
-	      <div class="modal-header" id="modalHeader">
-		<button type="button"  class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-		<h4 class="modal-title" id="modalTitle">EMT 알림메시지</h4>
-	      </div>
-	      <div class="modal-body" id="modalContent">
-			...
-	      </div>
-	      <div class="modal-footer" id="modalBtns">
-		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
-	      </div>
-	    </div>
-	  </div>
-	</div><!-- 모달 END -->
-	
 	<div class="login-box">
 		<div class="login-logo">
 			<a href="/emt/index"><b>English Mock</b>Test</a>
@@ -44,26 +26,22 @@
 		<!-- /.login-logo -->
 		<div class="login-box-body login-page">
 
-			<form method="post" action="findIdResult">
-				<div class="form-group has-feedback">
-					<input type="text" name="email" id="email" class="form-control"
-						placeholder="가입시 입력한 email"> <span
-						class="glyphicon glyphicon-pencil form-control-feedback"></span>
-				</div>
-				<div>
-					<!-- /.col -->
-					<div class="social-auth-links text-center">
-						<input type="submit" name="Submit"
-							class="btn btn-primary btn-block btn-flat" value="아이디 찾기">
-						
-					</div>
-					<!-- /.col -->
-				</div>
-			</form>
+			<div class="form-group has-feedback">
+				해당 메일로 가입되어 있는 아이디는<br>
+		<ul>
+				<c:forEach var="temp" items="${idList }" varStatus="status">
+		
+		<li>${temp.userId }</li>
+				</c:forEach>
+				</ul>
+			입니다.
+			</div>
+			<a href="/emt/findPw" class="text-center">PW찾기</a>
+			<br><a href="/emt/login/login" class="text-center">로그인</a>
 		</div>
 		<!-- /.social-auth-links -->
 	</div>
-	
+
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
 	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
@@ -75,4 +53,5 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
-	</body><!-- /.login-box-body -->
+</body>
+<!-- /.login-box-body -->
