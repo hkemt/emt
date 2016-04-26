@@ -93,7 +93,7 @@
 									<li><a href="/emt/user/part/part5">Part5</a></li>
 									<li><a href="/emt/user/part/part6">Part6</a></li>
 								</ul></li>
-							<li><a href="userGrammarList">문법문제</a></li>	
+							<li><a href="/emt/user/score/userScore">문법문제</a></li>	
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">게시판 <span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
@@ -119,6 +119,7 @@
 								data-toggle="dropdown">${sid }</a>
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="/emt/user/review/userReview?sid=${sid }">복습</a></li>
+									<li><a href="/emt/user/score/userScore">문법점수</a></li>
 									<li><a href="/emt/user/member/userMemberList?userId=${sid }">정보수정</a></li>
 									<li id="logout"><a>로그아웃</a></li>
 								</ul></li>
