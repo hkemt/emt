@@ -1,7 +1,7 @@
 		var answer= new Array();
 	function userGrammarList() {
 		$.ajax({
-			url: "userGrammarTest",
+			url: "/emt/user/grammar/userGrammarList",
 			method: "GET",
 			data: { type: 1,
 				grammarInning: 1
@@ -38,7 +38,7 @@
 	//문법 회차 클릭시 해당 회차 출력
 	function userGrammarInnning(){
 		$.ajax({
-			url:"userGrammarInning",
+			url:"/emt/user/grammar/userGrammarInning",
 			method:"GET",
 			data: {
 				type:1,

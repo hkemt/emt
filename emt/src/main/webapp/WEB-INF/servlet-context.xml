@@ -75,7 +75,7 @@
           <property name="dataSource" ref="dataSource" />
     </bean>
     <tx:annotation-driven transaction-manager="transactionManager" />
-    <mybatis:scan base-package="mvc.ch05.dao.mapper" />    
+  
 	
 	<!-- 메일 인증 관련 빈 -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
