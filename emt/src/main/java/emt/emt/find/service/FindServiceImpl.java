@@ -10,6 +10,7 @@ import javax.mail.internet.MimeMessage.RecipientType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import emt.emt.common.domain.User;
 import emt.emt.find.dao.FindDao;
@@ -18,6 +19,8 @@ import emt.emt.find.dao.FindDao;
 public class FindServiceImpl implements FindService{
 	@Autowired private JavaMailSender mailSender;
 	@Autowired private FindDao findDao;
+	
+	@Transactional
 	@Override
 	public void send(User user) {
 		MimeMessage message = mailSender.createMimeMessage();
@@ -36,11 +39,13 @@ public class FindServiceImpl implements FindService{
 		System.out.println("MailServiceImpl.send() 끝.");
 	}
 
+	@Transactional
 	@Override
 	public List<User> FindId(User user) {
 		return findDao.FindId(user);
 	}
 
+	@Transactional
 	@Override
 	public User FindPw(User user) {
 		return findDao.FindPw(user);

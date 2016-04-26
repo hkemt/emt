@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import emt.emt.common.domain.Question;
 import emt.emt.common.domain.Review;
@@ -13,45 +14,46 @@ import emt.emt.review.dao.ReviewDao;
 public class ReviewServiceImpl implements ReviewService{
 	@Autowired private ReviewDao reviewDao;
 	
+	@Transactional
 	@Override
 	public int reviewInsert(Review review) {
-		// TODO Auto-generated method stub
 		return reviewDao.reviewInsert(review);
 	}
 
+	@Transactional
 	@Override
 	public int reviewUpdate(Review review) {
-		// TODO Auto-generated method stub
 		return reviewDao.reviewUpdate(review);
 	}
 
+	@Transactional
 	@Override
 	public int reviewDelete(Review review) {
-		// TODO Auto-generated method stub
 		return reviewDao.reviewDelete(review);
 	}
 
+	@Transactional
 	@Override
 	public List<Review> reviewList(Review review) {
-		// TODO Auto-generated method stub
 		return reviewDao.reviewList(review);
 	}
 
+	@Transactional
 	@Override
 	public Review reviewView(Review review) {
-		// TODO Auto-generated method stub
 		return reviewDao.reviewView(review);
 	}
 
+	@Transactional
 	@Override
 	public Review reviewCheck(Review review) {
 
 		return reviewDao.reviewCheck(review);
 	}
 
+	@Transactional
 	@Override
 	public Question questionReview(int questionNo) {
-		// TODO Auto-generated method stub
 		return reviewDao.questionReview(questionNo);
 	}
 

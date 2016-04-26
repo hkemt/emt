@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import emt.emt.common.domain.User;
 import emt.emt.member.dao.MemberDao;
@@ -11,39 +12,40 @@ import emt.emt.member.dao.MemberDao;
 @Service
 public class MemberServiceImpl implements MemberService{
 	@Autowired private MemberDao memberDao;
+
+	@Transactional
 	@Override
 	public int memberInsert(User user) {
-		// TODO Auto-generated method stub
 		return memberDao.memberInsert(user);
 	}
 
+	@Transactional
 	@Override
 	public int memberUpdate(User user) {
-		// TODO Auto-generated method stub
 		return memberDao.memberUpdate(user);
 	}
 
+	@Transactional
 	@Override
 	public int memberDelete(String userId) {
-		// TODO Auto-generated method stub
 		return memberDao.memberDelete(userId);
 	}
 
+	@Transactional
 	@Override
 	public List<User> memberList(int page) {
-		// TODO Auto-generated method stub
 		return memberDao.memberList(page);
 	}
 
+	@Transactional
 	@Override
 	public User memberView(User user) {
-		// TODO Auto-generated method stub
 		return memberDao.memberView(user);
 	}
 
+	@Transactional
 	@Override
 	public int memberCount() {
-		// TODO Auto-generated method stub
 		return memberDao.memberCount();
 	}
 

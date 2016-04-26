@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import emt.emt.common.domain.Question;
 import emt.emt.question.dao.QuestionDao;
@@ -12,39 +13,39 @@ import emt.emt.question.dao.QuestionDao;
 public class QuestionServiceImpl implements QuestionService{
 	@Autowired private QuestionDao questionDao;
 
+	@Transactional
 	@Override
 	public int questionInsert(Question question) {
-		// TODO Auto-generated method stub
 		return questionDao.questionInsert(question);
 	}
 
+	@Transactional
 	@Override
 	public int questionUpdate(Question question) {
-		// TODO Auto-generated method stub
 		return questionDao.questionUpdate(question);
 	}
 
+	@Transactional
 	@Override
 	public int questionDelete(Question question) {
-		// TODO Auto-generated method stub
 		return questionDao.questionDelete(question);
 	}
 
+	@Transactional
 	@Override
 	public List<Question> questionList(int page) {
-		// TODO Auto-generated method stub
 		return questionDao.questionList(page);
 	}
 
+	@Transactional
 	@Override
 	public Question questionView(Question question) {
-		// TODO Auto-generated method stub
 		return questionDao.questionView(question);
 	}
 
+	@Transactional
 	@Override
 	public int questionCount() {
-		// TODO Auto-generated method stub
 		return questionDao.questionCount();
 	}
 }
