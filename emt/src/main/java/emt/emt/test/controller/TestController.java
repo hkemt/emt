@@ -33,13 +33,19 @@ public class TestController {
 		if (sid != null) {
 			rv.setUserId(sid);
 
-			// 파트1부분
+			// 파트1을 가져오기 위해 questionType을 1로 지정
 			question.setQuestionType(1);
+			// part1에 있는 문제들 가져오기
 			List<Question> part1 = partService.partQuestion(question);
+			//문제를 랜덤으로 불러오기 위해 랜덤함수 사용
 			int random = (int) (Math.random() * part1.size());
+			//part1 문제 하나 가져오기
 			question = part1.get(random);
+			//model에 동영상 정보를 담음
 			model.addAttribute("part1", question.getQuestionVideo());
+			//복습목록에 저장하기 위해 동영상번호 지정
 			rv.setQuestionNo(question.getQuestionNo());
+			//복습 목록에 없으면 -> 복습목록에 저장
 			if(reviewService.reviewCheck(rv)==null){
 				reviewService.reviewInsert(rv);
 			}

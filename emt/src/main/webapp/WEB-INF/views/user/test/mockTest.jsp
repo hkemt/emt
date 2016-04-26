@@ -198,11 +198,13 @@
 	<script src="<c:url value="/js/logout.js"/>"></script>
 	<script type="text/javascript">
 		var i = 1;
-		
+		//"part1/"+${part1} -> 파트별로 동영상 경로 가져오기 위함
 		var parts = [ "part1/" + "${part1}" , "part2/" + "${part2}",
 				"part3/" + "${part3}", "part4/" + "${part4}",
 				"part5/" + "${part5}", "part6/" + "${part6}" ];
+		//video 요소를 가져옴
 		var videoPlayer = document.getElementById("videoPlayer");
+		//동영상 하나가 끝나면 i값을 증가시켜 다음 동영상 플레이. i가 6이되면 모달을 띄워 시험 종료를 알림.
 		videoPlayer.onended = function() {
 			if (i == parts.length) {
 				$("#modalContent1").html("토익스피킹이 끝났습니다.<br>" + 
