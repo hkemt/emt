@@ -27,8 +27,8 @@ public class FindServiceImpl implements FindService {
 	public void send(User user) {
 		MimeMessage message = mailSender.createMimeMessage();
 		String pw = null;
-		if(FindPw(user)!=null){
-			pw = FindPw(user).getUserPw();
+		if(findPw(user)!=null){
+			pw = findPw(user).getUserPw();
 		}
 			try {
 				message.setSubject("[emt] 비밀번호 찾기 결과", "UTF-8");
@@ -46,13 +46,13 @@ public class FindServiceImpl implements FindService {
 	
 	@Transactional
 	@Override
-	public List<User> FindId(User user) {
-		return findDao.FindId(user);
+	public List<User> findId(User user) {
+		return findDao.findId(user);
 	}
 	
 	@Transactional
 	@Override
-	public User FindPw(User user) {
-		return findDao.FindPw(user);
+	public User findPw(User user) {
+		return findDao.findPw(user);
 	}
 }

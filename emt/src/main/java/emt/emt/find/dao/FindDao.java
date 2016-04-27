@@ -5,6 +5,6 @@ import java.util.List;
 import emt.emt.common.domain.User;
 
 public interface FindDao {
-	List<User> FindId(User user);
-	User FindPw(User user);
+	List<User> findId(User user);
+	User findPw(User user);
 }

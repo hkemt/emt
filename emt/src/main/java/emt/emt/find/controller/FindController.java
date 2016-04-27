@@ -22,7 +22,7 @@ public class FindController {
 	@RequestMapping(value="/findPw", method = RequestMethod.POST)
 	public String findPw(User user,Model model){
 		findService.send(user);
-		model.addAttribute("pw", "1"+findService.FindPw(user));
+		model.addAttribute("pw", "1"+findService.findPw(user));
 		return "user/find/findPw";
 	}
 	@RequestMapping("/findId")
@@ -31,7 +31,7 @@ public class FindController {
 	}
 	@RequestMapping(value="/findIdResult",method = RequestMethod.POST )
 	public String findIdResult(User user, Model model){
-		model.addAttribute("idList", findService.FindId(user));
+		model.addAttribute("idList", findService.findId(user));
 		return "user/find/findIdResult";
 	}
 }

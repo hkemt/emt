@@ -12,12 +12,12 @@ import emt.emt.find.dao.mapper.FindMapper;
 public class FindDaoImpl implements FindDao{
 	@Autowired private FindMapper findMapper;
 	@Override
-	public List<User> FindId(User user) {
-		return findMapper.FindId(user);
+	public List<User> findId(User user) {
+		return findMapper.findId(user);
 	}
 
 	@Override
-	public User FindPw(User user) {
-		return findMapper.FindPw(user);
+	public User findPw(User user) {
+		return findMapper.findPw(user);
 	}
 }
