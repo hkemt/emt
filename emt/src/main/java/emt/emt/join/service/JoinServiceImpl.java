@@ -12,14 +12,14 @@ import emt.emt.join.dao.JoinDao;
 public class JoinServiceImpl implements JoinService{
 	@Autowired private JoinDao joinDao;
 	
-	@Transactional
+
 	@Override
 	public User duplCheck(User user) {
 		System.out.println("서비스");
 		return joinDao.duplCheck(user);
 	}
 
-	@Transactional
+
 	@Override
 	public int joinUser(User user) {
 		return joinDao.joinUser(user);

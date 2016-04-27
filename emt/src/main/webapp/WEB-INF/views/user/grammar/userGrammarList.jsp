@@ -228,8 +228,9 @@ var sum;
 
 function answerChk(){
 	
-	//색깔 변경하는 css의 클래스 lime의 배열
+	//색깔 변경하는 css의 클래스 lime의 배열(문제 부분에 적용된 클래스), showHide의 배열(정답부분에 적용된 클래스)
 	var limes = document.getElementsByClassName("lime");
+	var showHide = document.getElementsByClassName("showHide");
 	
 	//정답 오답을 넣어놓는 배열
 	var result = new Array();
@@ -247,7 +248,8 @@ function answerChk(){
 			result[i] = "정답";
 			color[i] = "blue";
 			sum += 1;
-			limes[i].style.color= "blue";	
+			limes[i].style.color= "blue";
+			showHide[i].style.color="blue";
 			
 		} else{
 			if(selected[i] == null){
@@ -258,7 +260,8 @@ function answerChk(){
 			
 			result[i] = "오답";
 			color[i] = "red";
-			limes[i].style.color= "red";	
+			limes[i].style.color= "red";
+			showHide[i].style.color="red";
 		}
 	
 	}
@@ -282,7 +285,8 @@ function answerChk(){
 			scoreGrade: sum
 		}
 	}).done(function(result){
-		alert("점수등록성공");
+		/*정답을 보여주는 매서드*/
+		$('.showHide').show(); 
 	})
 	
 	// 모달 내용(메시지)가 들어가는 div에 메시지를 새로 씁니다.

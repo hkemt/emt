@@ -25,12 +25,15 @@
 							+"<div><input type='radio' name='"+i+"' value='2'>"+result[i].grammarEx2+"</div>"
 							+"<div><input type='radio' name='"+i+"' value='3'>"+result[i].grammarEx3+"</div>"
 							+"<div><input type='radio' name='"+i+"' value='4'>"+result[i].grammarEx4+"</div>"
-							+"<div style='text-align:right' >정답:"+answer[i]+"</div>"
+							+"<div class='showHide' style='text-align:right' >정답:"+answer[i]+"</div>"
 							+"</td>"
 							+"</tr>"
-							); 	
+							);
+					/*정답을 가려숨겨주는 매서드*/
+					$('.showHide').hide(); 	
 				}
 				$("#userGrammarTable").append("</tbody>");
+				
 			}
 		});
 	};	
@@ -61,10 +64,12 @@
 							+"<div><input type='radio' name='"+i+"' value='2'>"+result[i].grammarEx2+"</div>"
 							+"<div><input type='radio' name='"+i+"' value='3'>"+result[i].grammarEx3+"</div>"
 							+"<div><input type='radio' name='"+i+"' value='4'>"+result[i].grammarEx4+"</div>"
-							+"<div style='text-align:right' >정답:"+answer[i]+"</div>"
+							+"<div class='showHide' style='text-align:right' >정답:"+answer[i]+"</div>"
 							+"</td>"
 							+"</tr>"
-							); 	
+							);
+					/*정답을 가려숨겨주는 매서드*/
+					$('.showHide').hide(); 	
 				}
 				$("#userGrammarTable").append("</tbody>");
 			}
