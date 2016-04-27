@@ -14,6 +14,15 @@ public class User {
 	private String userPw;
 	private String email;
 	private Date userDate;
+	private int auth;
+
+	public int getAuth() {
+		return auth;
+	}
+
+	public void setAuth(int auth) {
+		this.auth = auth;
+	}
 
 	public String getUserId() {
 		return userId;
@@ -50,6 +59,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userPw=" + userPw + ", email="
-				+ email + ", userDate=" + userDate + "]";
+				+ email + ", userDate=" + userDate + ", auth=" + auth + "]";
 	}
+
 }

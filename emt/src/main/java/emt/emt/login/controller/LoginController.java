@@ -46,9 +46,16 @@ public class LoginController {
 			logger.debug(user.getUserId()+" 로그인");
 			return "/login/login";
 		} else {
-			session.setAttribute("sid", user.getUserId());
 			
-			logger.debug(user.getUserId()+" 로그인");
+			if(user.getAuth()==1){
+				session.setAttribute("sid", user.getUserId());
+				logger.debug(user.getUserId()+" 로그인");
+			}else{
+				model.addAttribute("msg", "로그인 권한이 없습니다. 메일 인증 후 이용바랍니다.");
+				
+				logger.debug("로그인 권한이 없음");
+			}
+			
 			return "/login/login";
 		}
 	}
