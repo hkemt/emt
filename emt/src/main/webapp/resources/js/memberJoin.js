@@ -123,7 +123,7 @@ $(function() {
 											success : function(result) {
 												if (result == 1) {
 													
-													$("#modalContent1").html("회원가입 되었습니다.");
+													$("#modalContent1").html("회원가입 되었습니다. 메일로 가입승인링크가 발송되었습니다.\n 메일을 확인해주시기 바랍니다.");
 													$("#modal1").modal({show : true});
 													
 												} else {

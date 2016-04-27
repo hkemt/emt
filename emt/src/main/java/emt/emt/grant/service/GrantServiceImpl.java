@@ -25,7 +25,7 @@ public class GrantServiceImpl implements GrantService{
 		String pw = null;
 			try {
 				message.setSubject("[emt]회원가입 승인 메일입니다.", "UTF-8");
-				message.setText(user.getUserId() + "링크를 클릭하시면 가입이 승인 됩니다."+"\n입니다.");
+				message.setText("<a href='http://localhost/emt/grantAuth?userId="+user.getUserId() + "'>가입승인링크</a>");
 				message.setFrom(new InternetAddress("inwon5554@gmail.com"));
 				message.addRecipient(RecipientType.TO,
 						new InternetAddress(user.getEmail()));

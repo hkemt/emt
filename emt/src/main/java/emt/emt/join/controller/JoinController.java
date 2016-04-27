@@ -1,19 +1,20 @@
 package emt.emt.join.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import emt.emt.common.domain.User;
+import emt.emt.grant.service.GrantService;
 import emt.emt.join.service.JoinService;
 
 @Controller
 public class JoinController {
 	
 	@Autowired private JoinService joinService;
+	@Autowired private GrantService grantService;
 	
 	@RequestMapping("/join/join")
 	public String join(){
@@ -37,6 +38,7 @@ public class JoinController {
 	@ResponseBody
 	public int addUser(User user){
 		int res = joinService.joinUser(user);
+		grantService.sendAuthMail(user);
 		return res;
 	}
 }
