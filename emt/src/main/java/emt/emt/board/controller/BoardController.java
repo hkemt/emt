@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import emt.emt.board.service.BoardService;
 import emt.emt.common.domain.Board;
-import emt.emt.common.domain.User;
 
 @Controller
 public class BoardController {

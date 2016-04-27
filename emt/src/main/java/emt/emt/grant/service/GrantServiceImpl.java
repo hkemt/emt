@@ -22,7 +22,6 @@ public class GrantServiceImpl implements GrantService{
 	@Override
 	public void sendAuthMail(User user) {
 		MimeMessage message = mailSender.createMimeMessage();
-		String pw = null;
 			try {
 				message.setSubject("[emt]"+user.getUserId()+"님 회원가입 승인 메일입니다.", "UTF-8");
 				message.setText("<a href='http://localhost/emt/grantAuth?userId="+user.getUserId() + "'>가입승인링크</a>");
