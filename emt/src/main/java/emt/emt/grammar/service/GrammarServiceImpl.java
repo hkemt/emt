@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import emt.emt.common.domain.Grammar;
-import emt.emt.common.domain.GrammarParameter;
 import emt.emt.grammar.dao.GrammarDao;
 
 @Service
@@ -58,7 +57,7 @@ public class GrammarServiceImpl implements GrammarService{
 
 	@Transactional
 	@Override
-	public List<Grammar> userGrammarList(GrammarParameter grp) {
-		return grammarDao.userGrammarList(grp);
+	public List<Grammar> userGrammarList(int type, int grammarInning) {
+		return grammarDao.userGrammarList(type, grammarInning);
 	}
 }

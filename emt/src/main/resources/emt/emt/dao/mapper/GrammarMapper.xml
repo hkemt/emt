@@ -75,7 +75,7 @@
 	
 	
 	<!-- 사용자 문제출력 -->
-	<select id="userGrammarList" parameterType="emt.emt.common.domain.Grammar" resultMap="grammarMap">
+	<select id="userGrammarList" parameterType="map" resultMap="grammarMap">
 		SELECT grammar_no grammarNo, grammar_quiz grammarQuiz, grammar_ex grammarEx, grammar_ex1 grammarEx1,
 			   grammar_ex2 grammarEx2, grammar_ex3 grammarEx3, grammar_ex4 grammarEx4, grammar_inning grammarInning,
 			   grammar_answer grammarAnswer

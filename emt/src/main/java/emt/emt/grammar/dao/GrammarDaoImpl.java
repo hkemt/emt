@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import emt.emt.common.domain.Grammar;
-import emt.emt.common.domain.GrammarParameter;
 import emt.emt.grammar.dao.mapper.GrammarMapper;
 
 @Repository
@@ -52,9 +51,9 @@ public class GrammarDaoImpl implements GrammarDao{
 	}
 
 	@Override
-	public List<Grammar> userGrammarList(GrammarParameter grp) {
+	public List<Grammar> userGrammarList(int type, int grammarInning) {
 		// TODO Auto-generated method stub
-		return grammarMapper.userGrammarList(grp);
+		return grammarMapper.userGrammarList(type, grammarInning);
 	}
 
 	

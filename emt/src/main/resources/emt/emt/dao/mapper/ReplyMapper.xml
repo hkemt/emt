@@ -9,7 +9,7 @@
 		<result property="boardNo" column="board_no"/>
 	</resultMap>
 	
-	<select id="replyList" parameterType="emt.emt.common.domain.ReplyParameter" resultMap="replyMap"> 
+	<select id="replyList" parameterType="map" resultMap="replyMap"> 
 		<![CDATA[
 		SELECT reply_no replyNo, reply_content replyContent, user_id userId, reply_date replyDate, board_no boardNo
 		FROM (SELECT rownum AS rnum, M.* 

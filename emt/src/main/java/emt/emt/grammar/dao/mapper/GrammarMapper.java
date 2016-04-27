@@ -2,8 +2,10 @@ package emt.emt.grammar.dao.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import emt.emt.common.domain.Grammar;
-import emt.emt.common.domain.GrammarParameter;
+
 
 public interface GrammarMapper {
 
@@ -26,7 +28,7 @@ public interface GrammarMapper {
 	int grammarDelete(Grammar grammar);
 	
 	//사용자 문제출력
-	List<Grammar> userGrammarList(GrammarParameter grp);
+	List<Grammar> userGrammarList(@Param("type")int type,@Param("grammarInning") int grammarInning);
 	
 	
 	

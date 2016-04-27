@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import emt.emt.common.domain.Reply;
-import emt.emt.common.domain.ReplyParameter;
 import emt.emt.reply.dao.ReplyDao;
 
 @Service
@@ -34,8 +33,8 @@ public class ReplyServiceImpl implements ReplyService{
 
 	@Transactional
 	@Override
-	public List<Reply> replyList(ReplyParameter rep) {
-		return replyDao.replyList(rep);
+	public List<Reply> replyList(int type, int boardNo) {
+		return replyDao.replyList(type,boardNo);
 	}
 
 	@Transactional
