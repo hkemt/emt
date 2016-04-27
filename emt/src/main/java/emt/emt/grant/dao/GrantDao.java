@@ -1,5 +1,7 @@
 package emt.emt.grant.dao;
 
-public interface GrantDao {
+import emt.emt.common.domain.User;
 
+public interface GrantDao {
+	public int grantAuth(User user);
 }

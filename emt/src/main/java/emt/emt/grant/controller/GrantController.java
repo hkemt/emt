@@ -1,5 +1,8 @@
 package emt.emt.grant.controller;
 
-public class GrantController {
+import org.springframework.stereotype.Controller;
 
+@Controller
+public class GrantController {
+	
 }
