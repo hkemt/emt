@@ -126,7 +126,7 @@
 								</table>
 							</div>
 							<!-- /.table-responsive -->
-							<input type="button" onclick="answerChk()" value="제출">
+							<input type="button" style="float: right" class="btn btn-primary" onclick="answerChk()" value="채점하기">
 
 
 
