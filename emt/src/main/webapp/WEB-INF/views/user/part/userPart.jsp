@@ -80,6 +80,24 @@
 	  </div>
 	</div>
 
+	<!-- 캡쳐용 모달 팝업 -->
+	<div class="modal fade" id="canvasModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="myModalLabel">화면 캡쳐(사진)</h4>
+	      </div>
+	      <div class="modal-body" style="text-align: center">
+			<canvas id="captures"></canvas>
+	      </div>
+	      <div class="modal-footer">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 	<div class="wrapper">
 		<header class="main-header">
 			<nav class="navbar navbar-static-top">
@@ -206,7 +224,9 @@
 						
                      </div>	<!-- /.box-body -->
 							<!-- /.table-responsive -->
-					
+					<div style="text-align: center">
+						<button onclick="captures()" class="btn btn-default">화면 캡쳐하기</button>
+						</div>
 					</div>
 				</div>
 				
@@ -327,6 +347,17 @@
 		location.replace('/emt/user/part/part'+type);
 	}
 	
+	function captures(){
+		var video = document.getElementById("videos");
+		canvas = document.getElementById("captures");
+		
+		var ctx = canvas.getContext("2d");
+		canvas.width = video.clientWidth;
+		canvas.height = video.clientHeight;
+		ctx.drawImage(video, 0, 0, video.clientWidth, video.clientHeight);
+		
+		$("#canvasModal").modal("show");
+	}
 	
 	</script>
 	
