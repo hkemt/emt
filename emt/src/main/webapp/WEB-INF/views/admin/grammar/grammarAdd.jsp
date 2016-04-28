@@ -189,5 +189,6 @@
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	<script src="<c:url value="/js/grammar/admin/grammarAdd.js"/>"></script>
+	<script src="<c:url value="/js/logout.js"/>"></script>
 </body>
 </html>

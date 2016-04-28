@@ -165,6 +165,7 @@
 	<script src="<c:url value="/js/app.min.js"/>"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
+	<script src="<c:url value="/js/logout.js"/>"></script>
 <script>
 var result = "${result}";
 if(result=="1"){

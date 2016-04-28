@@ -16,7 +16,6 @@
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script src="<c:url value="/js/question/questionAdd.js" />"></script>
-<script src="<c:url value="/js/logout.js"/>"></script>
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 
 <body class="hold-transition skin-blue layout-top-nav">
@@ -189,6 +188,6 @@
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	<script src="<c:url value="/js/question/adminQuestionList.js"/>"></script>
 	<script src="<c:url value="/js/question/questionDelete.js" />"></script>
-	
+	<script src="<c:url value="/js/logout.js"/>"></script>
 	
 	

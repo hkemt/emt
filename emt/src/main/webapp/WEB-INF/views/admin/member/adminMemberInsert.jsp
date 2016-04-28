@@ -3,10 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <title>AdminLTE 2 | Registration Page</title>
 <!-- Tell the browser to be responsive to screen width -->
-<meta
-	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-	name="viewport">
-
 <!-- Bootstrap 3.3.5 -->
 
 <link href="<c:url value="/css/bootstrap.min.css"/>" rel="stylesheet"
@@ -72,3 +68,4 @@
 		<!-- /.form-box -->
 	</div>
 	<!-- /.register-box -->
+	<script src="<c:url value="/js/logout.js"/>"></script>

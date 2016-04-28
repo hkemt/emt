@@ -322,7 +322,7 @@
 	</script>
 
 	
-	
+	<script src="<c:url value="/js/logout.js"/>"></script>
 	
 </body>
 </html>

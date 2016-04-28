@@ -213,5 +213,4 @@
 			location.href="/emt/admin/adminNotice";
 		});
 	</script>
-</body>
-</html>
+<script src="<c:url value="/js/logout.js"/>"></script>
