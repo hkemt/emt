@@ -184,7 +184,7 @@
 							<div style="text-align: right;">
 
 								<input type="submit" class="btn btn-default" value="수정">			 
-								<button class="btn btn-default"  onclick="location.href='index'">취소</button>
+								<button class="btn btn-default"  onclick="location.href='/emt/index'">취소</button>
 								
 							</div>
 							
