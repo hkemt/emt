@@ -161,9 +161,9 @@
 								</ul>
 							</div>
 														
-							<div>
-							<button class="btn btn-danger" type="button" id="delete" style="float: right">삭제</button>
-							<button class="btn btn-primary" type="button" onclick="location.href='/emt/admin/question/questionAdd'" style="float: right">등록</button>
+							<div style="text-align: center">
+							<button type="button" id="delete" class="btn btn-default" style="width:100px; height:50px;">삭제</button>
+							<button type="button" onclick="location.href='/emt/admin/question/questionAdd'" class="btn btn-default" style="width:100px; height:50px;">등록</button>
 							</div>
 							
 							<!-- /.table-responsive -->
