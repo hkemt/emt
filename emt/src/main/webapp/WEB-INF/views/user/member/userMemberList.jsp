@@ -235,6 +235,21 @@
 
 <script>
 function userDelete(){
+	
+	if (confirm("정말 탈퇴하시겠습니까?")== true){
+		if (confirm("탈퇴 시 작성한 글과 개인정보가 전부 삭제됩니다.")== true){
+			
+		}else{
+			return;
+		}
+		
+	}else{
+		return;
+	}
+	
+	
+	
+	
 	var id= "${sid}";
 	$.ajax({
 		url: "/emt/user/member/userMemberDelete",
