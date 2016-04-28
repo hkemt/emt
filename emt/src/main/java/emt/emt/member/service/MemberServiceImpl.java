@@ -49,4 +49,10 @@ public class MemberServiceImpl implements MemberService{
 		return memberDao.memberCount();
 	}
 
+	@Override
+	public int userMemberDelete(String userId) {
+		// TODO Auto-generated method stub
+		return memberDao.userMemberDelete(userId);
+	}
+
 }

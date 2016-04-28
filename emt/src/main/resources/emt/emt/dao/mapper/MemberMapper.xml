@@ -45,4 +45,9 @@
 		DELETE users where user_id=#{userId}
 	</delete>
 
+	<delete id="userMemberDelete" parameterType="String">
+		DELETE users where user_id=#{userId}
+	</delete>
+
+
 </mapper>

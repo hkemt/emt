@@ -183,7 +183,8 @@
 							</div>
 							<div style="text-align: right;">
 
-								<input type="submit" class="btn btn-default" value="수정">			 
+								<input type="submit" class="btn btn-default" value="수정">
+								<input type="button" class="btn btn-default" onclick="userDelete()" value="탈퇴">				 
 								<button class="btn btn-default"  onclick="location.href='/emt/index'">취소</button>
 								
 							</div>
@@ -232,7 +233,32 @@
 	<script src="<c:url value="/js/member/userMemberList.js"/>"></script>	
 	<script src="<c:url value="/js/logout.js"/>"></script>
 
+<script>
+function userDelete(){
+	var id= "${sid}";
+	$.ajax({
+		url: "/emt/user/member/userMemberDelete",
+		method: "POST",
+		data:{ userId : id	
+		},
+		success: function(result){
+			
+			if(result == 1) {
+				alert("탈퇴성공");
+
+				location.href="/emt/index";
+			} else{
+				alert("탈퇴실패");
+			}
+			
+			
+		}
+			
+	})
 	
+}
+
+</script>
 
 	
 	

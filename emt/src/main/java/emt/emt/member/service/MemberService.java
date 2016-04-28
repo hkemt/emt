@@ -11,4 +11,6 @@ public interface MemberService {
 	List<User> memberList(int page);
 	int memberCount();
 	User memberView(User user);
+	// 사용자 삭제
+	int userMemberDelete(String userId);
 }

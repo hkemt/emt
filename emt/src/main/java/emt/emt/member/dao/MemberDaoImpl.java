@@ -48,4 +48,10 @@ public class MemberDaoImpl implements MemberDao{
 		return memberMapper.memberCount();
 	}
 
+	@Override
+	public int userMemberDelete(String userId) {
+		// TODO Auto-generated method stub
+		return memberMapper.userMemberDelete(userId);
+	}
+
 }
