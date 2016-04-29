@@ -67,6 +67,24 @@
 	    </div>
 	  </div>
 	</div><!-- 모달 END -->
+	
+	<!-- 등록실패, 공백란 체크용 모달 -->
+	<div class="modal fade" id="modalChk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalChkHeader">
+		<button type="button"  class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalChkContent">
+	      	삭제 되었습니다.
+	      </div>
+	      <div class="modal-footer" id="modalChkBtns">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
 	<div class="wrapper">
 		<header class="main-header">
 			<nav class="navbar navbar-static-top">
@@ -201,7 +219,7 @@
 			var title = $("#noticeTitle").val();
 			var content = $("#noticeContent").val();
 
-			if (id != null) {
+			if (title.length>0 && content.length>0) {
 
 				$.ajax({
 
@@ -219,8 +237,8 @@
 								show : true
 							});
 						} else {
-							$("#modalContent").html("문제를 등록하지 못했습니다.");
-							$("#modalDel").modal({
+							$("#modalChkContent").html("문제를 등록하지 못했습니다.");
+							$("#modalChk").modal({
 								show : true
 							});
 						}
@@ -228,9 +246,13 @@
 
 				});
 			}
+			else {
+				$("#modalChkContent").html("제목과 내용을 입력하세요.");
+				$("#modalChk").modal('show');
+			}
 		}
-		$("#modalAdd").on('hidden.bs.modal', function(){
-			location.href="/emt/admin/adminNotice";
-		});
+			$("#modalAdd").on('hidden.bs.modal', function(){
+				location.href="/emt/admin/adminNotice";
+			});
 	</script>
 <script src="<c:url value="/js/logout.js"/>"></script>

@@ -20,7 +20,7 @@
 <link href="<c:url value="/css/blue.css"/>" rel="stylesheet" type="text/css">
 
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script src="<c:url value="/js/admin.js"/>"></script>
+
 
 <body class="hold-transition register-page">
 	<div class="register-box">
@@ -68,4 +68,4 @@
 		<!-- /.form-box -->
 	</div>
 	<!-- /.register-box -->
-	<script src="<c:url value="/js/logout.js"/>"></script>
+<script src="<c:url value="/js/admin.js"/>"></script>
