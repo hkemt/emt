@@ -56,6 +56,16 @@ public class BoardController {
 		return boardService.boardCount();
 	}
 	
+	//1_5 관리자 게시판 게시글 삭제하기
+	@RequestMapping(value="admin/board/adminBoardDelete", method=RequestMethod.POST)
+	@ResponseBody
+	public int adminBoardDelete(int boardNo, Board board){
+		board.setBoardNo(boardNo);
+		System.out.println(board.getBoardNo());
+		
+		return boardService.boardDelete(board);
+	}
+	
 	//3_1 인덱스 최근 게시판목록
 	@RequestMapping(value="indexBoardList")
 	@ResponseBody

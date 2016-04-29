@@ -108,6 +108,7 @@
 
 						<!-- /.box-header -->
 						<div class="box-body">
+						<form id="frm" name="frm">
 							<div id="boardView" class="table-responsive">
 								<table class="table no-margin">
 									<thead>
@@ -130,11 +131,8 @@
 
 
 							</div>
-							<input type="button"
-								onclick="location.href='adminBoardList.html'"
-								style="float: right" value="삭제"> <input type="button"
-								onclick="location.href='adminBoardInsert.html'"
-								style="float: right" value="등록">
+							<input type="submit"  style="float: right" value="삭제">
+							 </form>
 							<!-- /.table-responsive -->
 						</div>
 						<!-- /.box-body -->
@@ -194,3 +192,26 @@
 	<!-- 관리자 게시판  -->
 	<script src="<c:url value="/js/board/adminBoardList.js"/>"></script>
 	<script src="<c:url value="/js/logout.js"/>"></script>
+	
+	<script>
+	$(document).ready(function() {
+		$("#frm").submit(function(e) {
+			e.preventDefault();
+		
+		$.ajax({
+			url: "/emt/admin/board/adminBoardDelete",
+			method: "POST",
+			data: {
+				boardNo : $("#boardNo").val()
+			},
+			success: function(result){
+				alert("삭제 성공");
+			}
+		})
+		})
+	})	
+	
+	
+	</script>
+	
+	

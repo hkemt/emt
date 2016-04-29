@@ -11,7 +11,7 @@
 				for(var i=0; i<result.length; i++){
 					$("#boardTable").append(
 							"<tr>"
-							+"<td><input type='radio' name='boardNo' value='"+result[i].boardNo+"'></td>"
+							+"<td><input type='radio' id='boardNo' name='boardNo' value='"+result[i].boardNo+"'></td>"
 							+"<td>"+result[i].boardNo+"</td>"
 							+"<td>"+result[i].boardTitle+"</td>"
 							+"<td><span class='label label-success'>"+result[i].userId+"</span></td>"
