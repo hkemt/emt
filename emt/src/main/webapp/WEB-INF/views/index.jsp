@@ -96,6 +96,9 @@
 									<li><a href="/emt/notice">공지사항</a>
 									<li><a href="/emt/board">문제공유</a>
 								</ul></li>
+								<c:if test="${sid=='admin' }">
+									<li><a href="/emt/admin/adminMain">관리자페이지</a></li>
+								</c:if>
 						</ul>
 					</div>
 					<!-- /.navbar-collapse -->
