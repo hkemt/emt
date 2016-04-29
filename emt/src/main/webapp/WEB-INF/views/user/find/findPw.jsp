@@ -59,7 +59,7 @@
 					<!-- /.col -->
 					<div class="social-auth-links text-center">
 						<input type="submit" name="Submit"
-							class="btn btn-primary btn-block btn-flat" value="아이디 찾기">
+							class="btn btn-primary btn-block btn-flat" value="비밀번호 찾기">
 						
 					</div>
 					<!-- /.col -->
