@@ -80,8 +80,8 @@
 	
 	<!-- 메일 인증 관련 빈 -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-        <property name="username" value="inwon5554" />
-	    <property name="password" value="ttxjfmomtudsodra" />
+        <property name="username" value="wgkb1054" />
+	    <property name="password" value="wzwvugcgeksnnoxn" />
 	    <property name="javaMailProperties">
 	    <props>
 	        <prop key="mail.smtp.starttls.enable">true</prop>
