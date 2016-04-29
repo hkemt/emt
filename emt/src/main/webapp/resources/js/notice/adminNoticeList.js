@@ -165,10 +165,7 @@
 				},
 				success : function(result){
 					if(result>0){
-						$("#modalContent").html("삭제성공 " +
-								" 게시판의board_no로 삭제했습니다." +
-								" notice의 board_no는 게시판 테이블의 board_no삭제시" +
-								" 자동으로 삭제 됩니다."); 
+						$("#modalContent").html("삭제성공"); 
 						$("#modalDel").modal({show:true});
 						noticeList(1);
 						noticePage();
