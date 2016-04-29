@@ -21,4 +21,10 @@ public class JoinServiceImpl implements JoinService{
 	public int joinUser(User user) {
 		return joinDao.joinUser(user);
 	}
+
+
+	@Override
+	public int joinAdminUser(User user) {
+		return joinDao.joinAdminUser(user);
+	}
 }

@@ -37,7 +37,7 @@ public class MemberController {
 	@RequestMapping(value="/admin/addUser2",method=RequestMethod.POST)
 	@ResponseBody
 	public int addUser(User user){
-		int res = joinService.joinUser(user);
+		int res = joinService.joinAdminUser(user);
 		return res;
 	}
 	//1_2회원관리 수정

@@ -65,7 +65,7 @@ $(function() {
 		// alert("입력값 : "+userId.val());
 		$.ajax({
 			method : "POST",
-			url : "duplCheck2",
+			url : "/emt/duplCheck2",
 			data : {
 				userId : encodeURI(userId.val())
 			},
@@ -97,7 +97,7 @@ $(function() {
 							if (duplch) {
 								$.ajax({
 											method : "POST",
-											url : "addUser2",
+											url : "/emt/admin/addUser2",
 											contentType : "application/x-www-form-urlencoded; charset=UTF-8",
 											data : {
 												userId : encodeURI(userId.val()),

@@ -21,4 +21,9 @@ public class JoinDaoImpl implements JoinDao{
 		return joinMapper.joinUser(user);
 	}
 
+	@Override
+	public int joinAdminUser(User user) {
+		return joinMapper.joinAdminUser(user);
+	}
+
 }
