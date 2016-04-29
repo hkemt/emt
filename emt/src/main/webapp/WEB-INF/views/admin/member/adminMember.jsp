@@ -138,12 +138,9 @@
 								</ul>
 							</div>
 							
-							<div>
-							<input type="button"
-								onclick="location.href='adminMemberInsert'"
-								style="float: right" value="등록">
-							<input type="submit"
-								style="float: right" value="삭제">
+							<div style="text-align: center">
+							<input type="button" class="btn btn-default" style="width:100px; height:50px;" onclick="location.href='adminMemberInsert'"  value="등록">
+							<input type="submit" class="btn btn-default" style="width:100px; height:50px;" value="삭제">
 							</div>	
 							</form>
 

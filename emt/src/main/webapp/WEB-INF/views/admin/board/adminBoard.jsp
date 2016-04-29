@@ -148,7 +148,9 @@
 
 
 							</div>
-							<input type="submit"  style="float: right" value="삭제">
+							<div style="text-align: center">
+							<input type="submit"  class="btn btn-default" style="width:100px; height:50px;" value="삭제">
+							</div>
 							 </form>
 							<!-- /.table-responsive -->
 						</div>
@@ -231,7 +233,7 @@
 	})	
 	
 	$("#modal").on("hidden.bs.modal",function(){
-	document.location.href="/emt/admin/adminBoard";
+	location.href="/emt/admin/adminBoard";
 })
 	
 	</script>

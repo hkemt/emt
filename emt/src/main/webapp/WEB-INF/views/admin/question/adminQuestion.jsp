@@ -162,8 +162,8 @@
 							</div>
 														
 							<div style="text-align: center">
-							<button type="button" id="delete" class="btn btn-default" style="width:100px; height:50px;">삭제</button>
 							<button type="button" onclick="location.href='/emt/admin/question/questionAdd'" class="btn btn-default" style="width:100px; height:50px;">등록</button>
+							<button type="button" id="delete" class="btn btn-default" style="width:100px; height:50px;">삭제</button>
 							</div>
 							
 							<!-- /.table-responsive -->
