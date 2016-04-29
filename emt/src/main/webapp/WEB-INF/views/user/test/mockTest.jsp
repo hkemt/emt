@@ -30,7 +30,7 @@
 		<h4 class="modal-title" id="modalTitle">EMT 알림메시지</h4>
 	      </div>
 	      <div class="modal-body" id="modalContent">
-			로그아웃 되었습니다.
+			...
 	      </div>
 	      <div class="modal-footer" id="modalBtns">
 		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
@@ -44,14 +44,17 @@
 	  <div class="modal-dialog modal-sm">
 	    <div class="modal-content">
 	      <div class="modal-header" id="modalHeader1">
-		<button type="button"  class="close" onclick="moveIndex()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<button type="button" class="close" data-dismiss="modal">
+		<span aria-hidden="true">×</span>
+		<span class="sr-only">Close</span>
+		</button>
 		<h4 class="modal-title" id="modalTitle1">EMT 알림메시지</h4>
 	      </div>
 	      <div class="modal-body" id="modalContent1">
-			...
+			로그아웃 되었습니다.
 	      </div>
 	      <div class="modal-footer" id="modalBtns1">
-		<button type="button" class="btn btn-primary" onclick="moveIndex()" >확인</button>
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
 	      </div>
 	    </div>
 	  </div>
@@ -170,20 +173,7 @@
 	</div>
 	<!-- ./wrapper -->
 
-	<!-- 로그아웃 -->
 	
-	 <div class="modal" id="mymodal">
-        <div class="modal-dialog" id="sss">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <h3>시험이 종료되었습니다. 확인 버튼을 누르시면 메인화면으로 돌아갑니다.</h3>
-                </div>
-                <div class="modal-footer">
-                    <button id="goindex" type="button" class="btn btn-primary">확인</button>
-                </div>
-            </div>
-        </div>
-    </div>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- Bootstrap 3.3.5 -->
 	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
@@ -207,15 +197,15 @@
 		//동영상 하나가 끝나면 i값을 증가시켜 다음 동영상 플레이. i가 6이되면 모달을 띄워 시험 종료를 알림.
 		videoPlayer.onended = function() {
 			if (i == parts.length) {
-				$("#modalContent1").html("토익스피킹이 끝났습니다.<br>" + 
+				$("#modalContent").html("토익스피킹이 끝났습니다.<br>" + 
 										"확인버튼을 누르면 메인으로 돌아갑니다.");
-				$("#modal1").modal({show:true});
+				$("#modal").modal({show:true});
 			}
 			videoPlayer.src = "/emt/upload/" + parts[i];
 			i++;
 		}
 		
-		$("#modal1").on('hidden.bs.modal', function(){
+		$("#modal").on('hidden.bs.modal', function(){
 			location.href="/emt/index";
 		});
 		
