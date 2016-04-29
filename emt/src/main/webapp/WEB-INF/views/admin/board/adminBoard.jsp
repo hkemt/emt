@@ -23,6 +23,23 @@
 
 
 <body class="hold-transition skin-blue layout-top-nav">
+		<!-- 작은 모달 -->
+	<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalHeader">
+		<button type="button"  class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent">
+			...
+	      </div>
+	      <div class="modal-footer" id="modalBtns">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
 <!-- 로그아웃용 작은 모달 -->
 	<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-sm">
@@ -205,12 +222,17 @@
 				boardNo : $("#boardNo").val()
 			},
 			success: function(result){
-				alert("삭제 성공");
+				$("#modalContent").html("삭제에 성공했습니다.");
+				$("#modal").modal({show:true});
+
 			}
 		})
 		})
 	})	
 	
+	$("#modal").on("hidden.bs.modal",function(){
+	document.location.href="/emt/admin/adminBoard";
+})
 	
 	</script>
 	
