@@ -17,6 +17,8 @@
 <link rel="stylesheet" href="<c:url value="/css/_all-skins.min.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/member/userMemberList.css"/>">
 <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript">	var id= "${sid}"</script>
+<script type="text/javascript">	var updateResult = "${updateResult}"</script>
 
 <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
 
@@ -62,6 +64,30 @@
 	    </div>
 	  </div>
 	</div><!-- 모달 END -->
+	
+	<!-- confirm용 작은 모달 -->
+	<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="modalHeader2">
+		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="modalTitle2">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="modalContent2">
+		...
+	      </div>
+	      <div class="modal-footer" id="modalBtns2">
+		<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+		<button type="button" onclick="userDeleteAjax()" class="btn btn-primary">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	
+	
+	
+	
 
 	<div class="wrapper">
 		<header class="main-header">
@@ -135,7 +161,7 @@
 							</div>
 						</div>
 						<!-- /.box-header -->
-						<form action="/emt/update" method="post" id="signupForm">
+						<form action="/emt/user/member/userMemberUpdate" method="post" id="signupForm">
 						<div class="box-body">
 							<div class="table-responsive">
 
@@ -151,12 +177,7 @@
 											<td width=150><b>가입일자</b></td>
 											<td width=300><b>${user.userDate }</b></td>
 										</tr>
-<%-- 									
-										<tr>
-											<td><b>현재 비밀번호</b></td>
-											<td><input type="password" value=${user.userPw } readonly></td>
-										</tr>  
---%>
+
 									</thead>
 									<tbody>
 										<tr>			 
@@ -232,48 +253,4 @@
 	<script	src="//cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
 	<script src="<c:url value="/js/member/userMemberList.js"/>"></script>	
 	<script src="<c:url value="/js/logout.js"/>"></script>
-
-<script>
-function userDelete(){
-	
-	if (confirm("정말 탈퇴하시겠습니까?")== true){
-		if (confirm("탈퇴 시 작성한 글과 개인정보가 전부 삭제됩니다.")== true){
-			
-		}else{
-			return;
-		}
-		
-	}else{
-		return;
-	}
-	
-	
-	
-	
-	var id= "${sid}";
-	$.ajax({
-		url: "/emt/user/member/userMemberDelete",
-		method: "POST",
-		data:{ userId : id	
-		},
-		success: function(result){
-			
-			if(result == 1) {
-				alert("탈퇴성공");
-
-				location.href="/emt/index";
-			} else{
-				alert("탈퇴실패");
-			}
-			
-			
-		}
-			
-	})
-	
-}
-
-</script>
-
-	
 	

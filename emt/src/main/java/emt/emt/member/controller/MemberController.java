@@ -74,15 +74,13 @@ public class MemberController {
 	//1_5회원관리 상세보기
 	
 	
-	
-	//2_1본인정보관리 등록
 		
 	//2_2본인정보관리 수정
-	@RequestMapping(value="/update", method=RequestMethod.POST)
+	@RequestMapping(value="user/member/userMemberUpdate", method=RequestMethod.POST)
 	public String update(User user, Model model){
-		int result = memberService.memberUpdate(user);
-		model.addAttribute("result", result);
-		return "user/member/userMemberUpdateResult";
+		int updateResult = memberService.memberUpdate(user);
+		model.addAttribute("updateResult", updateResult);
+		return "user/member/userMemberList";
 	}
 	
 	

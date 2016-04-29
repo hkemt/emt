@@ -1,6 +1,7 @@
 $.validator.setDefaults({
     submitHandler : function() {
-        location.href("/emt/update");
+
+        location.href("/emt/user/member/userMemberUpdate");
 
     }
 });
@@ -40,3 +41,64 @@ $().ready(function() {
     });
  
 });
+
+
+function userDelete(){
+	
+		 $("#modalContent2").html("정말탈퇴하시겠습니까?")
+		 $("#modal2").modal({show:true});
+
+	
+
+
+	
+}
+
+function userDeleteAjax(){
+	
+	$.ajax({
+		url: "/emt/user/member/userMemberDelete",
+		method: "POST",
+		data:{ userId : id	
+		},
+		success: function(result){
+			$("#modal2").modal('hide');
+			if(result == 1) {
+				$("#modalContent").html("삭제에 성공했습니다.");
+				$("#modal").modal({show:true});
+
+
+			} else{
+				$("#modalContent").html("삭제에 실패했습니다.");
+				$("#modal").modal({show:true});
+			}
+			
+			
+		}
+			
+	})
+	
+}
+
+
+
+
+
+
+if(updateResult == 0 ){
+
+}else{
+	if(updateResult==1){
+		$("#modalContent").html("수정에 성공했습니다.");
+		$("#modal").modal({show:true});
+		
+	}else{
+		$("#modalContent").html("수정에 실패했습니다.");
+		$("#modal").modal({show:true});
+	};
+	
+}
+
+$("#modal").on("hidden.bs.modal",function(){
+	document.location.href="/emt/index";
+})
