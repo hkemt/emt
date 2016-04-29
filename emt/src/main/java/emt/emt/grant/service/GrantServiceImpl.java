@@ -26,7 +26,7 @@ public class GrantServiceImpl implements GrantService{
 			try {
 				MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 				messageHelper.setSubject("[emt]"+user.getUserId()+"님 회원가입 승인 메일입니다.");
-				String htmlContent ="<a href='http://localhost/emt/grantAuth?userId="+user.getUserId() + "'>가입승인링크</a>";
+				String htmlContent ="<a href='http://localhost/emt/grantAuth?uuid="+user.getUuid() + "'>가입승인링크</a>";
 				messageHelper.setText(htmlContent, true);
 				messageHelper.setFrom(new InternetAddress("inwon5554@gmail.com"));
 				messageHelper.setTo(new InternetAddress(user.getEmail()));
