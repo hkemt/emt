@@ -1,5 +1,7 @@
 package emt.emt.join.controller;
 
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,6 +39,8 @@ public class JoinController {
 	@RequestMapping(value="/join/addUser",method=RequestMethod.POST)
 	@ResponseBody
 	public int addUser(User user){
+		String uuid = UUID.randomUUID().toString().replace("-", "");
+		user.setUuid(uuid);
 		int res = joinService.joinUser(user);
 		grantService.sendAuthMail(user);
 		return res;

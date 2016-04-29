@@ -9,6 +9,6 @@ public interface JoinMapper {
 	@Select("select user_id userId FROM USERS WHERE user_id=#{userId}")
 	User duplCheck(User user);
 	
-	@Insert("INSERT INTO users values (#{userId},#{userPw},#{email},sysdate,0)")
+	@Insert("INSERT INTO users values (#{userId},#{userPw},#{email},sysdate,0,#{uuid})")
 	int joinUser(User user);
 }

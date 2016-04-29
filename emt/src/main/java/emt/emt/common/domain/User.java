@@ -15,7 +15,7 @@ public class User {
 	private String email;
 	private Date userDate;
 	private int auth;
-
+	private String uuid;
 	public int getAuth() {
 		return auth;
 	}
@@ -55,11 +55,20 @@ public class User {
 	public void setUserDate(Date userDate) {
 		this.userDate = userDate;
 	}
+	
+	public String getUuid() {
+		return uuid;
+	}
+
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
 
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userPw=" + userPw + ", email="
-				+ email + ", userDate=" + userDate + ", auth=" + auth + "]";
+				+ email + ", userDate=" + userDate + ", auth=" + auth
+				+ ", uuid=" + uuid + "]";
 	}
 
 }
