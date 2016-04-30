@@ -23,6 +23,42 @@
 
 
 <body class="hold-transition register-page">
+<!-- 가입 검증용 모달 -->
+<div class="modal fade" id="joinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="joinModalHeader">
+		<button type="button"  class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="joinModalTitle">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="joinModalContent">
+			
+	      </div>
+	      <div class="modal-footer" id="joinModalBtns">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
+	
+	<!-- 가입 결과 확인용 모달 -->
+<div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header" id="resultModalHeader">
+		<button type="button"  class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h4 class="modal-title" id="resultModalTitle">EMT 알림메시지</h4>
+	      </div>
+	      <div class="modal-body" id="resultModalContent">
+			
+	      </div>
+	      <div class="modal-footer" id="resultModalBtns">
+		<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
+	      </div>
+	    </div>
+	  </div>
+	</div><!-- 모달 END -->
+	
 	<div class="register-box">
 		<div class="register-logo">
 			<a href="/emt/admin/adminMain"><b>English Mock</b>Test</a>
@@ -68,4 +104,9 @@
 		<!-- /.form-box -->
 	</div>
 	<!-- /.register-box -->
+	
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<!-- Bootstrap 3.3.5 -->
+	<script src="<c:url value="/js/bootstrap.min.js"/>"></script>
+	
 <script src="<c:url value="/js/admin.js"/>"></script>

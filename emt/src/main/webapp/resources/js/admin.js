@@ -3,7 +3,8 @@ var mailExp = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 // id확인
 function idCheck() {
 	if (!exp.test($("#userId").val())) {
-		alert("아이디는 영문,숫자 5~10자리로 입력해주세요");
+		$("#joinModalContent").html("아이디는 영문,숫자 5~10자리로 입력해주세요");
+		$("#joinModal").modal('show');
 		return false;
 	} else {
 		return true;
@@ -12,7 +13,8 @@ function idCheck() {
 // pw확인
 function pwCheck() {
 	if (!exp.test($("#userPw").val())) {
-		alert("비밀번호는 영문,숫자 5~10자리로 입력해주세요");
+		$("#joinModalContent").html("비밀번호는 영문,숫자 5~10자리로 입력해주세요");
+		$("#joinModal").modal('show');
 		return false;
 	} else {
 		return true;
@@ -21,7 +23,8 @@ function pwCheck() {
 // 비밀번호와 비밀번호 확인 일치여부
 function pwCheck2() {
 	if ($("#userPwCh").val() != frmJoin.userPw.value) {
-		alert("비밀번호확인과 비밀번호가 일치하지 않습니다.");
+		$("#joinModalContent").html("비밀번호확인과 비밀번호가 일치하지 않습니다.");
+		$("#joinModal").modal('show');
 		return false;
 	} else {
 		return true;
@@ -30,7 +33,8 @@ function pwCheck2() {
 // 메일 확인
 function mailCheck() {
 	if (!mailExp.test($("#email").val())) {
-		alert("메일 형식은 abc@abc.com입니다.");
+		$("#joinModalContent").html("메일 형식은 abc@abc.com입니다.");
+		$("#joinModal").modal('show');
 		return false;
 	} else {
 		return true;
@@ -72,9 +76,11 @@ $(function() {
 			success : function(result) {
 				if (result == "") {
 					duplch = true;
-					alert("사용하실 수 있는 ID입니다.");
+					$("#joinModalContent").html("사용하실 수 있는 ID입니다.");
+					$("#joinModal").modal('show');
 				} else {
-					alert("사용하실 수 없는 ID입니다.");
+					$("#joinModalContent").html("사용하실 수 없는 ID입니다.");
+					$("#joinModal").modal('show');
 				}
 			},
 			error : function(request, status, error) {
@@ -106,10 +112,12 @@ $(function() {
 											},
 											success : function(result) {
 												if (result == 1) {
-													alert("정상적으로 등록되었습니다.");
-													document.location.href = "/emt/admin/adminMain";
+													$("#resultModalContent").html("정상적으로 등록되었습니다.");
+													$("#resultModal").modal('show');
+													
 												} else {
-													alert("정상적으로 등록되지 않았습니다.");
+													$("#joinModalContent").html("정상적으로 등록되지 않았습니다.");
+													$("#joinModal").modal('show');
 												}
 											},
 											error : function(request, status,
@@ -124,4 +132,8 @@ $(function() {
 							}
 						}
 					});
+});
+// 등록후 이동
+$("#resultModal").on("hidden.bs.modal", function(){
+	document.location.href = "/emt/admin/adminMain";
 });
