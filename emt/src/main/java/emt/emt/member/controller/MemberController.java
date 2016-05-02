@@ -77,10 +77,12 @@ public class MemberController {
 		
 	//2_2본인정보관리 수정
 	@RequestMapping(value="user/member/userMemberUpdate", method=RequestMethod.POST)
-	public String update(User user, Model model){
+	public String update(HttpSession session,User user, Model model){
+		String userId = (String)session.getAttribute("sid");
+		user.setUserId(userId);
 		int updateResult = memberService.memberUpdate(user);
 		model.addAttribute("updateResult", updateResult);
-		return "user/member/userMemberList";
+		return "user/member/userMemberView";
 	}
 	
 	
