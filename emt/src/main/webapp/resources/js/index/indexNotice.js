@@ -12,7 +12,7 @@
 				for(var i=0; i<result.length; i++){
 					title=result[i].boardTitle;
 					if(title.length>10){
-						title=title.substr(0,10)+"...";
+						title=title.substr(0,10);
 					}
 					$("#noticeTable").append(
 							"<tr>"
