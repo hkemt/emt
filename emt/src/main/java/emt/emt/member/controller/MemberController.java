@@ -99,7 +99,17 @@ public class MemberController {
 		user = memberService.memberView(user);
 		model.addAttribute("user", user);
 		
-		return "user/member/userMemberList";
+		return "user/member/userMemberChk";
+	}
+	
+	@RequestMapping(value="user/member/userMemberView")
+	public String userMemberView(HttpSession session, User user, Model model){
+		String userId = (String)session.getAttribute("sid");
+		user.setUserId(userId);
+		user = memberService.memberView(user);
+		model.addAttribute("user", user);
+		
+		return "user/member/userMemberView";
 	}
 	
 	
