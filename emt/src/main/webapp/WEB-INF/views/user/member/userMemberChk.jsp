@@ -185,8 +185,7 @@
 								
 							</div>
 							<div style="text-align: right;">
-								<input type="submit" class="btn btn-default" value="확인">		 
-								<button class="btn btn-default"  onclick="location.href='/emt/index'">취소</button>								
+								<input type="submit" class="btn btn-default" value="확인">		 						
 							</div>
 							
 							<!-- /.table-responsive -->
@@ -237,13 +236,16 @@
 		if ("${user.userPw }" == $("#userPw").val()){
 			location.href="/emt/user/member/userMemberView?userId=${user.userId }";
 		} else{
-			alert("비밀번호가 일치하지않습니다.");
-			location.href="/emt/index";
+			$("#modalContent").html("비밀번호가 일치하지 않습니다.");
+			$("#modal").modal({show:true});
 		}
 		
 		
 	})
-	
+	$("#modal").on("hidden.bs.modal",function(){
+	document.location.href="/emt/index";
+	})	
 	</script>
 	
+
 	
