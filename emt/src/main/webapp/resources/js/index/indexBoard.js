@@ -14,8 +14,8 @@
 					var title="";
 					for(var i=0; i<result.length; i++){
 						title=result[i].boardTitle;
-						if(title.length>10){
-							title=title.substr(0,10);
+						if(title.length>25){
+							title=title.substr(0,25);
 						}
 						$("#boardTable").append("<tr>"
 												+"<td style='width:60%;'><a href='boardDetailMove?boardNo="+result[i].boardNo+"'>"+title+"</a></td>"
