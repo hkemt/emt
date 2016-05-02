@@ -178,7 +178,7 @@
 										<thead>
 											<tr>
 												<th class="col-md-1">제목</th>
-												<td><input id="textTitle" type="text" style="width:90%;" placeholder="제목을 입력하시오."></td>
+												<td><input maxlength="40" id="textTitle" type="text" style="width:90%;" placeholder="제목을 입력하시오."></td>
 
 											</tr>
 										</thead>
