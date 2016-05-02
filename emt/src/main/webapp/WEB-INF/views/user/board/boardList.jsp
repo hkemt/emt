@@ -150,7 +150,7 @@
 
 						<div class="box box-info">
 							<div class="box-header with-border">
-								<h3 class="box-title">자유게시판</h3>
+								<h3 class="box-title">문제공유 게시판</h3>
 								<div class="box-tools pull-right">
 
 								</div>

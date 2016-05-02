@@ -21,7 +21,7 @@
 		
 						} else {
 							$("#noticeTable").append("<tr><td>"+result[i].boardNo
-									+"</td><td><a href='noticeDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle
+									+"</td><td style='width:50%'><a href='noticeDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle
 									+"</a></td><td>"+result[i].boardDate
 									+"</td><td>"+result[i].userId
 									+"</td><td>"+result[i].boardCount+"</td></tr>"); 
