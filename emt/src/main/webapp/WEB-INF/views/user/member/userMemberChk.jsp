@@ -235,7 +235,6 @@
 		e.preventDefault();
 
 		if ("${user.userPw }" == $("#userPw").val()){
-			alert("비밀번호가 일치합니다.");
 			location.href="/emt/user/member/userMemberView";
 		} else{
 			alert("비밀번호가 일치하지않습니다.");
