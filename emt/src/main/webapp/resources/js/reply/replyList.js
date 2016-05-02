@@ -8,13 +8,13 @@ function replyList(page) {
 			},
 		success: function(result){
 			$("#replyView").html("<table id='replyTable' class='table no-margin'></table>");
-			$("#replyTable").append("<thead><tr><th>번호</th><th style='width:60%; text-align:center;'>내용</th><th>아이디</th><th>작성일</th></thead>");
+			$("#replyTable").append("<thead><tr><th></th><th style='width:60%; text-align:center;'>내용</th><th>아이디</th><th>작성일</th></thead>");
 			$("#replyTable").append("<tbody>")
 			for(var i=0; i<result.length; i++){
 				$("#replyTable").append(
 						"<tr>"
-						+"<td>"+result[i].replyNo+"</td>"
-						+"<td style='width:60%;'>"+result[i].replyContent+"</td>"
+						+"<td></td>"
+						+"<td style='width:60%; ' >"+result[i].replyContent+"</td>"
 						+"<td><span class='label label-success'>"+result[i].userId+"</span></td>"
 						+"<td>"+result[i].replyDate+"</td></tr>"); 	
 			}
@@ -78,8 +78,7 @@ $(document).ready(function(){
 				}
 			}).done(function(result){
 				if(result>0){
-					$("#modalContent").html("등록성공");
-					$("#modal").modal("show");
+
 					// 댓글 등록후 입력란 비우기
 					$("#replyContent").val("");
 				
