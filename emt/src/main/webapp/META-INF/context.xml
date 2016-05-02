@@ -13,4 +13,4 @@
 		   minIdle="2"/>	   
 </Context>
 
-<!-- url="jdbc:oracle:thin:@192.168.4.116:1521:xe" -->
+<!-- url="jdbc:oracle:thin:@192.168.4.110:1521:xe" -->
