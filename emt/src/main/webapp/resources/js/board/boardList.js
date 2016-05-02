@@ -10,11 +10,16 @@
 					
 					$("#boardTable").append("<thead><tr><th>번호</th><th>제목</th><th>날짜</th><th>아이디</th><th>조회수</th></tr></thead>");
 					
-					$("#boardTable").append("<tbody>")
+					$("#boardTable").append("<tbody>");
+					var title="";
 					for(var i=0; i<result.length; i++){
 						if(result[i].isFix=='T') {
+							title=result[i].boardTitle;
+							if(title.length>30){
+								title=title.substr(0,30);
+							}
 							$("#boardTable").append("<tr class='text-bold'><td>"
-									+"</td><td style='width:50%; white-space: nowrap;'><a href='boardDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle
+									+"</td><td style='width:50%; white-space: nowrap;'><a href='boardDetailMove?boardNo="+result[i].boardNo+"'>"+title
 									+"</a></td><td>"+result[i].boardDate
 									+"</td><td>"
 									+"</td><td>"+result[i].boardCount+"</td></tr>"); 
