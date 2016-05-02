@@ -150,7 +150,7 @@
 									<thead>
 										<tr>
 											<th class="col-md-1">제목</th>
-											<td><input id="noticeTitle" type="text"
+											<td><input maxlength="40" id="noticeTitle" type="text"
 												style="width: 80%;" placeholder="제목을 입력하시오."></td>
 
 										</tr>
