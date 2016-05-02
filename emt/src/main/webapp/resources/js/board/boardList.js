@@ -14,14 +14,14 @@
 					for(var i=0; i<result.length; i++){
 						if(result[i].isFix=='T') {
 							$("#boardTable").append("<tr class='text-bold'><td>"
-									+"</td><td><a href='boardDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle
+									+"</td><td style='width:50%'><a href='boardDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle
 									+"</a></td><td>"+result[i].boardDate
 									+"</td><td>"
 									+"</td><td>"+result[i].boardCount+"</td></tr>"); 
 		
 						} else {
 							$("#boardTable").append("<tr><td>"+result[i].boardNo
-									+"</td><td><a href='boardDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle
+									+"</td><td style='width:50%'><a href='boardDetailMove?boardNo="+result[i].boardNo+"'>"+result[i].boardTitle
 									+"</a></td><td>"+result[i].boardDate
 									+"</td><td>"+result[i].userId
 									+"</td><td>"+result[i].boardCount+"</td></tr>"); 
