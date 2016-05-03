@@ -31,6 +31,9 @@
 		where board_no=#{boardNo}
 		]]>
 	</select>
+	<delete id="replyDelete" parameterType="emt.emt.common.domain.Reply">
+	DELETE reply where reply_no=#{replyNo}
+	</delete>
 	
 
 </mapper>

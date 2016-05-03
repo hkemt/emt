@@ -44,7 +44,16 @@ public class ReplyController {
 		int res = replyService.replyInsert(reply);
 		return res;
 	}
-		
+	
+	//1_3 댓글 삭제하기
+	@RequestMapping(value="replyDelete", method=RequestMethod.POST)
+	@ResponseBody
+	public int replyDelete(Reply reply, int replyNo){
+		reply.setBoardNo(replyNo);
+		System.out.println(replyNo);
+		int res = replyService.replyDelete(reply);
+		return res;
+	}
 
 	
 	

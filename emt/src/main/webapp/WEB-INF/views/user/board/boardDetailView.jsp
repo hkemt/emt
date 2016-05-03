@@ -265,6 +265,7 @@
 	<script type="text/javascript">var no = "${boardNo}"</script>
 	<script src="<c:url value="/js/board/boardDetailView.js"/>"></script>
 	<script src="<c:url value="/js/reply/replyList.js"/>"></script>
+	<script type="text/javascript">	var sid = "${sid}"</script>
 	
 	
 </body>

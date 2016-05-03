@@ -16,9 +16,17 @@ function replyList(page) {
 						+"<td></td>"
 						+"<td style='width:60%; ' >"+result[i].replyContent+"</td>"
 						+"<td><span class='label label-success'>"+result[i].userId+"</span></td>"
-						+"<td>"+result[i].replyDate+"</td></tr>"); 	
+						+"<td>"+result[i].replyDate+"</td>"
+						+"<td id='delBtn"+i+"'></td>"
+						
+						+"</tr>");
+				if(result[i].userId == sid){
+					$("#delBtn"+i+"").html("<input type='button' onclick='replyDelete("+result[i].replyNo +")' value='삭제'>");	
+				}
+				
 			}
 			$("#replyTable").append("</tbody>");
+			
 		}
 	});
 };
@@ -57,6 +65,20 @@ function replyPage(){
 	});
 	
 };
+
+function replyDelete(no){
+	$.ajax({
+		url: "replyDelete",
+		method: "POST",
+		data: {
+			replyNo :  no
+		},
+		success: function(result){
+			replyList(1);
+			replyPage();
+		}
+	})
+}
 
 
 $(document).ready(function(){
