@@ -126,7 +126,8 @@
 								</table>
 							</div>
 							<!-- /.table-responsive -->
-							<input type="button" style="float: right" class="btn btn-primary" onclick="answerChk()" value="채점하기">
+							<div id="userGrammarChk" class="table-responsive">
+							</div>
 
 
 
@@ -221,7 +222,8 @@
 	<!-- AdminLTE for demo purposes -->
 	<script src="<c:url value="/js/demo.js"/>"></script>
 	<script src="<c:url value="/js/logout.js"/>"></script>
-		<script src="<c:url value="/js/grammar/user/userGrammarList.js"/>"></script>
+	<script src="<c:url value="/js/grammar/user/userGrammarList.js"/>"></script>
+	
 <script>
 //정답체크 
 var sum;

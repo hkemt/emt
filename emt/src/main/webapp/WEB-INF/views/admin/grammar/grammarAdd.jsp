@@ -142,7 +142,7 @@
 										</tr>
 										<tr>
 										<td>
-											<select id="grammarInning" name="grammarInning" required="required">
+											회차<select id="grammarInning" name="grammarInning" required="required">
 												<optgroup>
 													<option value="1">1</option>
 													<option value="2">2</option>

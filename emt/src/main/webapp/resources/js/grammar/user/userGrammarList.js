@@ -51,6 +51,11 @@
 				$("#userGrammarView").html("<table id='userGrammarTable' class='table no-margin'></table>");
 				$("#userGrammarTable").append("<thead><tr><th></th><th></th></thead>");
 				$("#userGrammarTable").append("<tbody>")
+				
+				if(result.length > 9){
+					$("#userGrammarChk").html("<input type='button' style='float: right' class='btn btn-primary' onclick='answerChk()' value='채점하기'>");	
+				}
+				
 				for(var i=0; i<result.length; i++){
 
 					answer[i] = result[i].grammarAnswer;
@@ -77,7 +82,4 @@
 	};
 	
 	
-		
-	$(document).ready(function(){
-		userGrammarList(1);
-	})
+

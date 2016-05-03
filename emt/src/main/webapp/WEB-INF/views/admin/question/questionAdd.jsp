@@ -146,9 +146,9 @@
 								</div>
 								<div style="text-align: right;">
 									<input type="submit" id="add" class="btn btn-default"
-										value="등록"> <input type="button"
-										class="btn btn-default"
-										onclick="location.href='adminQuestionList.html'" value="돌아가기">
+										value="등록"> 							<input class="btn btn-default" type="button"
+								onclick="location.href='/emt/admin/adminQuestion'" style="float: right"
+								value="돌아가기">
 
 								</div>
 
