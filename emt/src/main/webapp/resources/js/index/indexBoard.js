@@ -14,8 +14,8 @@
 					var title="";
 					for(var i=0; i<result.length; i++){
 						title=result[i].boardTitle;
-						if(title.length>25){
-							title=title.substr(0,25);
+						if(title.length>20){
+							title=title.substr(0,20);
 						}
 						$("#boardTable").append("<tr>"
 												+"<td></td>"
