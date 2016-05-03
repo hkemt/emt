@@ -21,7 +21,8 @@ function replyList(page) {
 						
 						+"</tr>");
 				if(result[i].userId == sid){
-					$("#delBtn"+i+"").html("<input type='button' onclick='replyDelete("+result[i].replyNo +")' value='삭제'>");	
+					$("#delBtn"+i+"").html("<button class='btn btn-box-tool' onclick='replyDelete("+result[i].replyNo +")'>" +
+							"<i class='fa fa-times'></i></button>");	
 				}
 				
 			}
