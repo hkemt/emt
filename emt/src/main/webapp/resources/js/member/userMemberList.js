@@ -64,12 +64,12 @@ function userDeleteAjax(){
 		success: function(result){
 			$("#modal2").modal('hide');
 			if(result == 1) {
-				$("#modalContent").html("삭제에 성공했습니다.");
+				$("#modalContent").html("탈퇴가 성공적으로 처리 되었습니다.");
 				$("#modal").modal({show:true});
 
 
 			} else{
-				$("#modalContent").html("삭제에 실패했습니다.");
+				$("#modalContent").html("탈퇴에 실패했습니다.");
 				$("#modal").modal({show:true});
 			}
 			
