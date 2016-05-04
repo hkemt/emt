@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="emt.emt.review.dao.mapper.ReviewMapper">
-	<resultMap id="reviewMap" type="emt.emt.common.domain.Review">
+	<resultMap id="reviewMap" type="emt.emt.common.domain.Review">	
+		<result property="questionVideo" column="question_video" />
+		<result property="questionType" column="question_Type" />
 		<result property="reviewNo" column="review_no" />
 		<result property="userId" column="user_id" />
 		<result property="questionNo" column="question_no" />
 	</resultMap>
-	<resultMap type="emt.emt.common.domain.Question" id="questionMap">
-		<result column="question_no" property="questionNo"/>
-		<result column="question_type" property="questionType"/>
-		<result column="question_video" property="questionVideo"/>
-	</resultMap>
+
 	<select id="reviewList" parameterType="emt.emt.common.domain.Review"
 		resultMap="reviewMap">
-		SELECT * FROM review WHERE user_id=#{userId}
+		          SELECT b.question_no questionNo, b.question_type questionType, b.question_video questionVideo,n.review_no reviewNo, n.user_id userId
+					FROM question b, review n
+					WHERE b.question_no = n.question_no  AND user_id=#{userId}
 	</select>
 
 	<!-- 문제를 푼 후 저장된 문제인지 확인 -->
@@ -31,7 +31,7 @@
 
 	</insert>
 
-	<select id="questionReview" resultMap="questionMap"
+	<select id="questionReview" resultMap="reviewMap"
 		parameterType="emt.emt.common.domain.Question"> select question_no questionNo, question_type
 		questionType, question_video questionVideo from question where
 		question_no=#{questionNo} </select>

@@ -139,7 +139,7 @@
 								<table class="table no-margin">
 									<thead>
 										<tr>
-											<th></th>
+										<th></th>
 											<th>문제유형</th>
 											<th>아이디</th>
 											<th>다시보기</th>
@@ -148,10 +148,9 @@
 									<tbody>
 										<c:forEach var="review" items="${review }">
 											<tr>
-												
 												<td></td>
-												<td><span class="label label-success">${review.questionNo }</span></td>
-												<td>${review.userId }</td>
+												<td>${review.questionType }</td>
+												<td><span class="label label-danger">${review.userId }</span></td>
 												<td><a href="questionReview?questionNo=${review.questionNo }">다시보기</a></td>
 											</tr>
 										</c:forEach>

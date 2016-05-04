@@ -7,10 +7,24 @@ public class Review {
 	USER_ID		VARCHAR2(20 BYTE)
 	QUESTION_NO	NUMBER
 */
+	private String questionVideo;
+	private int questionType;
 	private int reviewNo;
 	private String userId;
 	private int questionNo;
-
+	
+	public String getQuestionVideo() {
+		return questionVideo;
+	}
+	public void setQuestionVideo(String questionVideo) {
+		this.questionVideo = questionVideo;
+	}
+	public int getQuestionType() {
+		return questionType;
+	}
+	public void setQuestionType(int questionType) {
+		this.questionType = questionType;
+	}
 	public int getReviewNo() {
 		return reviewNo;
 	}
