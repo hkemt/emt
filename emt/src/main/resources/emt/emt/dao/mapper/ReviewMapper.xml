@@ -14,6 +14,7 @@
 		          SELECT b.question_no questionNo, b.question_type questionType, b.question_video questionVideo,n.review_no reviewNo, n.user_id userId
 					FROM question b, review n
 					WHERE b.question_no = n.question_no  AND user_id=#{userId}
+					order by review_no DESC
 	</select>
 
 	<!-- 문제를 푼 후 저장된 문제인지 확인 -->
@@ -31,7 +32,7 @@
 
 	</insert>
 
-	<select id="questionReview" resultMap="reviewMap"
+	<select id="questionReview" resultType="emt.emt.common.domain.Question"
 		parameterType="emt.emt.common.domain.Question"> select question_no questionNo, question_type
 		questionType, question_video questionVideo from question where
 		question_no=#{questionNo} </select>

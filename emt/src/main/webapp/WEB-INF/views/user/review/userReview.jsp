@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="emt.emt.common.domain.Review, java.util.*" %>
 
 <title>EMT</title>
 <!-- Bootstrap 3.3.5 -->
@@ -139,16 +140,20 @@
 								<table class="table no-margin">
 									<thead>
 										<tr>
-										<th></th>
+											<th>번호</th>
 											<th>문제유형</th>
 											<th>아이디</th>
 											<th>다시보기</th>
 										</tr>
 									</thead>
 									<tbody>
-										<c:forEach var="review" items="${review }">
+										<% List<Review> reviews = (List<Review>)request.getAttribute("review");
+											int a = reviews.size();
+										%>
+										<c:forEach var="review" items="${review }" varStatus="status">
 											<tr>
-												<td></td>
+											
+												<td><%= a-- %></td>
 												<td>${review.questionType }</td>
 												<td><span class="label label-danger">${review.userId }</span></td>
 												<td><a href="questionReview?questionNo=${review.questionNo }">다시보기</a></td>
