@@ -48,11 +48,13 @@ function replyPage(){
 		success: function(count){
 			countAll = count;
 			
-			if((countAll%7)>0){
+			if((countAll%4)>0){
 				pageCount = Math.floor((countAll/4)+1);
 			}
-			else {
+			else if((countAll%4)==0){
 				pageCount = countAll/4;
+			} else if(countAll < 4){
+				pageCount = 1;
 			}
 			
 			$("#replyPage").html("<ul id='myPage' class='pagination pagination-sm no margin pull-right'>");

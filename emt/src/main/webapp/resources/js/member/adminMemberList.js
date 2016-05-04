@@ -39,21 +39,23 @@ var color = ["info","success","danger","warning","info","success","danger"]
 				
 				countAll = count;
 				
-				if(countAll%7>0){
+				if((countAll%7)>0){
 					
 					pageCount = Math.floor((countAll/7)+1);
 				}
-				else {
+				else if((countAll%7)==0){
 					
 					pageCount = countAll/7;
+				} else if(countAll < 7){
+					pageCount = 1;
 				}
 				
 				prev=0;
 				next=prev+3;
 				
-				if(pageCount<3){
+				if(pageCount<=3){
 					
-					for(prev; prev<next; prev++)
+					for(prev; prev<pageCount; prev++)
 					$("#myPage").append("<li onclick='memberList("+(prev+1)+")'>"+"<a href='#'>"+(prev+1)+"</a></li>");
 					
 				} else {
